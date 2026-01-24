@@ -1,0 +1,925 @@
+You
+13:44:23
+
+For CHN text. And then here, I create the unknown ID from the tag to ID of
+
+AI Course
+13:44:23
+
+For c h n text. And then here, I create that unknown ID. From the card to ID of
+
+AI Course
+13:44:26
+
+my note.
+
+AI Course
+13:44:52
+
+So this, I think, should work. We'll test it. And then here now I can use join, but this time, since this was not based on writer space, we no longer we don't also need to um, use white space here to join. We can just use, uh, to join. So here, I say join ID to Karen. I for all I in IDs.
+
+You
+13:44:53
+
+unknown. So this, I think, should work. We'll we'll test it. And then here now I can use join but this time since the split was not based on wider space, we no longer we don't also need to um, use white space here. We can just use, uh, future. So here, I say join ID to Karen. I for all I in IDs,
+
+AI Course
+13:44:57
+
+And return it.
+
+You
+13:45:08
+
+and return it. So that's the compact version and the same thing as we implemented before. So um, I'm not going to explain now. If you have questions later, um, we can cover it.
+
+AI Course
+13:45:08
+
+So that's the compact version, and the same thing has been implemented before. So, uh, uh, I'm not going to explain now. If you have questions later, uh, we can cover those.
+
+AI Course
+13:45:26
+
+Okay. This works. And now testing I'm going to use the code I had here for hello, and then hello becomes this sequence of IDs. And if the decode also correctly works, it brings this sequence of IDs back into hello.
+
+You
+13:45:27
+
+Okay. This works. And now testing, I'm going to use the code I had here for hello. And then hello becomes this sequence of IDs. And if if the code also correctly works, it brings this sequence of IDs back into Hello.
+
+You
+13:45:38
+
+So beside these two, now we also saw the problems. The problem is that if we have characters here like hello, exclamation point, or,
+
+You
+13:49:17
+
+other unknown characters, it would lose that. During the decode. So the next thing is software development organizer, which is almost all, uh, advanced elements are using. The idea is different. So it no longer uses a very fixed heuristic logic to split the the text based on, like, white spaces or empty string like characters. But it it starts from, um, it starts from the ground up and it's look and slowly figures out what are the right, uh, frequent tokens to add to the vocabulary. So most implementation start from characters. Like, all the characters first become part of the vocabulary. And then slowly, it goes over all the items in the corpus and figure out which of the two, um, two tokens in the vocabulary. If we merge them, it would be it would be most frequent in the corpus. Then it would merge them and then add a new token in the vocabulary. So that's the process, and it keeps doing that until it reaches a certain size of vocabulary. Uh, for example, the early versions of OpenAir was using 50,000. Later, in their newer um, models, I think, like GPT, three or four, they used, uh, tokenizers of size, uh, 100,000 tokens. And then I think the most recent one is, uh, having 200,000 tokens. Um, but, anyway, this is how the vocabulary is formed. We are not going to implement that. Then it's simple, but the logic is a little bit, um, unnecessary to implement. There are already great codes out there that we can use. And for this one, we would start looking into the tokenizer of GPT two. And GPT two was using a subfolder tokenize. So we would load the model. Basically, we would load the tokenizer of GPT two and then inspect it. And then use its encoding decoding functionality to to just mimic the encoding code implementation. So let's let's do it. So the first again, we use trans Hugging Face. It allows you to to, um, to download and use pre trained elements and their corresponding tokenizer. So for GPT two, we can write something great BPE tokenizer equal auto tokenizer dot from pretrained and then we specify g p t two. These are not things that you should memorize in general. I don't even memorize this. This is not um, you always have to search them. For this particular one, I've done this repeatedly, so I already know this like, how to use it from pre trained under names. But in practice, if, for example, you want to use a model I've already showed, um, showed before. Um, here, we have GLM 4.7, just a very new model. You come here, you see how to how to load it, uh, auto targets tokenizer from FreeTrin. So, for example, now if I replace g p t two with this, we would be able to inspect the actual tokenizer to use to train one of the best open source models out there. Um, Just to keep it at the at the core, like, foundation level, we'll stick with GPT two. But if you are interested, you can can, uh, uh, inspect other tokenizers. So we have PPE tokenizer now. And then if I run this, it would take a while because it's downloading the vocabulary. Of GPT two. And now this basically, an object that gives us a lot of, um, uh, has a lot of methods or gives us a lot of functionalities. For example, if I print, uh, b p e token dot vocab size,
+
+AI Course
+13:49:18
+
+Um, so beside these two, Now we also saw the problems. The problem is that if we have characters here, like, hello exclamation point or, um, other unknown characters, we would lose that. During the decoding. So the next thing is software, which is almost all, uh, advanced elements are using. The idea is different. So it no longer uses a very fixed heuristic logic to split the the text based on, like, white spaces or empty string by characters. But it starts from, um, starts from the ground up and and slowly figures out what are the right, uh, frequent tokens to add the vocabulary. So most implementation start from characters. Like, all the characters first become part of the vocabulary. And then slowly, it goes over all the items in the corpus and figure out which of the two, um, two tokens in the vocabulary. If we merge them, it would be it would be most frequent in the corpus. Then it would merge them and then add a new, um, token in the vocabulary. So that's the process, and it keeps doing that. Until it reaches a certain size of vocabulary. Uh, for example, the early versions of OpenAir was using 50,000 later in their newer um, models. I think, like, GPT three or four, they used, uh, tokenizers upsize, uh, 100,000 tokens. Then I think the most recent one is, uh, having 200,000 tokens. Um, but, anyway, this is how the vocabulary is formed. We are not going to implement that. Then it's simple, but the logic is a little bit, um, unnecessary to implement. There are already great codes out there that we can use. And for this one, we would start looking into the tokenizer of GPT two. And g b t two was using a software that a tokenizer. So we would load the model. Basically, we would load the tokenizer of g p t two and then inspect it, and then use its encoding decoding functionality to to just mimic the encode decode implementation. So let's let's do it. So the first again, we use transformers from Hugging Face. It allows you to to, um, to download and use pretrained LLMs and their corresponding tokenizer. So for g p t two, we can write something like b p e tokenizer equal auto tokenizer dot from pretrained and then we specify g v t two. These are not things that you should memorize in general. I don't even memorize this. This is not um, you always have to search them. This particular one, I've done this repeatedly, so I already know this like, how to use it from pretrained and the names. But in practice, if, for example, you want to use a model I've already showed, um, showed before. Um, here, we have DLM 4.7 just a very new model. You come here. You see how to how to load it. Uh, auto target organizer from pretrained. So, for example, now if I replace g p t two with this, we would be able to inspect the actual tokenizer to use to train one of the best open source models out there. Um, just to keep it at the at the core, like, foundation level, we'll stick with GPT two. But if you are interested, you can you can, um, inspect other tokenizers. So we have BPE tokenizer now. And then if I run this, it would take a while because it downloading the vocabulary of GPT two. And now this, basically, an object that gives us a lot of um, has a lot of methods or gives us a lot of functionalities. For example, if I print uh, b p e token dot vocab size,
+
+You
+13:50:27
+
+it says 50,005, um, 257. These are the total number of tokens that they're in the vocabulary of g p t two. We can also see all the special characters. Uh, we had one special character before, Sorry. Special tokens, like the unknown that we had earlier. So let's see what g p t two has for their special tokens. They have only one special token called end of text. And that's mostly for their training purposes. They want to as they are training the model, Um, they also and this at the end of every um, sentence or or text or passages so that the model learns to print to finish or when something is finished. This becomes the main thing when we want to generate text. We continue generating text using a pretrained model. We would see, uh, soon today. Uh, as soon as the model produces this token, it means that the model believes that the generation should be ended. And that's how, let's say, if we give some project ends. It's it's because of producing this or or equivalent of this
+
+AI Course
+13:50:28
+
+It says 50,005, um, 257. These are the total number of tokens that they're in the vocabulary of g p t two. We can also see all the special characters. Uh, we had one special character before. Sorry. Special tokens. Like, the unknown that we had, um, earlier. So let's see what g p t two has for their special tokens. They have only one special token called end of text and that's mostly for their training purposes. They want to as they are training the model, Um, they also appendix at the end of every um, sentence or or text or passages so that the model learns to when to finish or when something is finished. Uh, this becomes the main thing when we want to generate We continue generating text using a pretrained model. We would see, uh, soon today. Uh, as soon as the model produces this token, it means that the model believes that the generation should be ended. And that's how, let's say, you did some point, it ends. It's it's because of producing this or or equivalent of this token.
+
+You
+13:50:41
+
+token. Um, great. So this is g p t two. It's already there. Uh, the BTE. Uh, I've shown you this For encode, we can just use their, um, already implemented encode.
+
+AI Course
+13:50:41
+
+Great. So this is GPT two. It's already there. Uh, BP uh, I've shown you this. For import, we can just use their already implemented encode.
+
+AI Course
+13:51:06
+
+Functionality. So I just say bpetoken.encode, uh, text. This is meaningless. This part. We just have it so that it becomes it says consistent with four eleven and character 11 that we had before. But in practice, you don't need to have a separate function to call the encode within that. You can simply use the v p e dot encoder.
+
+AI Course
+13:51:13
+
+And then here, same story, return vpe.bp.decode.
+
+You
+13:51:15
+
+Functionality. So I just said BPE to dot encode, uh, text. This is meaningless, this part. We just have it so that it becomes uh, it stays consistent with four level and character level that we had before. But in practice, you don't need to have a separate function to call back in code within that. You can simply use the b p dot encode. And then here, same story, return b p e dot b p talk dot decode ID.
+
+AI Course
+13:51:18
+
+ID.
+
+AI Course
+13:51:23
+
+And now here, we want to test it. So I'm going to
+
+You
+13:51:23
+
+And now here, we want to test it. So I'm going to
+
+AI Course
+13:51:26
+
+put my code here.
+
+You
+13:51:26
+
+put my code here.
+
+You
+13:51:36
+
+So we start with this sample, and then we send it to the GPT tools, uh, software developer.
+
+AI Course
+13:51:37
+
+So we start with this sample. And then we send it to the GPT tools, uh, software developed tokenizer.
+
+You
+13:51:43
+
+The encode gives us the IDs These are the IDs that we end up having.
+
+AI Course
+13:52:48
+
+The encode gives us the IDs. These are the IDs that we end up having. And then we also see the, like, the corresponding tokens, like the mappings from these IDs to these tokens. So for example, you can see unbelievable becomes unbelievable if Abel and so on. The reason that this is happening is, again, because how BPE algorithm works. It tries to to come up with very frequent ports or sub ports, and then use them as their own standalone So this way, it has it will end up with a more controlled size for their vocabulary. We won't end up having one token for unbelievable and another for unbelievably and another token for, um, like, believable and so on. Um, it just learns these common fragments in English. And then use those as their stand alone token. But, anyway, um, these are going to be the tokens, and then the caller is exactly the same. So one more thing I want to clarify before we we move on. Is that, in general, special characters, including emojis. So
+
+You
+13:52:50
+
+And then we also see the like, the corresponding tokens, like the mappings from these IDs to these tokens. So for example, you can see unbelievable becomes on Dell if Abel and so on. The reason that this is happening is, again, because how DPE algorithm works. It tries to to come up with very frequent ports or supports, and then use them as their own standalone So this way, it has it would end up with a more controlled size for the vocabulary. We won't end up having one token for unbelievable and another token for unbelievably and another token for, um, like, believable and so on. It just learns these common fragments in English. And then use those as their stand alone token. But, anyway, um, these are going to be the tokens, and then decoded is exactly the same. So one more thing I want to clarify before we we move on. Is that, in general, special characters, including emojis. So
+
+You
+13:54:32
+
+these are ASCII characters. This is this is, um, um, in UTF eight encoding, like, the this is equivalent of this that the computer sees is just four bytes. So emojis most emojis, um, gets converted into a few bytes depending on UTF eight encoding. If you're interested, you can later search and, um, change it to UTF encoding and how it works But, basically, what happens is that for each special character, it ends up with an ID, and that ID gets mapped with a few bytes. So what happens is that BPA tokenizer, once it's been trained, it has no idea about different characters or different um, like, or emojis. What it sees is um, it just starts from bytes or characters, as I mentioned. Let's say it just starts from bytes. And then this in UTF eight has four bytes. Now those bytes are what BPE algorithm would see anytime there is this emoji in the Internet. Then during its merging algorithm, those four bytes that correspond to this gets merged and becomes one token. Because this emoji is appearing a lot when Internet data. Let's assume. So BP algorithm figures out at some point that four bytes should be merged into one token, and then, um, um, tokenizer still has no idea about I would have no idea about the the fact that it's an emoji. It just knows that these four bytes appear a lot on Internet, so let's have its content. Um, that's why here we are seeing all these weird things. This is basically, um,
+
+AI Course
+13:54:34
+
+these are ASCII characters. This is this is, um, in UTF eight encoding, like, the this is equivalent of this that the computer says is just four bytes. So emojis most emojis gets converted into a few bytes depending on UTF eight encoding. Um, if you are interested, you can later search and um, um, g p t u t f encoding and how it works. But, basically, what happens is that for each special character, it ends up with an ID, and that ID gets mapped to a few bytes. So what happens is that BPA tokenizer once it's been trained, it has no idea about different characters or different, um, like, or images. What it sees is um, it just starts from bytes or characters, as I mentioned. Let's say it starts from bytes. And then this in UTF eight has four bytes. Now those bytes are what BPE algorithm would see anytime there is this emoji in the Internet. Then during its merging algorithm, those four bytes that correspond to this gets merged and becomes one token. Because this emoji is appearing a lot on Internet data. That's the soon. So b p algorithm figures out at some point that four bytes should be merged into one token. And then, um, tokenizer still has no idea about would have no idea about the the fact that it's an emoji. It just knows that these four bytes appear a lot on Internet, so let's have its own token. That's why here we are seeing all these weird things. This is basically, um,
+
+AI Course
+13:55:13
+
+like, Unicode equivalent of those, uh, bytes. And then the same thing happens at decode during the decoding part. Decoding is still the token has no idea about It just puts them together and but once those four bytes um, concatenates, um, I don't know that it's it's going to be an emoji, so it just prints it. This might be too detailed, but it's just wanted you to get a sense of how emojis or special characters are in general handled. PPE handles them, but it has no idea there are special characters. It just sees the bytes.
+
+You
+13:55:13
+
+like, unicode equivalent of those, uh, bytes. And then the same thing happens at decode during the decoding Decoding is still the tokenizer has no idea about this. It just puts them together and what once those four bytes, um, concatenates, Python knows that it's it's going to be an emoji. So it just prints. This might be too detailed, but as just wanted you to get a sense of how emojis or special characters are in general handled. PPE handles them, but it has no idea they're special characters. It just sees the bytes.
+
+AI Course
+13:55:32
+
+And finally, Kik token. Kick token is a production ready library developed by OpenAir. It easily gives you access to load, um, like, common token inserts that's out there used to train good models, and then you can use their functionality.
+
+You
+13:55:33
+
+And finally, kick token. Keytoken is a production ready library developed by OpenAir It easily gives you access to load, um, like, common tokenizers out there used to train good models. And then you can use their functionality.
+
+You
+13:55:42
+
+So for this, it's basically going to be very simple to get the get the, uh, get some
+
+AI Course
+13:55:43
+
+So for this, it's basically going to be very simple to get the in get the get some
+
+AI Course
+13:55:58
+
+get the tokenizer, some tokenizer. Uh, for example, this c l 100 k base is what OpenAir used to train some of your good models. I have searched this before here.
+
+You
+13:55:59
+
+get the tokenizer some tokenizer. Uh, for example, this c l 100 k base, is what OpenAir used to train some of their good models. I have searched this before here.
+
+AI Course
+13:56:39
+
+You can see these are some of the common tokenizers that OpenAir developed, and it's already open source. So the most recent one is at least the recent one that is available is 200 k base. They used it to train, uh, GPT for a family. The one that we just saw, c l 100 k base, they use it to train GPT four and for turbo and 3.5 turbo. But and before that, you can see the older older versions. And and this is the tokenizer for their new opens open rate model. Um, but, anyway, our goal is to use the token to inspect this. So let's just inspect this particular tokenizer used for g p t four.
+
+You
+13:56:50
+
+You can see these are some of the common tokenizers that OpenAir developed. And it's already open source. So the more most recent one is at least, the recent one that is available is 200 k base. They used it to train uh, GPT for all family. The one that we just saw, c l 100 k base, they used it to train GPT four and four turbo and 3.5 turbo. Um, but then before that, you can see the older older versions. And, um, and this is the tokenizer for the new opens open rate model. Um, but, anyway, our goal is to use TIC token to inspect this. So let's just inspect this particular pet organizer used for g p t four. So this part is going to be simple. We can't just say, um, tokenizer, equality token dot get encoded. Um, and if I print this,
+
+AI Course
+13:56:50
+
+So this part is going to be simple. We can just say um, tokenizer, equality token dot get encoded. Um, and if I print this,
+
+You
+13:57:10
+
+print tokenizer. It's simply going to be an object. At this point, it's just an encoding object. Um, tick tokens object to to old tokenizers. But now I can use tokenizer dot dot encode to encode this.
+
+AI Course
+13:57:10
+
+print tokenizer. It's simply going to be an object at this point. It's just an encoding object. Um, the tokens object to to hold tokenizers. But now I can use tokenizer that that encodes to encode this.
+
+AI Course
+13:57:12
+
+Sentence.
+
+You
+13:57:12
+
+Sentence.
+
+AI Course
+13:57:23
+
+Dot
+
+You
+13:57:44
+
+Okay. These are these are simply the IDs that are um, that the model, um, was seeing. Like, g p t four model was seen during the training phase. For a sentence like this.
+
+AI Course
+13:57:46
+
+Okay. These are these are simply the IDs that are um, that the model, um, was seeing. Like, g p t four model was seen during the training phase. For a sentence like this.
+
+You
+13:58:13
+
+Um, alright. So that's it. You can also try different encodings here. In the solution that I would upload after the course, you would see a slightly uh, more comprehensive implementation including the GPT two tokenizer. But it's it's going to be the same. You can use encode and you can use decode to get the results back. You you code it as string. So that's
+
+AI Course
+13:58:14
+
+Um, alright. So that's it. You can also try different encodings here. In the solution that I would upload after the course. You would say slightly, uh, more comprehensive implementation including the g p t two tokenizer. But it's it's going to be the same. You can use import, and you can use decode to get the results back. You know, decode the string. So that's tick TikTok. Now
+
+You
+13:58:28
+
+TikTok. Now alright. So we covered tokenizer, and we already spent a good amount of time on it. Um, the rest of the project deep dive, is going to be faster. So I was I was expecting that. Because
+
+AI Course
+13:58:28
+
+alright. So we covered tokenizer, and we already spent a good amount of time on it. Um, the rest of the project deep dive is going to be faster. So I was I was expecting that. Because
+
+AI Course
+13:58:35
+
+because the main thing to learn is how the model would end up seeing these numbers.
+
+You
+13:58:35
+
+because the main thing to learn is how the model would end up seeing these numbers.
+
+You
+14:00:28
+
+Um, from here, we would also, in inspect linear layers and all those things a little bit. But then at the end of the day, we don't have to. I mean, for example, the starting from week two or guided learning um, week two, um, onboard, we don't need to know the details. You can think of transformer and linear layers as black box, and it would you would still be able to implement agent or agent assistance. But anyway, now we are going to move to neural networks and inspect LLM architectures. In the guided learning, we covered neural networks, and we saw that neural networks just a bunch of layers And these layers only operate on on just mathematical expression. The linear layer um, is just a linear transformation of some input to output. Um, So here, you can see a linear layer has just some dates. Some input goes in, then it gets linearly transformed into somehow. The output doesn't have to be one of size one. It can be size whatever you want. It would just change the shape of these, uh, these weights. For example, a linear layer can map three, like, vectors of size four. So each of these blue dots can be you can think of those as a number. Um, it can just transform this into this vector. Uh, how it's going to transform? Using its base. What is weight? It's just a matrix of these, like, numbers for each of this, uh, thing. So this gets multiplied metrics multiplied by these numbers, and then you get the This is a simple linear layer, um, mechanics. Now if you put a lot of linear layers next to each other, it becomes or and other layers or also, like, kind layers and and so on. It becomes a neural net. So neural network is just simply a sequence of layers. So at the end of the day, some input with some length posing get goes through some transformations, we get the output. So it's just a mathematical expression.
+
+AI Course
+14:00:30
+
+Um, from here, we would also inspect linear layers and all those things a little bit. But then at the end of the day, we don't have to. I mean, for example, starting from week two or guided learning about um, week two, um, on part, you don't need to know the details. You can think of transformer and linear layer as black box, and it would you would still be able to implement agent or agent existing. But, anyway, now we are going to move to neural networks and inspect LLM architectures. In the guided learning, we covered neural networks, and we saw that neural network is just a bunch of layers, and these layers only operate on just mathematical expressions. A linear layer, um, is just a linear transformation of some input. To output. Um, so here you can see a linear layer has just some weights. Some input goes in, then it gets linearly transformed into some output. The output doesn't have to be one. Of size one. It can be sized whatever you want. It would just change the shape of these, uh, these weights. For example, a linear layer can map three, like, vectors of size four. So each of these blue dots can be you can think of those as a number. Um, it can just transform this into this vector. Uh, how it's going to transform? Using its weights. What is weight? It's just a matrix of these, like, numbers for each of this, uh, thing. So this gets multiplied metrics multiplied by these numbers, and then you get this. This is a simple linear layer, um, uh, mechanics. Now if you put a lot of linear layers next to each other, it becomes or and other layers also, like hand layers and and so on. It becomes a neural network. So neural network is just simply a sequence of layers. Um, so at the end of the day, some people with some length goes in get goes through some transformations, we get the output. It's just a mathematical expression.
+
+AI Course
+14:01:27
+
+Now transformer, which most almost all elements are are based in, is basically the right side of this architecture. So this whole thing is the original architecture, uh, that was in the transformer paper by Google, and it was used for machine translation. So they had to have two parts. One part encodes the language in the source language. Uh, sorry. Encode the input in the source language, and then this tower would decode it into the target language. In language generation, we don't need two towers. So that's why all LLMs are decoder only transformer. Some inputs, which is a sequence of IDs goes in. There are a bunch of layers here, mostly linear layers and attention layers. Then at the very end, you get the the probabilities for the next token. So if I load g p t two, we would we are expecting to see this So we are going quite planning to do it soon.
+
+You
+14:01:27
+
+Now transformer, which most almost all elements are are based in, is basically the right side of this uh, architecture. So this whole thing is the original architecture, uh, that was in the transformer paper by Google, and it was used for machine translation. So, um, they had to have two parts. One part encodes the language in the source language, Sorry. Encode the input in the source language, and then this tower would decode it into the target language. In language generation, we don't need two towers, so that's why all elements are decoder only transformer. Some inputs, which is a sequence of IDs goes in. There are a bunch of layers here, mostly linear layers and attention layers. And then at the very end, we get the the probabilities for the next token. So if I load g p t two, it would be expecting to see this. So we are gonna gonna do it soon.
+
+You
+14:02:03
+
+Okay. I already mentioned this. What is linear layer? Some input, x goes in. W is the date matrix It's basically the weight and all those lines that we saw. And then we can also add it with some bias term. This is also going to be learned. So w and b makes this all linear transformation complete. So in order to create a linear layer, we need two parameters, like, two different objects for the One is w, one is b. Because once we have this, whenever there is an input x, going into this, we can do the transformation and then get the output.
+
+AI Course
+14:02:37
+
+Okay. I already mentioned the by this linear layer. Some input x goes in. W is the bait matrix. It's basically the bait and all those lines that we saw. And then we can also add it with some bias term. And this is also going to be learned. So w and b mixed this whole linear transformation complete. So in order to create a linear layer, we need two parameters, like, two different objects for the parameters. One is w, one is b. Because once we have this, whenever there is an input x, going into this, we can do the transformation and get the output. So for learning purposes, they are going to implement a linear layer by ourselves. It's going to be just to show that it's very simple. It's not going to be tens of uh, tens of, um, or hundreds of, uh, lines of codes. Um, it's going to be one or two lines of code. But in practice, you rarely implement your own, uh, linear layer. PyTorch already provides all of those. So let's just quickly implement this and then see how it can be we can use PyTorch to, um, create a linear day.
+
+You
+14:02:39
+
+So for learning purposes, they are going to implement a linear layer by ourselves. It's going to be just to show that it's very simple. It's not going to be tens of, uh, tens of or hundreds of, um, lines of codes. Um, it's going to be one or two lines of code. But in practice, you rarely implement your own, uh, linear layer. PyTorch already provides all of those. So let's just quickly implement this and then see how it can be we can use PyTorch to uh, create a linear link. So
+
+You
+14:03:52
+
+this is a a class, a typical PyTorch class. It has in it. And in it, we usually create the weights of that layer. Which we discussed in the guided learning. Forward, In the forward, we implement how the, um, computation should happen. So, basically, we implement in the, um, in the unit we implement all these layers and we create the weights. And then in the forward, we say that, okay. When x comes, has has input to this layer and then pass the output of this layer to that layer and so on. So that's what forward is expected to to include. Um, for linear, it's very, very, um, simple because let's have this in front of us. For linear in the unit, we would create these weights and also a bias term. So one term per, uh, per neuron. And then in the forward, we say that when x comes, um, matrix multiplied with weights to get this. So that's that's simply linear layer, and that's the foundation of all almost all elements. Um, so So let me create these these dates It's just very simple. Two lines of code. We create the rates.
+
+AI Course
+14:03:52
+
+So this is a a class, a typical PyTorch class. It has in it. In in it, we usually create the weights of that layer. Which we discussed in the guided learning. Forepart, In the four part, we implement how the, um, computation should happen. So, basically, we implement in the, um, in the unit implement all these layers and we create the rates. And then in the forward, it's say that, okay. When Diggs comes, pass pass input to this layer, and then pass the output of this layer to that layer and so on. So that's what forward is expected to to include. Uh, for linear, it's very, very, um, simple because it's have this in front of us. For linear in the unit, we would create these weights. And outside of bias term, So one turn per, uh, per neuron. And then in the forward, we say that when x comes, um, metrics multiplied with weights to get this. So that's that's simply linear layer. And that's the foundation of all almost all elements. Um, So let me create this this page. It's just very simple. Two lines of code. We create the page.
+
+AI Course
+14:04:52
+
+It's going to be a matrix. Um, it's going to be a matrix of size um, this times this. Because for each combination, we need a weight, a line. So if we call this out features or number of output nodes and we call this in features, we can create our weight metrics. And then these are the parameters. So PyTorch already has an end of that parameter. Which just specifies. And then for the start, the weights are random. They are not. At this point, we are not gonna train any bit. But, usually, in the beginning, when we create these weights, they are random. During training, they gets updated. So we can have, um, torch dot brand. Again, if you are interested after this session, you can look some of these, um, uh, like Brandon and things like that on PyTorch 200 exact API. But those are those are details only if you are interested.
+
+You
+14:05:17
+
+It's going to be a metrics. Um, it's going to be a metrics upsize, um, this times this. Because for each combination, we need a weight, a line. So if we call this out features or number of output nodes and we call this in features, we can create our weight metrics. And then these are the parameters. So PyTorch already has an end dot parameter, which is specifies And then for the start, the weights are random. We are not At this point, we are not gonna train it anyway. But, usually, in the beginning, when we create these rates, they are random. During training, they get updated. So we can have um, torus dot, uh, brand. Again, if you are interested after this session, you can look some of these, like, random and things like that on PyTorch to understand the exact API. But those are those are details only if you are interested. Um, towards the relevant, out features, times, and features. So here, I'm saying that, hey, torch. Create a matrix random metrics of size out features and in features. So it's going to be just a matrix of dates. And then I'm also saying that make sure it is parameters so that in future, if you want to train it, it they these weights be considered as parameters that can be updated.
+
+AI Course
+14:05:26
+
+Um, towards ultra admin, out features, times, in features. So here, I'm saying that, hey, torch. Create a matrix, a random matrix of size out features time in features. It's going to be just a matrix of it. And then I'm also saying that make sure it is parameters so that in future, if you want to train it with the these weights be considered as parameters that can be updated. That's it. And if you want, why else, sir? We need one BIOS pair out features. So
+
+You
+14:05:28
+
+That's it. And if you want, why else, sir? We need one files per out features. So
+
+AI Course
+14:05:51
+
+parameter torch dot rand n out features. Um, just two lines of code. For implementing a linear layer. And here, it's even simpler because it's it can be implemented in one line of code. We can say, um, metrics multiply. PyTorch already gives us max mode.
+
+You
+14:05:52
+
+parameter torus dot rand n out features. Um, just two lines of code. For implementing a linear layer. And here, it's even simpler because it's it can be implemented in one line of code. We can say, uh, matrix multiply. PyTorch already gives us maximum.
+
+You
+14:05:56
+
+Return
+
+AI Course
+14:05:58
+
+Return,
+
+You
+14:06:02
+
+torch to our sentiment.
+
+You
+14:06:23
+
+So here, we need to multiply x input with the transpose of bits just to make sure the shapes are correct. Um, to get this. And then also add the bias term. So we have one bias term per neuron. So here we say maximum
+
+You
+14:06:28
+
+x self dot weight that we created that transports
+
+AI Course
+14:06:28
+
+towards that maximum. So here, we need to multiply x input with the transpose of it. Just to make sure the shapes are right. To get this. And then also add the bias term. We have one bias term per neuron. So here we say, mat mode, x. Self dot weight that we created, dot transports.
+
+AI Course
+14:06:35
+
+And then we also add a self diagnostic.
+
+You
+14:07:17
+
+And then we also add the self at Webster. Um, I think this should work. So we are just simply multiplying x by weight and then adding bias We are specifying the forward computation of the linear layer. And now here, just to test, we create a linear layer of size three by two. So three means input features, It means that we are creating a layer that it can handle inputs of size three. So x, the three features. And then it would output um, y with size two. So it's going to be size two. So I'm going to create this layer, and then I'm going to create some random input. Of size three.
+
+You
+14:07:24
+
+And then I'll pass it to linear and then see see what happens.
+
+AI Course
+14:07:25
+
+Um, I think this should work. So we are just simply multiplying x by weight and then adding by a star. We are specifying the forward computation of the linear layer. And now here, just to test, we create a linear layer, upsize three by two. So three means input features. It means that they are creating a layer that it can handle inputs of size three. So x with three features. And then it would output, um, y with size two. So it's going to be size two. So I'm going to create this layer, and then I'm going to create some manual input. Of size three. And then I'll pass it to linear and then see see what happens.
+
+AI Course
+14:07:27
+
+Okay. So we have an error here.
+
+You
+14:07:29
+
+Okay. So we have an error here.
+
+You
+14:08:26
+
+Great. So input is this. The parameters that we created, like random dates, are these in the beginning? It's just you see a bunch of various small numbers. These are the numbers associated to these lines. And then same bias random number, and the output is this. So the linear loop is input and produced this output. Now during training, these weights become updated such that this mapping becomes more closer to the task that we are optimizing for. So that's how elements are trained. They have a bunch of layers, and then during training, all these weights gets updated such that when the input goes through all these layers, at the very end, the final output becomes very close to the probability like, how the probability description look like for the next token.
+
+AI Course
+14:08:28
+
+Great. So input is this. The parameters that we created, like, random rates are this in the beginning. It's just you see a bunch of various small numbers. These are the numbers associated to these lines. And then same bias, random number, and the output is this. So the linear node, this input, and produced this output. Now during training, these weights become updated such that this mapping becomes more closer to the task that we are optimizing for. So that's how elements are trained. They have a bunch of layers, and then during training, all these weights gets updated such that when the input goes through all these layers, at the very end, the final output becomes very close to their probability like, how the probability distribution look like for the next token.
+
+You
+14:09:11
+
+Um, alright. So we implemented this, but in practice, we don't have to. We can, uh, just wanted to show that it's just a bunch of like, two or three lines. It's not, um, it's it doesn't have to be a black box. So here, we can just use the same code that we have but instead of implementing our own class, we can use rely on um, PyTorch linear implementation. So if we do n n dot linear, it it already has what we implemented and bit more better code and more reliable code. So we say three by two, same input, Again, it just works, converts this into some some output. Now transformer.
+
+AI Course
+14:09:12
+
+Um, alright. So we implemented this but in practice, we don't have to. We can uh, I just wanted to show that it's just a bunch of like, two, three lines. It's not, um, it's it doesn't have to be a black box. So here, we can just use the same code that we have but instead of implementing our own class, we can use rely on, um, PyTorch. Linear implementation. So if we do n n dot linear, it it already has what we implemented and with more better code. And more reliable code. So we say three by two, same input again. It just works, converts this into some some output. Now transformer.
+
+AI Course
+14:09:22
+
+So so what we are gonna do here, we are going to now load GPT two and see the layers and inspect them. So first, we are going to load
+
+You
+14:09:24
+
+So so what we are gonna do here, we are going to now load g p t two and see the layers. And inspect. So first, we are going to load
+
+You
+14:09:34
+
+GPT two We call it GPT two equal GPT two l m head model from pretrained
+
+AI Course
+14:09:34
+
+g p t two. We call it GPT two equal GPT two l m head model from pretrained
+
+AI Course
+14:09:47
+
+g p t two. It's already transformed. Give me if you search online and say how to, um, load the g p t two model, you will see the documentation coming up in the hugging phase.
+
+You
+14:09:51
+
+GPT two. It's already transformed g p if you search online and say how to um, load a g p t two model, you would see in the documentation coming up in the Hugging Face. So great. So now let me run this.
+
+AI Course
+14:09:51
+
+Great. So now let
+
+AI Course
+14:09:57
+
+okay. It it it loaded the g p t two. Now if I print g p t two,
+
+You
+14:09:57
+
+Okay. It it it loaded the GPT two. Now if I print g p t two,
+
+AI Course
+14:10:05
+
+You would see all these layers.
+
+You
+14:10:05
+
+You would see all these layers.
+
+You
+14:10:22
+
+You would see this model that was implemented by Hugging Face as a GPT two It has a transformer.
+
+AI Course
+14:10:22
+
+You would see this model that was implemented by Hugging Face as a GPT two It has a transformer
+
+You
+14:10:28
+
+And an LM head.
+
+AI Course
+14:10:31
+
+and an LM head. So
+
+You
+14:10:33
+
+So
+
+You
+14:10:47
+
+this is the transformer. Which we saw in the lecture, and this is the head. The final linear layer to convert the output into a vocabulary size.
+
+You
+14:11:01
+
+So it has two components, transformer and element. Element head is simply just a linear layer that we just saw in the previous layer. These are the sizes. It goes from seven sixty eight to 50,257.
+
+You
+14:11:15
+
+This is because it's trying to, um, transform the final output into an a vector of size vocabulary size. That it can pick the next token. So that's why we have this linear layer. Here.
+
+AI Course
+14:11:15
+
+This is the transformer which we saw in the lecture. And this is the head. The final linear layer to convert the output into a vocabulary size. So it has two components, transformer and LM head. LM head is simply just a linear layer that we just saw in the previous layer. These are the sizes. It goes from seven sixty eight to 50,257. This is because it's trying to, um, transform the final output into an a vector of size vocabulary size. That it can pick the next token. So that's why we have this linear layer. Here.
+
+You
+14:11:26
+
+And and here, this is the transformer. It has, um, WFE,
+
+AI Course
+14:11:26
+
+And here, this is the transformer. It has, um, WTE,
+
+AI Course
+14:11:50
+
+text embeddings, So here, it's just an embedding layer, which we already covered in the guided journey. It goes from the vocabulary size because we have a sequence of IDs as the input. It converts them into vectors like embeddings of this size. And then this is also the position of embedding. It just creates an embedding layer and then add these up so that it injects position information. So these are um,
+
+You
+14:11:51
+
+text embeddings, So here, it's just an embedding layer, which we already covered in the guided learning. It goes from the vocabulary size because we have a sequence of IDs as the input. It converts them into vectors, like embeddings of these size. And then this is also the position of embedding. It just creates an embedding layer and then add this up so that it injects position information. So these are, um,
+
+You
+14:12:01
+
+This was this embedding layer. And then the other one was the position embedded. It's not it's not here.
+
+You
+14:13:10
+
+And then after this, we have a module list. It's a list It's called h. It has, um, 12 blocks zero to 11. And this refers to the 10 times of this transformer block. So here, we have one block, then end block. For g p t two, it was total is 12. It starts from zero to to 11. Now each block has at least from the canvas, it says multi head attention and feed forward. And here, we can see that each layer has attention. And NLP. NLP or fit fit work, they're they're the same. And under the hood, they have some other layers, like, uh, linear layers. In this case, it's Kanvandi, uh, for projection, and then these are the layer and details. These are the name of those layers. So this is how GPT tool looks like. We can easily inspect it by printing parts of it. For example, instead of printing g p t two, I can print um, g p t two dot
+
+You
+14:13:13
+
+transformer dot
+
+AI Course
+14:13:14
+
+This was the same menu. And then the other one was there. Position embedded. It's not it's not here. And then after this, we have a module list. It's a list It's called h. It has, um, 12 blocks. Zero to 11. And this refers to the 10 times of this transformer block. So here, we have one block and then end block. For g p t two, it was total is 12. It starts from zero to to 11. Now each block has, at least from the canvas, it says multi head attention and feed forward. And here, we can see that each layer has attention. And NLP. NLP or fifth feet forward. They're they're the same. And under the hood, they have some other layers like uh, linear layers. In this case, it's convandi, um, for projection, and then these are the layer and details. These are the name of those layers. So this is how GPT two looks like. Now. We can easily inspect it by printing parts of it. For example, instead of printing g p t two, I can print g p t two dot transformer dot
+
+AI Course
+14:13:17
+
+h
+
+AI Course
+14:13:20
+
+and then first block.
+
+You
+14:13:21
+
+h and then first block.
+
+You
+14:13:53
+
+It's just showing me the first one. Um, so this is how we can we can inspect it. Um, and in general, we can also print all the names, children, and stuff like that. You would see those examples in the solution. Um, for example, for this block, I'm going to create this name this block. And then for this block, I'm going to go over all its children and just print their, um, their their name, their capacity.
+
+AI Course
+14:13:54
+
+It's just showing me the first block. Um, this is how we can we can inspect it. And in general, we can also print all the names, children, and stuff like that. You would see those examples in the solution. For example, for this block, I'm going to create this, uh, name this block. And then for this block, I'm going to go over all its children. And just print their, um, their their name, their last name.
+
+AI Course
+14:14:57
+
+So each block has layer norm, attention, layer norm, MLP. So we already have this attention and MLP, and layer norm are just some normalization are putting between for more, um, consistent training, like more yeah, more consistent training. Um, so alright. So we have this. We already looked into it. Now here, what we want to do is we want to just we already loaded GPT. We want to send some input to it and see how it generates output. So I'm not going to start from here. I'm going to start from here. I'm going to just randomly create a sequence of vectors and pass it and send it to uh, sorry. Not not from here. I will start from here. So I'm going to start from a random sequence of IDs and just send it to the, um, GPT two. So we see what it outputs.
+
+You
+14:14:58
+
+So each block has layer norm, attention, layer norm, ML. So we already have this attention and MLP, and layer norm are just some normalization they are putting between for more, uh, consistent training, like, more yeah, more consistent training. Um, so alright. So we have this. We already looked into it. Now here, what we want to do is we want to just we already loaded GPT. We want to send some input to it and see how it generates output. So I'm not going to start from here. I'm going to start from here. I'm going to just randomly create a sequence of vectors and pass it and send it to uh, sorry. Not not from here. I would start from here. So I'm going to start from a random sequence of IDs and just send it to the um, GPT two so we see what it outputs.
+
+AI Course
+14:15:28
+
+So one thing we need to decide is the length Here is three. For example, just to keep it consistent with the solution, I would use a sequence length of eight. This is just random. We are trying to, um, inspect g p t two. So and then we create some dummy tokens of size first random integers between zero to vocabulary size of GPT, which was 50,000 something.
+
+You
+14:15:29
+
+So one thing we need to decide is the length. Here is three. For example, just to keep it consistent with the solution, I would use a sequence length of eight. This is just random. We are trying to um, inspect g p t t. So and then we create some dummy tokens. Of size first in random integers, between zero to vocabulary size of GPT, which was 50,000 something.
+
+AI Course
+14:15:55
+
+I think it was 50,000 to 57 or something. Uh, we can you we can do g p t dot config dot web app size. It's basically the 50,000 thing. And then here, we specify the shape of the input. Um, this this one, you can ignore it. It's the batch size. We can send always send batches of inputs to, um,
+
+AI Course
+14:16:15
+
+elements. Uh, but here, I'm going to create a sequence name. So now if I print dummy tokens, just a bunch of tokens, which I want to send to g p t two. Right now, it's very random, but we'll we'll make it use a concrete example next. Now
+
+You
+14:16:15
+
+I think it was 50,000 to 57 or something. Um, we can you we can do g p t dot config dot webcap size. It's basically the 50,000 thing. Um, and then here, we specify the shape of the input. Um, this this one, you can ignore it. It's the batch size. We can send always send batches of inputs to, uh, elements. But here, I'm going to create the sequence name. So now if I print dummy tokens, it's just a bunch of tokens, which I want to send to g p t two. Right now, it's very random, but we'll we'll make it um, use a concrete example next. No.
+
+AI Course
+14:16:56
+
+So now for here past the embedding So, basically, here, we want to pass this input to a layer of GPT two and just see how it looks like. So with torch dot nomGrad, it means that do not calculate the gradients because we're not training It just keeps things faster. Even if you don't have this, it still works. So here, we are saying that g p t two transformer text and meetings, and we passed dummy tokens. So we are sending these numbers to embedding pair to get this.
+
+You
+14:17:19
+
+So now for here, as embedding. So, basically, here, we want to pass this input to a layer of g p t two and just see how it looks like. So the torch dot nomgrad, it means that do not calculate the ingredients because we are not training It just keeps things faster. Even if you don't have this, it still works. So here, we are saying that GPT two transformer text embeddings, and we pass dummy tokens. So we are sending these numbers to embedding data. To get this. They are also gonna send this to, um, you are also going to create the send the the numbers, one, two, three, four, five, six, seven, Sorry. 01234567. We would send it to the positional recording to convert them into embeddings.
+
+AI Course
+14:17:19
+
+We are also gonna send this to um, we are also going to create the send the the numbers. One, two, three, four, five, six. 7. Sorry. 01234567. We would send it to the additional encoding to convert them into embeddings.
+
+You
+14:17:36
+
+And then we'll then we'll add it. So that that's how, um, positional embedding would be added. With with the these embeddings. We add this. This becomes hidden. This basically becomes what needs to now go into one block of transformer.
+
+AI Course
+14:17:36
+
+And then we'll then we'll add it. So that that's how, um, positioning will be added. With with the these embeddings. So we add this. This becomes hidden. This basically becomes what needs to now go into into one block of transformer.
+
+You
+14:17:57
+
+And here, we pass it to the block at the created here, uh, to the first block of transformer. We send the hidden, and these are some other, um, arguments. You can you can check them later. Not not super important. Uh, now we have apps. Now if I print
+
+AI Course
+14:17:57
+
+And here, we pass it to the block that we created here, uh, to the first block of transformer. We send a hidden. And these are some other, um, arguments. You can you can check them later. Not not super important. Um, now we have out. Now if I print
+
+You
+14:17:59
+
+out that shape,
+
+AI Course
+14:17:59
+
+out that shape,
+
+AI Course
+14:18:28
+
+It is one this is the bad size. You can still ignore it. Says that for the first example that we provided. So at least, So the output is eight by seven sixty eight. So when we pass this to the first layer, the output is still eight by seven sixty eight. Which makes sense because the input length was eight. And then the hidden dimension is seven sixty eight that, um, g p t two was designed.
+
+You
+14:18:32
+
+It is one this is the batch You can still ignore it. It says that for the first example that we provided, so ignore this. So the output is gate by seven sixty eight. So when we pass this to the first layer, the output is still eight by seven sixty eight. Which makes sense because the input length was eight, and then the hidden dimension is seven sixty eight at, um, g p t two was designed. So we have seen one layer
+
+You
+14:18:41
+
+Now, um, we've already seen this. I'm going to uh, skip this. We printed GPT two and saw all the layers.
+
+AI Course
+14:18:43
+
+So we have seen one year. We've already seen this. I'm going to uh, skip this. We printed GPT two and saw all the layers. It is basically
+
+AI Course
+14:18:55
+
+if you print everything, we already covered this. We have text embedding, plus channel embedding, and then a a list of transforming blocks, and then the final layer.
+
+You
+14:19:19
+
+It is basically if you print everything, we already covered this. We have text embedding, plus channel embedding, and then a list of transforming blocks, and then a final layer. So now here is the, um, here is where now we want to see the actual, um, how an actual example work end to end. So if you really start with a real sentence organize it, get the IDs, and send it to the, uh, GPT two, what would be the output? So here, I'm going to again create GPT two uh, as I had before.
+
+AI Course
+14:19:19
+
+So now here is the, um, here is where now we want to see the actual, um, how an actual example works end to end. So if you really start with a real sentence tokenize it, get the IDs, and send it to the, uh, GPT two, what would be the output? So here, I'm going to, again, create GPT two. Uh, as I had before.
+
+AI Course
+14:19:53
+
+So this is g p t two. I also need a tokenizer of g p t two. We've we've seen this before as well. These are some details, so so I can just run things on my local laptop. But in general, you can use auto talk tokenizer to get or any tokenizer based on the documentation and hugging face. But what is important is that now this is the tokenizer of g p t two. This is the pre trained model with with with all the weights. So let me run this.
+
+You
+14:19:53
+
+So this is GPT two. I also need the tokenizer of GPT two. We you've seen this before, as well. These are some details. So so I can't just run things on my local laptop. But in general, you can use auto talk tokenizer to get the GPT two tokenizer or any tokenizer based on the documentation and Hugging Face. But what is important is that now this is the tokenizer of g p t two. This is the pre pre trained model with with with all the baits. So let me run this.
+
+AI Course
+14:20:31
+
+Great. Now I'll start with this hello, my name. First, I need to pass it to the tokenizer and get get the IDs. So here, I can say, um, tokenizer, expose you the tokenizer. And then I can say, uh, this isn't, um, specified that I want um, like, a tensor as the output. And then input IDs. So now if I print input IDs, now hello my name is going to go to the GPT two tokenizer, and I'll get their IDs.
+
+You
+14:20:31
+
+Great. Now I'll start with this hello, my name. First, I need to pass it to the tokenizer and get get the IDs. So here, I can say, um, tokenizer. The text goes into the tokenizer. And then I can say, uh, this is an, um, specified that I want um, like, a tensor as the output. And then input IDs. So now if I print input IDs, now hello my name is going to go to the GPT two tokenizer, and I'll get their IDs.
+
+AI Course
+14:20:45
+
+Also, let me finish.
+
+AI Course
+14:21:03
+
+Great. So we started with hello, my name, and we want to see what GPT two would predict as the next token. As of now, we have three tokens. These are these are going to go into the GPT two now. So we'll do what we did before. It's going to be very same with
+
+You
+14:21:03
+
+Also, let me pin this. Great. So we started with hello, my name, and we want to see what g p t two will predict as the next token. As of now, we have three tokens. These are these are going to go into the GPT two now. So we'll do what we did before. It's going to be very same with
+
+AI Course
+14:21:10
+
+porch dot no grad
+
+You
+14:21:13
+
+porche dot no grant.
+
+You
+14:21:21
+
+Um, We just sent the input to g p t two. So we send all these sequence of numbers that we just obtained here to g p t two. And then we get the
+
+AI Course
+14:21:21
+
+We just sent the input to g p t two. So we send all the sequence of numbers that we just obtained here to GPT two. And then we get the
+
+AI Course
+14:21:29
+
+we get the logics. So here if I print logits,
+
+You
+14:21:29
+
+we get the logics. So here, if I print logins,
+
+You
+14:22:04
+
+Um, it's size one which is the back size. You can notice three by 50,000 something. So, actually, these three hell on my name, the three IDs, it went into GPT. It went through all that mathematical expression. It went through all the transformer layers. And at the very end, we got this output, uh, three, Not not even this. It applied the linear layer to all of this. So we get three by vocabularies.
+
+AI Course
+14:22:09
+
+It's size one, which is the back size. You can notice Three by 50,000 something. So, actually, these three hello my name, the three IDs, it went into GPT. It went through all that mathematical uh, expression. It went through all the transformer layers. And at the very end, we got this output, uh, three Not not even this. It applied the linear layer to all of this. So we get three by vocabularies size. So that's why we are seeing what we are seeing here is
+
+You
+14:22:09
+
+So that's why we are seeing what we are seeing here is
+
+You
+14:22:13
+
+um, three by vocabulary size.
+
+AI Course
+14:22:29
+
+three five vocabulary size. Now the next step is now where we have to so now what we need to do is we need to first ignore the first two here because those are not going to be used to predict the next token. We are going to extract this last vector.
+
+You
+14:22:29
+
+Now the next step is now there we have to so now what we need to do is we need to first ignore the first two here because those are not going to be used to predict the next token. You are going to extract this last vector
+
+AI Course
+14:22:47
+
+And then we are going to apply a softmax to it so it becomes probability instead of raw logics. And then we are going to look at the highest probability tokens that are predicated by g p t two.
+
+You
+14:22:49
+
+and then we are going to apply the soft max to it so it becomes probabilities instead of raw logics. And then we are going to look at the highest probability tokens that are predicted by g p t two. So here, we can say, um,
+
+AI Course
+14:22:52
+
+So here, we can say, um,
+
+You
+14:23:19
+
+again, Logix at this shape, So I need first, I'll index zero to get this, and I also here, I need to index the last vector, the the third one. So I'll use minus one That that Python should automatically give me the last one, but we can also do two. Zero one two two is the last one. So if I print the shape of this,
+
+AI Course
+14:23:20
+
+again, had this shape. So I need first, I'll index zero to get this. And I also, here, I need to index the last vector, the the third one. So I'll use minus one. That that title should automatically give me the last one, but we can also do two. Zero one two two is the last one. So if I print the shape of this,
+
+AI Course
+14:23:31
+
+now it would be probably this. Yes. So this 50,000 is this this vector. Now I need to apply a softmax to it.
+
+You
+14:23:31
+
+Now he would be probably this. Yes. So this 50,000 is this this vector. Now I need to apply softmax to it.
+
+You
+14:24:00
+
+Um, if that softmax If, again, is coming from PyTorch library, PyTorch already has the implementation for all these, um, building blocks like Softmax. So I'm going to send logics into Softmax and say apply Softmax on the on the last time a check. And then, um, these are going to my these are going to be my probabilities. Now if I print props,
+
+AI Course
+14:24:28
+
+Um, f dot softmax. F, again, is coming from Pytorch library. PyTorch already has the implementation for all these, um, meeting blocks like Softmax. So I'm going to send budgets into Softmax and say apply softmax on the on the last dimension. And then, um, these are going to my these are going to be my probabilities. Now if I print props, you will see a very long list of numbers. These are the probabilities. For each token in those fifty thousand months. Now next, I can I can inspect the best ones, like Topkade? So torch already has Topkade um, method. So I send these props. And then I'll ask for showing me extracting the top five, um, probabilities.
+
+You
+14:24:30
+
+you would see a very long list of numbers. These are the probabilities for each token in those fifty thousand months. Now next, I can I can inspect the best ones, like top k? So torch torch already has top k, method. So I send these props. And then I'll ask for showing me extracting the top five um, probabilities.
+
+You
+14:24:54
+
+Um, if I print top k, you would see two two, um, two objects, values and indices. These values are the probabilities, and these are the the indices. Of the tokens. So these are the actual indices. If we simply go and look up our tokenizer, we would see which token it corresponds to.
+
+AI Course
+14:24:58
+
+If I print top k, you would see two two, um, two objects. Values and indices. These values are the probabilities, and these are the the indices of the tokens. So these are the actual indices. If we simply go and look up our tokenizer, we would see which token it corresponds to. So let's let's do that.
+
+You
+14:24:59
+
+Let's let's do that.
+
+You
+14:25:16
+
+This is just a quote for to show this in a clean way, but it's just printing. So it's basically, I'm printing what I just described, uh, for each of these four, I'm going to print the probability and the, um, the corresponding token for this ID.
+
+AI Course
+14:25:16
+
+This is just a quote for to show this in a clean way. But it's just printing. So it's basically, I'm printing what I just described. Uh, for each of these four, I'm going to print their probability. And the, um, the corresponding token for this ID.
+
+You
+14:26:01
+
+So the highest probability token next token predicted by GPT was this, um, which is which is a totally good prediction. Hello. My name. The next token is his. And the chance is 77% based on GPT. And then these are some other things. So that's it. That's mostly how we can generate text. Now if we continue this loop, now we have this we grab this. We append it to the hello my name and append this and pass it again to GPT two and and just repeat this process. We can give keep getting the next token and next token. Until at some point, g p t two believes that this should be the end of sentence. That special token that we just saw.
+
+You
+14:26:34
+
+But we don't have to implement that loop. Hugging face and transformers already implemented that. And it's very easy to use it. We can just call generate. So GPT two has something like generate, and we can just use it. So here, we want to now decode. Now we want to do a have the loop to keep predicting the next token. So as I don't need to have okay. A lot of this code now is,
+
+You
+14:26:38
+
+similar to what you've seen. I'm going to copy paste it.
+
+AI Course
+14:26:40
+
+So the highest probability token next token predicted by GPT was his, um, which is which is totally good prediction. Hello. My name. The next token is is and the chance is 77% based on g p t two. And then these are some other things. So that's it. That's mostly how we can generate text. Now if we continue this loop, now we have this. We grab this. We append it to the hello my name and and is and pass it again to GPU two and and just repeat this process. We can give keep getting the next token and next token. Until at some point, gbt two believes that this should be the end of center That is special token that we just saw. Um, but you don't have to implement that loop. Hugging face and transformers already implemented that, and it's very easy to use it. We can just call generate. So GPT two has something like generate, and we can just use it. So here, we want to now decode. Now we want to do a have the loop to keep predicting the next token. So as I don't need to have okay. A lot of this code now is, um, similar to what you've seen. I'm going to copy paste it.
+
+AI Course
+14:26:56
+
+Great. So we have um, again, tokenizer, model for g p t two. And then here, we want to now implement this generation process.
+
+You
+14:26:58
+
+Great. So we have, um, again, tokenizer model for g p t two. And then here, we want to now implement this generation process.
+
+AI Course
+14:27:24
+
+As I just mentioned, transformer, which is this model, we can call it GPTQ. From here, I'm calling it model, already has this generate. So we can just pass the input IDs. It would keep generating it until until we get the output. You can also pass more arguments. For example, when you pass two sample defaults, it means that you not use, um, any randomness. Do not sample. It's greedy. Just pick the highest probability next token.
+
+You
+14:27:24
+
+As I just mentioned, transformer, which is this mother, we can call it g p t two. Here, I'm calling it mother. Already has this generate. So we can just pass the input IDs. It would keep generating it until until we get the output. You can also pass more arguments. For example, when you pass two sample files, it means that do not use, um, any randomness. Do not sample. It's greedy. Just pick the highest probability next token.
+

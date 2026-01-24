@@ -1,0 +1,923 @@
+AI Course
+14:27:27
+
+And then
+
+AI Course
+14:28:20
+
+that's it. That's basically be it's just one line of code. At its core, we convert the prompt just with it what we did into, um, IDs input IDs. And then we rely on transformers generate functionality to pass this and get the output. So now if I print this if I run this and print this, here I'm saying that continue this loop for until you generate 80 maximum 80 new tokens. This is also one of the arguments provided by by, um, parking phase. So here, we can see for these two prompt for these two prompts, once upon three prompts. Once upon a time, by just to suggest a party name. GPT two is predicting like that. Um, for example, here it says once upon a time, the the word was a place of great beauty and great danger.
+
+You
+14:28:20
+
+And then that's it. That's basically the it's just one line of code at its core. We convert the prompt just with what we did into, um, IDs input IDs. And then we rely on transformers' generic functionality to pass this and get the output. So now if I print this, if I run this and print this, here, I'm saying that continue this loop for until you generate 80 maximum 80 new topics. This is also one of the arguments provided by by, um, hugging face. So here, we can see for these two prompt for these two prompts, once upon three prompts. Once upon a time, what is two plus two, suggest the party name. GPT two is predicting like that. Um, for example, here, it's says, once upon a time, the the world was a place of great beauty and great danger.
+
+You
+14:28:49
+
+So that's basically what g p t two is just how it's just completing. It just keep predicting the next bucket. And what is two plus two? Two plus two is the number times you can use a spell to cast a spell. Um, the reason that these are these are not good is, first, because three d is not the best algorithm. But more importantly, g p two is not best model. It's very small. It was one of the earliest element If you simply replace g p t two with some, uh, more recent advanced elements, it suddenly would work better.
+
+You
+14:29:01
+
+Now top k and top k sampling are a better variation of greedy decoding. Instead of always picking the highest probability next. Okay?
+
+AI Course
+14:29:01
+
+So that's basically what g p t two is just how it's just completing. It just keep predicting the next token. And what is two plus two? Two plus two is the number of times you can use a spell to cast a spell. Um, the reason that these are these are not good is, first, because greedy is not the algorithm. But more importantly, g p t two is not the best model. It's very small. It was one of the earliest elements. If you simply replace GPT two with some, uh, more recent advanced elements, it suddenly would work better. Now top k and top k sampling are a better variation of um, graded decoding instead of always picking the highest probability next. Okay?
+
+You
+14:29:04
+
+We
+
+AI Course
+14:29:04
+
+We
+
+AI Course
+14:29:29
+
+for example, we talk Instead of only speaking this highest probability, we take into account the top few, um, tokens that their cumulative probability sounds to certain number like p, and then it samples from this So it it would ignore, like, very, uh, less likely tokens.
+
+You
+14:29:29
+
+for example, with Talkative, instead of always picking this highest probability, we take into account the top few, um, tokens at their cumulative probability sums to certain number like p, and then it samples from this. So it it would ignore, like, very, uh, less likely tokens.
+
+You
+14:29:44
+
+And in order to implement that, we don't have to implement this this logic by ourselves. All we need to do is we need to change this, uh, model that generate that plug in phase already implemented. Instead of do sample false, we set it to true.
+
+AI Course
+14:29:55
+
+And in order to implement that, we don't have to implement this this logic by ourselves. All we need to do is we need to change this, um, model that generate that login phase already implemented. Instead of do sample false, we set it to true. Um, and we will do that. So it's it's just a bunch of if else statements here.
+
+You
+14:29:55
+
+Um, and we we'll do that. So it's it's just a bunch of if else statements here.
+
+AI Course
+14:30:23
+
+So, again, we passed the prompt to a tokenizer. We get their IDs. Um, the only thing that now is different is that they opt the argument before we call the generate. We say that if it's greedy, do sample is parts. If it's top k, then do sample is true, and this is the top k value, like, when we take into account the first 50 tokens.
+
+You
+14:30:23
+
+So, again, we pass the prompt to a tokenizer. To get their IDs. Um, the only thing that now is different is that we update the argument before we call the generate. You say that if it's greedy, do sample is parts. If it's top k, then do sample is true, and this is the top k value, like, when they take into account the first 50 tokens.
+
+You
+14:30:28
+
+And then here is the top gate.
+
+AI Course
+14:30:30
+
+And then here is a topic.
+
+AI Course
+14:31:22
+
+So these, we don't need to understand the details or how they are implemented. I've read the source code There are long. All we need to know is that from the guided learning that top k that top key is what all elements are using to generate text. And this is how it works. And in order to use that, we just need to call model dot generate if you want to use binding face. In future, um, projects, we are not going to use ID. Js. We are going to use libraries that are more apps so we don't have to even deal with with some of this. Uh, we just specify these numbers, and then it would work. Um, but here, we want this session, we want to understand most foundations that are that are necessary for, in general, for elements. So now this part is also the same as the previous part. Um, it's just passing
+
+You
+14:31:25
+
+So these you don't need to understand the details or how they are implemented. I've read the source code. There are long All we need to know is that from the guided learning, that top k that top key is what all elements are using to generate text. And this is how it works. And in order to use that, you just need to call model.generate if you want to use Hugging Face. In future, um, projects, we are not going to use Hugging Face. We are going to use libraries that are more abstract. So we don't have to even deal with with some of these. Uh, we just specify these numbers, and then it would work. Um, but here, we want this session, we want to understand most foundations that are that are necessary for, in general, for analytics. So now this part is also the same as the previous part. Um, it's just passing
+
+You
+14:31:27
+
+um, passing the input to model, getting the output, and using the tokenizer to decode it.
+
+AI Course
+14:31:27
+
+um, passing the input to model, getting the output, and using the tokenizer to decode it.
+
+AI Course
+14:31:33
+
+Uh, now if I run this, and then run this test again,
+
+AI Course
+14:31:38
+
+we would see that
+
+You
+14:31:40
+
+Uh, now if I run this, and then run this test again, we would see that
+
+You
+14:31:48
+
+our top p sampling generates. For example, for g p t two, if you use top p, you would see, um, slightly different completion.
+
+You
+14:32:24
+
+I'm going to upload this solution so you can go over the the predicted results. Now one more important thing, um, is we saw GPT two. It was not, um, it was not too good. But now it's very easy to suddenly make what we had uh, much, much, much better. We just need to replace g p t two with something more advanced. And one example is Quinn. Quinn three, um, has a bunch of models. And one of them is 600,000,000. Parameters. So, again, you can search all these models here. When we
+
+AI Course
+14:32:24
+
+how top p sampling generates. So for example, for g p t two, if you use top p, you would see, um, slightly different composition. Um, I'm going to upload this solution so you can go over the the predicted results. Now one more important thing um, is beside g p t two, it was not um, it was not too good. But now it's very easy suddenly make what we had, um, much, much, much better. We just need to replace three p t two with something more advanced. And one example is Quinn. Quinn three, um, has a bunch of models. And one of them is 600,000,000. Parameters. So, again, you can search all these models here.
+
+You
+14:32:28
+
+can see a bunch of point three models.
+
+AI Course
+14:32:28
+
+Can see a bunch of point three models.
+
+You
+14:32:35
+
+And recently, they they introduced their TT
+
+AI Course
+14:32:37
+
+Uh, recently, they they introduced their TT s family.
+
+You
+14:32:38
+
+family.
+
+AI Course
+14:33:11
+
+And then here, we can see how we should use it. We can use this to get the tokenizer and model. And then we can just call generate exactly what what we saw. So I'm going to copy paste.
+
+You
+14:33:13
+
+And then here, we can see how we should use it. We can use this to get the tokenizer and model. And then we can just call generate exactly what what we saw. Um, so I'm going to copy paste.
+
+AI Course
+14:33:17
+
+It's basically the same almost the same copy paste from what you just saw here.
+
+You
+14:33:17
+
+It's basically the same almost the same copy paste from what you just saw here.
+
+AI Course
+14:33:46
+
+So just two models GPT two, we already saw, um, but I'll just keep it here. And, uh, this is a dictionary, um, to to keep the the, uh, model like this of Hugging Face. And then here, tokenizers, models. I just load both of them. And that's it. We just load it in this cell.
+
+You
+14:33:46
+
+So just two models g p t two, we already saw, um, but I'll just keep it here. And Quinn, this is a dictionary, um, to to keep the the the uh, model IDs of Hugging Face. And then here, tokenizers models. I just load both of them, and that's it. We just load it in this step.
+
+AI Course
+14:34:21
+
+Alright. So it loaded both models. Now with the same test um, that we had before, like, for each test, we have instruction. We have a a query, like, once upon a time. We specify the generation, decoding algorithm. Um, and then here, we write about to use both models and generate the results. Um, so for now, we already saw the GPT. I'm going to include model.
+
+You
+14:34:23
+
+Alright. So it loaded both models. Now with the same test uh, that we had before, like, for each test, we have instruction. We have a a query, like, once upon a time. We specify the generation and decoding algorithm. Um, and then here, we write about to use both models and generate the results. Um, so for now, we already saw the GPT. I'm going to only include one model.
+
+You
+14:35:18
+
+So now the generations are more meaningful. So example, we have once upon a time, there were 3,000 people in a town. This is just because now we are using a much, much powerful, um, pivot. And now but it's two plus two two plus two, um, in numbers. This is not, um, this is just a continuation Um, but here we have cancer two plus two is four. Um, so that's mostly it. These are all different components that LLMs generally deal with. All LLMs are based on, um, decoder only transformer. Decoder only transformer itself is just a bunch of, um, attention and linear layers.
+
+AI Course
+14:35:19
+
+So now the generations are more meaningful. So example, we have once upon a time, there are about 3,000 people in a town. This is just because now they are using a much, much powerful, um, element. And now what is two plus two? Two plus two, um, in numbers? This is not, um, this is just a continuation. Um, but here we have handset two plus two is four. Um, so that's mostly it. These are all different components that elements generally deal with. All elements are based on, um, the only transformer. Decoder only transformer itself is just a bunch of um, attention and linear layers. And let me bring it here.
+
+AI Course
+14:36:12
+
+It's just a bunch of layers, and we don't have to implement this. If you can think of this as a black box. In this session, in this project, we saw the inside of this, and we saw they are nothing but just a bunch of, uh, linear layers. The input, whatever your input prompt is in chat GPT, it goes into a tokenizer for that model It it gets converted into IDs. Those IDs goes into these layers. At the very end, it just add LLM just produces list of probabilities. Generation algorithm picks one of those appends it to the input, and repeats this process until you see until the final output is, uh, complete and generated. That's how, like, even chat g p t and modern AI, uh, chatbots work and generate, uh, tokens.
+
+You
+14:36:13
+
+It's just a bunch of layers. And we don't have to implement these. This you can think of these as a black box. In this session, in this project, we saw the inside of these, and we saw they are nothing but just a bunch of, uh, linear layers. The input, whatever your input prompt is in Chargebee, it goes into a tokenizer for that model. It it gets converted into IDs. Those IDs goes into these layers. At the very end, it just LLM just produces list of probabilities Uh, generation algorithm picks one of those appends it to the input, and repeats this process until you see until the final output is, uh, complete and generate. That's how, like, even chat g p t and modern AI, uh, chatbots work and generate, uh, tokens.
+
+AI Course
+14:36:51
+
+So I think that's mostly it. And then finally, here, we have just an optional and interactive element program. This is optional. It's mostly just put everything into a UI just to see how it looks. Um, so I'm not I'm not going to implement them. It's more UI code, but it would be included in your the uploaded solution. Um, But it's essentially the same code. Uh, we use g p t two and QUIN. We load them We create a UI, and then some widgets like these are all UI related.
+
+You
+14:36:53
+
+So I think that's mostly it. Um, and then finally, here, we have just an optional and in element program. This is optional. It's mostly just we put everything into a UI just to see how it looks. Um, so I'm not I'm not going to implement them. It's more UI code, but it would be included in your in the uploaded solution. Um, but it's essentially the same call. Um, we use GPT two endpoint. We load in the create the UI, and then some widgets these are all UI related.
+
+You
+14:37:38
+
+Some again, these are these are UI related. The key part is here where we send it to the model, which we already saw. So generate playground, it's basically there based on what the model and decoding algorithm is. Is is gonna send to the model, generate the output, and then decode it and return. Um, the rest is just UI UI and distance. So every one is, and it's going to be it's not going to it's not too fancy, but just just to get a sense. Tell me, uh, fun fact about the space. Uh, point three. It's a top p and then temperature, we can just keep default.
+
+You
+14:37:42
+
+And then press generating. Let's see if it works.
+
+AI Course
+14:37:43
+
+Some again, these are these are UI related. The the key part is here where we send it to the model, which we already saw. So generate wavefront. Is basically there based on what the model and decoding algorithm is. It is it's gonna send to the model, generate the output, and then decode it and return it. Um, the rest is just UI UI and these things. So let me run this, and it's going to be it's not going to it's not too fast, but just just to get a sense. Give me a fun fact about the space. Uh, point three. Let's say top p and then temperature, we can just keep default. And then I press generate. Let's see if it works.
+
+You
+14:38:44
+
+Great. So we have we have the generation, whatever it is. Um, but it seems it's working. So if you change the UI, if you change there are some more interesting way of implementing the UI in chain chain list is one example. For creating agentic UIs and just come up with the list of models that you're interested. It's it becomes very easy to build the UI with, um, with a set of models and uh, start answering users' queries. So that's it. I think we can wrap up this session and then get to the questions. Uh, let me see if there was anything else I wanted to cover. I also recommend trying different models. It they are
+
+AI Course
+14:38:50
+
+Great. So we have we have the generation, whatever it is, um, but it seems it's working. So if you change the UI, if you change there, some more interesting way of implementing the UI in chain chain link is one example. For creating agentic UIs. And just come up with the list of models that you're interested it becomes very easy to build a UI with, uh, with a set of models and uh, start answering user's queries. So that's it. I think we can wrap up this session and then get to the questions. Let me see if there was anything else I wanted to cover. I also recommend trying different models if they are some of them work really good, and it's also very interesting to try like, GLM and all those models.
+
+You
+14:38:51
+
+some of them work really good, and it's also very interesting to try, like, GLM and all those models.
+
+AI Course
+14:38:58
+
+So, yep, I think that's it. We can now start, um, going over questions.
+
+You
+14:38:59
+
+So, yep, I think that's it. We can now start, um, going over questions.
+
+You
+14:39:16
+
+Julia?
+
+AI Course
+14:39:16
+
+Um, Juliet?
+
+AI Course
+14:39:29
+
+Uh, thank you so much. This is super duper helpful. I really enjoyed the session. I have a few question. Sure. Number let me just I wrote it down. One second.
+
+You
+14:39:29
+
+Oh, thank you so much. This is super, duper helpful. I really enjoyed the session. I have a few question. Sure. Number let me just I wrote it down.
+
+AI Course
+14:39:37
+
+Number one question. Quick one. Are you able to share them this notebook that you return?
+
+You
+14:39:37
+
+Number one question. Quick one. Would you be able to share them this notebook that you written?
+
+You
+14:39:42
+
+Oh, yes. Yes. Um, it's already uploaded.
+
+AI Course
+14:39:43
+
+Oh, yes. Yes. Um, it's already uploaded.
+
+AI Course
+14:41:12
+
+Okay. The same code that you shared today. Right? Yes. So if you go, um, going to also upload the recording, but uh, if you go to deep dive project one, which was today's session, and under files, you would see that solution. And it's a cleanup solution. So it's a cleanup version of what we did today. Okay. Gotcha. Okay. So another one is the dictionary piece of during the section where we create a decoder, encoder. Um, and I noticed that the ID is actually a sequential number from one, two, three, whatever. Mhmm. Um, is this really happening in reality that the ID usually is a just a sequential number? There's no randomness? Yes. Yes. That's true. Um, for example, here is, uh, TikTok Canada is just a UI to be different things. Here, you can pick a tokenizer that, like, from open air. For example, o 200 k base is one of their most recent notes. And then if you print something if you type something, you can see, hi. My hi. How are you? You can see how it it gets into chunks, but then these are the IDs. And these IDs always start from zero, and it goes all the way depending on how many. Like, in this case, I think that's 200,000 or maybe if a little bit more. Um, but, yes, it always starts sequentially from zero. Got it. Okay. Uh, the next question about the unknown, uh, token that's how you create a placeholder almost unknown.
+
+AI Course
+14:43:09
+
+So I noticed that for g p t two as well. But how does that realistically work? Number one is during decoding session, it won't be represented. Number two is if there's always many, many unknown, which can be totally different tokens, but it's a b represent about unknown. How does that gonna affect the training? Because it would create inaccuracy. Yeah. That's a very good question, and that's true. I mean, if we have unknowns, it means that a lot of text during training might be replaced by unknown. And then the model would not would not be able to distinguish between different words that are unknown. Um, and that's one of the issues in but the thing is only word level and token, uh, correct level tokenizers has to deal with unknowns. If you've seen, when we switched to VP, there was no unknown special token. And the reason for that is that it's just how VP works. VP automatically handles unknown. It doesn't have to handle unknown because it just starts on bytes. At worst, if something is not really it's just a random sequence of characters, it would be split into individual bytes. Right? So there is no there is no unknown. Got it. So because of the bytes are definitive. Yeah. Because bytes are already part of the tokenizer. Uh, they're part of the work cap. So if you type something like a a a a, which is some random word, it would just become a bunch of a's. And for a, there is already a character or, let's say, a byte in, uh, in BP vocabulary. Got it. Okay. The last question, uh, at the dummy token, we're defining it from zero to the GPT vocabulary size. So I like, I tried to understand this vocabulary size a little better. So does that represent like, vocabulary size represents my understanding, if that's correct or not, is, um, like, of the vector dimension?
+
+You
+14:43:10
+
+Okay. The same code that you shared today. Right? Yes. So if you go, um, going to also upload the recording. But uh, if you go to deep dive project one, which was today's session, Yep. And under files, you would see the solution. And it's a cleanup solution. So it's a cleaned up version of what we did today. Okay. Gotcha. Okay. Another one is, um, the dictionary keys. So during the section where we create the decoder encoder, Um, and I noticed that the ID is actually a sequential number from one to three, whatever. Mhmm. Uh, is this really happening in reality that the ID usually is just a sequential number? There's no randomness? Yes. Yes. That's true. Um, for example, here, is, uh, TikTok analyzer is just a UI to visualize different things. Here, you can pick a tokenizer that, like, from OpenAir, for example, for 200 k base one of their most recent ones. And then if you print something if you type something, you can see my my how are you? You can see how it it gets into chunks, but then these are the IDs. And these IDs always start from zero, and it goes all the way depending on how many. Like, in this case, I think that's 200,000 or maybe a a little bit more. Uh, but, yes, it always starts sequentially from zero. Got it. Okay. Uh, the next question about the unknown, uh, token place for the almost unknown. Mhmm. So I I noticed that for g p t two as well. But how does that realistically work? Number one is during decoding session, it won't be represented. Number two is if there's always many, many unknown, which can be totally different tokens, but it's being represented by unknown, How does that gonna affect the training? Because it would create inaccuracy. Yeah. That's a very good question, and that's true. I mean, if we have unknowns, it means that a lot of text during training might be replaced by mono, and then the model would not would not be able to distinguish between different words. That are unknown. Um, and that's one of the issues in but the thing is only work level and talk and character level tokenizers has to deal with Anouk. If you've seen, when we switched to BP, there was no unknown special token. And the reason for that is that it's just how BPE works. BPE automatically handles on it doesn't have to handle on because it starts from bytes. At worst, if something is not really it's just a random sequence of characters, it would be a splitted into individual bytes. Right? So there is no there is no unknown. Got it. Because of the bytes are definitive. Yeah. Because bytes are already part of the tokenizer, uh, part of the vocab. So if we type something like a a a a, which is some random word, it will just become a bunch of a's. And for a, there is already a character or, let's say, a y. In, uh, in, uh, BP vocabulary. Got it. Okay. The last question, uh, at the dummy token, we're defining from zero to the GPT vocabulary size. So I like, I try to understand this vocabulary size a little better. Um, so does that represent like, vocabulary size represent is like, of the vector dimension.
+
+AI Course
+14:43:42
+
+Yeah. We'll calculate Okay. So in there, we are creating the dummy tokens. Right? In GPT? Yeah. W t two. And, also, I noticed that, um, in the end of during the decoding session part, that you generated, um, I think it's a five 50,000 or 257, whatever, That's a vocabulary size. So those are the candidates of the next token. Mhmm. So why? Why why is it exactly the number of, um,
+
+You
+14:43:43
+
+The vocabulary okay. So in where we are creating the dummy tokens, right, in GPT? Yeah. GPT two. And, also, I noticed that, um, in the end of during the decoding session part, that you generated, I think it's a five 50,000 to 257, whatever. That's a vocabulary size. So those are the candidates of the next token. Mhmm. So why? Why why is exactly the number of
+
+You
+14:45:11
+
+Mhmm. The company why would the company size dictate how many candidates that been generated? Right. So, basically, everything starts from the tokenizer. When you are training your tokenizer on your corpus, you end up with some vocabulary sites. Right? Is it something this is like a hyperparameter. You decide how many vocabularies do you want. For example, g p t two decided to continue this BP algorithm until the vocabulary size become, um, 50,200, whatever. Right? Yep. So at that point, they have a fixed tokenizer with that many vocabularies. Now in order to train now, the neural network needs to be designed having that in mind. Meaning that, um, this linear layer need to convert the hidden dimension into vocabulary size. Um, the vector size. Right? Because we want to predict the next token So we need that many, uh, probabilities, like, one probability per token so we can look at them and pick the best one. Right? So first is the tokenizer, then vocab, um, uh, vocabulary size is defined. After that, when they are implementing transformer, they make sure that the the shapes matches. Meaning that this embedding layer at the very beginning that converts yummy tokens or sequence of integers into embeddings, this embedding layer should have the right shape. So it should go for example, if for g p t two, if I print it,
+
+AI Course
+14:45:12
+
+why would computer size dictate how many candidates that being generated? Right. So, basically, everything has start from the tokenizer. Then you are training your tokenizer on your core you end up with some vocabulary size. Right? It's in something this is like a hyperparameter. You decide how many vocabularies you want. For example, g p t two decided to continue this BP algorithm until the vocabulary size become, um, 50,000, 200, whatever. Right? Yep. So at that point, they have a fixed tokenizer with that many vocabularies. Now in order to train now, the neural network needs to be designed having that in mind. Meaning that um, this linear layer need to convert hidden dimension into vocabulary size, um, the vector size. Right? Because we want to predict the next token. So we need that many, uh, probabilities. Like, one probability per token so we can uh, look at them and pick the best one. Right? So first is the tokenizer, then what vocabulary size is defined. After that, when they are implementing the the, um, transformer, they make sure that the the shapes matches. Meaning that this embedding layer at the very beginning that converts dummy tokens or sequence of integers into embeddings this embedding layer should have their right shape. So it should go for example, if for g p t two, if I print it,
+
+AI Course
+14:46:03
+
+g p two two, you can see that the first embedding layer the way that they have implemented and specified these, uh, sizes, makes sense because now the embedding goes from the vocabulary size into seven sixty eight. Twenty seven sixty eight. Seven sixty eight is, again, another hyperparameter that they decide. It's basically the embedding size. That this transformer is going to operate on internally inside it. So everything is going to be converted into this seven sixty eight and then call these computations and calculations along the way would happen, uh, with this embedding length. And then at the very end, this would get converted back here into um, back into the vocabulary size so that we can apply softmax and interpret them as probabilities for the next token.
+
+You
+14:46:03
+
+For g p t two, you can see that the first embedding layer the way that they have implemented and specified these, uh, sizes, makes sense because now the embedding goes from the vocabulary size into seven sixty eight. What is seven sixty eight? Seven sixty eight is, again, another hyperparameter that they decide. It's basically the embedding size. That this transformer is going to operate on internally inside it. So everything is going to be converted into this seven sixty eight and then all these computations and calculations along the way would happen, uh, with this embedding length. And then at the very end, this would get converted back here into um, back into the vocabulary size so that we can apply softmax and interpret them as probabilities for the next token.
+
+AI Course
+14:46:15
+
+Got it. So that's, like, a metric size. Right? Like, the rows or columns? Yes. Yeah. Okay. Thank you. Yep. Thanks.
+
+You
+14:46:16
+
+Got it. So that's like a metric size. Right? Like, the rows and columns? Yes. Yeah. Okay. Thank you. Yeah. Thanks.
+
+AI Course
+14:46:35
+
+Next question. Um, Emma? Yeah. It's perfect that, uh, we stopped it at seven sixty eight. That's what I have question on. So if this is the, uh, size of the matrix, is that like a seven sixty eight by seven sixty eight?
+
+You
+14:46:38
+
+Next question. Um, Hemant? Yeah. It's perfect that, uh, we stopped it at $7.68. That's what I have question on. So if this is the, uh, size of the matrix, is that like a seven sixty eight by seven sixty eight?
+
+You
+14:46:59
+
+Um, like, where? For example so if you go Okay. So so we have the embedding. Mhmm. Um, the vocabulary size is 50,000. Mhmm. Uh, the first layer, let's say Image.
+
+AI Course
+14:48:31
+
+Um, like, where? For example, if we go Okay. So so we have the embedding. Mhmm. Um, the vocabulary size is 50,000. Mhmm. Uh, the first layer, let's say, uh English. Yeah. So is that an array of like, 50,005 thousand five seven six eight. Yes. Basically, each row is showing that this is going to be the embedding for for this token. That row zero is going to be the embedding for token zero. Row one is the embedding for token one. So this whole um, becomes like a lookup search. Like, once you have a sequence of IDs as input, here Uh-huh. Here. And you want to get into the embeddings, you just need to look you look it up look this table up. So if this ID is zero, you need just to look up the the first, like, the first row. In that table, and that becomes the ending of high. I see. So, uh, in this example, this three would become seven sixty eight. Is that right? These three are seven sixty eight. Yes. In in GPT two. But I Yeah. But one thing to note is that it's a high barometer. GPT two started at seven sixty eight. They had four variants. And in general, as you increase this, we are you are increasing the total number of parameters. In your model. So the models become more capable. In general, you are increasing the capacity More base means more capacity to learn. So they have even a variation with 1,600 So what that means is that this vector is going to be 1,600. And all the vectors inside the transformer is going to be of that shape. Um, I see. You see more recent models like g v t t v, it just keeps going up and up. And they have also the GPT three that they, um, eventually,
+
+You
+14:48:32
+
+Yeah. Mhmm. So is that an array of like, 50,000? 50,000 by seven and sixty. Yes. Basically, each row is showing that this is going to be the embedding for for this token. Like, row zero is going to be the embedding for token zero. Row one is the embedding for token one. So this whole um, becomes like a lookup search. Like, once you have a sequence of IDs as input, here Uh-huh. Here, And you want to get into the embeddings, you just need to look look look it up look this table up. So if this ID is zero, you need just to look up the the first, like, the first row in that table, and that becomes the embedding of byte. I see. So, uh, in this example, this three would become seven sixty eight. Alright? These three are seven sixty eight. Yes. In in GPT two. But I Yeah. But one thing to note is that it's a hyperparameter. GPT two started with seven sixty eight. They had four variants. And in general, as you increase this, they are you are increasing the total number of parameters in your model. So the models become more capable. In general, you are increasing the capacity. More weights means more capacity to learn. So they have been in variation with 1,600. So what that means is that this vector is going to be 1,600, and all the vectors inside the trans is going to be of that shape. Um, you see more recent models like g p t three? It just keeps going up and They have also the GPT three that they, um, eventually,
+
+AI Course
+14:49:48
+
+released as chat g p t, it was a, uh, original version of this, but I think the architecture was somewhat very similar. With 175,000,000,000. So they have they were using a 12,000 embedding size. And then this is the number of layers, like 96 transformer blocks. Uh-huh. And towards the end of that, can you go up that picture? Uh, so okay. So at the end of this process, we would end up the output sequence would be a vocabulary size. Because we are picking the top p or or of of each of this. Its output has to be a vocabulary size. Right. Um, so that during training, we can optimize it such that the one that should be like, the one that actually is the next token gets higher budget. And the ones that are not get lower logits. So during the optimize during the training process, it just all the parameters of this model gets updated such that this final thing, um, the cell that corresponds to the correct next token Uh-huh. Reduces very high number. Got it. And that's the human training. And during inference, 90 very easy because we just need to look it up and pick, uh, it's basically this. You can think of it like you can think of it as a problem. Probability distribution, um, which we had here.
+
+You
+14:49:49
+
+released as Chai GPT, it was a, uh, RLEC version of this, but I think their architecture was somewhat very similar. It a 175,000,000,000. So they have they were using a 12,000 embedding Um, and then decrease the number of layers, like 96 transformer blocks. Uh-huh. And and towards the end of that, you go up that picture. Uh, so okay. So at the end of this process, we would end up the output sequence would be, uh, vocabulary size. Because we are picking the top p or or of of this This output has to be of vocabulary size. Right. Um, so that during training, we can optimize it such that the one that should be like, the one that actually is the next token gets higher budgets. And the ones that are not get lower budget. So during the optimizer, during the training process, it just all the parameters of this model gets updated such that this final thing, um, the cell that corresponds to the correct next token Uh-huh. Reduces very high number. Got it. And and that's during training. And during inference, then it it's very easy because we just need to look it up and pick, uh, It's basically this. You can think of it like you can think of it as a prob probability distribution, um, which we had here.
+
+AI Course
+14:51:11
+
+Yeah. The final app is something like this. Like, different tokens, different probabilities, then you figure out how basically, the text decoding algorithm figures out how to pick Greely picks the best that keeps the most probable one. But happy uh, considers more tokens and pick from them. Got it. Uh, last question. So the the projects, uh, we would be expected to do them before the class, or will we just follow when you're, uh, doing it? Sure. Um, so yeah. I mean, projects are released. Like, project templates are released. So in case you are interested to practice like, guided learning, as I mentioned in the intro session, um, I strongly encourage you watch them before our deep dives. If you don't, um, later, you can watch that first and then watch the recording of the deep dive. Because are a lot of things that we cover in the Deep Dive, and in general, in the projects the concepts and core foundations are being taught in the in the guided learning. So that part is important. Um, if you are after watching the guided learning, if you are if you want to practice some of those things, you can go into the project template and practice it for that week. But we're not required to. Right? No. You are not required. If you don't, it's going to be the same session as we had today, and then we would go over everything about it. Yeah. Great. Great. Thank you. Yep. Thanks.
+
+You
+14:51:12
+
+Yep. The final app is something like this. Like, different tokens, different probabilities, then you figure out how basically, the text decoding algorithm figures out how to pick Three d picks the best. It keeps the most probable one. But top e, uh, considers more tokens and pick them from them. Got it. Uh, last question. So the the projects, uh, we would be expected to do them before the class, or will we just follow when you're Sure. Um, so yeah. I mean, projects are released. Like, project templates are released. So in case you are interested to practice like guided learning, as I mentioned in the intro session, um, very strongly encourage you to watch them before our deep dives. If you don't, um, later, you can watch that first and then watch the recording of the deep Because there are a lot of things that we cover in the Deepgrams and in general in the projects, the concepts and core foundations are being taught in the in the guided learning. So that part is important. Um, if you are after watching the guided learning, if you are if you want to practice some of those things, you can go into the project template and practice it for that week. We are required to. Right? No. You are not required. If you don't it's going to be the same session as we had today, and then we would go over everything about it. Great. Thank you. Yeah. Thanks.
+
+You
+14:51:54
+
+Next question, uh, Siri. Hi, uh, Ali. Uh, my question regarding what are the tokenization algorithms used by latest AI models, like, Gmail three or Opus 4.5 Like, is it still b p or, uh, other some variants like syntax piece or as well? Yeah. Almost all of them are, um, BPE. Not not the original BPE, but some variants of BPE. But at the core, they are BPE. Um, I think I can search this, but I'm pretty sure that at least for open I'm I'm pretty sure that they're using some variants of PPE, um, like, like, the ones that are open rates or comes with technical reports.
+
+AI Course
+14:51:55
+
+Next question, uh, Siri. Hi. Uh, I my question is regarding what are the tokenization algorithms used by, uh, latest AI models? Like, JEMI three or Opus 4.5 Like, is it still b p or are there some variance like sentence piece? As well? Yeah. Almost all of them are, um, b p Not not the original VPE, but some variants of VPE. But at the core, they are VPE. Um, I think I can search this, but I'm pretty sure that at least for OpenAir, I'm I'm pretty sure that they're using some variants of PP. Like, um, like, the ones that are open and beta or comes with technical reports.
+
+You
+14:54:28
+
+So if you read most of the, um, technical reports for LLMs, they are using some variations of BP. So I think, yes, modern language models like Google, Gemini, and, um, they're still using support tokenizations and mostly BP and some variants of it. Nice. Um, and then, like, modern integrations also work with multiple languages. Like, European languages, Asian languages. Right? And wouldn't that lead to an explosion of subword tokens? Uh, because now we need to deal with um, subword tokens that are relevant or repeating in the, uh, training corpus of multiple languages. Right? Yeah. That's a that's a great one, and that's true. Um, and that's why partly the community moved from where the because in order that if you think of that, it's going to be way, like, way worse. Lots of different languages in each language, lots of different words. At least we software developer tokenizer, uh, common fragments become their own, um, token. We don't have to have one dedicated token per port. Now you are right, and that's one reason that the the vocabulary size keeps increasing. In g p t two, it was 50 k. Then it became 100 k because, probably, they wanted to train models on different languages capable of understanding and completing different languages. So the corpus that they've trained their tokenizer was different languages. So 100 k vocabulary they ended up in. And then later, 200 k. I don't know. It's not open it's not open to public, so I don't know what, like, g p t five, um, how many, um, vocabulary are being used in their tokenizer. But at least right before but but, um, right before g p t five, we know that you know, 200 k was was what being used. Um, it keep it kept increasing for a while while industry was was moving from a single language or few language into, like, a multi language element. But I don't expect this to keep increasing and increasing because right now, basically, we have very good coverage of all different languages, um, that LRMs can support. And then this is happening by around 200 k, uh, vocabularies. Oh, so 200 k actually includes, uh, some word tokens from other languages? Right? Yes. You said yep. Alright. And does the same, uh,
+
+AI Course
+14:55:06
+
+If you read most of the, um, technical reports, for, they are using some variations of BP. So I think, yes, modern language models like Guillain, Gemini, and, um, they're still using support organizations and mostly VP and some variants of it. Nice. Um, and then, like, uh, model interference also work with multiple languages like European languages, Asian languages. Right? And wouldn't that lead to an explosion of subword tokens? Uh, because now we need to deal with um, subword tokens that are relevant or repeating in the, uh, training corpus of multiple languages. Right? Yeah. That's a that's a great point, and that's true. Um, and that's why partly the community moved from border level tokenizers. Because in border level, if you think of that, it's going to be very, like, very worse. Um, we have lots of different languages. And each language, lots of different words. At least with software developer, common fragments become their own, um, token. We don't have to have one dedicated token per work. Now you are right, and that's one reason that the the vocabulary size keeps increasing. In GPT two, it was 50 k, and it became 100 k because probably they wanted to train models on different languages capable of understanding and completing different languages. So the corpus that they've trained their tokenizer was different languages. So 100 k vocabulary they ended up with. And then later, 200 k. I don't know. It's not open. It's not open to public, so I don't know what, like, g p t five, um, how many, um, vocabulary are being used. In their tokenizer. But at least right before but but, um, right before g p t five, we know that, you know, 200 k was was being used. Um, it keep it kept increasing for a while while industry was was moving from a single language or free language into, like, a multi language LLMs. But I don't expect this to keep increasing and increasing because right now, we have a very good coverage of all different languages, um, that LRMs can support. And then this is happening by around 200 k, um, vocabularies. Oh, wow. So 200 k actually includes, uh, some word to put from other languages. Like English. Yes. Yep. Alright. And does the same, uh, frequency based merging technique works work for languages like Chinese, which lack letters and spaces, but more like, you know, words has, like, semantic meaning of words. Right? Would, um, the same tokenization algorithms work on those languages as well? Uh, can you repeat, like, on languages where, uh, like, the white space cannot be a good logic to to split? Yeah. White white space and as well as, like, there are no letters. Right? Like, in Chinese. Exactly. Yeah. Yeah. Um, Yeah. I don't know. Let me let me search on that, and I'll get back to you. Sure. One last question on this. So you also mentioned, uh, during the transformer, architectures step about a layer normalization, which is
+
+AI Course
+14:55:12
+
+uh, layer, which is used for stability. Could you expand on that?
+
+You
+14:55:15
+
+frequency based merging technique works work for languages like Chinese, which lack letters and spaces, but more like, you know, words, has, like, semantic meaning of words, right, would, um, the same tokenization algorithms work on those languages as well? Um, can you repeat, like, on languages where, uh, like, the white space cannot be a good logic to to split? Yeah. White white space as well as, like, there are no letters, right, like, in Chinese. That's right. Yeah. Yeah. Um, yeah. I don't know. Let me let me search on that, and I'll get back to you. One last question on this. So you also mentioned, uh, during the transformer, um, architecture's step about linear normalization, which is uh, layer, which is used for stability. Could you expand on that?
+
+You
+14:55:24
+
+For the normalization layers? Yeah. What what is the stability aspect of it? Like Right. So
+
+You
+14:55:46
+
+first of all, there is a very good, um, YouTube video to watch, um, to learn about that, uh, from Andre from Andre. If you are interested to learn this topic, um, in detail, I suggest you watch this video.
+
+AI Course
+14:55:46
+
+Um, for the normalization layers? Yeah. What is the stability aspect of it? Like, Right. So first of all, there is a very good, um, YouTube video to watch um, to learn about that, um, from Andre from Andre Kapati. If you are interested to learn this topic, um, indicate, I suggest you watch this video.
+
+AI Course
+14:56:01
+
+Hi, Paul. Yes. This video. Um, this is this completely, like, fully explains every single detail about that. But I can provide a brief overview.
+
+You
+14:56:13
+
+Hi, everyone. Yes. This video. Um, this is this is completely like, fully explains every single detail about that. But I can provide a brief overview. Um, without layer norm, these inputs goes into these layers, and these layers keep just metrics multiplication, um, using metrics multiplication linear. Just transforming the input to some output.
+
+AI Course
+14:58:35
+
+With that, they are norm. These inputs go into these layers, and these layers keep just metrics modification, um, using metrics multiplication linear. Just transforming the input to some output. And then over time, there would be no control over the magnitude like, the the the range of these numbers into, um, in these sets. So if we don't control it or add some mechanism to control the range of these numbers, um, these numbers may go up or may go down or become very, very extremely small. And then it becomes problematic for the, um, for the in the for the optimization process. Like back propagation, it relies on gradients. And then if some of these activations are very, very low or very, very large, the gradient. And then the the chain rule applied to all these gradients. It would become it would explode or it would vanish. So they are called vanishing gradient or exploding gradient. It was a very common, uh, uh, issue in earlier days of neural networks, you know, vanishing gradient problem and exploding gradient problems. A lot of the questions in in AI interviews are about techniques to mitigate these. But but in short, exploding brilliant. Um, yeah. These are two main issues that happened, and it was there in earlier days of neural networks. So normalization layers try to normalize. And make sure that at each layer, the activations are falling within a a a range. Um, so it's not going to go too high or, um, too low. So that's mostly the purpose of normalization layers. Nice. So within a specific range, like zero to five or zero to 10, is that, like, also a hyperparameter, the range of the The normalization there, they do also come with depending on the normalization there that you but they usually come with one, two, or a few, um, parameters that are learnable. So, basically, the normalization layer learns how to normalize, um, the input. To something that works best for the task. Okay. Cool. Thank you. Yeah. And and back to your previous question about this, I converted, uh, uh, hi. How are you to Japanese? And then if I paste this here, you will see it understands it. Um, so that means that it has support in other languages. Like, oh, 200 k. Even the 100 c l 100 k also, 100 senses. So this is one token. Um, Yeah. Unfortunately, I don't understand Japanese, so I I don't know. But I assume probably this is high How are you where is it?
+
+AI Course
+14:58:53
+
+Hi. How are you? Yeah. But but the thing is it understands it. For example, this characters are one token, and this is their, um, their ID. This is comma space and so on. So, anyway, um, next question.
+
+You
+14:58:56
+
+And then over time, there would be no control over the magnitude, like, the the the range of these numbers into, um, in these sets. So if we don't control it or add some mechanism to control the range of these numbers, um, these numbers may go up or may go down or become very, very extremely small. And then it becomes problematic for the, um, for the in the for the optimization process. Like back propagation, it relies on gradients. And then if some of these activations are very, very low or very, very large, the gradient and then the, uh, the chain will apply to all these gradients. It would become it would explode or it would vanish. So they are called vanishing radiance or exploding radiance. It was a very common issue in earlier days of neural networks, you know, vanishing gradient problem and exploding gradient problems. A lot of the questions in interview in AI interviews are about techniques to mitigate these. But but in short, it's exploding brilliant. Um, yeah. These are two main issues that happened, and it was there in earlier days of neural networks. So normalization layers try to normalize. And make sure that at each layer, the activations are falling between a a a range. Um, so it's not going to go too high or, um, too low. So that's mostly the purpose of normalization layers. Nice. So within a specific range, like zero to five or zero to 10, is that, like, also a hyperparameter, the range of the Yeah. The normalization layer, they do also come with depending on the normalization layer that we use, but they usually come with one, two, or a few um, parameters that are learnable. So, basically, the normalization layer learns to normalize, um, the input, uh, to something that works best for the task. Okay. Thank you. Yep. And and back to your previous question about this, I converted, um, hi. How are you? To Japanese. And then if I paste this here, you would see it understands. Um, so that means that it has supporting other languages, like, oh, 200 k. Even the 100 c l 100 k also understands. So this is one token. Um, Yeah. Unfortunately, I don't understand Japanese, so I I don't know. But I assume probably this is high. How are you was it? Hi. How are you? Yeah. But but the thing is it understands it. For example, these characters are one token, and this is their, uh, their ID. This is comma, space, and so on. So, anyway, um, next question. Akansha.
+
+You
+14:59:01
+
+Yeah. Hi. I have a very poor
+
+You
+15:00:14
+
+on, uh, what is the definition for hyperparameters we integrate interchangeably use it for our weights sometimes and then sometimes. Like, fine tuning factors within the layers. What it's and then for big models, like I said, there is, like, billion of hyperparameters and just define what exactly would be all hyperparameters. Sure. So we talked about neuron neural networks. Neural networks are a bunch of links. And those layers come with weights. Those weights called parameters. And they are learnable, meaning that as you train this model, those weights get you let the algorithm, the optimization process to change those, um, change the values of those weights. So those are called parameters. And LLMs has, like, billions of parameters. Or more recent LLMs, they come at, like, with, um, trillions of parameters. The numbers that you are seeing here are parameters. For example, GPT two, the smallest variation, which we just inspected, at 117,000,000 parameters. So that means that if you go into each layer and count the weights you would end up with, um, 117,000,000. Now hyperparameters are things that you define um,
+
+AI Course
+15:00:53
+
+Yeah. Hi. I have a very important question on, uh, what is the definition for hyperparameters we need today? Interchangeably use it for weights sometimes, and then sometimes like, finding parameters within the layers. So what and then for big models, like, I select layers, like, parameters and find what exactly we all hyperparameters? Sure. So we talked about neuron neuron and Neural networks are a bunch of layers, and those layers come with rates. Those weights called parameters, and they are learnable. Meaning that as you train this model, those rates get you let the algorithm, the optimization process to change those, um, change the values of those weights. So those are called parameters. And LLMs has, like, billions of parameters or more recent LLMs take on at like, with, um, trillions of parameters. The numbers that you are seeing here are parameters. For example, GPT two, the smallest variation, which we just inspected at 117,000,000 parameters. So that means that if you go into each layer and count the rates, you would end up with um, 170,000,000. Now hyperparameters are things that you define, um, it's it's basically defined by you or by the model. It's not going it's not trained, but it's not going to be trained during this process. For example, you come up with, um, like, seven sixty eight. You say, I want to use seven sixty eight before even implementing anything. You say, I want to use seven sixty eight as the embedding size of my neural network, or I want to use 12 layers. So these are the hyperparameters. These are the things that you decide on before you build your neural network and train it. Anything any weight inside the neural network is parameters. Those are trainable. Okay. That makes sense. Thank you. Yeah.
+
+You
+15:00:54
+
+it's it's basically defined by you or by the model level of It's not going it's not trainable. It's not going to be trained during this process. For example, you come up with, um, like, seven sixty eight. You say, I want to use seven sixty eight before even implementing anything. You say, I want to use seven sixty eight as the embedding size of my neural network, or I want to use 12 layers. So these are the hyperparameters. These are the things that you decide on before you build your neural network and train it. Anything any weight inside the neural network is parameters. Those are trainable. Okay. That makes sense. Thank you. Yeah.
+
+AI Course
+15:00:59
+
+Um, Adam?
+
+AI Course
+15:01:41
+
+Uh, thanks, Ali, for explanation. I will go back again on the, uh, embedding, presentation slides. So, uh, embedding, uh, depending on the model, for example, the the embedding size is seven sixty eight. How the size is changing when we are moving to multi add attention? So we have query key and value, uh, metric size. And, for example, the token size is, uh, 10, so the query size will become 10 by seven sixty eight. And the same for others. And how that head size. For example, the number of heads is zero twelve. How it is going to change those matrices?
+
+You
+15:01:42
+
+Um, Ayam? Uh, thanks, Ali, for explanation. I will go back again on the, uh, embedding dimension side. So, uh, embedding, uh, depending on the model, for example, the dimension embedding size is seven sixty eight. How the size is changing uh, when we are moving to multi add attention? So we have query key and value, uh, multi size. And, for example, the token size is 10, So the query size will become 10 by seven sixty eight. And the same for others. And how the head size how example, the number of heads is 12. How it is going to change those metrices? Mhmm.
+
+AI Course
+15:01:48
+
+Let me see. I can find a good visual to explain this.
+
+AI Course
+15:01:53
+
+This means every
+
+AI Course
+15:02:36
+
+again, this is too detailed. It goes into the internal self attention. But, um, this is the input that we just discussed. Self attention has three matrices. And each of these are just linear layers. Like like, self attention has three three, uh, linear layers. Right? One, two, three. And each linear layer, this is the weight. We already saw that linear layer has a weight matrix to transform input size to output size. Now when you increase the hidden I mentioned, you are increasing the number of rows here. So what that means is that you have to also change the shapes of your paid matrices when you are creating those linear layers. So as you increase them,
+
+AI Course
+15:02:54
+
+you will basically end up with more parameters. Yeah. So here, miss, when you're saying the grade metrics, so we metrics here is you are multiplying every word with other other word and taking the dimension. So if I have a 10 tokens, so it will become 10 by seven sixty eight size here.
+
+You
+15:02:55
+
+Uh, let me see. I can find a good visual to explain this. This means every again, this is too detailed. It goes into the internals of self attention. But um, this is the input that we just discussed. Self attention has three matrices. And each of these are just linearly. Like like, self attention has only three, uh, linear layers. Right? One, two, three. And each linear layer, this is the weight. We already saw that linear layer has a weight matrix to transform input size to output size. Now when you increase the hidden dimension, you are increasing the number of rows here. What that means is that you have to also change the shapes of your paid matrices when you are creating those linear layers. So as you increase them, you would basically end up with more parameters. Yep. So and here, it means when you are saying the weight metrics, so weight metrics here is you are multiplying every word with other other word and taking the dimension. So if I have a 10 tokens, so it will become 10 by seven sixty eight. So
+
+AI Course
+15:04:10
+
+Uh, yes. Basically so let's say the hidden dimension here is x, and then the desired output dimension is y. Right? This weight matrix should be upsized x by y. Uh, it's going to be it's very similar to this visual here. I think this would be easier to digest this. Um, A linear layer, this is the weight metrics. So if your hidden dimension is four, and you want to go to one, two, three, four, five, six, seven, eight, What did he dimension six. Sorry? What did he get, Damon? Sorry. What is What is What is Dimitry, is it, uh, here? Here, the yeah. He he here in this particular example, the size that input size is different from output size. So the input hidden dimension is four. The output hidden dimension is eight. In transformer and self attention, it's usually the same. So if four goes in, four goes out. Now if you increase for example, in g p t two, it's seven sixty eight. So if there are still in seven sixty eight, um, tokens here, neurons here. And then the output is also seven sixty eight. So this statement has to be of shape seven sixty eight by seven sixty eight. Now when you increase this, like what GPT three did to 12,000, many of these linear layers would end up having 12,000 by 12,000. So you would end up with a lot of more parameters.
+
+You
+15:04:10
+
+Yes. Basically so let's say the hidden dimension here is x. And then the desired output dimension is y. Right? This weight metrics should be of size x by y. Um, it's going to be it's very similar to this visual. Here. I think this would be easier to digest this. Um, a linear layer, this is the weight metrics. So if your hidden dimension is four and you want to go to one, two, three, four, five, six, seven, eight What hidden dimension is Sorry? What is peer evidence? I'm sorry. What is What is hidden dimension? Is it Oh, here. What are the that Yeah. He he here in this particular example, besides the input size is different from output size. So the input hidden dimension is four. The output hidden dimension is eight. In transformer and in self attention, it's usually the same. So if four goes in, four goes out. Now if you increase for example, in GPT two, it's seven sixty eight. So if there are still in seven sixty eight tokens here neurons here. And then the output is also seven sixty So these fake metrics has to be of shape seven sixty eight by seven sixty. Now when you increase this, like what GPT three did to 12,000 many of these linear layers would end up having 12,000 by 12,000. So you would end up with a lot of more parameters.
+
+You
+15:04:23
+
+So it depends on the model size that we are putting in. Basically, model size depends on the shapes. I mean, as you increase the hidden dimension and everything, you would end up with a bigger model.
+
+AI Course
+15:04:23
+
+So it depends on the model size that we are putting it. Basically, model size depends on the shapes. I mean, as you increase the hidden dimension and everything, you would end up with a bigger model.
+
+You
+15:05:26
+
+Okay. Or you can say that you can say the other way around. I mean, what is important is you um, these elements, they decide on hyperparameters like number of, like, number of layers they want to use, hidden dimension, that's that. And then they build their neural network, and then they count how many parameters they end up with. So even parameter that we are talking about, that is what our embedding layers will become. Right? So each token is for example, seven speaker is the, uh, model size. And so ABBYY token will be converting to our seven sixty eight vector size of that. Yes. So these are basically, um, is this seven sixty eight? Yes. The rates are these lines. That are going to transform this input to some output. This is input. Or inputs to that particular layer. Because each layer has some input and some output. Right? The layer itself only transforms it.
+
+You
+15:05:30
+
+When we have seven sixty eight here, for example,
+
+AI Course
+15:05:30
+
+Okay. We can say that you can say the other way around. I mean, what is important is you, um, these elements, they decide on hyper parameters like um, number of, like, number of layers they want to use in a dimension that's app. And then they build their neural network, and then they count how many parameters they end up with. So hidden parameter that we are talking about, that is what our embedding layers becomes. Right? It's a east open is for example, seven sixty eight is the, uh, model size. And so every token will be converted into our seven sixty eight size of that. Yes. So these are basically um, this is seven sixty eight. Yes. The rates are these lines. That are going to transform this input to some output. This is input. Or inputs to that particular layer. Because each layer has some input and some output. Right? The layer itself only transforms it. So when we have seven sixty eight here, for example,
+
+AI Course
+15:05:43
+
+This is the input. This layer with its weights transforms it. Into seven sixty eight outputs.
+
+AI Course
+15:05:56
+
+The rates of this layer are the rates of our neural network or our, uh, element. These are not the parameters. These are just the inputs. And the output is not the parameter. It's just the output.
+
+You
+15:05:56
+
+This is the input. This layer with its weights transforms it. Into seven sixty eight outputs. The weights of this layer are the weights of our neural network or our, uh, element. These are not the parameters. These are just the inputs. And the output is not the parameters. It's just the output.
+
+AI Course
+15:06:03
+
+Does that make sense?
+
+You
+15:06:03
+
+Does that make sense?
+
+You
+15:06:13
+
+Alright. So, um, yeah, which one which one?
+
+AI Course
+15:06:17
+
+Alright. So, um, yep, we can we can move on. Sierra?
+
+You
+15:06:18
+
+Sierra?
+
+You
+15:06:23
+
+Oh, I'm sorry. Um, Sierra, one second. I think, um, Brian, do you want to raise your hand? I I unmute you.
+
+AI Course
+15:06:24
+
+Oh, I'm sorry. Um, Sarah, one second. I think, um, do you want to raise your hand? I'm on mute here.
+
+You
+15:08:10
+
+Yep. Go ahead. Sorry. Yeah. Sorry. Sorry for that. Yeah. Okay. Uh, do you have any more article or for going into more details into the rate? Because how the rate is getting is I will go into don't want to waste the whole class thing. Yeah. Yeah. Yeah. Definitely. Yeah. Just ping me on the course platform. I can share some stuff. Okay. And second thing is, uh, when you are, uh, giving the prompt examples, uh, you are sending the three prompts. So I want to understand, uh, about the LLM. So for example, uh, in my organized or if I create my own LLM, uh, model, I just take from Hanging Face and try to implement that. So If multiple users want to use the, uh, the same model, will the LLM provide, uh, sequential data at a time? Or it can give multiple details to the same prompt. For example, you provided three prompt three prompts, um, three questions in a one prompt Mhmm. It will going one by one sequence. If I want to make it a parallel, how I can achieve that? Um, Yeah. That's a good question. So if you put everything in one prompt, it's definitely going to be considered as one request. So your, um, it would start just producing tokens as if it's answering two, three questions at the same time. So it would just keep generating and generating. Um, if you have multiple questions and you want to send them in parallel, it depends on the APIs and and and, uh, the back end that you are using. Um, many of them many of the back ends, including transformers and, um, VLLM, they allow you to VLLM, send
+
+AI Course
+15:08:10
+
+Yep. Go ahead. Sorry. Yeah. Sorry. Sorry for that. Yeah. Okay. Uh, do you have any more article of going into more details into the rate? Yes. How the rate is getting this? I will go into, like, the one to listen. Whole class thing. Yeah. Yeah. Yeah. Definitely. Yeah. Just ping me on the course platform. I can share some stuff. Okay. And second thing is, uh, when you are, uh, giving the prompt examples, uh, you are sending the three prompts. So I want to understand, uh, about the LLM. So for example, uh, in my organized if I create my own LLM, uh, model, I just take from Honeywell's and try to implement that. If multiple users want to use the, uh, the same model, Will the LLM provide, uh, sequential data at a time? Or it can give multiple results to the same prompt. For example, you provided three prompt three prompts, uh, three questions in a one prompt. Mhmm. It is going one by one sequence. If I want to make it a parallel, how I can achieve that? Um, Yeah. That's a good question. So if you put everything in one prompt, it's definitely going to be considered as one request. So your, um, it would start just producing tokens as if it's answering to three questions. At the same time. So it would just keep generating and generating. Um, if you have multiple questions and you want to send them in parallel, it depends on the APIs and and and, the back end that you are using. Um, many of them many of the back ends, including transformer and, um, VLLM, they allow you to
+
+AI Course
+15:08:10
+
+VLLM
+
+AI Course
+15:08:35
+
+send LMS queries. Many of them have good documentation and allow you with the API, like how to, um, send multiple requests at once. So so, basically, instead of the LNM answering them sequentially, the LLM just consider them as a batch of inputs, and we'd start generating next tokens, um, in parallel for each. Um, for each request in that batch.
+
+AI Course
+15:09:18
+
+I can I can do for some example sorry? Yeah. So, uh, let's say, it depends on the batch and how the batch side will be, uh, performed by or tune. Yes. Yes. And almost all the again, all the, um, back ends and APIs, they allow you to send, uh, multiple requests at once. It just and that's why all these elements are having the patches, the first I mentioned. We also saw in the in the, uh, live session that GPT two also was always when we created the dummy tokens, the first time I mentioned was one. That is the password. That was so that if you want to send multiple requests at once, we can just um, convert them to IDs and then just, um, uh, batch them and send the entire batch to the model.
+
+AI Course
+15:09:20
+
+Okay.
+
+You
+15:09:21
+
+LMM queries. Many of them have good documentation and allow you with the API, like, how to, um, send multiple requests at once. So so, basically, instead of the LMS answering them sequentially, the LLM just considers them as a batch of inputs and would start generating next tokens, um, in parter for each um, for each request in that batch. So I can I can do for some example sorry? Yeah. So, um, let's say, it depends on the batch and how the batch side will be, uh, performed or or tuned. Yes. Yes. And almost all the again, all the back ends and APIs, they allow you to send, uh, multiple requests at once. It just and that's why all these LLMs are having the batch as the first time mentioned. We also saw in the in the, uh, live session that GPT two also was always when we created the dummy tokens, the first dimension was one. That was the backspace. That was so that if you want to send multiple requests, at once, we can just, um, convert them to IDs and then just, uh, batch them. And send the entire batch to the model. Okay.
+
+AI Course
+15:10:17
+
+Yeah. Can you share these links also? Sure. Yeah. I'll try to find that. Yeah. Uh, I mean, I can use VLRM as one example and then I I'll send it to you. Okay. My thermostat is, uh, related to the normalization. So we are achieving the nomination because we are trying to get the symmetry search. And, uh, those values are going into the larger values. Maybe, for example, one value span and one value is thousand, but both are pointing the same direction. That's why we are, uh, I'm both are pointing the same thing. So we are using the normalization to reduce it to bring it to within the one or two or one or five values. Right? Just I want to, you know, confirm if my understanding is correct or not. And that's why we are using the log functions, uh, to reduce the value from thousand to 10 or something within our parameter we needed. Is there any other functions, uh, we are using for the nomination other than the loss?
+
+AI Course
+15:13:30
+
+Um, so your question is for normalization, we normalize so that we bring the values into a controlled range. Yes. And your question is, are there any other ways that this is this Yes. Um, no. I think yeah. And the reason, um, for we are achieving the nomination uh, just to have a symmetry search. That's why we are doing it. So I want you to confirm it, miss if my understanding is correct or not. Sure. Can you can you, um, elaborate more on the similarities here so I don't I don't bother with that? Like, uh, we are, uh, doing the talk product every the two numbers. Uh, and one for example, one, uh, variable is one another value is 10 or an up another value is ten and one is 100, so it becomes a thousand. So when we do that dot product, it it means they have a common similarity. If if if both are pointing in the same direction. But if one is minus one and one hundred, then it will be going into the backward direction. So it's not a similar direct. So thus, we are not, uh, dissimilar items. So when we when both are in the same direction, we are doing the, uh, cosine similarity. It means we are looking for the similar searches uh, similar, uh, items that are grouped together. Mhmm. But but one value is 10, one value is thousand, but both are in the same direction means that we can say uh, uh, like, one is a building is a building, and Another, uh, we can say, uh, Indian Tad Mahal. Is also a building or monument. So both are in the in the same context or something. Mhmm. But both have a height and just different dimensions. Both are pointing to the same thing, but they have different magnitude values. Yes. Yes. Now I get that. Better. We are doing the normalization. And keeping it inside the values. Yes. Think what you're asking is also very relevant in general in building recommendation system. Systems, um, and service systems. Um, so I think so this I I really enjoyed when I read this. I think it would help a lot. Uh, to explain, uh, differences between, um, uh, uh, when to have the normalization. And but if you don't have the to your vectors and then apply the nearest neighbor. Um, and they have their own use cases. I mean, when you don't apply normalization, you don't normalize their vectors. Um, and use that that product, especially in recommendation system. They have some, uh, impacts. For example, the items that are already popular, they become even more popular. Because you always because they magnet to this high and you are not, uh, normalizing them, So there will be some popularity bias. Um, whereas when you normalize them and then you rely on, um, that your, um, like, let's say, cost and similarity, There are some other consequences. So just to keep this short for now, I suggest you take a look at this, and, um, I think it would help a lot to understand when, uh, normalization would help and not help. And what what are the impacts. Um, and then if you have more questions, please post them. Yeah. Okay. Thank you. Do you do you want yeah. It's basically the developers we have mentioned getting the cluster. I searched together with this and then it comes here. Measuring similarity from a bit. If you just Google cost analysis. Thank you. Yeah. Thanks.
+
+You
+15:13:30
+
+Yeah. Can you share these the links also? Sure. Yeah. I'll try to find that. Yeah. Uh, I mean, I can use VLRM as one example and then I'll I'll send it to you. Okay. My purpose is related to the normalization. So we are achieving the normalization because we are trying to get a similarity search. And, uh, those values are going into the larger values, maybe, for example, one value is ten and one value is thousand, but both are pointing the same direction. That's why we are, uh, and both are pointing the same thing. So we are using the normalization to reduce it to bring it to within the one or two or one or five values. Right? Just I want to, you know, confirm if my understanding is correct or not. And that's why we are using the log functions, uh, to reduce the value from thousand to 10 or something within our parameter we needed. Is there any other functions, uh, we are using for the normalization other than the loss? So your question is for normalization, we normalize so that the bring the values into a controlled range. Yes. And your question is, are there any other ways that this is Yes. Um, no. I think Yeah. And the reason, um, for we are achieving the nomination uh, just to have a similarities. That's why we are doing it. So I want you to confirm it with if my understanding is correct or not. Sure. Can you can you elaborate more on the similarities there? I don't I'm not following that. Like, we are, uh, doing the top of the between the two numbers. Uh, and, uh, one week for example, one, uh, value is one, another value is 10 or another value is ten and one is a a 100, so it becomes a thousand. So when we do the dot product, it means they have a common similarity. If if if both are pointing in the same direction. But if one is minus one and one is 100, then it will be are going into the backward direction. So it's not a similar direct. So thus, they are not, uh, dissimilar items. So when we when both are in the same direction, we are doing the science similarity. It means we are looking for the similar searches, uh, similar, uh, items that are grouped together. Mhmm. But but one value is 10, one value is thousand. But both are in the same direction means that we can say uh, uh, one is the building. I forgot about the building, and another, uh, we can say uh, Indian is also a building or monument. So both are in the in the same context or something Mhmm. But would have a height and distance different dimensions. Both are pointing to the same thing, but they have different magnitude values. Yes. Yes. Now I get that. Together. We are doing the normalization. And keeping it inside the new values. Yep. Think what you're asking is also very relevant in general in building recommendation system, um, and search systems. Um, so I think so this I I really enjoyed it when I read this. I think it would help a lot, uh, to explain the differences between, um, when to apply normalization and what if you don't apply normalization. To your vectors and then apply the nearest neighbor. And they have their own use cases. I mean, when you don't apply normalization, you don't normalize vectors, um, and use that that product, especially recommendation system. They have some, uh, impacts. For example, the Python that are already popular, they become even more popular. Um, Because you always because they magnetize to this height and you are not, uh, normalizing them, So there will be some popularity bias. Um, whereas if then you normalize them and then you rely on, um, um, your, um, like, let's say, constant similarity, there are some other consequences. So just to keep this short for now, I suggest take a look at this, and, um, I think it would help a lot to understand when, um, normalization would help and not help, um, and what what are the impacts. Um, and then if you have more questions, please post them. Yeah. Okay. Thank you. Do you do you want yeah. It's basically the developers we have mentioned there in past I searched VWO with this, and then it comes here, measuring similarity. From InMed. If you just Google Awesome. Sounds like that. Thank you. Yeah. Thanks.
+
+AI Course
+15:13:54
+
+Uh, Thanks, Adi, for the walk through. It's really helpful. Um, just to follow-up on the previous, uh, that question. That John had. So that normalization, from my understanding, is mainly to address the exploring gradient problem. Right? Generally,
+
+You
+15:15:10
+
+Walkthrough, scaling out too. Um, just to follow-up on the previous, uh, that question, that John had. So that nomination, from my understanding, is mainly to address exploring gradient problem. Right? Generally, uh, Can can you repeat that even last few first words? Uh, the normalization topic that we're talking about, uh, is is it to address the x exploding gradient problem, right, generally, uh, in neural network? Yeah. Basically, you want to keep your activations at any given time. Um, very nice and within a range. So I think even the this visual also, um, explains it well. Um, the thumbnail. Yep. Uh, if I if I if I click, the thumbnail would go there, I think. Everyone? Yes. But, basically, from the thumbnail, you can see that ideally, we don't want, um, like, bad distributions of the activation We want them to have a very nice, um, like, a normal distribution. And activation and normalization layers helps us to achieve that. Um Okay. Throughout the neural network layers. So yeah. So my actual question is on the code where earlier you were discussing the embedding metrics right here. Um, so even though we have the if they're showing the full token embedding, so 50,000 to seven sixty eight. Uh, the sequence length is still I think, based on the
+
+AI Course
+15:15:11
+
+No. Can can you repeat that again, Nava? If we Uh, the normalization Mhmm. The topic that we talking about, uh, is is it to address the x exploding gradient problem, right, generally, uh, in neural networks? Yeah. Basically, you want to keep your activations at any given time. Um, very nice and within a range. So I think even the this visual also, um, explains it, but um, the time line. Yeah. Uh, if I if I if I click the timeline would go away, I think. Hi, everyone. Yes. But, basically, from the timeline, you can see that, ideally, we don't want um, like, bad distributions of the activation. We want them to have a very nice um, like, a normal distribution. And activation and normalization layer helps us to achieve that. Um, Okay. Throughout the neural network layers. Okay. So yeah. So my actual question is up on the code, where you earlier, we were discussing the embedding matrix right here. So even though we have the here, we're showing the full token embedding. So 50,000 to sound 68. Uh, the sequence length is still I think, based on the
+
+You
+15:15:56
+
+based on the next WPEs looks like the sequence length is only max sequence length should be, what, ten twenty four. Right? That's yes. That's correct. Yeah. GPT two was, um, was early, and then GPU GPUs were not too So they also was it was also more experimental. So the sequence length was 1,000. But then over time, it became very important because higher sequence length means that the model would have higher more context window. So then the industry then industry switched to four k, eight k, 32 k, um, and yeah. Google if you are interested to learn about this, Google also released a paper about um, one, 10,000,000 Um, what should I search Google?
+
+AI Course
+15:15:57
+
+based on the next looks like the sequence length is only max sequence length. Should be one ten twenty four. Right? Yes. That's correct. Yeah. GPT two was, uh, was early, and then GPU GPU were not too good. So they also was it was also more experimental. So the sequence length was 1,000. But then over time, it became very important because higher sequence length means that the model would have higher more context window. So then the industry the industry is to issue four k, eight k, 32 k, And yeah. Fuget, if you are interested to learn about this, Google also released a paper about, um, one 10,000,000 Um, what should I search?
+
+You
+15:16:15
+
+They have a very good paper that they use a very, kind of a ring attention, like a modified version of attention that allows them to to go to millions of, um, tokens. Oh. Expired going out of memory.
+
+You
+15:16:35
+
+Uh, attention. That's interesting. I think this is coming from Berkeley. This is the the this is the foundation that many companies were able to increase the context to millions, um, and then they were allowing you to upload very long content.
+
+AI Course
+15:18:22
+
+Pay per 10,000,000 on text menu. They have a very good paper that they use a very, um, kind of a read attention, like a modified version of attention that allows them to to go to millions of, um, tokens. Oh. And without going out of memory. So in case just you're interested, you can take a look at this. And also there is this other paper ring. Uh, attention. That's interesting. Thank you. I think this is coming from Berkeley. This is the the fund this is the foundation that many companies were able to increase the contact center to millions. Um, and then they were allowing you to upload their long context like books, uh, very long PDFs. Um, and images. And still the element works. A lot of them are based on ring attention or some variations of it. So just so just a couple, uh, small question for it. If we go back to the code, um, so so here, let's say we are, uh, the prompt is variable length. Right? So, you know, the always ten twenty four. And here, uh, somewhere, uh, just to make it ten twenty four, we should be are we replacing like, you know, let's say the prompt length is only a 100 or 200 So the rest of the tokens with some special character Yeah. Uh, so You just add a special path. Character. Special character. Okay. During the training process. Okay. Yes. Yeah. And Yeah. That, uh, about that ten that huge embedding that you've just discussed, like, I get somewhere that, you know, uh, for the one of the weakness of Avalon is that if you have, like, this huge context some sometimes it looks at the beginning and the end of the it's it it, uh, has more, uh, information about the beginning and end of the element, but it forgets what's in the middle. So is that being addressed in this new kind of, uh, you know, models? Yeah. New attention. No. I mean, that's just still ongoing issue that the research is working on companies are working on. When the context is very, very long and you're using it, um, usually, what is going in the middle is might be might influence less. Okay. Now, um, companies try to evaluate. There are different tests, um,
+
+You
+15:18:23
+
+Context like books, um, very long PDFs, um, and images. And still the LLM works. A lot of them are based on ring attention or some variations So just so just a couple of, uh, small questions. Like, if we go back to the port, um, so so here, let's say we are the prompt is variable length. Right? So, you know, we always ten twenty four. Mhmm. And here, uh, somewhere just to make it ten twenty four, we should be are we replacing like you know, let's say if the prompt length is only 100 or 200. So the rest of the tokens with some special character Yeah. Okay. You just had a special character. Special character. Okay. During the training process. Okay. Yes. Yeah. And Yep. That about that ten that huge embedding that you just discussed, like, I'll get somewhere that, you know, for the one of the weakness of our learn is that if we have, like, this huge context, some sometimes it looks at the beginning and the end of the it it, uh, has more information about the beginning and end of the element, but it forgets what's in the middle. So is that being addressed in this new kind of, uh, you know, models? Yeah. New attention. No. But I mean, that's still a an ongoing issue. That research is working on companies are working on. When the context is very, very long, and you're using, um, usually, what is going in the middle is might be might influence less. Okay. Now, um, companies try to evaluate. There are different tests
+
+You
+15:18:24
+
+in the
+
+AI Course
+15:19:34
+
+I don't know which of these, but, basically, they they use an evaluation mechanism when they train models to specifically evaluate and put the model is for the exact same thing that you mentioned. They put some random stuff in the middle of the context, and then they see if the model will recall or not. But as you said, that's an ongoing issue. A lot of um, these days, many of the agentic systems or chatbots try to rely on uh, like, dynamic kind of context building to, you know, like, dynamically go and open files that are relevant and put them in their context. So that they don't they do not basically, they many of the agents today and advanced, uh, elements, they are not starting from a very um, large context. They put things and save them in files, and then create some, um, like, uh, references or documentations. So as the model figures out what to do next, it decides to read some of those files or additional documentation and put them in the context. So this way, they employed.
+
+AI Course
+15:21:09
+
+Yeah. So it seems like it is, like, some kind of a pointers kind of a thing. Right? Like, to refer to learning it. So, like, uh, so the so is there like, we add mainly the solution. The to address this kind of a problem. Because even if we have this huge context, then I mean, generally, we will not need drag. Right? If we have, like, a very big context. But then uh, if we have drag, then we're only pulling, like, relevant information. It looks like then that is more probably gives us better you know, response than just dealing with one big, huge context. And then maybe as, like, the next week's Yeah. No. No. No. Actually, I mean, what you're raising is exactly that's exactly why at some point in the moved to our back and also more recent, um, variations. Like, tool calling and, uh, even like cursor, like compass, composer. All these try to train agentic models that predict the next tool to use. I mean, those would be covered in in week three. Um, but, basically, these are trained to open files and read the content. So this way, they don't have to we don't have to start from a hinge context in the beginning. Again, we just put things in different files. And it's it's kind of relevant to the, um, agent skills by by, um, anchoring. Basically why it's becoming so powerful. I mean, he shared a cloud introduced it in an open standard and then open AI. And today, I think or maybe yesterday,
+
+AI Course
+15:21:38
+
+Caresair also adopted it in in certain cases. But, basically, the whole idea is to create individual files or directories and then put instructions and executable codes and codes and whatever you want inside those. And do not include them in your context. In the context, just let the model know and ever the model about those. And then let the model just load them whenever necessary and put them in the context That's cool. Yeah. Yeah. Thank you so much. Yeah.
+
+You
+15:21:39
+
+I don't know which of these, but, basically, the they use an evaluation mechanism when they train models to specifically evaluate how good the model is for the exact same thing that you mentioned. K? Put some random stuff in the middle of the context, and then they see if the model would recall or not. Um, but still, that's an ongoing issue. A lot of um, these days, many of the agentic systems or chatbots try to rely on uh, like, dynamic kind of context building to, um, like, dynamically go and open files that are relevant and put them in the context. So that they don't they do not basically, they many of the agents today and advanced, uh, elements, they are not starting from a very um, large context. They put things and save them in files, and then create some, um, like, uh, references or documentations. So as the model figures out what to do next, it decides to read some of those files or additional documentations and put them in the context. So this way, they avoid. So so, like, you need to kind of Yeah. Yeah. So it seems like it is, like, some kind of a pointers kind of a thing. Right? Like, to refer to one minute. So, like, so the so event, like, Rag mainly the solution just to address this kind of a problem because even if we have this huge context, then I mean, generally, we will not need drag. Right? If we have, like, a very big context, But then, uh, if we have drag, then we are only pulling, like, relevant information, looks like. And then that is most probably gives us a better, uh, uh, you know, uh, response. Than just dealing with one big, huge context. I mean, maybe that's, like, the next week's Yeah. No. No. No. Actually, Actually, um, I mean, what we're raising is exactly that's exactly why at some point industry move toward RAP and also more recent, um, variations like tool calling and, even like, cursor, like, compose compose. They're all these try to train agentic models that predict the next tool to use. I mean, those will be covered in in week three. Um, but, basically, these are trained to open files and read the content. So this way, they don't have to we don't have to start from a huge context in the beginning. Again, we just put things in different files. And it's it's kind of relevant to the um, agent skills by by, um, entropic. It's basically why it's becoming so powerful. I mean, initially, introduced it. It's an open standard and then open AI. And today, I think, or maybe yesterday, um, clock, um, CareCentre also adopted it in in certain cases. But, basically, the whole idea is to create individual files or directories and then put instructions and executive codes and codes and whatever you want inside those, and do not include them in your context. In the context, just let the model know and never the model about those. And then let the model just load them whenever necessary and put them in the context. That's cool. Yeah. Thank you so much. Yep.
+
+You
+15:22:27
+
+Uh, Julia? Thank you so much for staying, uh, late. This is way overtime. Uh, really appreciate that. And quick question. So on the fundamental level in the context of GPT two, uh, the input matrice matrice. What is the row numbers of row? Is that seven sixty eight? And the column number is, uh, 57? You are referring to this? Yeah. Yes. This is seven sixtieth for GPT two. Hold on. Got it. And also the right before softmax, that's the input for softmax before softmax. What is the what is the shape of that metrics?
+
+AI Course
+15:22:27
+
+Uh, Julian? Thank you so much for staying, uh, late. This is way overtime. Uh, we appreciate that. And quick question. So on the fundamental level in the context of a GPT two, Uh, the input metrics metrics. What is the row numbers of a row? Is that seven sixty eight? And the column number is, uh, 57? You are referring to this? Yeah. Yes. This is seven sixty eight. For Jupiter. Okay. Got it. And, also, the right before soft max. That's, uh, the input for soft max before soft max. Uh, what is, uh, what is the shape of that metrics?
+
+AI Course
+15:22:52
+
+Yep. That in first screen is it's going to be vocabulary size, 50,000 something. Okay. Uh, what is the measure? The shape of a measure. Uh, this is this is seven sixty eight. Seven sixty eight by 57. Seven sixty eight by
+
+You
+15:22:53
+
+Yep. Let me first clean this. Um, it's going to be vocabulary says 50,000 something. Okay. Uh, what is the metric? The shape of metric. Uh, this is this is seven sixty eight. Seven sixty eight by 57? Seven sixty eight by
+
+You
+15:23:07
+
+divide depends on the input length, like the sequence length. For example, in the code, you we saw that when we started from the sample
+
+AI Course
+15:23:07
+
+divide depends on the input then. Like, the sequence then. For example, in the code, you we saw that when we started from error, uh, sample
+
+You
+15:23:17
+
+text, hello, my name. It became three tokens. So now it forms these three vectors.
+
+You
+15:23:53
+
+Right? How how r becomes three tokens or three IDs, and then embedding the converts its ID into an embedding vector. So now here we have three times seven sixty eight. And then here, it's still three times seven sixty eight. Here, still seven times, uh, sorry, three times seven Three times 50,000 something. And then Softmax just grabs the the last vector and picks the highest probability or next token probability. Or sorry. Yes. It grabs the last vector and converts them into probabilities. So this size depends on the
+
+AI Course
+15:24:00
+
+text hello, my name, it became three topics. So now it forms these three vectors. Right? How how r becomes three tokens or three I t's, and then embedding the converge each ID into an embedding vector. So now here we have three times seven six sixty eight. And then here, it's still three times seven sixty eight. Here, still seven times, uh, sorry, three times seven seven, um, three times 50,000 something. And then Softmax just grabs the the last vector and picks the highest probability or next token probability. Or, sorry, Yes. It grabs the last vector and converts them into probabilities. So this size depends on the on your sequence, like the input length. Got it. Okay. Thank you so much. Yeah.
+
+You
+15:24:02
+
+your sequence, like, the input length. Got it. Okay. Thank you so much. Yeah.
+
+You
+15:24:06
+
+Um, Konag,
+
+You
+15:25:47
+
+Um, Ronald, please go ahead. Sorry. I'm just bringing on to what, uh, Julie asked I had a similar question too. Is there a way you can take us through your, uh, examples? You know, feed only one value and see at each layer in GPT two, what is the, you know, virtual size. Like you said, the first vector that goes in high has a seven sixty eight vector size. What does that vector actually mean? And after each transformer block, you know, what is the vector size and what does it mean after each customer move on goes through. And then, you know, before output sequence, what does the vector look like and what does the vector look like before going into linear and after linear, like you said. Right? After linear, uh, there the vectors the output sequence, the vector is still seven sixty eight. And then, uh, you know, how how it transforms from, you know, three seven sixty eight factors into, uh, you know, 50,000 probability sequence. Right. Um, okay. That's a, um, good question. And I think this visual would so first, I would address the last part of your question. For example, how we go from seven sixty eight to 50,000. Is that that's part of your question. Right? Yes. This linear layer does that. Linear layer is, um, is a bunch of weights, like or a gate matrix. Um, which transforms input of a certain size to output of a certain size.
+
+AI Course
+15:28:27
+
+Um, please go ahead. Sorry. I'm just thinking on to what, uh, Julie asked, uh, I had a similar question too. Is there a way you can take a through your, uh, examples? You know, feed only one value and see at each year in g p t two, what is the, you know, vector size, like you said. The first vector that goes in high has a seven sixty eight per vector size. What does that vector actually mean? And after each transformer block, you know, what is the vector size and what does it mean each start from the box goes through. And then you know, before output sequence, what does the vector look like? And what does the vector look like before going into linear and after linear, like you said. Right? Number here, uh, there the vectors the output sequence of vector is still seven sixty eight. And then, uh, you know, how how it transforms from, you know, three seven sixty eight factors into, uh, you know, 50,000 probability sequence. Right. Um, okay. That's a um, a good question. And I think this visual would so first, I would address the last part of your question. For example, how we go from seven sixty eight to thousand. Is that that's part of your question. Right? Yes. This linear layer does that. Linear layer is, um, is a bunch of weights, like, or a bit matrix. Um, which transforms input of a certain size to output output of a certain size. Right? So when you want to go from seven sixty eight to 50,000. You can imagine seven sixty eight, um, neurons here. And 50,000 neurons here. So now you need um, all these rates. So the weight metrics for that final linear layer is simply seven sixty eight times 50,000. Whatever. Now once you create that weight matrix, so you can now easily go transform input of size seven sixty eight. To 50,000. You just need to matrix multiply. So Does this part make sense? A little bit. You know? So we have to figure out, I mean, you know, once to concern, uh, GPT two. Right? And I input layer on top, let's say, four. Right? Now three. Hi. Hi. How are. Right? Those three are very close, and we have 50,000, uh, you know, So is it, like, three multiplied seven each neuron? Is seven sixty eight. Right? Because that's the vector size for each input. Mhmm. So seven sixty eight Yes. Sorry. Go ahead. Sorry. Yeah. So like, in your example, right, if you scroll down on the on the example, high, uh, how are so we we first, uh, you know, go to seven sixty eight. Right? Three three columns of seven sixty eight. Right? Three arrows of seven sixty eight. Right? And that's your input sequence. Right? So now how how does it know that it has to because the, uh, probability, uh, for once each word which is, you know, the total tokens in the GPT two is 50,000. It knows that it has to produce the final output as 50,000. Right? Because that's how it goes what what what to, uh, predict from the three, uh, seven sixty eight sequence that is going in. Mhmm. So from here, it knows, you know, seven sixty eight it, uh, like, in your example, you are saying seven sixty eight is the linear, uh, you know, output sequence. Right? The final the last important. Yeah. Where where does it know that seven sixty eight needs to be now transformed into 50,000? Okay. That's a that's a good question, and that's what I was I was, um, I was sharing here. It doesn't know. We know. We, as the developer or creator at the neural network, we have to know this. When we are creating our neural network. So for example, we created this toy simple by linear. Right?
+
+You
+15:28:28
+
+Right? So then you want to go from seven sixty eight to 50,000. You can imagine seven sixty eight, um, neurons here. And 50,000 neurons here. So now you need, um, all these weights. So the weight metrics for that final linear layer is simply seven sixty eight times 50,000, whatever. And once you create that weight metrics, you can now easily go transform inputs of size seven sixty eight to 50,000. You just need to matrix multiply. Does this part make sense? A little bit. You know? So we have 50,000, you know, words, tokens, and GPT two. Right? And our input layer on some, let's say, four. Right? There are three. I I how are. Right? Those three are the inputs. And we have 50,000, uh, you know, so is it, like, three forty nine seven? Each neuron is seven sixty eight. Right? Because that's the vector size for each input. Mhmm. So seven sixty eight Mhmm. Yes. Sorry. Go ahead. Sorry. Yeah. So like, in your example, right, if you scroll down on the on the example, hi, uh, how are so we we first you know, go to seven sixty eight. Right? Three three columns of seven sixty eight. Right? Three arrows of seven sixty eight. Mhmm. Right? And that's your input sequence. Right? So now how how does it know that it has to because the probability for once each word which is, you know, the total tokens in GPT two is 50,000. It knows that it has to produce the final output as 50,000. Right? Because that's how it knows what what word to, uh, predict from the three, uh, seven sixty eight sequence that is going in. Mhmm. So from linear, it knows, you know, seven sixty eight, like, in your example, you're saying seven sixty eight is the linear, uh, you know, output sequence. Right? The final the last end bottom. Yeah. How where where does it know that seven sixty eight needs to be now transformed into 50,000? Okay. That's a that's a good question, and that's what I was I was, um, I was sharing here. It doesn't know. We know. We as the developer or creator at the neural network, we have to know this. When we are creating our neural network. So, for example, we created this toy simple by linear. Right?
+
+You
+15:29:28
+
+We know that what we expect this layer to do. Um, we know that its input is going to be of size seven sixty eight, and its output is going to be this size. So we create the weight based on those numbers. Right? Okay. So what you're saying is the input is the size that which I have given in and output is the one where, you know, where you build your, uh, vocabulary. Right? Yes. Yes. Do all of those are specified beforehand. Before the developers actually start implementing the model. They're usually coming in a YAML file, let's say, like, in config dot JSON or YAML. Right? And then here, this is GPT two, for instance. But you can see here, it's specifying that, okay. Embedding dimension we want is this. Number of layers, transformer blocks we want is 12. And and the rest of it. Maximum sequence length is this.
+
+AI Course
+15:29:30
+
+We know that what we expect this layer to do. Um, we know that its input is going to be of size seven sixty eight. And output is going to be this size. So we create a weight based on those numbers. Right? Okay. So what you're saying is the input is the size that which I have given in, and output is the one where, you know, uh, where you will be your vocabulary. Right? Yes. Yes. All of those are specified beforehand before the developers actually start implementing the neural network. They are usually coming in a YAML file, let's say, like in config dot JSON or YAML. Right? And then here, this is g p t two, for instance. But you can see here, it's a specifying that, okay. Embedded dimension we want is this. Number of layers, transformer blocks we want is 12. Um, and and the rest of it. Maximum sequence length is this.
+
+AI Course
+15:30:42
+
+A bunch of other things. So, basically, you first figure this out as the developer has has as the person who is building or want to train a neural network. Then you figure this out. You know, okay. This is going to be my dimension. This is going to be the tokenizer that I'm going to use. This is going to be the maximum number vocabularies, like, vocab size here. Right? Once you notice then you go and implement a class. So you implement the class decoder only transformer. Right? And then you just keep implementing. You you keep just creating, um, first layer equal n n dot linear, and you go back here and figure out what is the input dimension. It's going to be uh, 50,000, and it it needs to be, uh, converted into embedding. So then you type here 50,000 whatever. To seven sixty eight. And then you create your transformer block. Right? Then for transformer block, again, you specify that, hey. These are some of the key numbers that to to make sure the shapes are correct. Right? And then at the very end, you have last layer.
+
+AI Course
+15:31:16
+
+That you already know. Again, you can you can see, okay. You use this embedding this size. So here we have seven sixty eight. What we need is a linear layer that converts this into um, physical. So that means that we need a linear layer with those um, hyperparameters. So last layer becomes uh, a linear layer that goes from seven sixty eight to 50,000 example, two fifty five. And then here, we implement, like, softmax.
+
+AI Course
+15:31:34
+
+Or layer, I mean. We don't have. But this is the this is the image. So here, we define the network like that. We define it such that it works with these numbers that we have in mind. And these dimensions that we have in mind.
+
+You
+15:32:33
+
+Um, a bunch of other things. So, basically, you first figure this out as the developer, as as as the person who is building or want to train a neural network. When you figure this out, you know, okay. This is going to be my dimension. Is going to be the tokenizer that I'm going to use. This is going to be the maximum number of vocabularies, like vocab size here. Right? Once you notice, then you go and implement a class. So you implement a class decoder only transformer. Right? And then you just keep implementing. You you keep just creating, uh, first layer equal n n dot linear. You go back here and figure out what is the input dimension. It's going to be uh, 50,000, and it it needs to be, uh, converted into embedding. So then you type here 50,000 whatever, to seven sixty eight. And then you create your transformer block. Right? And then for transform and block, again, you specify that, hey. These are some of the key numbers that to to make sure the shapes are correct. Right? And then at the very end, you have last layer. That you already know. Again, you can you can see, okay. You use this embedding, this size. So here, we have seven sixty eight. What we need is a linear layer that converts this into, uh, 50,000. So that means that we need a linear layer with those five parameters. So last layer becomes uh, a linear layer that goes from seven sixty eight to 50,000 for example, to 55. And then here, we implement, like, softmax or layer. I mean, we don't have. But this is the this is the in it. So here, we define the network like that. We define it such that it works with these numbers that we have in mind. And these dimensions that we have in mind. Does that does that clarify? Definitely, this is this is this explanation is much more clearer. But is there a way for us to actually, you know, for GPT two to go and see after each forward layer. Right? What is the, you know, metrics? What does the metrics looks like? You know? What are each of those values? What what each of those values mean. Right? Like, the vector size of seven sixty eight, I'm guessing each of those number actually needs something. Oh, the numbers, they don't mean something to us as humans. I mean, that's why we never almost never look into the numbers. Those numbers are are what neural network learn over time. It's just meaning. I mean, if you look at the numbers, like the weight numbers, they're just a bunch of random numbers to us as humans between minus one to one, like 0.001, sneak things like that. So those are those mean almost nothing. I can show you. For example, g p t two has these layers. Right?
+
+AI Course
+15:32:34
+
+Does that does that factor in? Definitely, this is this is this explanation, you know, is much more clearer. But is there a way for us to actually, you know, for GPT two to go and see after each forward layer. Right? What is the you know, metrics? What does the metrics looks like? You know? What are each of those values? What what each of those values mean? Right? Like, the vector size of seven sixty eight, I'm guessing each of those, uh, number actually needs something. Oh, the number that does not mean something to us as humans. I mean, that's why we never almost never look at into the numbers. Those numbers are are what the neural network can learn over time. It's just meaningless. I mean, if you look at the numbers, like the great numbers, there's just a bunch of random numbers to us as humans between minus one to one, like, zero point zero zero ones, things like that. So those are those mean almost nothing. I can show you. For example, g b t two has these layers. Right?
+
+AI Course
+15:32:51
+
+If I print g p two to transformer, it already has these, uh, layers. If I print, let's say, h of zero, this is the first lock. Right? Now if I print that, um,
+
+You
+15:32:52
+
+Um, if I print g p t c transformer, it already has these, uh, layers. If I print, let's say, h, of zero, this is the first block. Right? Now if I print that, um, NLP,
+
+You
+15:33:07
+
+Right now, I'm here. I'm I'm in this feed forward. Right? Now here has the NLP. NLP itself has these these things. So let's let me also go into first um, convolutional fully connected layer.
+
+You
+15:33:19
+
+You see, this is the the building block. So they are using account one b with this number of, uh, with this hyperparameters. Now you can also print, um,
+
+AI Course
+15:33:20
+
+NLP right now, I'm here. I'm I'm in this feet forward. Right? Now here has the NLP. NLP itself has these these things. So let's let me also go into first um, convolution on fully connected layer. You see, this is the the building block. So they are using a count one d with this number of uh, with this hyperparameters. Now you can also print, um,
+
+You
+15:33:45
+
+You can print the rates. These are the rates, but, again, it's meaningless. It's just a bunch of weights that just happen to work after training g p t two. To predict their next tokens. What is more interesting is to always inspect your shapes. So for example, this goes from seven sixty eight to 3,072.
+
+AI Course
+15:33:45
+
+You can print the weights. These are the weights, but, again, it's meaningless. It's just a bunch of weights that just happen to work after training GPT to to predict their next tokens. What is more interesting is to always inspect their shapes. So, for example, this goes from seven sixty eight to 3,072.
+
+You
+15:33:50
+
+Um, because they are implementing the original transformer paper.
+
+AI Course
+15:33:50
+
+Because they are implementing the original transformer paper.
+
+You
+15:33:57
+
+And in the original transformer paper, the feed forward layer has two linear layers.
+
+AI Course
+15:33:57
+
+And the original transformer paper, the feed forward layer has two linear layers.
+
+AI Course
+15:34:09
+
+I don't think there is a visual. But, basically, they're just implementing this transformer line by line. This is I I'm I'm getting to understand
+
+AI Course
+15:35:36
+
+a little bit and, uh, understand. Uh, you know, what side is going into the platform or layer. I didn't understand. You know? Uh, the first one hour was very clear to me. The second hour, half of the things went over my head. Is it absolutely required to for the next uh, you know, session to you know, the the recorded video that you opened up today. Is it is it required to understand all of this 100% before going to the next one, or is it okay to go ahead and and then revisit it? At some point? Yeah. It's okay. Yeah. It's okay to move move for now and revisit later. They're not going to be, um, causing any issue for future, uh, lectures. And the reason for that is, again, because moving forward, especially starting from project two, uh, we are going to move to higher level libraries and tools like Lambda. With those, we don't have to actually go and deal with these things since we can just think of these as black box. So the good thing with this foundation is that moving forward, if you, for example, read some new technical reports of a new model, you would you would find it it's very likely that you understand what's going on and what are what they're doing, what are the key pieces, and what that means. You may not need these details if you want to simply use a Lambda chain, let's say. To build an agentic, um, setup. I mean, we will build those in future projects, and we we we don't need uh, most of these details. We can just think of those as black boxes.
+
+AI Course
+15:36:04
+
+Sure. Thank you so much, uh, Yeah. Really appreciate you diving into the deep. I really appreciate it. Thank you. Yeah. Thanks for that question. Um, next question, I had I had sorry. Hello, Alia. Thank you. Uh, you have been a very great mentor. I was and it's a great session. Uh, I just so I I really understood token is the fundamental units in LN and then
+
+You
+15:36:13
+
