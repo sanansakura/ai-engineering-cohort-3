@@ -1,0 +1,300 @@
+ByteByteGo
+13:57:17
+
+What is your refund policy.
+
+You
+13:57:18
+
+What is your refund policy?
+
+ByteByteGo
+13:57:25
+
+Um, so we have this question. I pass it to Rad.
+
+ByteByteGo
+13:57:30
+
+Retrieve docs.
+
+ByteByteGo
+13:57:36
+
+Drag step question, Now if I print this retrieve docs,
+
+You
+13:57:36
+
+Um, so we have this question. I pass it to Rag retrieve docs, drag a step question, Now if I print this retrieve docs,
+
+ByteByteGo
+13:58:44
+
+Sorry. Um, I forgot to pass that question to this Um, so if I run this now, it is giving me a bunch of documents. And probably if I print the length, it would be eight. Because it's supposed to return eight most similar documents.
+
+You
+13:58:44
+
+Sorry. Um, I forgot to pass that question to this. Um, so if I run this now, it is giving me a bunch of documents. And probably if I print the length, it would be eight. Because it's supposed to return eight most similar documents.
+
+You
+13:59:09
+
+Uh, my bad.
+
+ByteByteGo
+13:59:10
+
+Uh, my bad.
+
+ByteByteGo
+13:59:22
+
+Alright. So we have all these documents, and then the length is eight. Um, so great. So we have the first step. Now we implemented these parts.
+
+You
+13:59:24
+
+Alright. We have all these documents, and then the length is eight. Um, so great. So we have the first step. Now we implemented this part.
+
+You
+13:59:40
+
+The retrieval. We have these content. We have eight content here. We have also the question here. We also created the prompt template. Now we need once we have this, we need to also format the prompt template with this and this. Now we have these two parts. We just need to format template.
+
+ByteByteGo
+13:59:46
+
+Yeah. Reach reward. We have these contents. We have eight content here. We have also the question here. We also created the prompt template. Now we need once we have this, we need to also format the prompt template. With this, and this. Now we have these two parts. We just need to format the template. So that's the next part. So here, I'm going to say, okay. Let me build the context.
+
+You
+13:59:46
+
+Um, so that's the next part. So here, I'm going to say, okay. Let me build the context.
+
+ByteByteGo
+13:59:49
+
+Build the context.
+
+You
+13:59:51
+
+Build the context.
+
+ByteByteGo
+14:00:19
+
+Um, so what do I need to do here is, first, I need to as I saw, docs are just objects. What we need to do is we need to go between each document, get the actual content, and then, um, format it to be a very longest string. I mean, this is one way to implement this. You can implement it in different ways. So what I'm going to do is before continuing this. Return docs.
+
+You
+14:00:20
+
+So what do I need to do here is, first, I need to as we saw, docs are just objects. What we need to do is we need to go within each document, get the actual content, and then, um, format it to be a very longest stream. I mean, this is one way to implement this. You can implement it in different ways. So what I'm going to do is before continuing this.
+
+ByteByteGo
+14:00:22
+
+Let's keep these print docs.
+
+You
+14:00:24
+
+Return docs. Let's keep this print docs.
+
+ByteByteGo
+14:00:30
+
+Let me rerun this one more time. Okay. We have these long docs. Now our purpose is to turn it into a longest string.
+
+You
+14:00:51
+
+Let me rerun this one more time. Okay. We have these long docs. Now our purpose is to turn it into a long screen. Um, so I'm going to write a format docs function, and then I pass some docs to it. This part is very simple. I just need to, um, I just need to get to the content. So, um, there are different ways that this can be done, but contents equal
+
+ByteByteGo
+14:00:52
+
+Um, so I'm going to write a format docs function, and then I pass some docs rate. This part is very simple. I just need to, um, I just need to get to the content. So, um, are different ways that this can be done, but contents equal
+
+ByteByteGo
+14:00:54
+
+d
+
+ByteByteGo
+14:00:58
+
+So for the index,
+
+You
+14:01:27
+
+e So for d in docs, then I say d dot page content. As we saw before, we already saw that page content is the content that we want. So here, we have the content, and then we just need to turn it turn this list into a string. So last session, we saw that we can use join. So I'm going to use, um, two new lines between each retrieve chunk just to keep it clear for the element and then join all the content. So here, I'm going to pass the contents.
+
+ByteByteGo
+14:01:37
+
+then I said e dot page content. As we saw before, we already saw that page content is the content that we want. So here we have the content, and then we just need to turn it turn this list into a string. So last session, we saw that page is joined. So I'm going to use, um, two new lines between each bitrate chunk just to keep it clear for the element. And then join all the content. So here, I'm going to pass the contents and return yeah. Sorry. The return. Um, so let's test it. Let's test format.
+
+You
+14:01:39
+
+Return. Yeah. I'm sorry. The return. Um, so let's test it. Let's test
+
+ByteByteGo
+14:01:44
+
+Docs, and then pass how we treat docs.
+
+You
+14:01:45
+
+format docs. And then pass our retrieve docs.
+
+You
+14:02:10
+
+Great. Basically, it's just converting um, extracting the content, converting into text, and then appending them with with new lines. So we'll get this noise stream format. That we can include it in our we can basically use it to format our system template. Uh, let me delete this. I'm no longer deleting this. Here, instead of returning docs, now I format it.
+
+ByteByteGo
+14:02:10
+
+Great. Basically, it's just converting um, extracting the content, converting into text, and then appending them with with new lines. So we'll get this nice stream format. That we can include it in our we can basically use it to format our system template. Let me delete this. I no longer delete this. Here, instead of returning docs, now I format it.
+
+You
+14:02:17
+
+So I do context equal format docs,
+
+ByteByteGo
+14:02:17
+
+So I do context equal format docs.
+
+ByteByteGo
+14:02:22
+
+And pass all the docs. So now I have context.
+
+You
+14:02:23
+
+and pass all the docs. So now I have context.
+
+You
+14:02:28
+
+I have this in a string format. I have this in a string format. Next step is to
+
+You
+14:02:40
+
+format the the system part. So here is I'm going to say, hey. My message is or
+
+ByteByteGo
+14:02:53
+
+I have this in a string format. I have this in a string format. Next step is to uh, format the the system prompt. So here is I'm going to say, hey. My message is or messages is prompt dot format messages. We named it prompt here. Format messages, and I pass context equal context. Question is question.
+
+You
+14:03:04
+
+messages is prompt dot format messages. We named it Frontier. Format messages. Then I pass context equal context. Question is question. Uh, we have already the question. So here is basically now this is our full message or prompt that we have ready.
+
+ByteByteGo
+14:03:05
+
+Uh, we have already the question here. So here is basically now this is our full message. Or prompt that we have ready.
+
+ByteByteGo
+14:03:26
+
+I don't print it. It's it's very obvious. Um, it just we just format that template. Um, so now it's time to use the LMM. We have everything ready now. We can now say answer equal element dot in book. And then send send this entire messages.
+
+You
+14:03:26
+
+I don't print it. It's it's very obvious. We just we just format that that template. Um, so now it's time to use the element. We have everything ready now. We can now say answer equal l l m dot inbox. And then send send this entire messages.
+
+ByteByteGo
+14:04:02
+
+So here, we have two options. Either to return the answer or if you want citations, we can also return the actual retrieved documents. So we can say why we are including parts of this, um, like, what are the citations? Like, what is the grounding in this answer? So simple implementation is just to return the answer. Uh, if you want, I'll take citation, instead, we can return a dictionary. We can have answer
+
+You
+14:04:03
+
+So here, we have two options, either to return the answer or if you want citations, we can also return the actual retrieved documents. So we can say why we are including parts of this, um, like, what are the citations. Like, what is the grounding in this handset? So simple implementation is just to return the answer. Uh, if we want to take citation, instead, we can return a dictionary. We can have answer,
+
+You
+14:04:13
+
+We can we can have, like, source documents.
+
+ByteByteGo
+14:04:14
+
+We can we can have, like, source documents.
+
+You
+14:04:19
+
+Docs.
+
+ByteByteGo
+14:04:28
+
+So now if I for this question, if I send it to Ragostat, I'll get the answer.
+
+You
+14:04:28
+
+So now if I for this question, if I send it to Ragastat, I'll get the answer.
+
+ByteByteGo
+14:06:37
+
+Okay. For this one, it says I'm not sure from the docs. So what that simply means is that the model was not good enough to figure out and answer my question based on the based on the existing configuration. That's implements so then here is the part where we have to inspect. We have to figure out, is it because our embedding model is not good? Or a retrieval is not good or simply the element made a mistake. So at this point, it's often like, the best practice is now start printing and inspecting. You print the docs to see if the chunk related to refund policy was actually retrieved or not. If not, um, the problem is here. The problem is we have our embedding model. We'll retrieve all. Retrieval is quite safe because we use language already built as that. We didn't implement retrieval and nearest neighbor, um, implementation. So we don't have to doubt that part. Um, but we can potentially switch to better, bigger, um, embedding models. If that corresponding chunk is already reached retrieved. And here, it means that, um, our element made a mistake. Basically, we had that as part of the message, but the element couldn't figure it out. Um, But anyway, this is this is the entire implementation of lag, uh, lag. It is assuming that we use some easy libraries like, uh, easy to use libraries like Olama, we create a prompt. We create a retriever. We create the element, and then we just uh, write this workflow to retrieve documents, format them, and then send them to the element to get the answer. Now here, I have also a bunch of questions with this setup. And let's see if, um, what it answers. I have some code here. So I go over each of these doc each of these questions.
+
+You
+14:06:39
+
+Okay. For this one, it says I'm not sure from the tops. So what that simply means is that the model was not good enough to figure out and answer my question based on the, uh, based on the existing configuration. So that simply means so then here is the part where have to inspect. We have to figure out, is it because our embedding model is not good? Or our retrieval is not good or simply the element made a mistake. So at this point, it's often like, the best practice is now start printing and inspecting. You print the docs to see if the chunk related to refund policy was actually retrieved or not. If not, um, the problem is here. The problem is we have our embedding model or retrieve what Retrieval is quite safe because we use language It's already built a step. We didn't implement retrieval and nearest neighbor um, implementation. So we don't have to doubt that part. Um, but we can potentially switch to better, bigger, um, embedding models. If the corresponding chunk is already retrieved and here, it means that, um, our LMS made a mistake. Basically, we had that as part of the message, but the LMM couldn't figure it out. Um, but anyway, this is this is the entire implementation of that. Uh, rack. It is assuming that we use some easy libraries like, uh, easy to use libraries like Olama. We create a prompt. We create a retriever. We create the LLM. And then we just, uh, write this workflow. To retrieve documents, format them, and then send them to the LNM to get the answer. Now here, I have also a bunch of questions with this setup, and let's see if um, what it answers. I have some quote here. So I go over each of these document each of these questions.
+
+ByteByteGo
+14:06:47
+
+And then I'll ask the question to RaggedStep and the result print print the first few characters of the result.
+
+You
+14:06:48
+
+And then I'll ask the question to rag a step, get the results, print print the first few characters of the result.
+
+ByteByteGo
+14:07:13
+
+Now if you go to this tab that Paloma was opened, do you see that it keeps sending request and getting responses back. But, anyway, here we have cancers.
+
+You
+14:07:14
+
+Now if you go to this tab, that Paloma was opened. You see that it keeps sending request and getting responses back. But, anyway, here we have the answers.
+
+ByteByteGo
+14:07:37
+
+The answer to the first question, if I'm not happy with my purchase, what is your refund policy, and how do you start the return? So it already found the right chunk and it replied. It says, okay. Here is your refund policy and return process, refund policy, um, whatever. And and it keeps just reducing answers. How long been delivery? Take for a standard order?
+
+You
+14:07:38
+
+The answer to the first question, if I'm not happy with my purchase, what is your refund policy and how do you start the return? So it already found the right chunk and it replied. It says, okay. Here is your refund policy and return process, refund policy. Whatever, and then it keeps us producing answers. How long will delivery, uh, take for a standard order?
+
+ByteByteGo
+14:07:53
+
+So it's very hard. We have to figure figure it out if they are accurate or not. Basically, it's just working. If if they're not accurate, either we have to switch our demo theory model to something bigger. Or we have to change our embedding model.
+

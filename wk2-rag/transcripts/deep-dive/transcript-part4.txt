@@ -1,0 +1,300 @@
+You
+13:45:16
+
+is this way to automate your work using open models? While keeping your data safe? Um, basically, it's it's a it's it's already take care of all the loading loading, generations, formatting, um, sampling, all those stuff. All you need to do, you need to specify the model, you load it, and then you send some inputs, get the output. Um, and then then you're, um, so we are going to use that. It requires some installation. I've already installed this. Um, the first step in order to run the server is to run OLOMASER. I'm going to open a new terminal here.
+
+ByteByteGo
+13:45:22
+
+I'm going to type Olana surf.
+
+You
+13:45:22
+
+I'm going to type olama surf.
+
+ByteByteGo
+13:47:13
+
+So this is simply just running a server, a local server here. So then I can play with I can send request to this alarm. Now I'll just keep let this run. Because I'm going to use Olama. Not going back to my terminal. The next step is to pull models that you want. In this case, I've already pulled. So, um, if I type o l lama pool gema 31000000000. It probably says the models are in there. Yeah. The model was probably there. It was so fast. Um, to verify that it's there. But you can load any of these models that you want. These are, like, the latest, best open rate models out there. Kiwi k 2.5 came very, very recently, and it's already there. Um, so you you basically have access to the best open rate LMS out there. And Gemma, the one that we are using, is developed by Google, and that's also one of the very good models that use that a lot in practice. But you can you can see there are lots of different models including embedding models. So we saw we already loaded in our embedding model, but you can potentially use for Alama and use, um, one of their best set of the art, um, embedding models. So in our case, we are in our case, we are relying on on general three. In the next project, we are you you will see more more examples of in in the release project. Um, so we have this We have the model already pulled. Now we can, uh, use Olam. And this part is is now very simple. Um, instead of doing all those organization, loading, and all those things, we can just simply um, create an LRM using Olam.
+
+ByteByteGo
+13:47:25
+
+Here, I'm going to send say which model I want, Gemma three one billion. And then this would work. Um, if I run this, now we have an element.
+
+ByteByteGo
+13:47:32
+
+Object. But now we can send request to this element by
+
+You
+13:47:35
+
+So this is simply just running a server, a local server here. So then I can play I can send request to this whole app. Now I'll just keep let this run. Because I'm going to use Olama. Now going back to my terminal, the next step is to pull models that you want. In this case, I've already pulled. So, um, if I type o l m a pool gema three one million. It probably says the model is already there. Yeah. The model was probably there. It was so fast. Um, to verify that it's there. But you can load any of these models that you want. These are, like, the latest best open rate models out there. Kiwi k 2.5 came very, very recently, and it's already there. Um, so you you basically has access to the best open base elements out there. And Gemma, the one that we are using, is developed by Google, and that's also one of the very good models that use that lot in practice. But you can you can see there are lots of different models including embedding models. So we saw we already loaded an hour embedding model, but you can potentially use Ollama and use, uh, one of their best state of the art, um, embedding models. So in our case, we are in our case, we are relying on on Gemma too. In the next project, we are you you will see more more examples of Olam. In in the release project. Um, so we have this we have the model already pulled. Now we can, uh, use Olam. And this part is is now very simple. Instead of doing all those organization, loading, and all those things, we can just simply uh, create an LLM using Calama. So here, I'm going to send say, which model I want. Gemma three one billion. And then this would work. Um, if I run this, now we have an LLM. Okay. So now we can send request to this element by invoke. Hi. What is your name?
+
+ByteByteGo
+13:47:37
+
+ebook. Hi. What is your name?
+
+ByteByteGo
+13:47:57
+
+So, basically, in two out of code, if we are just doing all these on the last week. We have this element. We whatever anytime we have any we just use invoke and send it. So if I print this, it says, hello. I'm Gemma, a large language model created by Gemma team at PLT mine.
+
+You
+13:47:58
+
+So, basically, in two lines of code, we are just doing all this on the last week. We have this element. We whatever anytime we have any question, we just use invoke and send it. So if I print this, it says, hello. I'm Gemma, a large language model created by Gemma team at Google team.
+
+ByteByteGo
+13:48:09
+
+If I use a different model like t b k two, it's not gonna work because I have not pulled it. It's a large model. Let me
+
+You
+13:48:11
+
+Um, if I use a different model like k m k two, it's not gonna work because I have not pulled it It's a large model. Let me
+
+You
+13:48:45
+
+Yeah. I think there is no point to show this. Um, basically, you want to make sure that you pull the model before using it. Since I've pulled it this this before it worked. Alright. So we have an LLM. So going back into our lecture again, we are now having this piece as well. You just need to just chain everything when there is a when there is a question.
+
+ByteByteGo
+13:48:46
+
+Yeah. I think there is no point to show this. Um, basically, you want to make sure that you pull the model before using it since I put it this this before import. Alright. So we have an element. So going back into our lecture again, we are now having this piece as well. You just need to just chain everything. When there's a when there's a question.
+
+ByteByteGo
+13:49:09
+
+We have the element. Now is the part that we actually want to build the rack. And as I mentioned, rack is just simply chaining all of these components. We have a retriever index. We already built it. Retriever, we have as a wrapper around it. We have the element. We just need to build this setup or chain. Um, so the first step was defining a system prompt.
+
+You
+13:49:25
+
+We have the Now is the part that we actually want to build the rack. And as I mentioned, rack is just simply changing all of these components. We have a retriever index we already built Retriever, we have has a wrap around it. We have the LLM. We just need to build this setup or chain. Um, so the first step was defining a system prompt. Um, so the system prompt has, uh, these, like, obvious things. Like, you are a customer support chatbot, and then you give it some instructions and some rules. The important part is here.
+
+ByteByteGo
+13:49:27
+
+Um, so the system prompt has the these, like, obvious things like, you are a customer support chatbot. And then you give it some instructions and some rules. The important part is here.
+
+You
+13:50:26
+
+We have context and then we are having this context in these brackets. And also user and a question in this bracket. So the reason that they're doing this is because these are static things. We always like, the instruction to our rack application is very static. It's almost fixed. We exactly know what our application is doing and what we want it to do. It's not going to change as the users start interacting with it. But there are some components that we don't know ahead of time. One is the retrieve content. Retrieve content is going to be better in my on at runtime when the user provides a query. And same goes for the question. So these two are not going to be known ahead of time. So we are going to use this format. It's called the template string. Um, so later, we can replace these parts whenever the question comes. So we have a system template. It's not still a prompt. It's just a system template. We are we need to replace this letter. So let me run this.
+
+ByteByteGo
+13:50:27
+
+We have context, and then we are having this context in these brackets. And also user and a question in this bracket. So the reason that we are doing this is because these are our static things. We always like, the instruction to our rack application is very static. It's almost fixed. We exactly know what our RAD application is doing and what we want it to do. It's not going to change as the user interacting with it. But there are some components that we don't know ahead of time. One is the retrieve content. Retrieve content is going to be determined on at runtime when the user provides a query. And same goes for their question. So these two are not going to be known ahead of time. So we are going to use this format. It's called a template string. Um, so later we can replace these parts whenever the question comes. So we have a system template. It's not still a prompt. It's a system template. We are we need to replace this later. So let me run this.
+
+ByteByteGo
+13:50:34
+
+So now if I print prompt,
+
+You
+13:50:36
+
+So now if I print prompt,
+
+ByteByteGo
+13:50:38
+
+sorry, system template,
+
+You
+13:50:41
+
+Sorry. System template.
+
+You
+13:50:48
+
+It is exactly showing what we included.
+
+ByteByteGo
+13:50:50
+
+It is exactly showing what we included.
+
+You
+13:51:05
+
+So Python add this template string. So, basically, what you can do, you can just, um, follow what we just saw, this format.
+
+ByteByteGo
+13:51:15
+
+So Python had this template string. So, basically, what you can do, you can just um, follow what we just saw, this format. And then we can it it it it becomes a template object. We can format the template. Let me bring the good.
+
+You
+13:51:17
+
+Then we can it it it it becomes a template object. We can format the template. Let me bring the input.
+
+ByteByteGo
+13:51:23
+
+Or, actually, let's use this.
+
+You
+13:51:24
+
+Or, actually, let's use this.
+
+You
+13:51:51
+
+Was not helpful. But, anyway, so if we do format, context, I think this should work.
+
+ByteByteGo
+13:51:51
+
+It was not helpful. But anyway, so if we do format, context, I think this should work.
+
+You
+13:52:38
+
+So now simply, we are converting that into a an actual prompt. So if I print this s, you can see s now has replaced the content with my content. And question with my nice question. So we can use this thing or something similar to this at runtime convert our system template into the actual system prompt. Um, so let me delete this. So we have the system prompt. Now the next thing is we want to create the chain.
+
+ByteByteGo
+13:52:47
+
+So now simply, we are converting that into a an actual prompt. So if I print this s, you can see s now has replaced the content with my content and question with my nice question. So we can use this thing or something similar to this at runtime to convert our system template into the actual system prompt. Um, so let me delete this. So we have this system prompt. Now the next thing is we want to create the chain. Now, um, previously, the had this conversational retrieval chain. They keep changing their methods.
+
+You
+13:52:50
+
+Now, um, previously, Langhtian had this conversational retrieval chain. They keep changing their methods.
+
+ByteByteGo
+13:53:01
+
+So this one is very simple to use. It's a few lines of code. I would include it as part of the solution when I uh, upload it. But it does not give a lot of visibility.
+
+ByteByteGo
+13:53:19
+
+So I I think it's deprecated. The link may not work. Um, so they moved to some newer versions. And, um, so what we are gonna do here is we are going to actually implement it. It's because it's very simple. We have the system prompt. We have our retriever and element. We just need to implement the workflow.
+
+ByteByteGo
+13:53:26
+
+Alright. So let me implement this.
+
+You
+13:53:29
+
+So this one is very simple to use. It's a few lines of code. I would include it as part of the solution when I, uh, upload it. But it does not give a lot of visibility into how it And they no longer it's I I think it's deprecated. The link may not work. Um, so they moved to some newer versions, and so what we are gonna do here is we are going to actually implement it. It's because it's very simple. We have the system prompt. We have our retriever and element. We just need to implement the workflow. Um, alright. So let me implement this.
+
+ByteByteGo
+13:53:36
+
+Oh, and one more thing. Um, before we move forward.
+
+You
+13:53:37
+
+Oh, and one more thing, um, before we move forward.
+
+ByteByteGo
+13:53:41
+
+So beside that Python, the string already gives us the format.
+
+You
+13:53:43
+
+So beside that Python string already gives us the format.
+
+ByteByteGo
+13:54:04
+
+Um, method so we can convert these templates when we know the actual values of context and question. Langchain also has something, uh, similar. And, again, since we are within Langchain framework, it's always good to stick with those. Um, to keep everything consistent. Um, so if I do from lang chain core dot prompts, import.
+
+You
+13:54:05
+
+Method so we can convert these templates when we know the actual values of context and question. Blank chain also has something, um, similar. And, again, since we are within Langchain framework, it's always good to stick with those. Um, to keep everything consistent. Um, so if I do from langchaincore.com, import
+
+ByteByteGo
+13:54:20
+
+Chat prompt effect. And then it's it's basically the same. I create this I do this from template I passed the system template. I now have this template prompt. Which I can, um,
+
+ByteByteGo
+13:54:33
+
+which I can format it. But now it's a line chain object. If I print prompt here, it is a chat prompt. Template. And if I format it with, um,
+
+You
+13:54:34
+
+chat prompt template. And then it's it's basically the same. I create this, um, I do this from template bypass the system template. I now have this template prompt. Which I can, um, which I can format it. But now it's a Langchain object. Um, if I print prompt here, it is a channel chat prompt template. And if I format it with,
+
+You
+13:54:59
+
+If I format it like this, I'm printing key. It would just work. So we'll stick with to this chat template chat prompt template from matching.
+
+You
+13:55:08
+
+Great. Um, okay. So now create the line chain. Create our line chain.
+
+ByteByteGo
+13:55:09
+
+If I format it like this and print it, it will just work. So we'll stick with to this chat template chat from template from 19. Great. Um, okay. So now create the line chain. Create our chain.
+
+ByteByteGo
+13:55:12
+
+Let me
+
+You
+13:55:12
+
+Let me
+
+ByteByteGo
+13:55:42
+
+Just for clarity, I'm also going to copy paste this here to create the retrieve object again, but I don't have to because we had it already. Um, so here we have prompt. We have retriever. We also have the element.
+
+You
+13:55:43
+
+Just for clarity, I'm also going to copy paste this here create the receiver object again, but I don't have to because we had it already. Um, so here we have prompt. We have retriever. We also have the LMM.
+
+You
+13:56:02
+
+Now we need to, implement one step of ramp.
+
+ByteByteGo
+13:56:11
+
+Now we need to, uh, um, implement one step of rack. So we we write a function The input is a question. This is the question that is going to come from the user.
+
+You
+13:56:12
+
+So we we write a function The input is a question. This is the question that is going to come from the user.
+
+You
+13:57:06
+
+So the first thing we need to get is to run this retriever. Now we need to pass this question to the retriever and ask to give us the closest points closest chunks. So I'm going to do docs equal retriever dot get relevant documents. So this is what I meant by saying that it's good to have this, um, call this method on top of VectorDB to convert it to every trigger object. Because it gives us a lot of method. It's already implemented by line chain. If you search for as retriever and go with, uh, all the methods, there are lots of useful methods that can use. So right now, we are using get relevant documents. So here, if I print dots, just to keep testing it at each step, And then let's say we have a question, like,
+
+ByteByteGo
+13:57:07
+
+So the first thing we need to get is to run this retriever. Now we need to pass this question to the retriever and ask to give us the closest points closest chunks. So I'm going to do docs equal retriever dot get relevant documents. So this is what I meant by saying that it's good to have these um, call this method on top of VectorDB. To convert it to every trigger object because it gives us a lot of method. It's already implemented by line chain. If you search for Azure Retriever and go read, uh, all the methods, there are lots of useful methods that can use. So right now, we are using text relevant documents. So here, if I print dots, just to keep testing me that h s step, And then let's say we have a question, like,
+

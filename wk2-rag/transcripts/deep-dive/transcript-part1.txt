@@ -1,0 +1,300 @@
+You
+13:01:31
+
+Just checking my screen. It's visible.
+
+ByteByteGo
+13:01:32
+
+Just checking my screen as visitor.
+
+You
+13:01:35
+
+Yes. Great.
+
+ByteByteGo
+13:01:37
+
+Yes. Great. Um, also recording is going on.
+
+You
+13:01:59
+
+Okay. So we have everything set up. Hello, everyone. Welcome to week three. Today, we are going to do the deep dive of project two.
+
+You
+13:02:47
+
+A couple of notes. One is that week three, the content has been released. Um, and that includes agents, which I as I mentioned earlier, that's my favorite week. Um, because suddenly we go from right, which is kind of static. We will see why. To something that is becoming a lot more capable. And then we'll we'll work on the project. Also, the project has been released. The project period is to build something like asset based agent. Similar to Perplexity for tool calling. The purpose is just to understand how tool calling works How can we combine some of these things and build something? Um, it's obviously not going to be as, um, advanced as WebRTC website, but we'll but the purpose is just to get the idea and understand different components. Also, for the project, you can find it here.
+
+ByteByteGo
+13:02:49
+
+Okay. So we have everything set up. Hello, everyone. Welcome to week three. Today, we are going to do the deep dive of project two. A couple of notes. One is that week three, the content has been released. Um, and that includes agents, which I as I mentioned earlier, that's my favorite week. Um, because suddenly we go from rack, which is kind of a static. We will see why. To something that is becoming a lot more capable. Then we'll we'll work on the project. Also, the project has been released. The project three is to build something like ask the web agent. Similar to Perplexity for tool calling. The purpose is just to understand how tool calling works how can we combine some of these things and build something. Um, it's obviously not going to be as, um, advanced as per per per per per per per per per per per per per per per per per per per per per per per per understand different components. Um, also in the project, you can find it here.
+
+You
+13:05:28
+
+It has three parts. One is the environment demo, um, similar to before. We have required requirements dot text, which you'll see the instructions for the installations. We have also assets. You can ignore this. This is mostly to add some diagrams as well as, um, suggested by some learners. Um, so we have some diagrams now, and, uh, we made some improvements to the project as well compared to the previous cohorts. Um, so yeah. Let me know how it goes. And if you have any feedback or if there are any typos, we've made some changes and improvements. So there might be some typos or some minor issues. Let me know and I can fix it. Um, I also added this optional MCT section. In the previous, uh, revisions, we didn't have MCT, and the reason was that we did things from scratch, and we understand how using our two common works and how it should do connected to, uh, hell lamp. Um, once we know that, you know, the things that we learned in the guide, we will you will learn in the guided learning, uh, Using MCP is going to be very simple. But in this project, we also added an option of section in in case you want to see how it looks like in practice to to create some use some MCP tools and connect it to your PC. That's all about the next project. And one more thing, is that in the instruction so in this project, we are also switching to the latest 19 versions as opposed to the previous project. Like project two that we are going to do the Deepgram today. And the reason for that is because previous versions of land chain is simpler. Everything is on is under the same package. So for learning, it's simpler. Uh, But now that we would complete, uh, project two today, um, and learn it, in project three, we are going to migrate to latest sessions, um, just to get a sense of how, um, how it works. Um, and one more thing before we start the deep dive is that, um, we also added a UV in installation in case so you you don't have two options. You did Conda last time. Um, this time, you have both options. You can still continue with Conda Environment panel is already provided here. You can use it. Or you can switch to UV. And UV is just also a a package manager. It's just significantly faster. Um, so I suggest if you try this, this time you try this, um, it's going to be faster, and, um, the requirement file is also provided here, requirement dot text. Um, it's here. Um, Yep. That's all about next project. And then now we can start the Deepgram.
+
+ByteByteGo
+13:05:50
+
+So it has three parts. One is the environment YAML, uh, similar to before. We have required requirements that text which you see the instructions for the ins installations. We have also assets. You can ignore this. This is mostly to add some diagrams as well as um, suggested by some learners. So we have some diagrams now, and, uh, we made some improvements to the project as well compared to the previous cohorts. Um, so, yeah, let me know how it goes. And if you have any feedback if there are any typos, we've made some changes and improvements. So there might be some typos or some minor issues. Let me know, and I can fix it. Um, I also added this optional MCP section. In the previous, uh, revisions, we didn't have MCP, and the reason was that we build things from scratch, and we understand how this inter tool calling works and how it should be connected to, uh, elements. Um, once we know that, given the things that we learned in the guide we will you will learn in the guided learning, um, Using MCP is going to be very simple. But in this project, we also added an optional section section in in case you want to see how it looks like in practice to to create some use some MCP tools and connect it to your That's all about the next project. And one more thing is that in the instructions, So in this project, we are also switching to the latest 19 versions. As opposed to the previous project, like project two that we are going to do the Deepgram today. And the reason for that is because previous versions of lang chain is simpler. Everything is on is under the same package. So for learning, it's simpler. But now that we would complete the project two today, um, and learn it, project three, we are going to migrate to latest versions. Um, just to get a sense of how, um, how it works. And one more thing before we start the deep dive is that we also added a u b installation in case so you you don't have two options. You did Conda last time. Um, this time, you have both options. You can still continue with Conda Environment channel is already provided here. You can use it. Or you can switch to UB. And UB is just also a a package manager. It's just significantly faster. Um, so I suggest if you try this this time you try this. Um, it's going to be faster, and, um, the requirement file is also provided here. Requirement dot text. Um, it's here. Yep. That's all about next project. And then now we can start the Deep Depth. Let me see. I don't forget anything else. Okay. These tabs are open for deep dive. Project has been released, and then I'm going to upload the project here after this this session here under Deep Tech. And also project three link, you can see it here. It's under the same. Alright. Now let's go to the project.
+
+You
+13:05:53
+
+Let me see. I don't forget anything else. Okay. These tabs are open for Deep Dive. Project has been released. And then I'm going to upload the project here after this this session here under deep dive. Um, And also project three link, you can see it here. It's under the same gateway. Alright. Now let's go to the project.
+
+You
+13:06:16
+
+Um, week two was all about RAC, and RAC is basically if you watch the guided learning, it's, um, combining a pure element in some knowledge store so that it becomes more capable. It can rely on some other facts that are internal to our, let's say, company. Um, and then architecture is like this. The architecture is like
+
+ByteByteGo
+13:06:18
+
+Um, which team was all about RAC, and RAC is basically if you watched the guided learning, it's, um, combining a pure element with some knowledge store so that it becomes more capable. It can rely on some other facts that are internal to our let's say, company. Um, and then architecture is like this. The architecture is like
+
+You
+13:06:31
+
+this. Um, in last week, we saw LLMs. And LLMs generate text. So RAD has this generation piece, which is mostly an LLM.
+
+ByteByteGo
+13:07:05
+
+this. In last week, we saw LLMs, and LLMs generate text So RAD has this generation piece, which is mostly an element. The main addition in Rack systems is that they added which system. So that's what makes an an element turns it into a rack. And retrieval system is responsible to given a bunch of documents like PDFs, images. These are the things that are unique to your, um, company. That's it. And she will figures out pitch chunks from these documents Documents are relevant when the query comes in. It retrieves those, and it also passes those to the elevator. So LLM has now more context. So that's the whole purpose of retrieval, and that's what RAC does.
+
+You
+13:07:06
+
+The main addition in Brack Systems is that they add a retrieval system. So that's what makes an LLM transit into a Rack. And retrieval system is responsible to given a bunch of documents like PDFs, images. These are the things that are unique to your, um, company, let's say. Retrieval figures out which chunks from these documents. Documents are relevant when the query comes in. It which which stores, and it also passes those to the element. So LLM has now more context. So that's the whole purpose of retrieval, and that's what's right does.
+
+ByteByteGo
+13:07:08
+
+Alright. So
+
+You
+13:07:38
+
+Alright. So so that's what we are going to implement today. Also, for the LLMTs, in the last project, we did we had a very deep dive event. We we learned the internals and mechanics of elements. In this project, we'll see how simple it is if we switch to more abstract libraries. That are built around, um, open based models and bug and fix. So we'll also switch that and see how how simpler life becomes. Alright. So with that, we can start the project. I have it open here.
+
+ByteByteGo
+13:07:38
+
+so that's what we are going to implement today. Also, for the LLM piece, in the last project, we did we had a very deep dive. We then we will learn the internals and mechanics of LMS. In this project, we'll see how simple it is if we switch to more abstract libraries that are built around, um, open rate models and finding phase. We'll also switch that and see how how simpler life becomes. Alright. So with that, we can start the project. I have it open here.
+
+ByteByteGo
+13:07:55
+
+I'm going to open the project. I'm going to select the kernel, which I've already installed. It's called Rack Chatbox. I need a bunch of terminals, but for now, I'm not gonna open. I'm just going to activate
+
+You
+13:07:55
+
+I'm going to open the project. I'm going to select a terminal, which I've already installed. Called right chatbot. I need a bunch of terminals, but for now, I'm not gonna open. I'm just going to activate
+
+ByteByteGo
+13:08:04
+
+Kinda activate red chatbot.
+
+ByteByteGo
+13:08:08
+
+And then just to make sure we are in the right environment, let's say, for instance, it's like launching community is already installed.
+
+You
+13:08:09
+
+And now activate red add box. And then just to make sure we are in the right environment, let see for instance, this line launching community is already installed.
+
+ByteByteGo
+13:08:27
+
+It's it's starting. It shows that the version is 0.3, uh, 24. So it seems we are in the right environment. We have the installations ready, and then we can start. So I'm going to skip this environment setup section.
+
+You
+13:08:29
+
+You see, installed and it shows that the version is zero point three point twenty four. So it seems we are in the right environment. We have the installation ready, and then we can stop. So I'm going to skip this environment setup section. Um, so
+
+ByteByteGo
+13:09:06
+
+Um, so, again, the purpose of this project is to connect an element with some, um, additional documents. Those documents, depending on the use case, can be your company's policies, It can be some thing related to your retail store. It can be simply some facts for your users. Um, in this project, we are using a a very common use case to turn a chatbot's general purpose chatbot into something specialized for for your store. So our use case is customers of a chatbot. And as a result of that, we have some data. And data is here. Um, we have some PDFs. I don't know if it's going to be opened here. No.
+
+You
+13:09:06
+
+again, the purpose of this project is to connect an element with some, um, additional documents. Those documents, depending on the use case, can be your company's policies, It can be some thing related to your retail store. It can be simply some facts for your users. Um, in this project, we are using a a very common use case to turn a chatbot's a general purpose chatbot, into something specialized for for your store. So our use case is customers support chatbot. And as a result of that, we have some data, and data is here. Um, we have some PDFs. I don't know if it's gonna be opened here. No.
+
+ByteByteGo
+13:09:50
+
+We have some PDFs, and these PDFs are just toy examples. I just wanna show that we given this for PDFs, how can we inject a knowledge into the element? In practice, we won't end up with four PDFs only. In practice, our companies may have hundreds of PDF files, images, and, um, it's going to be um, much much larger given the PDFs. But in this example, we have one, um, refinance equity PDF, which has some questions about, like, payment methods, um, questions about refund, and so on. We have also one product product sizing. It's, um, more complex kind of, like, formatted text.
+
+ByteByteGo
+13:10:07
+
+We have return and exchange. And we have another one. So this is considered our knowledges. Store, which we are seeing here, these four PDFs. Now the first step in back systems is to index this. We need to as we start here,
+
+ByteByteGo
+13:11:21
+
+we need to convert this into an index so we can easily look up for relevant information. To build this index, we first need to parse the documents There are different softwares written for different documents to parse. For PDFs, for it could be HTML file HTML like URLs. Um, so the first step is to parse the document, then we chunk it. Because these documents are often very, very long. And if we just, um, index an entire document, it can be, uh, less meaningful. So we chunk them into more independent, semantically meaningful smaller chunks and every indexing chunk. Indexing simply means um, going from text into it depends also upon how we index, but in vector based, indexing, we go from text, use some machinery model, convert it into a numerical vector. And then we store that vector in our index. And then later, we use this index to retrieve. Um, and that's the first step in our project. So the first step is that given we have this data of PDFs, we want to learn We want to, uh, index them. So this is a bunch of imports for now.
+
+ByteByteGo
+13:11:22
+
+And then the first step is to load the documents.
+
+ByteByteGo
+13:11:36
+
+Now there are different libraries and different implementation for loading depending on what framework you are using in our case it's lang chain. But in general, depending on what framework you are using, you may want to, um, search.
+
+You
+13:11:36
+
+We have some PDFs, and these PDFs are just toy examples. I just wanna show that given these four PDFs, how can we inject the knowledge into the element? In practice, we won't end up with four PDFs only. In practice, our companies may have hundreds of PDF files, images, and it's going to be, um, much much larger, even the PDFs. But in this example, we have one, um, refinance security PDF which has some questions about, like, payment methods, questions about refund, and that's on. We have also one project product sizing. It's, um, more complex kind of, like, formatted text. We have return and exchange. And we have another one. So this is considered our knowledge store. Which we are seeing here, these four PDFs. Now the first step in Rack Systems is to index this. You need to as we saw here, we need to convert this into an index. So we can easily look up for relevant information. Build this index, we first need to parse the documents There are different softwares written for different documents to parse. For PDFs, for it could be HTML file, um, HTML like URLs. So the first step is to parse the document, then we chunk it. Because these documents are often very, very long. And if we just, um, index an entire document, it can be, uh, less meaningful. So we chunk them into more independent semantically meaningful, smaller chunks, and then we index in chunk. Indexing simply means, um, going from text into it depends also on how we index, but in vector based indexing, we go from text, use some machine learning model, convert it into a numerical vector. And then we store that vector in our index. And then later, we use this index to retrieve. Um, and that's the first step in our project. So the first step is that given we have this data of PDFs, we want to learn we want to, uh, index them. So this is a bunch of imports for now. And then the first step is to load the documents. Now there are different libraries and different implementations for loading depending on what framework you are using in RPC it's lang chain. But in general, depending on what framework you are using, you may want to, uh, search.
+
+You
+13:13:04
+
+I mean, online search. So I did online search for line chain. I simply searched Google with document orders, and these things came up. Um, and line chain has implementation for different, um, copier packages as that for loading documents. So if you go here, you can see it is supporting that, um, loading unstructured content like PDFs, PKC URL, and a bunch of other things. So if you want to, um, I think and here is, uh, a bunch of other, uh, loaders for PVS. So you can see all these packages are already supported by lang chain. It helps us to do a quick search and see what are the differences which ones are having, like, are more efficient or more capable and so on. In our case, we'll use five PDF. It's already very common and popular. Um, and here we can see how it should be used. So Um, so the reason that I'm showing this is that nobody is supposed to memorize all these things. These things keep changing and changing. It's Even within the same frameworks, they keep changing and moving all these packages around. So it's always good to do a quick search and figure out what is their latest method and signature to use. So in this case, once we have a PDF file, we can just pass it to this, uh, package by PDF loader. We get a loader object. And once we do that load, it gives us the actual document. It looks like this. So let's just follow that.
+
+ByteByteGo
+13:13:05
+
+I mean, online search. So I did online search for land chain by simply searched Google with document folders, and these things came up. Um, and land chain has implementation for different um, popular packages as well for loading documents. If you go here, you can see it is supporting that um, loading unstructured content like PDFs, recursively URL, and a bunch of other things. If you want to, um, I think and here is, uh, a bunch of other, uh, loaders for PDFs. You can see all of these packages are already supported by lang chain. Um, it helps us to do a quick search and see what are the differences which ones are having like, are more efficient, are more capable, and so on. Our case, we'll use five PDF. It's already very common and popular. Um, and here we can see how it should be used. Um, so the reason that I'm showing this is that nobody is supposed to memorize all these things. These things keep changing and changing. It's Even within the same frameworks, they keep changing and moving all these packages around. So it's always good to do a quick search and figure out what is the latest method and signature to use. So in this case, once we have a PDF file, we can just pass it to this, um, package, high PDF loader. We get another object. And once we do that load, it gives us the actual documents. It looks like this. So let's just follow that.
+
+ByteByteGo
+13:13:17
+
+So first, I need to load all the PDFs inside our knowledge store. So the first step is to create a list and then, um, now I'm going to
+
+You
+13:13:18
+
+So first, I need to load all the PDFs inside our knowledge store. So the first step is to create a list and then, um, now I'm going to
+
+ByteByteGo
+13:13:28
+
+now I'm going to implement, um, these ones. So first, I'm going to go over all the path, all of the files.
+
+ByteByteGo
+13:13:31
+
+Now if I print,
+
+You
+13:13:33
+
+now I'm going to implement, uh, these ones. So first, I'm going to go over all the path all the files. Now if I print,
+
+ByteByteGo
+13:13:38
+
+now if I print this back, I would see these four files.
+
+You
+13:13:40
+
+now if I print this back, I would see these four files.
+
+You
+13:13:51
+
+Great. Now next, I need to load them. So in order to load them, we saw the documentation. We can write doc equal,
+
+ByteByteGo
+13:13:52
+
+Great. Now next, I need to load them. In order to load them, we saw the documentation. We can write doc equal
+
+ByteByteGo
+13:13:58
+
+high PDF loader, and then we needed to pass the path and then call load.
+
+ByteByteGo
+13:14:32
+
+Now this give me the document. Now if I create a document, it should print an object of, like, line chain document object. And within that, I expect to see the actual content of this, uh, PDF. So if I print this and I just break it, so it can be more manageable. So here, the first document I'm getting this object here. It says some metadata. Um, creator, which was pipe media, um, pipe PDF. Title, return and exchange policy. So perhaps it's
+
+ByteByteGo
+13:14:35
+
+this one.
+
+You
+13:14:36
+
+pie, PDF loader, and then we needed to pass the path and then call load. Now just give me the document. Now if I pin the document, it should print an object of, like, line chain document object. And within that, I expect to see the actual content of this, uh, PDF. So if I print this and I just break it so it becomes more manageable. So here, the first document I'm getting this object here. It says some metadata. Creator, which was pipe p d pipe PDF, title, return and exchange policy. So if I have seats, uh, this one.
+
+ByteByteGo
+13:14:56
+
+And then the key part is total pages and whatever, and then the key part is the content. It's called page content. So here, we can see the content inside that PDF. Um, for example, if I print doc.page content,
+
+You
+13:14:56
+
+And then the key part is total pages and whatever, and then the key part is the content. It's called page content. So here, we can see the content inside that PD. Um, for example, if I print doc.page content,
+
+You
+13:15:13
+
+Up. It's a list.
+
+ByteByteGo
+13:15:13
+
+Uh, please release.
+
+You
+13:15:49
+
+Dot edge content. So we can't see the actual contact here. So that's great. That's that's that's simply what parsing means. That's like, just a few lines of code to parse documents. Now let me clean this part and make sure that we have everything in a nice list. So I'm going to do raw docs equal or it's, uh, at least, so I'm going to keep extending, and then I'm going to use pyPDF loader dot load. Uh, it's simply loading all the documents keeping them in the botox, and then here it's going to be printed.
+
+ByteByteGo
+13:15:53
+
+Dot page content. We can't see the actual content here. So that's great. That's that's that's simply what parsing means. That's like, just a few lines of code to parse documents. Now let me clean this part and make sure that we have everything in a nice list. So I'm going to do raw docs equal or it's a list, so I'm going to keep extending, and then I'm going to use py PDF loader at dot load. Uh, it's simply loading all the documents keeping them in the products here, and then here it's going to be printed.
+
+You
+13:16:07
+
+Great. So it's successfully loaded them. It says loaded eight PDF pages. From four files, and that's because some of these PDFs are having more than one page.
+
+ByteByteGo
+13:16:28
+
+Great. So it's successfully loaded them. It says loaded eight PDF pages from four files. And that's because some of these PDFs are having more than one page. So we have this. Uh, this part is optional. But we can follow the same process for web pages. Um, there's some sample web pages here, and it's it's basically the same process. We can go to lang chain and see what is the what is used for web pages.
+
+You
+13:16:29
+
+So we have this this part is optional, um, but we can follow the same process for web pages. Um, there's some sample web pages here, and it's it's basically the same process We can go to land chain and see what is the what is used for web pages.
+
+You
+13:16:59
+
+It's called web based loader. And, again, they keep changing, so this this link is no no longer, um, here. But for now, we can just implement it. It's it's this part is optional. It's just, um, just to show that it's going to be the same. Just loading, we just need different packages to load from different places. Um, so here, we can say loader
+
+You
+13:17:03
+
+We call it web based.
+
+ByteByteGo
+13:17:03
+
+It's called the paste loader. And, again, they keep changing, so this this link is no no longer um, here. But for now, we can just implement it. It's this part is optional. It's just, um, just to show that it's going to be the same, just loading. We just need different packages to load from different places. So here, we can say uh, loader We call it web based
+

@@ -1,0 +1,300 @@
+ByteByteGo
+14:08:29
+
+But at least this one, it's very easy to confirm that it's working. It says that what is the quickest way to contact your support team? It says you can contact logistics at uh, Everest on that example. Um, if if we didn't without any retrieval or these documentations, the LMM would not answer. So if you simply load an element and invoke it with this question, in an in with all the it has no idea what is the right unit. So it shows that we were successfully able to introduce these PDFs to our, um, to our element.
+
+ByteByteGo
+14:09:16
+
+Um, that's mostly how it looks like to implement. Right? Um, I have also a simple um, string based, uh, code here. This part is optional. I'm not going to explain the UI parts. But, basically, I'm just putting together everything that we implemented. Like creating this vector DB using some embedding model, using some element, uh, potentially having some memory to include the chat history and so on. Um, and then I and then here are the UI parts. Um, like, extremely data spinners like things like that just to make a UI nice. If I run this, it would write into a app that I find.
+
+You
+14:09:16
+
+So it's very hard. We have to figure figure it out if they are accurate or not. But, basically, it's just working. If if they're not accurate, either we have to, uh, switch our Gemma three model to something bigger, or we have to change our embedding one. One. But at least this one, it's very easy to confirm that it's working. It says that what is the quickest way to contact your support team? It says you can contact logistics logistics at, uh, Everest storm, that example. Um, if if it didn't without any retrieval or these documentations, the LLM would not answer. So if you simply load an LLM and invoke it with this question, in an in with all the it has no idea what is the right email. So it shows that we were successfully able to introduce these PDFs to our, um, to our element. That's mostly how it looks like to implement for that. I have also a simple um, extremely, uh, code here. This part is optional. I'm not going to explain the UI part. But, basically, I'm just putting together everything that we implemented. Like creating this vector DB using some embedding model, using some LLM, uh, potentially having some memory to include the chat history and so on. Um, and then I and then here are the UI parts. Um, like, extremely dot spinner, like, things like that, just to make the UI nice. If I run this, it would write into a app dot pie
+
+You
+14:09:31
+
+file. It appears here. It's basically the same code that I have. Now I can run it. So for running it, I think it's it's just as simple as doing a Streamlit.
+
+ByteByteGo
+14:09:31
+
+It appears here. It's basically the same code that I had. Now I can run it. So for 28, I think it's it's just as simple as doing a stream date.
+
+ByteByteGo
+14:09:35
+
+Run app.i.
+
+You
+14:09:37
+
+Run app dot pie.
+
+ByteByteGo
+14:09:55
+
+It's just as as simple UI. Just not nothing fancy. Just showing that now with this legend, we can just put it in a UI that is made for LMS or agents, and we expose it to some real users. What is your, um, shipping time?
+
+You
+14:09:57
+
+So it's just a a simple UI. Just not nothing fancy. Just showing that now with this logic, you can just put it in a UI that is made for elements or agents, and we expose it to some real users. What is your, uh, shipping time?
+
+ByteByteGo
+14:10:07
+
+It again, it's I didn't put a lot of effort into the UI, so it's not it's not ideal. But I just wanted to show that, uh, uh, it would look like.
+
+You
+14:10:08
+
+Again, it's I didn't put a lot of effort into the UI, so it's not it's not ideal. But just wanted to show that, uh, it would look like.
+
+You
+14:11:45
+
+Yeah. Hopefully. Hopefully, they are archived, but it it it is working. Um, I doubt that's these configurations are are good. Um, in general, we want a little bit better models. Gemma, one billing model is good. Um, but I suggest if you want to build some real app applications, it's even on normal lap like mine, it's easy to switch to a bit bigger models like 3,000,000,000 or 7,000,000,000 models. So even if you want to host it locally, I would still suggest to um, switch to something bigger. Same for embedding. Our embedding is, like, it's it's very it it's not as good as it can be. Switching to other embedded models is also I've already shown that. It's very simple. You can also rely on Olam and use the embedding models. I think there is also a tab here for embeddings. So you can simply use any of these models, and here you can see different variations. So depending on how how big you want your embedding model to be, you can pick one of these. Um, in general, for embedding, it should be it should work fine if your use case is not too complex. So even this 600,000,000 parameter should be good. Uh, but you can potentially consider switching to bigger ones. Um, so I think I covered everything that I wanted to cover. Um, one more thing is that in the next project, we are switching to
+
+You
+14:11:55
+
+for the for the UI. We are switching to change it instead of stream it. So you can see it put at the very end of the project.
+
+ByteByteGo
+14:11:55
+
+Yeah. Hopefully. Hopefully, they are correct, but it it is working. Um, I doubt that these configurations are good. Um, in general, we want a little bit better models. Gemma, 1,000,000,000 model is good. Um, but I suggest if you want to build some real applications, it's even on normal laptops like mine. It's easy to switch to bit bigger models like 3,000,000,000 or 7,000,000 models. So even if you want to post it locally, I would still suggest to, um, switch to something bigger. Um, and same for embedding. Our embedding is, like, it's It's very it it's not as good as it can be. Switching to other and many models is also I've already shown that it's very simple. You can also rely on hold on and use the many models. I think there is also a tab here. For embeddings. So you can simply use any of these models. And here you can see different variation So depending on how how big you want your embedding model to be, you can pick one of these. Um, in general, for embedding, it should be it should work fine if your use case is not too complex. So even this 600,000,000 parameter should be good. Um, but we can potentially consider switching to bigger ones. Um, so I think I covered everything that I wanted to cover. Um, one more thing is that in the next project, we are switching to for the for the UI. We are switching to chain bit instead of a stream bit. So you can see it's put at the very end of the project.
+
+ByteByteGo
+14:12:21
+
+Um, here, So Chainlink is made for LLM and agent take applications. So the UI is is nicer, and it's made for that. So you would see this in our next week's deep dive. And if you're interested, I've included the the link chain with that. Io. You can read the documentation and see how to use it. Uh, but it looks much much nicer than simple string rate, uh, UIs.
+
+You
+14:12:27
+
+Um, here, So Chainlink is made for LLM and agent pick application. So the UI is is nicer, and it's made for that. So you would see this in our next week's deep dive. And if you're interested, I've included the the link, chainbit.io. You can read the documentation and see how to use it. Um, it looks much much nicer than simple, extremely, um, UIs. Um, alright. So I think I have covered everything.
+
+ByteByteGo
+14:12:28
+
+Alright. So I think I have covered everything.
+
+ByteByteGo
+14:12:37
+
+Yeah. I think, uh, I covered everything, and then we can now, uh, go to questions.
+
+You
+14:12:38
+
+Yep. I think, uh, I covered everything, and then we can now, uh, go to questions.
+
+You
+14:13:41
+
+Go ahead, Cyrano. I believe. Thank you for the walk through. Um, my question is, like, is the PDF has some images then how, um, how is the workflow going to change? Do we use two different embedding One for I mean, first, how how do we get the images extracted out of the PDF and also what kind of embeddings do we use, um, for the handling image the image data. Okay. Um, Yeah. Thanks for um, the question. Um, that's true. In practice, we have PDFs. We have also, like, independent like, separate images that we want to include and index. So there are two parts to that. First is how to extract images. I mean, for that, there are similar, um, packages out there. Lancashin might have also its own
+
+ByteByteGo
+14:13:41
+
+Go ahead, Steven. Yeah. Great. Thank you. For the walk through. Um, my question is, like, if the PDF has some images, then how, um, how is the workflow gonna be changed? Do we use two different embeddings? One for I mean, first, how how do we get the images? Extracted out of the GDF and also what kind of embeddings do we use, um, for the for handling image, yeah, for image data. Okay. Um, Yeah. Thanks for the question. Um, that's true. In practice, we have PDFs. We have also, like, independent like, separate images that you want to include and index. There are two parts to that. First is how to extract images. I mean, for that, there are similar, um, packages out there. Langchain might have also its own
+
+ByteByteGo
+14:13:51
+
+But if not,
+
+You
+14:13:52
+
+But if not,
+
+ByteByteGo
+14:14:03
+
+Let me check if it actually has
+
+You
+14:14:05
+
+Let me check if it actually has
+
+ByteByteGo
+14:15:44
+
+Yeah. I have to read the the documentation in detail, but I I believe that language should also support that. But in general, for parsers, lang chain is not the only option. There are some other parsers that are made for to handle more complex layouts like what we had here. And they are generally has two phases. Uh, AI based notes. So the first phase, they go from the actual PDF into the way up. So they predict the bounding boxes, um, and also the the type of that, um, entity. So whether it's title, text, figure, image, and so on. That's the first phase. The second phase is to extract those items and, um, and and produce them in some structured outputs. Um, so that's that's the way to first extract images from PDFs. If you have a standalone key uh, image files, that's simpler. You no longer need to do parsing. You just need to load them, and there are also libraries to load images as well. But that's the that's the first step, how to add support for image parsing between documents. You just need to switch to document parsers that handle that. If you search document parsing with images, there are lots of Airt based, uh, packages out there. If you want some examples, uh, post a message. I can share some some good examples. I think I've also included some in the Gen AI system design book. So you can you can find them there. But this is parsing. The other change you need to make to your to assist to the existing setup that we had is the embedding part. We used a text embedding model to map text into ECS space. Um, for images, there are two options.
+
+ByteByteGo
+14:15:54
+
+One is to use a model use an embedding model that is trained to support both images and text. And one example is is clip model.
+
+You
+14:15:55
+
+Yeah. I have to read the the documentation in detail, but I I believe that 19 should also support that. But in general, general, for parsers, lang chain is not the only option. There are some other parsers that are made for to handle more complex layouts like what we had here. And there are generally has two phases, uh, AI based ones. So the first phase, they go from the actual PDF into the layout. So they predict the bounding boxes. And also the the type of that entity. So whether it's title, text, figure, image, and so on. So that's the first phase. The second phase is to extract those items and, um, and and produce them in some structured outputs. Um, so that's that's the way to first extract images from PDFs. If you have a stand alone image files, that's simpler. You no longer need to do parsing. You just need to load them and there are also libraries to load images as well. But that's the that's the first is how to add support for image parsing within documents. You just need to switch to document parses handle that. If you search document parsing with images, there are lots of AI based, uh, packages out there. If you want some examples, uh, post a message. I can share some, um, some good examples. So I think I've also included some in the Gen AI system design book. So you can you can find them there. But this is parsing. The other change you need to make to your to the sis to our existing setup that we had is the embedding part. We used a text embedding model to map text into this space. Um, for images, there are two options. One is to use a model use an embedding model that is trained to support both images and text. And one example is is clip model.
+
+You
+14:17:48
+
+So cream is also an embedding model. It embeds inputs. But the difference is that it's trained to embed both input images and input text. So, um, so, basically, this is the this is the page if you are interested. So you'd use a contrastive pre training with some text and corresponding images It tries to learn the to map them during training. And at and then at in fairness time, this embedding space is meaningful. Meaning that regardless of your modality, if you pass an input text or input image, it would map it to the right light. It's to the to a meaningful, uh, location in the embedding space. Basically, this embedding space is going to be shared both within text and images. So if you embed an image of a dock it would be near the embedding of an actual text like a dock or something like that. So that's one option. You can switch your embedding to uh, an embedding model that supports both images and text. And then use that to embed images separately. You can store them, uh, in your index. But everything else is the same. Because the input is image, the model produces vectors. In a very similar way that it produce it produce vectors for text. You don't need to touch anything else. You just need to change this and now also pass images. The other common approach in practice is to go from image to some text. And then keep everything else the same as we what we have. There are some models that can produce some caption for an image. So the image goes here, the model produces something, this image shows a cat sitting on, and then we can use our current existing text on the embedding model to convert this into a embedding. This is the only change that we need to make. Everything else remains, uh, the same.
+
+ByteByteGo
+14:17:49
+
+So clip is also an embedding model. It embeds. Inputs. But the difference is that it's trained to embed both input images and input text. So, um, so, basically, this is the, uh, this is the page if you are interested. So it it use a contrastive pretraining. With some text and corresponding images. It tries to learn the to map them. During training. And then and then at in first time, this embedding space is meaningful. Meaning that regardless of your modality, if you pass an input text or input image, it would map it to the right like, it's to the to a meaningful, uh, location in that waiting space. Basically, this embedding a space is going to be shared both between text and images. So if you embed an image of a dock it would be near the embedding of an actual text like a doc or something like that. So that's one option. You can switch your embedding to um, an embedding model that supports both images and text. And it use that to embed images separately. And you can store them, uh, in your index. But everything else is the same. Because the input is image, the model produces vectors. In a very similar way that it produce it produce vectors for text. So you don't need to touch anything else. You just need to change this and now also pass images. The other common approach in practice is to go from image to some text. And then keep everything else the same as we what we had. There are some models that can produce some caption for an image. So the image goes here. The model produces something. This image shows a cat sitting on then we can use our current existing text only embedded model to convert this into an embedding. This is the only change that we need to make. Everything else remains, uh, the same.
+
+You
+14:18:02
+
+Um, next question, Vijay. Yeah. Tell. Let me discuss of the base model. I think as part of the initial
+
+You
+14:18:14
+
+context from the Internet, we talked about the organization followed by a process which converts them to a list, uh, decimal points of 40
+
+You
+14:20:52
+
+even though when you you straight away to mention it, it generates the Webcam meetings. Think it still follows the same process. Right? Tokenization, creating a vocabulary, and then when We correct it. Sure. So your question is how these embedding models are built trained? Yes. Yes. I mean, in turn, if you if you go inside them and look at the architecture, they are somewhat very similar to what we saw last week. They are usually a transformer based architecture. They are just smaller because we don't need um, very big models to learn embeddings. Uh, it's generally a simpler tasks. Than text generation for elements. So the model is usually smaller, but it's almost always a a transformer based. Um, and the rest of everything else is is kind of the same. Um, for example, if it supports text, there's all always should be a tokenizer. The tokenizers, um, the tokenizer converts the text into IDs. And then there should be some embedding layers between this embedding model um, to convert, uh, IDs into vectors and then the rest of it. Um, if you are interested to learn the internals, you can read, um, I don't know if the technical report of this is out or not. Yes. It's out. So point three embedding model is kind of a state of the art for for very close to the state of the art. And then you can read, um, the architecture and how they are trained. The main difference is like, the architecture is usually very similar to LMS. The main difference is the, um, the training objectives. So instead of training it, optimizing it for next token prediction, it's optimized for, like, similarities between similar inputs versus less similar inputs. Um, but, yeah, if you're interested, you can you can read this paper. Okay. Sure. And one other question that I have is, I know as part of this RAG integration, initially, you generated the background, the embeddings with some embedding model. And it is nowhere connected to the actual LLM, which is being used by in Jamal, uh, you used. Right? These are those two are different. Assets. They're two they could be co provided by two different companies. Yeah. One would study in the morning. Yes. So don't we need to worry about the parity because one way one side, vector embeddings further are being generated by someone depending upon their algorithm or process. And, uh, there is someone among, like, Jema from Google or what not, that's generating embeddings outside of the Internet data. Mhmm. It's a second strategy. Mhmm. So these are not aligned together. Right? They they have their own problem. Processes to generate the where is the connection? Mhmm. Yeah. That's a good, um, good question. Let me clarify that.
+
+ByteByteGo
+14:20:53
+
+Um, next question, Vijay. Yeah. Ali. Hey. But we discussed about the base model, I think as part of the initial, uh, raw text from the Internet, we talked about record tokenization followed embedding process, which converts them to a vector, uh, decimal points or 14 numbers. Right? Mhmm. And even in the case of rag, even though when you you straight away to pension it, it generates a vector embeddings. I think it still follows the same procedure. Right? Tokenization, creating a vocabulary, and then vectors on top of it. Am I correct? Sure. So your question is how these embedding models are built or trained? Yes. Yes. Yes. I mean, in turn, if you if you go inside them and look at our architecture, they are somewhat very similar to what we saw last week. They are usually a transformer beta based architecture. They are just smaller because we don't need um, very big models to learn embeddings. Uh, it's generally a simpler task. Than text generation for LOMs. So the model is usually smaller, but it's almost always a a transformer based. Um, and the rest of everything else is is kind of the same. Um, for example, if it supports text, there's all always should be a tokenizer. The tokenizers, um, the tokenizer converts the text into IDs. And then there should be some embedding players within this embedding model. Um, to convert, uh, IDs into vectors and then the rest of it. Um, if you are interested to learn the internals, you can read, um, I don't know if the technical report of this is out or not. Yes. It's out. So point three embedding model is kind of a state of the art or very close to a state of the art. And then you can read, um, the architecture and how they are trained. The main difference is like, the architecture is usually very similar to other ones. The main difference is that um, the training objectives. So instead of training it, optimizing it for next token prediction, it's optimized for like, similarities between similar inputs versus less similar inputs. Um, but, yeah, if you're interested, you can you can read this paper. Okay. Sure. And one other question that I have is, I know as part of this RAG integration, initially, you generated the vector embeddings with some embedding model. And it is nowhere connected to the actual LLM, which is being used by uh, I think, Jamal, you, uh, you used. Right? These are those two are different. Assets that too they could be covered provided with by two different companies Yeah. What our strategies they want. Yes. So don't we need to worry about the parity because one way one side vector embeddings further rather being generated by someone. Depending upon their algorithm or process. And, uh, there is someone among, like, JAMA from Google or whatnot. Yeah. Generating embeddings outside of the Internet data. It's a second strategy. Mhmm. So these are not aligned together. Right? They they have their own proper processes to generate the hardware. Where is the connection? Mhmm. Yep. That's a good, um, good question. Let me clarify that.
+
+ByteByteGo
+14:23:39
+
+So in racks, we don't so the embedding model is fully independent of the element. Right? So there there is, like, zero dependence on those. And the reason for that is that, um, you see here we use the embedding model to get the relevant docs. Right? And these docs are more no longer vectors or embeddings. They're, like, actual chunks that are retrieved. And then we convert it to text. So from here, onboard, the element has no idea about which which one model was used, what was the remaining model, what was the size of embedding model, and all those things. All it sees is that there are a bunch of additional text inputs provided as as context. Um, so that's why there is like, zero dependency between the element and the embedding model. Embedding model can be anything because data step is fully wrapped up before, uh, editing information. Element doesn't see any of the embeddings. It doesn't have to deal with any of the embedding vectors. Uh, it only deals with a long string message, which has all the retrieved documents. Yeah. I I think I got it got it now. So last question. I know initially you said that, uh, the first text says we can run-in Google Colab. How about the next ones? Can we still run-in Google Colab, or you really prefer, uh, I think depending upon the utilities are involved. Yes. So the new one that is released, I also suggest to run it locally, um, and all the instructions are provided to run it locally. Theoretically, anything that you run locally, it can be also run on Google Colab. You just need to, um, do a little bit of search probably, uh, on how to expose Olam. So, um, so that's why I suggested local run. So first was the the learning purpose, but uh, more importantly, here we, uh, started this Olama server. I mean, they did run. Uh, I know that could get call up also offers and supports that. You just need to do some search. I know there was some, uh, threads going on a while ago, and then at some point, I think, Miguel clarify, like, call up team collab clarified how to how to do it there. But, yeah, it's up to you. I mean, if you if feel more comfortable doing it on Google Colab, you just need to upload the project there and then open the scratch ad, what I Python notebook on on Colab. And you need to figure that out by doing some research. Or you can you can just run it locally by only difference is that if you run it locally, this part is easier. You just need to go through the installation, uh, phase, which is is also very straightforward and simple. There's a few lines of code, but um, yeah. Both options are are possible.
+
+You
+14:23:39
+
+So in rags, we don't net so the embedding model is fully independent of the LML. Right? So there there's like, zero dependence on those. And the reason for that is that, um, you see here we use the embedding model to get the relevant docs. Right? And these docs are no no longer vectors or embeddings. They're, like, actual chunks that are retrieved. And then we convert it to text. So from here, onboard, the LMM has no idea about which retrieval model was used, what was the embedding model, what was the size of embedding model, and all those things. All it sees is that there are a bunch of additional text inputs provided as as context. Um, so that's why there is like, zero dependency between the LLM and the embedding model. Embedding model can be anything because that step is fully wrapped up before, uh, LLM implication. LLM doesn't see any of the embeddings. It doesn't have to deal with any of the embedding vectors. Uh, it only deals with a long string message, which has all the retrieve documents. I I think I got it got it. So last question. I know initially you said that, uh, the first access we can run-in Google app. I will put the next one. Can we still run-in Google Colab, or you will prefer, uh, I think, depending upon the utilities, uh, Yes. So the new one that is released, I also suggest to run it locally. Um, and all the instructions are provided to run it locally. Theoretically, anything that you run locally, it can be also run on Google Colab. You just need to, um, do a little bit of search probably, uh, on how to expose Olam. So, um, so that's why I suggested local run. So first was the the learning purpose, but uh, more importantly, here we, uh, started this Olama server. And we let it run. Uh, I know that Puja call up also offers and supports that. You just need to do some search. I know there was some, uh, threads going on a while ago, and then at some point, I think, Pujel clarify, like, collab team collab clarified how to how to do it there. Um, but, yeah, it's up to you. I mean, if you if you feel more comfortable doing it on Google Colab, you just need to upload the project there and then open the scratch adbot by Python notebook on on Colab. And you need to figure that out by doing some research. Um, or you can you can just run it locally by the only difference is that if you run it locally, this part is easier. You just need to go through the installation, uh, phase, which is which is also very straightforward It's just a few lines of code, but, um, yeah. Both options are are possible.
+
+ByteByteGo
+14:23:42
+
+Thank you.
+
+ByteByteGo
+14:25:32
+
+Uh, Siri? Uh, hi, uh, Ali. My question is, uh, are these independent embedded models from Huddl and Face They're used for rack systems, um, as good as the embedding layers of elements Like, because LMS type embeddings would, uh, would have much deeper contextual representations during massive massive pretraining. Right? And have higher precision in retrieval and semantic search as well. Right? Yeah. So now that it to their two main differences. Uh, one is that in LMS, um, it's it's optimized for a different object Right? So it's optimized for next token prediction. So every layer, everything that they produce, every hazard, every intermediate uh, activations, they are optimized such that such that this entire model can predict the next token properly. And that includes the embedding layer. So embedding layers, yes, if you if you visualize them and look at them, there might be some semantic relationships going on within those embeddings. And you are right because they are trained on massive return data. But none of this training process for embeddings enforce that similar inputs should end up with similar embeddings. Right? Um, we never enforced something like that. All we enforced was that, okay. Uh, convert the tokens into embeddings, go through these, uh, layers, and then at the end, make sure that the final probability distribution matches the correct next token. Whereas, embedding models are trained for that purpose. So embedding models almost always are better, um, than embedding layer of elements for embedding purposes. So that's one thing. The other thing is that embedding layers is just one layer. It's just a lookup table. Right? But embedding models, they are an, uh, a full neural net. With lots of layers transformed by base. So there are lots of attention mechanics I'm going on to come up with the best possible embeddings, um, for that objective.
+
+You
+14:25:33
+
+Uh, Siri? Uh, hi, Ali. Uh, my question is, uh, are these independent embedding models from Huggiespace? They're used for rag systems, um, as good as the embedding layers of LNMs. Like, because LN derived embeddings would have much deeper contextual representations during massive massive pretrained. Right? And have higher precision in retrieval and sort of semantic search as well. Right? Yes. So now the the there are two main difference. Uh, one is that in LLMs, um, it's it's optimized for a different objective. Right? So it's optimized for next token prediction. So every layer, everything that they produce, every asset, every intermediate, uh, activations, they are optimized such that such that this entire model can predict the next token properly, and that includes the embedding layer. So embedding layers, yes, if you if you visualize them and look them, there might be some semantic relationships going on within those embeddings. And you are right because they are trained on massive intern data. But none of this training process for embeddings enforce that similar input should end up with similar embeddings. Right? Um, we never enforce something like that. All we enforced was that, okay. Uh, convert the tokens into embeddings, go through these, uh, layers, and at the end, make sure that the final probability distribution matches the correct next token. Whereas Alright. Embedding models are trained for that purpose. So embedding models almost always are better, uh, than the embedding layer of elements for embedding purpose. So that's one thing. The other thing is that embedding layers is just one layer. It's just a lookup table. Right? But embedding models, they are an, uh, a full neural network. With lots of layers transforming based, so there are lots of attention mechanisms going on to come up with the best possible embeddings, um, for that objective.
+
+You
+14:26:40
+
+I see. So it's always in in our, uh, interest to create a use a dedicated embedding model Yeah. That is trained for similarity as the end goal rather than next token prediction. Of course. Always. Yeah. I see. That that's one of the best place Embedded models are there. Yeah. Oh, okay. I I thought, uh, we were using embedding models because of size constraints, because these massive elements would may have much more larger models that are probably difficult to use in, let's say, a con a resource constrained environment, where we run these rags, uh, within, Yeah. I mean, size is also important, but that is not the the main reason that we are using embedding models. The main reason is that embedding models are trained to embed in this high dimensional embedding space, so they work best for that purpose. Um, and embedding all has come in different variations sizes. I mean, we have all these control over the a good size for efficiency purposes. So you saw it in the all the there was, uh, three variations, for instance, bitcoin three.
+
+ByteByteGo
+14:27:40
+
+I see. So it's always in our in our, uh, interest to try use a dedicated embedding model. That is straightforward similarity as the encode rather than next token prediction. Of course. Always. Yeah. Nice. That that's one of the best ways many models are there. Yeah. Oh, okay. I I thought, uh, we were using embedding models because of size constraints, because these massive elements would have may have much more larger models that are probably difficult to use in, let's say, a con resource constrained environments. Where we run these rags, uh, within, yeah, Yeah. I mean, size is also important, but that is not the the main reason that we are using embedding models. The main reason is that embedding models are trained to embed in this high dimensional editing as we so they work best for that purpose. Um, and embedding models come in different value and sizes. I mean, we have all this control over the the good size for efficiency purposes. So you saw it in the all the there was, uh, three variations for instance with 23. And I know many other embedding models are coming in in in different variations. And as a quick follow-up on this. Right? Uh, do embeddings, uh, how do they perform on similarity tasks? Have there has there been any study on on that? Um, like, do they perform equally as good or bad or, like, how bad if they are not as good? That's yeah, that's a great question. I I don't know, and I haven't seen a paper, um, looking into that. There might be some papers. It's an interesting problem. My intuition is that it's not going to be comparable, the quality on similarity search tasks compared to embedding models. If I find something, uh, I'll definitely look after this, uh, meeting. I'm also curious, but, um, I I don't remember any papers on top of my head. Sure. Thanks. Uh, just one more question on this. Um, so I understand there's a lot of value in building RAC systems for enterprise systems with, like, proprietary data. However, I want to understand if there's any value in building Rag systems
+
+ByteByteGo
+14:29:13
+
+rack systems for specific engineering problems. Like, say, learning all things distributes systems and databases to help accurately design systems. Right? My question here specifically that since modern elements have encyclopedic knowledge, to accurately answer questions in all domains, is there any value or novelty in building rags for specific domains and have meaningful user value? For, let's say, specific group of target audiences. Yep. So people have not done it, and the main reason for that is because the community, um, went in the agented direction. Uh, right after Max. And agents, which this week we'll talk about, are more proper for that use case. So instead of having a static rack, like a static knowledge base, you equip your LLM with some additional components like tools. And then that those tools allow you to do all those things that you were just describing. For example, coding agents. Most of the coding agents are are agents. Um, so there's a an element, and then it's equipped with additional tools like reading files, opening files, editing files. Um, so this way, the agent just starts a loop and keeps doing opening, updating um, running commands until it it completes the user's request. Um, so to answer to answer your question, I have not seen rag application be built for that purpose. But I've seen agent like, AI agents are built for that. Um, we can talk more also about this next week um, once you go over the agent guided learning. Sure. Thank you. Thank you. Yep. Thanks.
+
+You
+14:29:13
+
+And I know many other embedding models are coming in in it. Different variations. And as a quick follow-up on this. Right? Uh, do LNM embeddings, uh, how will they perform on similarity tasks? Have there has there been any study on on that? Uh, like, do they perform equally as good or bad or, like, how bad if they are not as good? That's yeah, that's a great question. I I don't know, and I haven't seen a paper, um, looking into that. There might be some papers. It's an interesting problem. My intuition is that it's not going to be comparable, the quality and similarity search tasks compared to embedding models. If I find something, I'll definitely look after this, um, meeting. I'm also curious, but, um, I I don't remember any papers on top of my head. Sure. Right. Uh, just one more question on this. Um, so I understand there's a lot of value in building RAG systems for enterprise systems with, like, proprietary data. However, I want to understand if there's any value in building RAG for specific engineering problems, like, say, learning all things distributed systems and databases to help accurately design systems. Like, my question here specifically is that since modern LLMs have encyclopedic knowledge, to accurately answer questions in all domains, is there any value or novelty in building rags for specific domains and have meaningful user value for, let's say, specific group of target audiences. Yeah. So people have not done it, and the main reason for that is because the community, um, went in the agent live direction, uh, right after Max. And agents, which this week we'll talk about, are more proper for that use case. So instead of having a static rack, like a static knowledge base, you equip your LLM with some additional components like tools. And then that those tools allow you to do all those things that you were just describing. For example, coding agents, most of the coding agents are are agents. So there is a an LLM, and then it's equipped with additional tools like reading files, opening files, editing files. Um, so this way, the agent just starts a loop and keeps doing opening, updating, um, running comments until it it completes the user's request. Um, so to answer to answer your question, I I have not seen rag application be built for that purpose. But I've seen agents like, AI agents are built for that. Um, we can talk more also about this next week. Uh, once you go over the agent guided learning. Sure. Thank you. Thank you. Yeah. Thanks.
+
+You
+14:29:19
+
+Next question, uh, Pawel.
+
+ByteByteGo
+14:29:20
+
+Next question, uh, Pawel.
+
+ByteByteGo
+14:29:29
+
+Uh, probably I cannot hear you.
+
+You
+14:29:30
+
+Uh, Pablo, I cannot hear you.
+
+ByteByteGo
+14:29:38
+
+We still cannot hear.
+
+You
+14:29:40
+
+We still cannot hear.
+
+You
+14:29:49
+
+Uh, Pavel, I'm not able to hear you.
+
+You
+14:29:58
+
+Maybe okay. Maybe you rejoin and then, um, for now, we'll go to the next question. Do we?
+
+ByteByteGo
+14:29:58
+
+Uh, Robert, I'm not able to hear you. Maybe okay. Maybe you rejoin, and then, um, for now, we'll go to the next question. Uh, do we?
+
+ByteByteGo
+14:31:45
+
+Yes. Uh, I have one and another question maybe. Uh, don't is it possible to mix, uh, all those kind of, um, tuning? I don't I don't know. Let's say we have a rack and, also, we need to to use the prompt engineering if there is a a same part we will we only need to to go back to the to the loop. Uh, and I think the the documents and, uh, you know, is it possible to to to to operate the data, uh, on the the model, uh, by using the those two combination of prompt generating or side. I don't know. Maybe fine tuning also and the original. Uh, of course. Retrieval the good thing with retrieve like, back in general, I think the main like, the key strength of rack is the retrieval. Component. Retrieval component is not only in racks if they're just everywhere. And you can use retrieval everywhere, including when you are building AI agents. Almost all AI agents, they have a record retrieval component. It's sometimes called context retrieval. Okay. Calling agents, they also have uh, retrieval component. So, yes, in practice, you can combine retrieval in any application that you're building, including a fine tune model. Again, a good example is quoting agents. Quoting agents, you have to fine tune an LLM for coding purposes. So once you have that fine tune element for coding purposes, you put it in an agent, and then you also introduce an additional retrieval component. Um, to take care of, um, retrieving similar chunks from your code base, given the given your your query. Um, so short answer is yes. You can.
+
+You
+14:31:46
+
+Uh, yes. Uh, I have one and another question maybe. Uh, and don't is it possible to mix all those kind of, um, tuning? I don't I don't know. Let's say we have a rack and, also, we need to to use the prompt engineering if there is a a same part that we will we don't need to to go back to the to the loop and adding the parts in the documents and you know, is it possible to to to to populate the data, uh, on the the model, uh, by using the those two combination of prompt generating or, uh, or maybe fine tuning also and the retrieval. Uh, of course. Retrieval the good thing with retrieve like, RAC in general, I think the main like, the key strength of RAC is the retrieval component. And retrieval component is not only in RACs. They're just everywhere. And you can use retrieval everywhere. Including when you are building AI agents. Almost all AI agents, they have a wrapped a retrieval component. It's sometimes called context retrieval. Okay. Coding agents, they also have, um, retrieval component. So, yes, in practice, you can combine retrieval in any application that you're building, including a fine tune model. Again, a good example is coding agents. Coding agents, you have to fine tune an LLM for coding purposes. So once you have that fine tune LLM for coding purposes, you put it in an agent, and then you also introduce an additional retrieval component. Um, to take care of, um, retrieving similar chunks from your code base given the given your your query. Um, so short answer is yes. You can.
+
+You
+14:32:03
+
+Okay. If that makes sense, we can go to the next question. Yes. Yeah. Okay. Um, are you now?
+
+You
+14:32:23
+
+Yeah. Sure. Um, I wanted to know, um, what are the most common or best vector databases you've seen in production? Because I've seen things like Chroma or Lustig, but I don't know what is the, like, the standard in fact for for the industry?
+
+You
+14:35:07
+
+Sure. Yeah. So I have a good message that I've, um, shared before. Can you can I share it on on the course portal? Please send me a message, and I can share the list of things that I've seen are are usually being used to build production systems. Got it. And and in that, um, message, do you, um, do you have also, or have you also taken into account uh, the eval or evaluation libraries? Like, I I was reading something about a a library from NVIDIA uh, like, a car plate Cartridge library. I don't know. Yeah. I'm trying to grasp, uh, or trying to get a a little bit more into the details of which, uh, laborers to use in those aspects like in the embeddings, not in the meetings, uh, uh, the vector database and garbage part. Oh, okay. So okay. These are these are good points. I think I have also something here at the very end of their guided learning, which shows the overall system. So we saw this part, it's indexing. We saw texting coder, but in practice, we can have texting coder and imaging coder and get the indexes. Um, we saw Retrieval, which was, uh, we use the same embedding model, and then we run nearest neighbor search on our index. So this is what was being already handled by our retriever object. And then we have generation, which has LLM for sure, but then we can also add additional things. But outside of these, there are also other components in practice. So one is, for example, query expansion. Because a lot of times, the input query has issues. It's vague. It may have some grammar issues or things like that. So, um, it's almost, um, it's it's this, like, has the same importance as all other companies to place a query expansion, or there might be different terminologies being used. But basically, the idea is to go from a non ideal prompt into a into a better, more accurate, precise prompt. While keeping the meaning the same. And some additional components that'll that are always there as well is, in general, cord rates. Your input card rates, we have output card rates. Um, so the question that you're asking has two parts. One is about the guardlets. Guard rates. Guard rates are often, uh, LLMs. Sometimes, advanced AI labs fine tune an LLM to be good card rates. Um, sometimes, the start ups or smaller companies may decide to use a general purpose algorithm and instruct it so it'd be a good card rate. But regardless, it's usually an algorithm.
+
+ByteByteGo
+14:35:08
+
+Okay. If that makes sense, we can go to the next question. Yes. Yeah. Okay. Um, are you not? Yeah. Sure. Um, I wanted to know, um, what are the most common or best vector databases used seen in production? Because I have seen things like coma or last year, but I don't know. Uh, what is the, like, the standard factor for for the English Sure. Yep. So I have a good message that I've, um, shared before. Can you can you share it on on, uh, course portal? Please send me a message, and I can share the list of things that I've seen are are usually being used to build production systems. Got it. And and in that, um, message, the the do you have also, or have you also taken into account the eval or evaluation libraries? Like, I I was reading something about a a library from Nvidia, uh, like, a card card rails library. But I don't know. Yeah. I'm trying to craft a a trying to get a a little bit more into the details of which, uh, libraries to use in those, uh, aspects, like, in the embedding not in the embedding, uh, the banker database and the part Oh, okay. So okay. These are these are quick wins. I think I have also something here at the very end of the guided learning, which shows the overall system. So beside this part, it's indexing. We saw a text encoder, but in practice, we can have text encoder and image encoder and get the indexes. We saw retrieval, which was, uh, use the same embedding model, and then we run nearest neighbor search on our index. So this is what was being already handled by our retrieve object. And then we have generation, which has element for sure, but then we can also add additional things. But outside of these, there are also other components in practice. So one is, for example, query expansion. Um, because a lot of times, the input query has issues. It's vague. It may have some grammar issues or things like that. So, um, it's almost, um, it's it's this like, has the same importance as all other companies to place a query expansion, or there might be different terminologies being used. But basically, the idea is to go from a non ideal prompt into a into a better, more accurate, precise prompt. While keeping the meaning the same. And some additional components that I'll that are always there as well is, in general, card readers. Your input card rates, we have output card rates. Um, so the question that you are asking has two parts. One is about the guardlets. Card rates. Card rates are often, uh, elements. Sometimes, advanced early apps fine tune an element to be good card rates. Um, sometimes the start ups or smaller companies may decide to use a general purpose element and instruct it so it'd be a good card rate. But regardless, it's usually an element.
+
+ByteByteGo
+14:36:35
+
+It's just either fine tuned or instructed to be a guardrail. Evaluation is a different story. And once you have this whole setup, you need to evaluate different pieces. First, you need to evaluate how good is um, your embedded model is. Um, there are some dedicated metrics for nearest neighbor and retrieval, like, uh, recall precision and note counting metrics. You also need to evaluate the LMM separately to see how good that is. You need to evaluate yourself uh, safety filters. Um, so that's one. Um, part or phase of the evaluation. The other phase is the end to end evaluation. For end to end evaluation, basically, you have some inputs and it creates your ideal outputs. You pass the input to this entire system. You get the final output of your system. And then you compare that final output with your desired or correct ideal output. Um, and that comparison can happen in different ways. Usually, uh, LMM has a judge. So you pass both responses, uh, predicted response and the correct response to an element, and then you ask it instruct the element to score it by some criteria. There are also some libraries out there that you can use. They've already implemented common evaluation metrics for different tasks. And you can simply use them. But, again, for more complex systems or or if you have some specific evaluation needs, you have to complement this by implementing your own,
+
+You
+14:36:54
+
+It's just either fine tuned or instructed to be a garbage. Evaluation is a different story. Once you have this whole setup, you need to evaluate different pieces. First, you need to evaluate how good this um, your embedding model is. Um, there are some dedicated metrics for nearest neighbor and retrieval. Like, uh, recall precision and all those common metrics. You also need to evaluate the L and M separately. To see how good that is. You need to evaluate yourself, uh, safety figures. Um, so that's one, um, part or phase of the evaluation. The other phase is the end to end evaluation. For end to end evaluation, basically, you have some inputs and it creates your ideal outputs. You pass the input to this entire system. You get the final output of your system. And then you compare that final output with your desired or correct ideal output. Um, and that comparison can happen in different ways. Usually, uh, LLM as a judge so you pass both responses, uh, predicted response and the correct response to an LLM, and then you ask it instruct the LLM to score it by some criteria. There are also some libraries out there that you can use. They've already implemented common evaluation, uh, metrics for different tasks. And you can simply use them. But, again, for more complex systems of or if you have some specific evaluation needs, you have to complement this by implementing your own, software. Um, so one example is open air speech bots. You're interested, you can take a look. It says it says framework for evaluating LLMs and LLM systems. So most of most things around LLMs, um, probably, AI EVAS could be a good starting point to start looking into it. Um, but there are also other other frameworks in general. So I think
+

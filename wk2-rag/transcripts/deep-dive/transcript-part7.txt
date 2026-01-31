@@ -1,0 +1,300 @@
+ByteByteGo
+14:36:56
+
+software. Um, so one example is OpenAir's EVA If you're interested, you can take a look. It says it's a framework for evaluating LLMs and LLM systems. So most of most things around LLMs, um, probably, AI does could be a good starting point to start looking into it. But there are also other other frameworks in general. So I think
+
+ByteByteGo
+14:37:25
+
+um, for example, Langley Smith is for observant. Observe availability. And I think they also offer some evaluation. I'm not sure. I have to search, but um, these are some other options that you potentially have. But in general, if you want to build things from scratch, you have unique use cases, it's always best to start from one of these, like, uh, AI eval code basis, like, open MS EBAS. And then you augment it with whatever is missing and you need them.
+
+You
+14:37:25
+
+um, for example, language management is for observability. Observability, and I think they also offer some evaluation. I'm not sure. I have to search, but um, these are some other options that you potentially have. But in general, if you want to build things from a scratch, you have unique use cases, it's always best to start from one of these, like, uh, AI eval code bases, like open and as events. And then you augment it with whatever is missing and you need them.
+
+You
+14:37:36
+
+Hope that helps. Um, so before going to the next question, I want to get to
+
+ByteByteGo
+14:37:40
+
+Hope that helps. So before going to the next question, I want to get to, um, product which had to rejoin.
+
+You
+14:37:42
+
+um, travel, which had to rejoin.
+
+ByteByteGo
+14:39:59
+
+Go ahead, please. Yeah. Thank you. Thank you so much. Uh, so just a quick question. Again, we're new to all this. Right? As part of the project, I was thinking to build some kind of rack model and more like insurance industry. So we're just wondering something back model which can answer why probably, like, a dental claims are down this month as compared to previous month. So all the data we is in, like, a SQL tables. Right? Um, so I was just wondering if you can try it, like, a high level 10,000 feet overview Are are we following, like, the same structure here, which we use, like, PDF files. We just use, like, SQL tables, and go from there. Um, so that's one option. Uh, but in general, for very specific, um, formats or layouts like SQL, it may not work as good as just loading them and passing it to an element. There are some models that are fine tuned specifically for those. For example, for SQL, you can see, um, there elements that Super was fine tuned on on, SQL data to generate embeddings. This is one example. I'm sure if you search, there would be probably even a leaderboard to figure out each embedding models are best for SQL or other types of databases or, uh, different languages. Um, so that's one main change. You may want to incorporate into the system. You need to make sure that the embedding model that you are using is works. And if you are having sequel, probably the general purpose embedding may not be as good as the ones that are optimized for that. So that's one change. Once you have that, it means that your retrieval piece would be good because now whatever the input query is, you can if it's a natural language, you can pass it to a general purpose embedding. Um, if it's uh, if it's a SQL, you can pass it to the same embedding model, get the get the embedding, and then run nearest neighbor. And retrieve relevant chunks. Um, the second part is the element itself. Most advanced elements, like, being enough elements are are trained on lots of different things. Um, for example,
+
+You
+14:40:00
+
+Um, go ahead, please. Yeah. Thank you. Thank you so much. Uh, so just a quick question. Again, very new to you all this. But, um, as part of the project, I was thinking to build some kind of rack model I mean, more like insurance industry. So we're just wondering something RegModel which can answer why probably, like, a dental claims are down this month as compared to previous month. So all the data basically is in, like, a SQL tables. Right? Um, so I was just wondering if you can try it, like, a high level 10,000 feet overview. Are are are we following, like, a same structure here, which we use, like, a PDF files. We just use, like, SQL tables, and go from there? Um, so that's one option. Um, but in general, for very specific, uh, formats or layouts like SQL, it may not work as good as just loading them and passing it to an element. There are some models that are fine tuned specifically for those. Um, for example, for SQL, you can see, um, there are LLMs at superfast fine tune on on sequel data to generate embeddings. This is one example. I'm sure if you search there would be probably even a leaderboard to figure out which embedding models are best for SQL or other types of databases or uh, different languages. Um, so that's one main change we may want to uh, incorporate into the system. You need to make sure that the embedding model that you are using is works. And if you are having SQL, probably the general purpose embedding may not be as good as the ones that are optimized for that. So that's one change. So once you have that, it means that your retrieval piece would be good. Because now whatever the input query is, you can if it's a natural language, you can pass it to a general purpose entity. If it's, uh, if it's a sequel, you can pass it to the same embedding model, get the get the embedding, and then run nearest neighbor and retrieve relevant chunks. Um, the second part is the LLM itself. Most advanced LLMs, like, beginning of LLMs are are trained on lots of different things. For example,
+
+You
+14:40:02
+
+let me see if I can open something.
+
+ByteByteGo
+14:40:05
+
+let me see if I can open something.
+
+ByteByteGo
+14:41:44
+
+Yep. I I cannot open it right now, but, um, but what I wanted to show was that many of the advanced items are not showing any on text item. Trained on, um, other things like codes. Um, sequence, lots of different formats. So if you stick to those elements, they should be able to handle your SQL inputs. So, uh, to summarize my answer to your question, you definitely need to consider changing your embedding model Um, you probably need to switch to a bigger LMM, but you don't need an LMM that is a special specialized for SQL. Probably, if you just switch to big enough element, like, 10,000,000,000 parameters or more, uh, they should be already uh, have capability to deal with with SQL, uh, data. And and just a last question. This would be, like, a safe, right, if we do that. On locally. Right? The way you did it, like, it's not exposed that to outside Yeah. Anything. Yeah. So for example, what we did locally right now, what what we did today was like, it's fully, uh, private. Because I'm loading those open rate models. Nobody has access to my data, and it's it's leaving within my machine. And all models are already loaded. I never sent any of the requests to outside of my machine. So, yes, you can build you can adapt it to your case by replacing them value models, switching to bigger LRMs, But as long as you are keeping it keeping it manageable to run on your machine, uh, then, yes, you can just run it locally. Cool. Thank you so much. Yep. Thanks.
+
+You
+14:41:44
+
+Yep. I I cannot open it right now, but, um, but what I wanted to show was that many of the advanced are not trained you know, text that have been trained on, um, other things like codes, um, sequence, lots of different formats. So if you stick to those elements, they should be able handle your SQL inputs. So, um, to summarize my answer to your question, you definitely need consider changing your embedding model. Um, you probably need to switch to a bigger LLM, but you don't need an LLM that is specialized for SQL. Probably, if you just switch to big enough LLM, like 10,000,000,000 parameters or more, uh, they should be already, uh, have capability. To deal with with SQL, uh, data. And and just a last question. This would be, like, a safe, right, if we do that on uh, on locally. Right? The way you direct, like, it's not exposed up to outside Yeah. Meeting. Yeah. So, for example, what we did locally right now, what what we did today was, like, this fully, uh, private because I'm loading those open rate model nobody has access to my data. It's it's living within my machine. And all models are already loaded. I never send any of the requests to, uh, outside of my machine. So, yes, you can build you can adapt it to your use case by replacing the embedding model, switching to bigger elements. But as long as you are keeping keeping it manageable to run on your machine, uh, then, yes, you can lose money locally. Thank you so much. Yeah. Thanks.
+
+You
+14:42:29
+
+Um, Julian? Uh, I think I have a similar question to the SQL question because in real life, you often have to see through structure, unstructured data. What would your recommendation in terms of, um, the system design would you say you have a sort of a router sort of situation where you have a separate process searching for structured data versus um, the non structured use of the process that we'll we'll already see, or it's mingled. Yeah. So in practice, is is
+
+ByteByteGo
+14:42:30
+
+Uh, Julian? Uh, I think I have a similar question to that simple question because in real life, you often have to see through structure, unstructured data. What would your recommendation in terms of um, the system design? Would you say you have a sort of a router sort of situation where you have a separate process searching for structured data versus um, the nonstructured use of the process that we've we've already seen, or it's mingled. Yeah. So in practice, it's
+
+You
+14:43:31
+
+like, the searching part of retrieval is implemented in a more complex way. Here, we only use the single text um, embedding model. We also used a probably a simple nearest neighbor search. And we also skip entirely skip, um, text based search. In practice, those are usually, um, adopted and the the entire system is, like, hybrid. You not only have text encoder, you have multiple embedding models for text, image, potentially audio or video. Instead of nearest neighbor search, there are more efficient versions like approximate nearest neighbor. Again, depending on how large your knowledge base is, it might be efficient to switch from nearest neighbor exact nearest neighbor to approximate nearest neighbor. Just to be faster. Um, and also in terms of router, I have not seen a router in Retrieval. But it all depends on your use case. Many of the existing
+
+You
+14:44:22
+
+um, applications or products are not open source. So, you know, who knows? They may use some routers within this retrieval to figure out which model should be used. We will actually use this router setup in our last project to get our multimodal agent. Um, but in general, you can use the idea behind router to put it anywhere whenever in any in in scenarios where you are not sure which model is the right model to be used. You can just delegate the task to where after. Got it. So on the conceptual level, so you're from so if the query comes in, what happens if you can have a deterministic secure search to get the answer? Like, do you do a little bit evaluation to see whether this is gonna be a non non deterministic vector.
+
+ByteByteGo
+14:47:08
+
+this like, the searching part of retrieval is implemented in a more complex way. Um, here, we only use a single text, um, embedding model. We also used a, uh, probably a simple nearest neighbor search. And we also skipped entirely skipped, uh, text based search. In practice, those are usually, uh, adopted, and the entire system is, like, hybrid. You do not only have text encoder, you have multiple embedded models for text image, potentially audio or video. Instead of nearest neighbor search, there are more efficient versions like approximate nearest neighbor. Again, depending on how large your knowledge base is, it might be efficient to switch from nearest neighbor exact nearest neighbor to approximate nearest neighbor. Just to be faster. Um, and also in terms of router, I have not seen a router in retrieval. But it all depends on your use case. Many of the existing um, applications or products are not open source. So, you know, who knows? They may use some patterns within this retrieval to figure out which model should be used We will actually use this router set up in our last project to build our multimodal agent. Um, but in general, you can use the idea behind router to put it anywhere whenever in any in any scenarios where you are not sure which model is the right model to be used. You can just delegate the task to a router. Got it. So on the conceptual level, so if, um, so if the query comes in, what happens if, uh, you can have a deterministic secure search to get the answer? Like, do you do a little bit evaluation to see whether this is gonna be a non deterministic of that search with LM, or you just go query. I see. So your question is when there is a query, how should we know whether we should search our embeddings or we should do an exact So yeah. Search. So so that's that's my point. In practice, both are applied. For the exact same reason that you're asking. In practice, we have both vector like, imaging based search and text based search so that if the query is like, if so that if exact text search is a better fit for that particular query, we make sure to retrieve include the retrieve content from text based and has that. So, yeah, both are used. Mhmm. It's difficult to know ahead of it's difficult to implement a mechanism to know at one time which part to route to. Embedded based search or retrieval based like, or text based search. We just use both. Uh, I see. Okay. I mean, it's it is possible. Not not that it's not possible, but there is a trade off. I mean, the simplest way is use an LMM to process the text and figure out which one is good. Uh, but all these are much much faster than using an LLM and going through all that generation and spending computer to figure out which of these are are, uh, are better fit. Um, retrieval is often very fast. Even even embedding based models are very fast because um, this index has already happened offline. Um, so at one time, it's not going to happen happen. All all that needs to happen is use a small embedding model to embed the user's query, and this nearest neighbor is also super fast. It it never it is never a bottleneck. And same goes for and even text based search is even faster. Um, than this. So this entire component is never a bottom leg. There is no point to optimize optimize it too much for efficiency. Yeah. Uh, so now performance is more like, uh, accuracy. Because it's security you the exact. Right? So that's why. Okay. I think I have the answer. In terms of index, you know I know that you mentioned that it's, um, already been taken care of. We don't need to, like, go into depths into the makeup of it. But to use conceptually, like, help me understand that a little better? And number one is like, the indexing, I know that affects the response without quite a bit. If your if your index is more optimal versus not. And then number two is how to understand the index in concept? For example, come from relational database background to, like, you you know how index works. How how this, like, natural database index works? So Mhmm. Sure. So the first question was that how these embedding models are trained. Conceptually.
+
+ByteByteGo
+14:47:14
+
+Right? No. The first question is, uh,
+
+ByteByteGo
+14:47:19
+
+so how the index affect the result. Response performance.
+
+ByteByteGo
+14:48:25
+
+How you indexing your vector database does that have a correlation to the accuracy of the output, for example? I see. So at least for the, uh, like, um, embeddings, the one that we did today, using the same part is a super simple process. If you can think of it as a table, um, with some IDs or rows that shows the which chunk this embedding is coming from. And the vector. So it's just you can think of it as a table. Now the reason that all these face and all these libraries, this because they also adopt some particular data structures um, to make this retrieval process fast. So instead of just simply writing it in a table, they, for example, write they have an in the in inverse index table, They have, um, like, a bunch of other data structures and metadata just to keep things fast. But at the very core, you can think of it as a single as a single table. Does that answer your first question?
+
+ByteByteGo
+14:48:29
+
+So when you run this indexing,
+
+You
+14:48:30
+
+Search with LOM or you just go seek query? I see. So your question is when there is a query, how should we know whether we should search our embeddings or we should do a exact So yeah. Inspection. So so that's that's my point. In practice, both are applied. For the exact same reason that you're asking. In practice, we have both vector like, embedding basis and text based search. So that if the query is like so that if exact text search is a better fit for that particular query, we make sure to retrieve include the retrieve content from text based here as well. So, yeah, both are used. Mhmm. It's difficult to know ahead of it's difficult to implement a mechanism to know at runtime which part to route to. Embedding based search or retrieval based like, or text based search. We just use both. Uh, I see. Okay. I mean, it's it is possible. Not not that it's not possible, but there is a trade I mean, the simplest way is use an LLM to process the text and figure out which one is good. But all these are much much faster than using an LLM. Going through all that generation and spending compute to figure out which of these are are, um, uh, are better fit. Retrieval is often very fast. Even even embedding based models are very fast because um, this index has already happened offline. Um, so at runtime, it's not going to happen All all that needs to happen is use a small embedding model to embed the user's query, and this nearest neighbor is also super fast. It never it is never a bottleneck. And same was for and even text based search is even faster, uh, than this. So this entire component is never a bottleneck. There is no point to optimize optimize it too much for efficiency. Yeah. Uh, so it's not performance. It's more like, uh, accuracy. Because it's secure giving you the exact. Right? So that's fine. Okay. I think I have the answer. In terms of the impact, you know I know that you mentioned that it's, um, already been taken care of. We don't need to like, go into the into the makeup of it. But can you conceptually, like, help me understand a little better And number one is, like, the indexing I know that affects. The response route out quite a bit. If your if your index is more optimal versus not. And then number two is how to understand the index in the concept? For example, it come from relational database background to, like, you you know how index works. How how this, like, natural database index works? So Mhmm. Sure. So the first question was that how these embedding models are trained. Conceptually. Right? No. The first question is, uh, so how the index affect the without response performance. Like, how you index in your vector database? Does that have a correlation to the accuracy of the output, for example? I see. So at least for the, uh, like, uh, embeddings, the one that we did today, this indexing part is a super simple process. If you can think of it as a table, um, it's IDs or rows that shows the which chunk this embedding is coming from and the vector. So it's just you can think of it as a table. Now the reason that all these face and all these libraries is because they also adopt some particular data structures, um, to make this retrieval process fast. So instead of just simply writing, getting table, they, for example, write they have an in inverse index table. They have, um, like, a bunch of other data structures and metadata just to keep things pass But at the very core, you can think of it as a single as a single table. Does that answer your first question? So when you run this indexing,
+
+ByteByteGo
+14:50:35
+
+So, Lisa, I asked you because I know of there's a a Google product that does indexing for you. Right? Yep. So because of that, the there's optimization happened on the index layer. It produced way better accuracy in the end. So I'm kind of I know there's a correlation. I just don't know how that happened. Sure. Um, so, again, it it it depends on a lot of I mean, for example, if you are relying on some external services like what Google offers, Um, so my question is do we have also control over the embedding model? Or no? Because that those can also influence the the quality. If if the company they're using some embedding model and that embedding model is not open source, So, yeah, definitely, it can influence the overall quality. Because if the embedding model is better, the retrieval overall would be better. It can retrieve more relevant chunks. That's one thing. But the main thing is, in general, inefficiency. I mean, the main reason that instead of I just write this in a single table, I rely on phase is because once we scale to millions or billions of chunks, Um, you see simple single table one. Uh, scalable. Um, and the other is the the, um, the user's kit. The scale of request that are coming. I mean, that's another benefit of for example, relying on external services like Google. You no longer have to deal with infrastructure, uh, handling requests, all those things. You can just assume that it's a black box that whenever you have a query, you send it Um, it's never it's almost it's always live. And ready to answer your queries, and you get a very accurate response chunks back. Um, those are the main benefits of using, like, what these companies offer often as, um, like, embedding systems or models.
+
+You
+14:50:35
+
+So the reason I asked you because I know of there's a a Google product that's indexing for you. Right? Yep. So because of that, there's some optimization happen on the investing layer. It produce way better accuracy in the end. So I've been kinda I know there's a correlation. I just don't know how that happened. Sure. Um, so again, it it it depends on a lot of things. I mean, for example, if you are relying on some external services like what Google offers, Um, so my question is do we have also control over the embedding model or no? Because that was can also influence the, uh, the quality. If if the company, they are using some embedding model and that embedding model is not open source. So, yeah, definitely, it can influence the overall quality. Because if the embedding model is better, the retrieval overall would be better. It can retrieve more relevant chunks. That's one thing. But the main thing is, in general, again, efficiency. I mean, the main reason that instead of I just write this in a single table, I rely on phase is because once we scale to millions or billions of chunks, um, the sim simple single table won't, uh, scale well. And the other is the the like, the users, like, the scale of requests that are coming. I mean, that's another benefit of, for example, relying on external services like Google. You no longer have to deal with the infrastructure, uh, handling request, all those things. You can just assume that it's a black box that whenever you have a query, you send it. Um, it's never it's almost it's always live and ready to answer your queries. And you get the very accurate response, uh, chunks back. Um, so Those are the main benefits of using, like, what these companies offer often as um, like, embedding systems or models?
+
+ByteByteGo
+14:52:20
+
+But if you are asking if the quality is only only thing that can influence the quality is the embedding model itself. Got it. Okay. And just put that priority. Um, I think I have one last question about you mentioned about the during the trunking time, there are overlap. That's usually make it better. Why? Like, can you can you explain conceptually? And Yep. Yep. Yeah. And how much overlap? I know how you have to test an error and figure that out. What's what are the best practices? Sure. So the overlap can be helpful in cases where you are very unlucky and you break a chunk in the middle of something very important. Like, you break a test in the middle of something very important. Right? So let's say, for example I mean, this example is not good, but imagine, for example, right between this splitting and up, is when your algorithm would chunk. And let's say there is a let's say, the paragraph as just explaining super important. And if you you are unlucky and chunk it from here, then each chunk is not going to be semantically meaningful anymore. Right? So basically, those two chunks would not be useful just because you were super on the and you chunked it from the very bad place. If you include overlaps, if you are unlucky here, the next chunk would be start from here, from a little bit earlier. So it basically reduces the chance of, um, the chances of splitting from some somewhere that can be uh, for some reason, super bad. And break their meaning workflow. Got it. That makes sense.
+
+You
+14:52:26
+
+But if you are asking about quality, it's only the only thing that can influence the quality is the embedding model itself. Got it. Okay. Thank you for that, Carrie. Um, I think I have one last question about, um, you mentioned about the during the trunking time, there are overlap. That's usually make it better. Mhmm. Why? Like, can you explain conceptually and yeah. And how much overlap? I know how you have to test an error and figure out. Uh, what's what are the best practices? Sure. So the overlap can be helpful in cases where you are very unlucky and you break a chunk in the middle of something very important. Like, you break a test in the middle of something very important. Right? So let's say, for example I mean, this example is not good, but imagine, for example, example, right between this splitting and up is when your algorithm would chunk. And let's say there is a let's say paragraph was just explaining super important. And if you you are unlucky and chunk it from here, then each chunk is not going to be semantically meaningful anymore. Right? So, basically, those two chunks would not be useful just because you were super unlucky and you chunk it from the very bad place. If you include overlaps, if you are unlucky here, the next chunk would be start from here. From a little bit earlier. So it basically reduces the chance of the chances of splitting from software somewhere that can be uh, for some reason, super bad. And break their meaning workflow. Got it. Then this is Was there a follow-up question on this or no? No. Thank you. Okay. Great. Thanks.
+
+ByteByteGo
+14:52:26
+
+Was there a a follow-up question in this or no? No. Thank you. Great. Thanks.
+
+ByteByteGo
+14:55:39
+
+Michelle? Yeah. Hello? Can you hear me? Yes. Yeah. So my question is, uh, with respect to, uh, fine tuning the element. So in the, uh, data learning, there were two methods which we have discussed. One is left and the raft. So in general, right, I mean, which one is superior? In which cases you use that? And in a general production, uh, environment. Right? I mean, so uh, I guess you need GPUs and all that stuff to kind of, you know, do this, uh, fine tuning. So how much of effort that is, and is it something commonly used? Okay. So find unity, yes. It's commonly used in general because there are a lot of cases where a general purpose had a lamp is not good enough. One very popular example is encoding models or coding agents. A general purpose LMM has good understanding about code, but it may not be um, it may not be may not be working super well. It calling making com complex code bases and difficult, um, coding queries. So we fine tune a general purpose element on a lot of coding data. So it it becomes a better coder. So fine tuning is very, very common. For many different use cases. One is what I just explained. The other is when you have a very custom data and you want to tune a model so it's learns that particular thing. So let's say you are working in say, medical domain. You have some data. You want to train a general purpose element to learn that data. So you're fine tune. So fine tuning is common depending on why you are fine tuning and how big your data is. It determines the cost of fine tuning. In general, fine tuning is not costly. Too much. It requires some GPUs, but definitely not as as many GPUs as we need for pre training models. Um, it's also much faster even for the most advanced point of view setups or is supervised point tuning that companies do. It's usually a week or two weeks. It's not it's never more than that. And if you are having a small use case, like few examples on your medical domain and want to fine tune, it can be a day or less than a day. Sometimes, like, twenty minutes And before some image with image, um, text to image, text to video models, fine tuning can be even, like, twenty like, twenty minutes. Like, for example, this stream book paper came from Google. They suggested they to find you a general purpose text to image model to learn a certain subject. So you can just use prompt to place that subject in different, uh, scenes. In order to fine tune this model and use this data, it's just, like, twenty minutes of complete unit. Um, so to summarize, fine tuning is super fast and less requires less compute. Now for the raft, raft is something very specific. Raft idea was proposed just for rag applications. So, basically, what it does, um, let me find the raft.
+
+You
+14:55:39
+
+Nisha? Yeah. Hello. Can you hear me? Yes. Yeah. So my question is, uh, with respect to, uh, fine tuning developments. So in the, uh, graded learning, there were two methods which were discussed. One is pref and, uh, raft. So in general, right, I mean, which one is superior? In which cases you use that? And in a general production uh, environment. Right? I mean, so, uh, I guess you need GPUs and all that stuff. To kind of, you know, do this, uh, fine tuning. So how much of a part that is, and is it something commonly used? Okay. So fine tuning, yes. It's commonly used in general because there are a lot of phases where a general purpose item is not good enough. One very popular example is encoding models. Or coding agents. Uh, a general purpose LLM has good understanding of code, but it may not be, um, it may not be may not be working super well. Right? According to, like, in com complex code bases and difficult, um, coding queries. So we find to you in a general purpose element on a lot of coding data, so it it becomes a better coder. So fine tuning is very, very common for many different uses. One is what I just explained. The other is when you have a very custom data and you want to tune a model so it learns that particular thing. So let's say you are working in, let's say, medical domain. You have some data. You want to train a general purpose element to learn that data. Um, so so you fine tune. So fine tuning is common depending on what your fine tuning and how big your data is. It determines the cost of fine tuning. In general, fine tuning is not costly. Too much. It requires some GPUs, but definitely not as as many GPUs as we need for pre training models. Um, it's also much faster even for the most advanced point tuning set ups or if it's, uh, supervised point tuning that companies do, it's usually a week or two weeks. It's not it's never more than that. And if you are having a small use case, like few examples on your medical domain and you want fine tune, it can be a day or less than a day. Sometimes, like, twenty minutes. I mean, for some image image um, text to image, text to video models, fine tuning can be even, like, twenty, like, twenty minutes. Like, for example, this stream put paper came from Google, They suggested they to fine tune a general purpose text to image model to learn a certain subject. So you can just use prompt to place that subject in different, uh, scenes. In order to fine tune this model and use this data, it's just, like, twenty minutes of compute tuning. Um, so to summarize, fine tuning is super fast and less requires less compute. Now for the raft, raft is something very specific. RAFT idea was proposed just for drag applications. So, basically, what it does let me find a raft.
+
+ByteByteGo
+14:55:52
+
+Do I have raft here? Yes. At the end, I guess.
+
+You
+14:55:53
+
+Do I have rafts here? Yes. At the end, I guess.
+
+You
+14:58:27
+
+Uh, Brass. So Brass is basically a very um, very specific method proposed to train your LN to become good for in rack systems, and that's the only use So if you train something for Raft, um, that can be only useful in in a rack application. And the key idea is to um, so here we have these racks set up. So the key idea is there still might be some noises in this retrieve content. What if we train this element so it can automatically handle and figure out which of these retrieve contents are more, like, noisier or less noisy? Um, so that's the whole idea. These days, it's it's very, like, less common. Because now the entire community moved to our agent AI agents. And agent existence. And agent existence, they automatic automatically they are involved in a in a loop, and they keep reading files retrieving files, figuring and they're also thinking models that think that there are these retrieve content are good or not. So RAST, I I've rarely seen that companies used it in practice. Earlier days, when it was proposed, it was being used, but then, uh, very quickly became kind of, uh, less useful. Okay. Okay. So in in general use case, I mean, since the agenda, uh, thing, I mean, probably we'll be using the normal path based, uh, fine tuning if required. Otherwise, the agents are capable of retrieving the right 100. That's what you're seeing. Yes. The agents, but themselves are not able to retrieve They still need a retrieval. Again, those are the content of this week. But, yes, you you don't need to fine tune for rank, which is raft. You don't need to do that. You simply need to build your agent, and you may still need some retrieval components like encoding agents. Um, but the agents would figure out when to request a tool, when when to read files, when to retrieve, and so on. Oh, okay. Okay. Okay. Okay. And the the support guide, I mean, uh, if we want to fine tune, can I do it with my with my Mac and, uh, luckily, I can do it with some open source server, if I want to try something? Usually not. It depends on the size of the LLM. If the LLM is a small enough, um, and your local machine is powerful, you can fine tune it. Um, But yeah. But only in those scenarios. If you switch to bigger models, like, I think probably anything beyond few billion parameters may not work or low call fine tuning. Um, you know, there are some services, like,
+
+ByteByteGo
+14:58:27
+
+Uh, right. So graft is basically a very uh, very specific method proposed to train your element to become good for in back system. And that's the only use case. So if you train something for raft, that can be only useful in in a RAG application. And the key idea is to um, so here we have this rack set up. So the key idea is there still might be some noises in this retrieved content. What if we train this LMM so it can automatically handle and figure out which of retrieve contents are more, like, noisier or less noisier? So that's the whole idea. These days, it's it's very, like, less common. Because now the entire community moved to our agent AI agents. And agent assistance. And agent assistance, they automatic are involved in a in a loop, and they keep reading files, which files, figuring and they're also thinking models that think better these retrieve content are good or not. So draft, I I've rarely seen that companies used it in practice. Earlier days when it was proposed, it was being used, but then, uh, very quickly became kind of that's useful. Okay. Okay. So in in general use case, I mean, since the identity uh, thing I mean, probably we'll be using the, uh, normal path. Based, uh, fine tuning if required. Otherwise, the agents are capable of retrieving the right content. That's what you're saying. Yes. The agents, for themselves, are not able to retrieve. They still need a retrieval. Again, those are the contact of this bit. But, yes, you you don't need to find you for rag, which is raft. You don't need to do that. You simply need to build your agent, and you may still need some retrieval components, like encoding agents. But the agents would figure out when to request a tool when when to read files, when to retrieve, and so on. Oh, okay. Okay. Okay. Okay. And suppose right? I mean, uh, if we want to fine tune, can I do it with my with my Mac and, uh, locally, I can do it with some offer those other one if I want to try something? Usually not. It depends on the size of the LLM. If the LLM is a small enough, um, and your local machine is powerful, you can fine tune it. But yeah. But only in those scenarios. If you switch to VR models, like, I think probably anything beyond few billion parameters may not work for low quality fine tuning. Um, you know, there are some services, like, team care.
+
+ByteByteGo
+15:00:23
+
+So this is from, uh, the company thinking machine Machines Lab. So the founder was the the lady from OpenAir. And what they are offering is just a training API. So instead of you have you dealing with your own fine tuning or training infrastructure, you just delegate it to them. All you need to do is specify the open rate model, you pass your data, and then they will take care fine tuning your model. And and and yep. So that's also another possibility. Okay. Okay. Got it. Thank you. And one more last question. So it's, uh, with respect to phase. Uh, so it's it's basically, uh, something, uh, lot of the in memory, uh, kind of a vector database. Right? So if I want to kind of, um, store the data Because then otherwise, I need to kind of label the vector DB every time, uh, the application restarts. So is there a way to kind of store it on, uh, permanently and then use it? Yeah. Yeah. Um, I don't remember where, but if you go over advanced topics, they they they fully explain how that's being handled. You can see here the use cases are also, like, indexing 1,000,000,000,000 vectors. Uh, and in many of these cases, you have to, uh, write somewhere and then go again. Different or different ways. Um, but, yeah, can you can take a look at these and text screens and answers your question. Okay. Uh, great. Thank you. And, uh, ask somebody asked if you can I mean, if you can share the standard tools which is used in production environment, I mean, that would be great? Sure. Because, uh, people are talking about the elastic uh, as a vector DB and things like that. So lot of confusion around that area. So yeah. That's a problem. Yeah. Of course. Thanks. Um, next question, Mohan.
+
+You
+15:00:24
+
+um, skin care. Alright. Thank you. This is from the company thinking machine Machines Lab. Um, so the founder was the the lady from OpenAI. And what they are offering is just a training API. So instead of you you have you dealing with your own fine tuning or training infrastructure, we just delegate it to them. All you need to do is you specify the open rate model, you pass your data, and then they will take care of finding your model and and, um, and yeah. So that's also another possibility. Okay. Okay. Got it. Thank you. And one more last question. So it's, uh, with respect to phase. Uh, so it's it's basically something, uh, lot of the in in memory, uh, kind of a that database. Right? So if I want to kind of um, store the data, uh, because in other words, I need to kind of label the DB every time, uh, the application restart. So is there a way to kind of store it on, uh, permanently and then use it? Yep. Yeah. Um, I don't remember where, but if you go over the advanced topics, they they they fully explain how that's been handled. You can see here the use cases are also, like, indexing 1,000,000,000,000 vectors. Uh, and in many of these cases, you have to, uh, write somewhere and then load them, uh, different or different days. Um, but yeah. You can you can take a look at this and it explains and answers your question. Okay. Great. Thank you. And, uh, as somebody asked, if you get I mean, if you can share the standard tools which is used in production environment, I mean, that would be great. Got it. Because people are talking about elastic, uh, aspect or DB and things like that. So lot of confusion around that area. So that's what I'm providing. Yeah. Of course. Thanks. Um, next question, Mohan.
+
+ByteByteGo
+15:01:42
+
+Yeah. Uh, can you hear me? Yes. Okay. So, uh, my question is, um, um, can we use, uh, any existing, uh, knowledge base Uh, let's say, um, let's say for a project management tool, and then, uh, entirely, uh, just using the rack. Can we, um, view answer to the question with uh, text, images, and video meeting? Uh, if some of the user ask, okay. How to do this particular thing? Like, how to migrate from one system to another system? Some something like that. And then, uh, can we use it just in the, uh, drag and then, uh, give the answer to the user with the text and then, you know, step by step image as well as, you know, like a video, um, So is that possible? Uh, and then my next question is, like, if not, uh, what are the, uh, other ways? Yeah. So yeah. It it is possible. So just to make sure I understand your question, you are asking what if we want to we have a knowledge base of different modalities, including text, image, videos. And we want to also retrieve those whenever appropriate. Even the question. Right? Correct. Yeah. Yes. It is possible. So let's say your knowledge store has, um,
+
+You
+15:01:42
+
+Yeah. Uh, can you hear me? Yes. Okay. So, um, my question is, can we use, uh, any existing, uh, knowledge base Uh, let's say, um, let's say, for a project management tool, and then, uh, entirely, um, just using the rack. Can we, um, view answer to the question with uh, text, images, and video meeting? Uh, if some user ask, okay, how to do this particular thing, like, how to migrate from one system from the system, some something like that. And then, uh, can we just entirely drag and then, uh, give the answer to the user with the text and then, you know, step by step image. As well as, you know, like a video, So is that possible? Uh, and then my next question is, like, if not, uh, what are the, uh, other ways? Yeah. So yeah. It it is possible. So just to make sure I understand your question, you are asking what if we want to we have a knowledge base of different modalities, including text, image, videos, and we want to also retrieve those whenever appropriate. Event question. Right? Correct. Yeah. Yes. It is possible. So let's say your knowledge store has, um,
+
+ByteByteGo
+15:01:48
+
+Sorry. Let me find this.
+
+You
+15:01:49
+
+Sorry. Let me find this.
+
+You
+15:03:03
+
+Okay. Maybe here. So let's say let's say your knowledge is stored. Not like, document database has PDFs, lots of different text. Products, and also some in other modalities, like assets in other modalities. Like, three d data, um, images, videos, potentially audio. So what you need to do is you need to also index them as well. Um, for text and image, it's simpler because there are lots of models that are trained embedding models that are trained and they have a shared embedding space. So you can use, for example, clip You can use the same model to embed both your images and text. Um, for videos, it can be um, a bit more additional work required. But often, this is this is what you need to do. This is the common workflow that you need First, you need to make sure that you can you embed them. For videos, audio, for almost any modality, there are some embedding models that are trained for that purpose. You just need to search, like, video embedding models. And usually, you see a bunch of, uh, models that are doing that for you, like VLAN, to back, and so on. Um, same goes for audio content.
+
+ByteByteGo
+15:03:04
+
+Okay. Maybe here. So let's say let's say our knowledge is or not, like, document database has PDFs, lots of different text. Products, and also some in other modalities, like assets in other modalities. Like, three d data, um, images, videos, potentially audio. So what you need to do is you need to also index them as well. Um, for text and image, it's in here. Because there are lots of models that are trained embedding models that are trained and they have a shared embedding space where you can use, for example, clip. You can use the same model to embed both your images and text. Um, for videos, it can be a bit more additional work required. So but often, this is this is what you need to do. This is the common work that you need to do. First, you need to make sure that you can you embed them. For videos, audio, for almost any modality, there are some embedding models that are trained for that purpose. We just need to search, like, video embedding models. And usually, you see a bunch of, uh, models that are doing that for you, like BLM, two bake, and so on. Um, same goes for audio content.
+
+You
+15:03:09
+
+Audio and many models are lots of embedding models for audio.
+
+ByteByteGo
+15:03:09
+
+Audio and many models. There are lots of embedding models for audio.
+
+ByteByteGo
+15:03:19
+
+So that's the first step. You index them. With different embedding models. Now when there is a
+
+You
+15:03:20
+
+So that's the first system. You index them with different embedding models. Now when there is a
+
+ByteByteGo
+15:03:24
+
+um, let me think.
+
+You
+15:03:25
+
+let me think.
+
+ByteByteGo
+15:04:03
+
+Okay. So I have to step back. I changed my mind. Um, so that's one way. It might be more complex, but there is a simpler way. Um, for example, when you have audio, you can first convert audio or generate some caption for the audio. There are also models to do that. Um, like audio to caption. Or potentially, you can go from audio to transcript and from transcript to the summarized caption. Audio to caption might have There are there are models to to do that for you.
+
+You
+15:04:22
+
+Okay. So I have to step back. I changed my mind. Um, so that's one way. It might be more complex, but there is a SIM survey. Um, for example, when you have audio, you can first convert audio or generate some captioning for the audio. There are also models to do that. Um, like audio to caption. Or potentially, you can go from audio to transcript and from transcript to the summarized caption. Audio to caption models. There are there are models to to do that for you. Or you can do video captioning model. Potentially, you can use some elements also that support this. But there are models that create caption from audio, video, and different models. And once you have the caption, you can use the same text embedding to index them. That's probably the most straightforward way. If you which is here, we had it here.
+
+ByteByteGo
+15:04:22
+
+Or you can do video captioning model. Potentially, you can use some elements also that support this. But there are models that create caption from audio video and different modalities. And once you have the caption, you can use the same text embedding to index them. That's probably the most straightforward way. If you which is here. We had it here.
+
+You
+15:04:36
+
+We had we had it here. So you can do this to embed different modalities and use the same stick to the same text and menu.
+
+ByteByteGo
+15:05:12
+
+We had we had it here. So you can do this to embed different modalities and use the same stick to the same text embedding. Um, and after retrieval, if somehow the retriever believes that this vector is good, you can then you can map the vector to the original content, which is a video and return those videos. I have using models to embed videos which is more expensive for audio, especially video, is less common. For example, YouTube, I at least until the theaters, ago, I know YouTube was also using text to handle a lot of searches. So when you type something,
+
+ByteByteGo
+15:05:37
+
+um, it it relies their system relies on the transcript or some captions. I don't know how the system work, but I know that, uh, it relies on text based um, kind of setup to figure out which videos are relevant to you. So, yeah, that's probably the most straightforward. Embedding models for videos, audios, they can be expensive, and there are some other challenges that um, I I think it makes it more complex.
+
+You
+15:05:38
+
+Um, and after retrieval, if somehow the retriever believes that this vector is good, you can you can map the vector to the original content, which is a video, and return those videos. Um, I have using models to embed videos is more expensive, or audio, especially video, is less common. For example, YouTube, I I've least until a few years ago, I know YouTube was also using text. To handle a lot of searches. So when you type something, um, it it relies their system relies on the transcript or some captions. I don't know how the system works, but I know that. Um, it relies on text based, uh, kind of setup. To figure out which videos are relevant to you. So, yeah, that's probably, yeah, most straightforward. Embedding models for videos, audios, they can be expensive, and there's some other challenges that um, I I think it makes it more complex.
+
+ByteByteGo
+15:06:41
+
+Okay. So instead of, uh, like, directly, uh, uh, using the video of the input, uh, we can convert into text And then, uh, based on that, uh, we can point out the to the video. Also, you need to do trunking if the videos are long. And the way the trunking works for videos is basically you go from video to the transcript. From the transcript, you chunk it. And then each tran each chunk transcript, you can either embed that or convert or generate a caption from it and embed it. Um, or use some models and and break the video into smaller chunks and then use that captioner to caption each chunk. Uh, basically, it depends on how you want to do this. There are lots of different ways If you want to go from video to transcript and from transcript to to, um, captions, or you want to directly go from the video to captions using some captioning models. Um, depending on how you do it. But the important thing is for video, you often need to do um, take care of the trunking. So you don't want to embed the entire video into a vector.
+
+You
+15:06:41
+
+Okay. So instead of, uh, like, directly, uh, using the video game, but uh, we can convert into text. And then, uh, based on that, uh, we can point out the the video. Also, you need to do chunking if the videos long. And the way the chunking works for videos is basically you go from video to the transcript. From the transcript, you chunk it. And then each each chunk transcript, you can either embed that or convert or generate a caption from it and embed it. Or use some models and and break the video into smaller chunks and then use that captioner to caption each chunk. Uh, basically, it depends on how you want to do this. There are lots of different ways. If you want to go from video to transcript and from transcript to to, um, captions, or you want to directly go from the video to captions using some captioning models. Um, depending on how you do it. But the important thing is for video, you often need to do, um, take care of the chunking. So you don't want to embed the entire video. Into a vector.
+
+ByteByteGo
+15:06:56
+
+Okay. And and, uh, my follow-up question is, like, is is is there is any uh, other methods, uh, you know, like, instead of rack, can we use, like, other methods to to the same, uh, thing?
+
+ByteByteGo
+15:07:56
+
+Um, I think drag is probably the best fit. For this kind of use case. I mean, anything that at its core is related to retrieval, it's always good to have that retrieval component. For example, in search and recommendations, retrieve retrieval is still the most, um, like, the best fit to, um, to power those systems. So it's used. Um, for this app for this setup that you are asking, whenever you have a bunch of data, videos, docking documents, audio, images, and you want to find the most relevant, um, content to certain query, pretty sure what is probably the best choice. You know, you can you can always use an element, but, again, the whole thing is the accuracy and the efficiency. Element expensive, and they're not specialized for that. They are just specialized to answer questions or generate next tokens, not not, um, uh, retrieving or not finding the most similar content.
+
+You
+15:08:50
+
+Okay. And and, um, my follow-up question is, like, is is is there is any, uh, other methods uh, you know, like, instead of RAC, can we use, like, other methods to achieve the same? Thing? Um, I think Rag is probably the best fit for this kind of use case. I mean, anything that at its core is related to retrieval, it's always good to have that retrieval component. For example, in search and recommendations, retrieval is still the most, um, like, the best fit to, um, to power those systems. So it's used. Um, for this app for this setup, that you're asking, whenever you have a bunch of data, videos, documents, documents, audio, images, and you want to find the most relevant um, content to certain query, retrieval is probably the best choice. You know, you can you can always use an LLM, but, again, the only thing is the accuracy and the efficiency. LLMs are more expensive, and they're not specialized for that. They are just specialized to answer questions or generate mixed tokens. Not not, uh, retrieving or not finding the most similar content. Oh, okay. Got it. So, um, so just to, uh, something summarize your part, so, uh, for the requirement I have, which is better to use RAC, uh, and then, you know, like, make what were the knowledge base, text to video, and audio images, everything into, uh, chunks and then it import it. Uh, and then finally, uh, we can use that, uh, you know, like, rack for several of them to give the proper answer to the Yeah. Say that, Pierre. That's probably the best workflow that would work for that use case. Also, to go from audios, if that's part of your use case as well, to go from audio to to the transcript, there are models out there. Uh, Mhmm. Go ahead. Three TTS came out recently, uh, January 22, ten days ago. And on a lot of benchmarks, it's working quite well. So if you want to, um, use this, you can use this. But there are also other APIs like OpenAir. I think they have this one.
+
+ByteByteGo
+15:08:51
+
+Oh, okay. Got it. So, uh, so just to sum summarize your part, it so uh, for the requirement I have, it is better to use RAC and then, you know, like, make whatever the knowledge based text and video and audio. Uh, images, everything into uh, chunks and and and then finally, we can use, uh, you know, like, to give the proper answer to the Yes. Exactly. Yeah. That's probably the best workflow that would work for that use case. Also, to go from audios, if that's part of your use case, as well to go from audio to to the transcript, there are models out there. Point three t t s came out recently, um, January 22, ten days ago. And on a lot of benchmarks, it's working quite well. So if you want to, um, use this, you can use this. But there are also other APIs like OpenAir. I think they have this pair.
+

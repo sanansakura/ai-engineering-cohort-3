@@ -1,0 +1,300 @@
+You
+13:17:08
+
+Loader, and then we pass the list of URLs.
+
+ByteByteGo
+13:17:15
+
+loader, and then we pass the list of URLs. And now we just need to load it. So if I do products,
+
+You
+13:17:16
+
+Now we just need to load it. So if I do products,
+
+You
+13:17:19
+
+two equal loader dot load,
+
+ByteByteGo
+13:17:20
+
+two equal loader dot load,
+
+You
+13:17:51
+
+It should work. So for now, I'm going I'm not going to implement this callback. It's just here for the it's just always the best practice depending on your use case. So in case something goes wrong, if you may want to use a different package or you want to fall back to you want to fall back to something, um, that makes sense given the workflow of your application. But it's always good to have some fallback, you know, so just to keep that behavior constant. Consistent and predicted. Um, so if I run this now, it says web page failed.
+
+ByteByteGo
+13:17:52
+
+It should work. So for now, I'm going I'm not going to implement this fallback. It's just here for the it's just always the best practice depending on your use case. So in case something goes wrong, if you may want to use a different package or you want to fall back to you want to fall back to something, um, that makes sense given the workflow of your application. But it's always good to have some feedback, you know, so just to keep that behavior consistent. And predicted. Um, so if I run this now, it says web page failed.
+
+ByteByteGo
+13:18:20
+
+The library was
+
+You
+13:18:21
+
+The library was
+
+You
+13:19:04
+
+Looks like you imported on structured. URL loader instead. Oh, yeah. Yep. Thanks. Um, let me see if I can also import that. If not, I'm going to switch to that.
+
+ByteByteGo
+13:19:04
+
+Looks like you imported on structured. URL load instead. Oh, yeah. Yep. Thanks. Um, let me see if I can also import that. If not, I'm going to switch to that.
+
+ByteByteGo
+13:19:11
+
+Okay. It seems it's it's fine now.
+
+You
+13:19:13
+
+Okay. It seems it's it's running now.
+
+ByteByteGo
+13:19:41
+
+Yeah. Anyway, this is running in general, there there are different packages. Um, for example, the u unstructured URL loader was what speed initially So that can be also potentially used to load the the, uh, the URLs. Great. So now we load it. That's the parsing part. Now we need to chunk it. There are also different ways and different algorithms to chunk.
+
+You
+13:21:02
+
+Yep. Anyway, this is running, but in general, there there are different packages. Example, the unstructured URL loader was what we initially So that can be also potentially used to load the the, uh, the URLs. Great. So now we load it. That's the parsing part. Now we need to chunk it. There are also different ways and different algorithms to chunk documents. If you search land train for text splitters, uh, this comes up, and then it says text splitters break large dots into a smaller chunks that will be retrievable individually. So this is exactly what we want. And there are different algorithms. Uh, here, they are mentioning they have LAND based So these are covered in the guided learning. So length length based is the simplest way but there are problems because you may you may, um, break the document in places where it's that's not ideal. It's breaking the flow or the meaning of the sentences. Um, there are also document structure based. So in this project, we gonna use the recursive character text splitter. It's basically starting from the um, largest semantically coherent chunks And then if that's beyond the defined chunk size, it would just split them into a smaller, uh, meaningful pieces. For example, if it's paragraphs, and it's more than 100 turns, it would break it into smaller sentences. So it keeps doing that until it meets the chunk size requirement. You can see the explanation here. You can read the explanation here. But, basically, in order to use that, we can use this and then specify chunks and chunk overlap. And then we've we've covered this the overlap and
+
+ByteByteGo
+13:21:02
+
+Documents. If you search the time chain for text splitters, um, this comes up. And then it says, case as splitters break large docks into smaller chunks that will be retrievable individually. So this is exactly what we want. And there are different algorithms. Uh, here, they are mentioning they have length based So these are covered in the guided time. So length length based is the simplest way but there are problems because you may you may, um, break the document in places where it's that's not ideal. It's breaking the flow or the meaning of the sentences. Um, there are also document structure based. So in this project, we're gonna use the recursive character Texas splitter. It's basically starting from the, um, largest semantically coherent chunks. And then if that's beyond the defined chunks size, it would just split them into a smaller uh, meaningful pieces. For example, if it's paragraphs and it's more than 100 chunks, it would break it into smaller sentences. So it keeps doing that until it meets the transcribed requirement. Um, and you can see the explanation here. You can read the explanation here. But, basically, in order to use that, we can use this and then specify chunk size and chunk overlap. And then we've we've covered this, the the overlap and, uh,
+
+You
+13:21:21
+
+is here. So in the guided learning, you can see the example. But based on the chunks, so it's an overlap, some of these chunks would have overlap. Um, it turns out to work better when they are having some overlap between chunks. So we are going to do the same. Um, I'm going to use this recursive
+
+ByteByteGo
+13:21:23
+
+is here. So in the guided learning, you can see the example. Based on the chunks, there is an overlap. Some of these chunks would have overlap. Um, it turns out to work better when they are having some overlap between chunks. Um, so we are going to do the same. Um, I'm going to use this recursive
+
+You
+13:21:26
+
+um, text splitter.
+
+ByteByteGo
+13:21:27
+
+um, takes this video.
+
+ByteByteGo
+13:21:34
+
+And then I as I get the chance, I would just append everything in this list. I would keep it in this list.
+
+ByteByteGo
+13:21:38
+
+It was recursive.
+
+You
+13:21:43
+
+And then I as I get the chance, I would just append everything in this I would keep it in this list. So it was recursive correct, text speeder. Chunk size,
+
+ByteByteGo
+13:22:05
+
+Character text splitter, chunk size, I'm going to set this to 300, um, to but this is something that in general we might we may want to experiment Once we have an evaluation set up and, uh, we have the entire system ready, we keep changing this to see what works best for our use case. Uh, but for now, I'm going to use these default values. I'm going to call this a Texas platter object.
+
+You
+13:22:09
+
+I'm going to set this to 300, um, to but this is something that in general we might we may want to experiment Once we have an evaluation set up and, uh, we have the entire system ready, we keep changing this to see what works best for our users. But for now, I'm going to use these default values I'm going to call this a Texas Twitter object. And then chunks equal
+
+You
+13:22:14
+
+Texas filter dot split documents.
+
+ByteByteGo
+13:22:15
+
+And then chunks equal Texas splitter dot split documents.
+
+ByteByteGo
+13:22:43
+
+Raw docs. So products, we already we already saw their products. Those are basically the parts PDFs, and each item is a document object. Since we are sticking to one framework, in this case, lang chain, it's already implemented with that, um, to software tools. So Texas meter is lang chain's object. So split documents expect, uh, a list of document options. Now if I
+
+You
+13:22:43
+
+Raw docs. So products, we already we already saw their products. Those are basically the parsed PDFs, and each item is a document object. Since we are sticking to one framework, in this case, blockchain, it's already implemented with that uh, to support those. So Texas Twitter is nine chains object. So split documents expect, um, a list of document options. Now if I
+
+You
+13:22:51
+
+now if I, um, print this, this should work. It's going to print
+
+You
+13:22:56
+
+let me first transfer it.
+
+ByteByteGo
+13:22:57
+
+now if I, um, print this, this should work. It is going to print let me first transfer it.
+
+ByteByteGo
+13:23:12
+
+Products, for some reason, is um, empty. Perhaps because we ran it on the UX. So let me rerun this again.
+
+ByteByteGo
+13:23:16
+
+You had an error in, uh, two. Right? In the
+
+You
+13:23:20
+
+Products, for some reason, is not empty, perhaps because we ran it on the UX. So let me rerun this again. I have an error in, uh, two. Right? In the two dot one, you had an error in the raw logs two two should have been done there.
+
+ByteByteGo
+13:23:36
+
+In the exception part road logs two. Oh, yeah. Yeah. Yeah. Yeah. Okay. Yeah. So this is where it was. Um, empty email this time. Thanks. So now their products is good. It has our PDFs. I can run this to get the chunks. So now we have 42 chunks.
+
+ByteByteGo
+13:23:41
+
+If I print a single chunk, let's see how it looks like.
+
+You
+13:23:43
+
+In the exception part, raw docs two. Oh, yeah. Yeah. Yeah. Yeah. Okay. Yeah. So this is where it was. Um, empty in the listing. Yeah. Thanks. So now the products is good. It has our PDFs. I can run this to get the chunks. So now we have 42 chunks. If I print a single chunk, let's see how it looks like.
+
+You
+13:24:00
+
+So it's still the same object, documents. It's just the the smaller chunks. If if we go into the content, you'll see it starts from somewhere. It ends somewhere. So this one is the first one, so it starts from the beginning. But if I print, like, fourth,
+
+ByteByteGo
+13:24:13
+
+So it's still the same object documents. It's just the the smaller chunks. If if we go into the content, you'll see it starts from somewhere. It ends somewhere. So this one is the first one, so it starts from the beginning. But if I print, like, fourth um, it is starting from somewhere. The content of this one, it starts from hand, uh, custom, whatever. So we have chunks ready as well.
+
+You
+13:24:13
+
+it is starting from somewhere. The content of this one, it starts from end, um, custom water. So we have chunks ready as well.
+
+You
+13:24:20
+
+That's here.
+
+ByteByteGo
+13:24:20
+
+Back here.
+
+You
+13:25:16
+
+Okay. We have 42 chunks now. The next part is to do the indexing. And this is where there are different options. In general, we have um, vector based, which is very common. We have also, like, text based, um, story. So we store the text content, and then later we use some search algorithms to match the text, like exact match or partial matches. Um, in practice, I see often they are hybrid. So companies use both because each of these are working well in certain cases. Vector based are good vendor. Um, queries are more vague. Or, like, semantically complex. Keyword is really good when the user has very specific question or if it's using some um, names or IDs or brands or things like that, which um, keyword search works better. But anyway so in this case, we are going to now convert these chunks
+
+ByteByteGo
+13:26:31
+
+Okay. We have 42 chunks now. The next part is to do the indexing. And this is where there are different options In general, we have, um, vector based, which is very common. We have also, like, text based, um, story. So we store the text content, and then later we use some search algorithms to match the text like, exact match or partial matches. Um, in practice, I see often they are hybrid. So companies use both because each of these are working well in certain cases. Vector based are good when the, um, queries are more vague. Or, like, semantically complex. Um, keyboard is really good when the user has very specific question or if it's using some, um, names or IDs or brands or things like that, which um, keyword search works better. But anyway, so in this case, we are going to now convert this chunks into vectors. And our models made for this. And they are called embedding models. Embedding models are just trained such that when you pass singular inputs, first, they're made such that when you pass a text, it converts sending to a embedding into a high dimensional vector. Um, so you can think of so you can think of it as whatever your input is, it would be mapped into a high dimensional embedding space. So each chunk would be a point in this high dimensional embedding space. And then the property of embedding models is that the way that they're trained, it ensures that if you pass two inputs that are similar in their meaning, they will be mapped nearby in that embedding space. And this is a really good property because it allows us to search. So if we use one of these models to map all our chunks into this embedding space, later, when there is a query, we can use the same embedding model to map the query into the same space. And then depending on where it's mapped, we can run a nearest neighbor search. To extract all the nearby, um, um, vectors. And then each vector corresponds to one chunk. So we can easily retrieve relevant chunks given an input query. So let's do that.
+
+You
+13:26:32
+
+into vectors, and there are models made for this. And they are called embedding models. Embedding models are just trained such that when you pass similar inputs, first, they are made such that when you pass a text, it converts them into embedding. Into a high dimensional vector. Um, so you can think of so you can think of it as whatever your input is, it would be mapped into a high dimensional embedding space. So each chunk would be a point in this high dimensional embedding space. And then the property of embedding models is that the data they are trained, it ensures that if you pass two inputs that are similar in their meaning, they would be mapped nearby in that embedding experience. And this is a really good property because it allows us to search So if we use one of these models to map all our chunks into this embedding space, Later, when there is a query, we can use the same embedding model to map the query into the same space. And then depending on where it's mapped, we can run a nearest neighbor search to extract all the nearby um, vectors. And then each vector corresponds to one chunk. So we can easily retrieve relevant chunks given an input query. So let's do that.
+
+ByteByteGo
+13:26:53
+
+So the first part part is the embedding models. There are lots of embedding models, um, If I search and there are also, like, lots of layers. That support MA models. I think I have some open here.
+
+You
+13:26:56
+
+So the first part part is the embedding models. There are lots of embedding models. If I search and there are also, like, lots of layers at support in many months. I think I have some open here.
+
+You
+13:28:16
+
+So, Lancashire, this is the embedding model's page. Basically explains what what it is, why it's useful, and so on. But it allows you to also use them. And then it has lots of it supports lots of different packages. Um, so that's one way that we can use embedding models. The other way we can use embedding models is just simply to go hug uh, go to hugging face and figure out where the embedding models are stored. And similar to what we saw last time, we can just import it. And, um, depending on which model we want to use to load the model, and then use it to encode inputs. In this case, this example, it's showing that some sentences, once the model is loaded, we can call in code, pass the sentences, we get the embeddings. And the shape of the embeddings, in this case, is three by three eighty four. So what that means is that there are three like, we have three input sentences, so the output has three different embeddings, and then each embedding is of size three eighty four. So, basically, it's mapping these sentences into a um, a very high dimensional embedding space, and the dimension is zero eight four. Uh, three eight four. Um, and if you print this, these are just numbers. It's just meaningful when in that embedding space. So the the distances are um, meaningful between different queries.
+
+ByteByteGo
+13:28:22
+
+So line chain, this is the embedding models page. It basically explains what what it is, why it's useful, and so on. But it allows you to also use them. And then it has lots of it supports lots of different packages. Um, so that's one way that we can use embedding models. The other way we can use embedding models is just simply to go hide, uh, go to hiding phase. And figure out where the embedding models are stored. And similar to what we saw last time, we can just import it and, um, depending on which model we want to use to load the model, and then use it to encode inputs. In this case, this example, it's showing that some sentences, once the model is loaded, we can call in code, pass the sentences, we get embeddings. And the shape of the embeddings, in this case, is three by three eighty four. So what that means is that there are three like, we have three input sentences. So the output has three different embeddings. And then each embedding is of size three eighty four. So, basically, it's mapping these sentences into a, uh, a very high dimensional embedding space. And the dimension is zero eight four, uh, three eight four. Um, and if you print this, these are just numbers. It's just meaningful when in that embedding space. So the the distances are, um, meaningful between different queries. So that's mostly it about many models.
+
+ByteByteGo
+13:28:45
+
+And then line chain and audio pairs has those. Once you pick a model, you can um, on Huddl phase, there are always a button here you can click and see how to use it. Um, in our case, we are going to stick with, uh, with, um, with line chain. So go going back to the project,
+
+You
+13:28:46
+
+So that's mostly it about embedding models. And the lang chain and holoencace as those Once you pick a model, you can, um, on Huddl phase, there are always button here you can click and see how to use it. Um, in our case, we are going to stick with with, um, with blockchain. So go going back to the project,
+
+ByteByteGo
+13:28:49
+
+I'm going to remove this.
+
+You
+13:28:49
+
+I'm going to remove this.
+
+ByteByteGo
+13:29:07
+
+Mida. Um, sentence transformer embedding. This is already important from before. And then we just need to pass some model name to it. And then this one, I have it here.
+
+You
+13:29:08
+
+Em, model. Um, so sentence transformer embeddings. This is already important from before. And then we just need to pass some model name to it. And then this one, I have it here.
+
+ByteByteGo
+13:29:30
+
+So this is a very small model, like, small, lightweight model. Um, so I'm running this so we can run it. But in general, if it's not good enough, after evaluation, you may need to, um, switch to better bigger models. So let's load this and print this. See if it's working.
+
+You
+13:29:33
+
+So this is a very small model, light small, light at not lightweight model. Um, so I'm running this so we can run it. But in general, if it's not good enough, after evaluation, you may need to, um, switch to better, bigger models. So let's load this and put this see if it's working.
+
+ByteByteGo
+13:29:37
+
+It takes some time to load the model.
+
+You
+13:29:39
+
+It takes some time to load the model.
+

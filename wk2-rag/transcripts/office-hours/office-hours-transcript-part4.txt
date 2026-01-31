@@ -1,0 +1,300 @@
+ByteByteGo
+23:59:49
+
+Yeah. That's it.
+
+You
+23:59:49
+
+Yeah. That's it.
+
+You
+23:59:59
+
+The reason for that is because mostly, which is not the bottleneck from which was our very fast compared to the other generation. I think the reason for that is because mostly, which is not the bottleneck from which was our very fast compared to the other generation.
+
+ByteByteGo
+00:00:28
+
+You generally don't mind if you send, like, some, uh,
+
+You
+00:00:29
+
+You generally don't mind if you send, like, some, uh,
+
+You
+00:01:08
+
+Again, I have not seen that it it just it just
+
+ByteByteGo
+00:01:09
+
+Again, I have not seen that it it just just a completely
+
+You
+00:01:12
+
+gonna I'm gonna give you a thought for the for the
+
+ByteByteGo
+00:01:14
+
+find the bug, anything, uh, the code.
+
+You
+00:01:31
+
+No. I do that. Okay. Promptaching is the best thing to save cost on those kind of things.
+
+ByteByteGo
+00:01:45
+
+A new prompt to the mother, um, equals to a cache. And if, um, if the prefix of some
+
+ByteByteGo
+00:01:52
+
+specific idea from action you send you have a prompt, and then it it sees if there's a
+
+ByteByteGo
+00:01:57
+
+prefix of it, it's already been cached before, and if that's the case, you know your preference on the package.
+
+You
+00:02:04
+
+It goes to a cache, and if, um, it is a prefix of some, um, basically, if it has some, like, so, basically, the idea is in production, you send you had a prompt, and then it it sees if there is a a prefix of it, it's already been cached before, and if that's the case, it no longer becomes a catalyst. Um, if you want to understand the details of the other them has a nice prefetching, um, content here. It did explains how it divides the prompting to blocks
+
+ByteByteGo
+00:02:20
+
+Perfect stand. Content here. It explains how it divides the property to plus, and then it caches in. So whenever you send any prompt, if it hits cache and it report or the credit software prompt into cache, you will just use those calculations. We use instead of calculating them. So here, this is the open ID, prompt caching bit. And I think somewhere, they mentioned that this can save up to 80 or 90% of your tokens. So by
+
+You
+00:02:21
+
+just use those calculations instead of calculating everything. Um, So here, this is the OpenAI Compression guide. And I think it's on there. Mentioned that this can save up to 80 or 90% of your tokens. So I would suggest you to do it.
+
+You
+00:02:28
+
+And
+
+You
+00:02:36
+
+What happens when, uh, the top k is not having the exact or some some technical
+
+You
+00:02:37
+
+issue is.
+
+ByteByteGo
+00:02:38
+
+look for top k, uh, percentage of the data and then, uh, send you element and then the data is coming. What happens when, uh, the top a is not having that or something, the is that you're looking for. Mhmm. Go and resolve the issues.
+
+You
+00:03:01
+
+Back to your question. Uh, let me so is here. So you're right. There might be cases where when there when you reach with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with with
+
+ByteByteGo
+00:03:02
+
+Let me so is here. So you're right. There might be cases where when when when you reach me,
+
+ByteByteGo
+00:03:11
+
+let me see if so I'm gonna check something top k 19.
+
+You
+00:03:11
+
+let me see if sorry. One. Let me check something. Top k land chain.
+
+ByteByteGo
+00:03:32
+
+You should choose the right maximum distance, um, such as if there are some discrete contents, they are good enough
+
+You
+00:03:33
+
+Right? That is not if you can if you should choose the right maximum distance, um, that if there are some
+
+ByteByteGo
+00:03:39
+
+that if there are some retreat contents, they are close enough. They are close enough for the embedding to query such that you are it's very like an iterative. But that makes sense for you. So so
+
+ByteByteGo
+00:03:44
+
+the two, um, partners that is specified for your. Right? Why is that your key?
+
+You
+00:03:46
+
+So so there are two, um, parameters I have to specify for your setup. Right? What is the value of and
+
+ByteByteGo
+00:04:07
+
+So that's one way you can fix Photoshop. You
+
+You
+00:04:16
+
+So that's one way you can fix. You evaluate your setup. It's different values okay in the topic and see what works out. The other rate is based on the distances of in the many cases. So when there's a query, let's say, the query is what is your finalize. Right?
+
+ByteByteGo
+00:04:18
+
+out. The other way is based on the distances of in the. So when there's a query, let's say, the query is what is your. Right?
+
+You
+00:04:19
+
+Gets
+
+You
+00:04:35
+
+So you say that if the distance of nearest nearest far uh, more penetrative, you do not receive that. Right? So what works best in practice is a hybrid approach. You can publish by default, let's say, you extract or retrieve the top 10 or 20, no single chunks.
+
+ByteByteGo
+00:04:36
+
+So you say that if the distance of near neighbors are uh, more beneficial, you do not reach even. Right? So what works best practice is hybrid approach. You can follow it by default. Let's say you extract or retrieve that 10 or 20 single chunks. And then you go ahead and drop the ones
+
+You
+00:04:38
+
+So
+
+ByteByteGo
+00:04:47
+
+not relevant or relevant compared to the query. Yep. Makes sense? Yep.
+
+You
+00:04:48
+
+Yep. Makes sense? Yep. Uh, uh, these are I think we know I was going through. I
+
+You
+00:05:11
+
+Yeah. It's it's very common in my I research, um, especially in search systems. So let's say you want to have your search system to find similar videos.
+
+ByteByteGo
+00:05:24
+
+Exact search exact text.
+
+You
+00:05:25
+
+Exact matches to the to the item of the video or parts that are more to be more sense to be sure based on the exact search exact text. Um, but usually, the
+
+You
+00:05:47
+
+Sorry.
+
+ByteByteGo
+00:05:47
+
+So how we can, uh, avoid the biting of the interest?
+
+ByteByteGo
+00:05:51
+
+Yeah. Like, let me just uh, we see the bicing
+
+You
+00:05:52
+
+Yeah. But, like, let me just uh, we see the bicing bicing by column when the and the
+
+ByteByteGo
+00:05:52
+
+buying by
+
+ByteByteGo
+00:06:11
+
+Uh, I'm not sure if I have for some reason, my brother you see, hear me? I see it. Right? And you see the browser. Right? Yeah. I I can hear you. Or not, uh, for some reason.
+
+You
+00:06:14
+
+they can buy to their own, uh, or of their own advantages. How we can go down with this pricing? Uh, I'm not sure if I have for some reason, my brother see you hear me? I'm just seeing me. Right? I'm just seeing the browser. Right? Yeah. I I can hear you. We're not for some reason. I don't know what to do with it. Might be falling. My my screen is frozen.
+
+ByteByteGo
+00:06:14
+
+I don't know how to do it. Like, before, the entire screen is frozen.
+
+ByteByteGo
+00:06:23
+
+Yeah.
+
+You
+00:06:26
+
+Yeah. I don't know what to do because I cannot click on on Zoom. Uh,
+
+You
+00:06:59
+
+you know, I recently, I spent a lot of my time on using LMM as a judge to make it work for some evaluation setups. And a lot of it goes into figuring out the right system out. Uh, I've really seen that the issue is a bias. It's more like lack of precise, uh, instruction in the system. But in some cases, yes, the model might be biased,
+
+ByteByteGo
+00:07:00
+
+You know, I we said I spent a lot of my time on using to make it work for some integration setups. And a lot of it was due to feeling at the right system. Now I've rarely seen that issue with the iOS. It's more like precise instruction in the system. But in some cases, yes, the model might be Bios.
+
+You
+00:07:11
+
+you may want to replace your model b. I did replace the model and if you're making features models a lot. But at some point, you once you pick the best element for your task that is out there, there is not much you can do about its inherent points. Um, so, yeah, I think that's the best answer I can share for now. My observation and my experience is that
+
+ByteByteGo
+00:07:11
+
+At some point, you you mean, once you pick a test, element for your task that is out there, there is not too much you can do about its inherent parts. So, yeah, I think that's the best answer I can share for now. But my observation and my experience is that
+
+You
+00:07:24
+
+yeah, probably, I don't know why is the best approach for you. Um, there's nothing there's nothing you can do about it.
+
+ByteByteGo
+00:07:35
+
+evaluate how accurate the caption is in terms of describing the scene or describing the light or describing the motion. Right?
+
+You
+00:07:36
+
+You want to evaluate how accurate caption is in terms of describing the scene, or describing the light, or describing the motion.
+
+ByteByteGo
+00:07:57
+
+Okay. I got it. Okay. Now I could do the issue at my screen as well.
+
+You
+00:08:02
+
+So next question, I
+

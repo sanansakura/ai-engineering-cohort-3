@@ -1,0 +1,300 @@
+You
+23:51:57
+
+Yeah.
+
+You
+23:52:02
+
+But it's a very interesting application because it's the first sign that agents are actually coming up on a on your, um, system.
+
+ByteByteGo
+23:52:15
+
+Um, next question, Juliet? Uh, thank you. My first question is,
+
+You
+23:52:16
+
+Stories, like, you know, like, lost money. But yeah. Next question, Ju kay? Uh, thank you, My first question is, um, in what kind of situation is better suited for a long time window?
+
+ByteByteGo
+23:52:16
+
+um, in what kind of situations that are suited for a long time window versus back?
+
+ByteByteGo
+23:52:36
+
+So, um, so the question is if the model quality supports very long next window, then what's the point of hang back? They can't just put everything in context. So the problem is models may drift or they may lose
+
+ByteByteGo
+23:52:42
+
+And it happens in package a lot. Um, as soon as the context goes beyond a certain length,
+
+You
+23:52:43
+
+Like, you potentially are able to attach lots of content. I mean, there's a cost saving component beside that in terms of performance. So, um, so the question is if their model already supports very long, unless we know then what's the point of adding back? You can just put everything in context, something like that. Right? So the problem is models may drift or they may hallucinate. Even even if theoretically they support long distance campaigns. Um, as soon as the context goes beyond the second, uh, length,
+
+ByteByteGo
+23:52:47
+
+And if you can get pain on using when you are
+
+You
+23:52:54
+
+So short answer is, yes. There are degree models as support long as you can just
+
+ByteByteGo
+23:52:55
+
+use.
+
+You
+23:53:03
+
+And that's why each of the skills
+
+ByteByteGo
+23:53:20
+
+Yeah. Uh, skills. Right? Could you you always have a really good way of explaining complex concepts
+
+You
+23:53:21
+
+Yep. Uh, skills. Right. Could you you want to tell the rig of explaining complex concepts?
+
+ByteByteGo
+23:53:22
+
+concept into very
+
+You
+23:53:36
+
+In a prompt, you create folders, and separate them. So for example, one is about certain, like, start, another is about
+
+ByteByteGo
+23:53:39
+
+certain, like, the style. Another thing is about, um, analytics. So think about that. So I have lots of different skills. And
+
+ByteByteGo
+23:53:51
+
+So they are they are
+
+You
+23:54:04
+
+Now the agent decides which skill can be relevant at this point as it's completing the tasks. It looks at the skill, and then only now it puts it in the configuration. Um, so this way,
+
+ByteByteGo
+23:54:04
+
+Now the agent decides which the scale can be relevant at this point as it's completing the task. It loads that scale, and then only now it puts it in a context mode. Um, so this way,
+
+You
+23:54:08
+
+skill it's so I don't know if you're fine. So it's it's I really need to talk about this because next week is going to be, uh, about
+
+You
+23:54:41
+
+Thank you. Amiib, the agent um, live session, you can maybe do a little bit example. Yeah. What time do we share a quick, uh, video is Okay. Cool. Um, so for, like, do you think we still need some sort of grounding or because lots of people in tiny, right, can get a degree hype, like, almost close to different receptor. You don't need to worry about those things as much.
+
+ByteByteGo
+23:54:44
+
+Got you. Thank you. Um, maybe the agent, um, live session, you can maybe do a little bit example. Yeah. What is something we share with, um, everybody. Okay. Cool. Um, so for that, do you think we still need some sort of brownie or not? Lots of people in tiny rabbit can get pretty high like, almost close to different receptors. Like, you don't need very hot as much. That's right. Um, with Ravi, you you worry less about translation because now
+
+You
+23:54:44
+
+That's right. Um, with Ravi, if you worry less about optimization because now
+
+You
+23:54:48
+
+if you follow the
+
+ByteByteGo
+23:54:48
+
+you only
+
+ByteByteGo
+23:54:55
+
+So
+
+You
+23:54:56
+
+So
+
+ByteByteGo
+23:54:59
+
+It's called
+
+You
+23:55:00
+
+It's called
+
+You
+23:55:11
+
+found somewhere in the store, and, uh, it matches. Sometimes it doesn't match, so it just drops those those parts of fans. We ask the other end to rewatch it sensor.
+
+ByteByteGo
+23:55:22
+
+That's all. So if you're access some produce some inaccuracy, what would be the area that could do that? If rec is not accurate, not the colors. Mhmm. Because I know those before. So
+
+You
+23:55:22
+
+If back is not accurate for particular Mhmm. Just in it goes before. So
+
+ByteByteGo
+23:55:30
+
+now
+
+You
+23:55:33
+
+I think this was covered somewhere
+
+ByteByteGo
+23:55:34
+
+support videos. I think this was covered on there.
+
+You
+23:55:59
+
+Yeah. Oh, this other more fundamental question that I'm trying to, uh, make sure I understand correctly. So so when you retrieve the relevant chunks for knowledge information, are you doing like, is that a case where you use, uh, natural search? And if it's not natural search,
+
+ByteByteGo
+23:56:00
+
+That I'm trying to, uh, make sure I understand correctly. So so when you retrieve the rabbit traps or knowledge information, are you doing like, if I use, uh, vector search. And if it's not vector search,
+
+ByteByteGo
+23:56:04
+
+there's no text search, full text search, keyword search. Those are just a situational way of searching. Mhmm. You don't need involve, um, into it.
+
+You
+23:56:05
+
+it's not text search, full text search keyword search. Those are just a traditional way of searching. Mhmm. You don't really involve, uh, into it.
+
+ByteByteGo
+23:56:35
+
+It matches your query. So there is not really any machine learning component in it. Mean, the downerachim pieces where, um, I mean, to play. Yeah. So just to be just to be clear, in modern AI systems, that's where the case anymore. Because in an exact search or exact matches or even
+
+You
+23:56:38
+
+It matches your query. So there is not really any machine learning. Only the data region piece that's more about, um, on to Yeah. So But just to be just to be clear, it in modern data systems, it has rarely the case anymore. Because, again, exact search or exact matches or the partial matches may not work in complex system. Many many cases may not work because you're not
+
+You
+23:56:47
+
+So when you're talking about machine learning, is it more product relevant now relevant?
+
+You
+23:56:47
+
+You mean that for the indexing, you use better search?
+
+ByteByteGo
+23:56:48
+
+So when you talk about machine learning, it's more palette now palette, Do you mean that for the indexing, you use vector search for scenarios?
+
+ByteByteGo
+23:57:17
+
+Text. Yes. So for text, you typically end it
+
+ByteByteGo
+23:57:18
+
+this chunk. Speech chunk separately going to the edit model and then get vector.
+
+You
+23:57:20
+
+I assume you're talking about text. Right? Text embed? Per personalized. Yes. So for text, you typically embed this chunk. Each chunk separately go into the embed model and then get a vector. You don't embed this entire document.
+
+You
+23:57:30
+
+Right? Ideally, we want to identify, like, independent
+
+You
+23:57:31
+
+topics. So as as you know,
+
+ByteByteGo
+23:57:39
+
+Like, I don't know, um, a bank statement. It could be a driver's license.
+
+ByteByteGo
+23:57:56
+
+Into its corresponding. But what I'm all the kinda showing up on the each document? For example, the best statement. Every detail on the best statement will also cover those feedbackings. Yep. You typically wanna do unless there are parts that can seem a reason. I mean, for kind of the
+
+You
+23:57:56
+
+be, like, I don't know, um, a bank statement. It could be a driver's license. Index. And when index, so you all cover the index. Into its corresponding value. But what about with the with all the counters showing up on the each document? For example, the best thing. Like, every detail, I would have to estimate. We also cover those. Yeah. You typically want to do unless there are parts that can see no reason. I mean, for example, the documents that
+
+ByteByteGo
+23:59:00
+
+to do a back to search, and you still don't reuse out of box API? Right? I mean, I just try you unless you have the out like, the return without a full vector search, and then use natural language and that's all an issue something. That's
+
+You
+23:59:02
+
+I mean, try you once you have the out like, the return, we dial out of the vector search, and then use natural language as a model into something else. Yeah. So yeah. So again, assume that
+
+ByteByteGo
+23:59:06
+
+and then use natural language and assemble it into something else. Yeah. So yeah. So, again, assume that for the segment, there is a query coming from user, and the query is is payment methods.
+
+ByteByteGo
+23:59:13
+
+And then you request the
+
+You
+23:59:28
+
+Yeah. Thanks, Ali. My question is. So, uh,
+
+You
+23:59:36
+
+and if
+
+ByteByteGo
+23:59:41
+
+and if I I get a different element, uh, about about question. But if I have the same question or the same question like that, how does, uh, the people they go to the same cycle of retrieving and send me to found and
+

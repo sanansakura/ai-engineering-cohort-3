@@ -1,0 +1,300 @@
+You
+23:30:21
+
+I come to the office hour of week two. As always, similar to that week, in the office hour, we would over questions. Most of the questions you might have throughout the week, whether it's another project or the people that got their learnings from the lecture. And I have the
+
+ByteByteGo
+23:30:22
+
+I come to the office hour of week two. Um, as always, similar to that week, in the office hour, we would go over questions. Whatever questions you might have throughout the week, whether it's another project or the from the nature. I have the hat open. So if you have questions about the guided learning, uh, if you could help me navigate the right place.
+
+You
+23:30:26
+
+if we do, And this is, um, just one interesting brief
+
+ByteByteGo
+23:30:30
+
+And this is, um, just one interesting read that I found this week. So if somebody might be interested, I this question, if you're about device items.
+
+You
+23:30:41
+
+this this article talks about some of the techniques that were used last year to make
+
+ByteByteGo
+23:30:42
+
+Interested to learn about how to make elements more efficient and how to adapt them to work on device, this this particle pass about some of the techniques that were used last year to make make. So yeah. So with that, we can start with the questions.
+
+You
+23:30:46
+
+So yeah. So we have to be trying to start with the questions.
+
+ByteByteGo
+23:30:47
+
+Awesome.
+
+You
+23:30:49
+
+Awesome?
+
+ByteByteGo
+23:31:01
+
+Sure. So, um, so there was an announcement about the Apple product, and the feedback is here.
+
+ByteByteGo
+23:31:09
+
+Here
+
+You
+23:31:11
+
+Sure. So, um, so there was an announcement about the Exxon project, and if he gave his year, if you click on the video, you can see first, you can see the main dashboard that you can add your projects there for for for the demo day. Link here for past budgets. And both of these are also listed here. So if I click on the completed budgets, it will go to this page.
+
+ByteByteGo
+23:31:30
+
+Second question, um, in the RAD systems, when we're talking about was there something in the project? Very well about chat history. When we look at the chat history, is that just the output that is fed into the next as input?
+
+ByteByteGo
+23:31:33
+
+Exactly. So, for example, here if I ask, um,
+
+You
+23:31:33
+
+When we look at the chat history, is that just the output that is fed into the next as input? Exactly. So know, for example, if I pass, um,
+
+ByteByteGo
+23:31:35
+
+like, how is the
+
+You
+23:31:37
+
+like, how is the
+
+You
+23:32:12
+
+Can you put a summary in the week two directory?
+
+You
+23:32:18
+
+Of the guided learning summary markdown just the key
+
+You
+23:32:23
+
+bullets to refresh my memory on everything.
+
+You
+23:32:28
+
+Don't want it to be too long.
+
+ByteByteGo
+23:32:48
+
+How is that better in San Francisco today?
+
+ByteByteGo
+23:33:00
+
+And now if I ask, um, is it cool? If you don't pass the previous conversation history, may ask the question, like, is it cool? It's great because you are not necessarily in there. The
+
+You
+23:33:02
+
+How is the better in San Francisco today? Take it. And now if I ask um, is it cool? So if you don't pass the previous conversation or history, they ask the question like, is it cold? It's it's vague because you are not specifying there. Um, so it's a common practice in most chatbots. In in a single session, all your previous conversations are being included as part of the
+
+You
+23:33:05
+
+and
+
+ByteByteGo
+23:33:06
+
+being included as part of the context. Each round of the question. So now when I if it all it already happens, these previous
+
+ByteByteGo
+23:33:12
+
+Yep.
+
+You
+23:33:31
+
+So it's going to work for every time a number of iterations, same on a second conversation.
+
+ByteByteGo
+23:33:59
+
+Also here, um, has a nice logout on my next expansion if you are interested.
+
+You
+23:34:12
+
+So
+
+You
+23:34:26
+
+And then last question, in this project, how will we evaluate? Evaluate the the rescission? Mhmm. So
+
+ByteByteGo
+23:34:29
+
+So most elements
+
+You
+23:34:34
+
+So
+
+ByteByteGo
+23:34:35
+
+So
+
+You
+23:34:50
+
+And 128 is also
+
+You
+23:35:09
+
+So regarding the evaluation of back
+
+You
+23:35:11
+
+evaluation of back, it's a it's a very deep topic, and also it's very important. And there's a
+
+You
+23:35:20
+
+And
+
+ByteByteGo
+23:35:53
+
+in the matrix work if you got that.
+
+You
+23:35:55
+
+I'm in matrix board. Matrix board hand.
+
+You
+23:36:19
+
+You also want to evaluate the entire end to end system as well that happens with agents too. For those, the process typically is based on dataset.
+
+You
+23:36:55
+
+With respect to of this project, then we will actually have a great supervised output and then compare it. If if you want to evaluate, yes. But many of the companies, you you, uh, may not need to evaluate for another
+
+ByteByteGo
+23:36:55
+
+With respect to office project, then we actually have a great supervisor about, and then okay. If if you want to evaluate, yes. But if you have a component, you you, uh, cannot think about it for another
+
+ByteByteGo
+23:37:14
+
+So when it gets you can
+
+You
+23:37:15
+
+So maybe because you can parties see all the numbers.
+
+You
+23:37:22
+
+Can have access to all the metrics here. And it's a semicolon, so it's just a matter of connecting them and, uh,
+
+ByteByteGo
+23:37:40
+
+In the future, do we have an example where we'll be able to work on both?
+
+You
+23:38:26
+
+That was nice. Thank you. Yeah. Thanks for the questions. Next question. Uh, Sal? Hey. Um, okay. My question is related to chatbot.
+
+ByteByteGo
+23:38:26
+
+Um, I have another questions related to chunk domains.
+
+ByteByteGo
+23:38:47
+
+And it's what happened to be table. I mean, we showed the table into two, three different chunks. So then we are going to embed those chunks and the technology is split. If we ask something to do with the system, uh, we have to lose information to the table, which probably
+
+You
+23:38:49
+
+And it's what happened when we, for example, we have a document with a unique table, and we we shunt the table into, for example, let's say, it's too difficult to do two, three different times. So then we are going to embed those chunks, and the table is going to be split. If we ask something to to the system, we're able to move information from the table. For example, if if the how to put the information
+
+ByteByteGo
+23:38:55
+
+Mhmm. My responses.
+
+You
+23:39:01
+
+improve my responses on the tables for. Okay. Um, just to make sure my understanding is correct, I'm actually rephrase your question. Um, so your question is when you are chunking documents,
+
+You
+23:39:12
+
+Uh, then we may miss some other similar chunks. Right? Is that the case? Yeah. That's that's true. And this part, it requires a lot of, uh, experiments.
+
+ByteByteGo
+23:39:12
+
+Nearest chunks. Um, then you may need some other similar chunks. Right? Is that a yes? Yeah. That's that's true. And this part, it requires a lot of,
+
+You
+23:39:14
+
+These
+
+ByteByteGo
+23:39:15
+
+uh, experiments and trial and error and
+
+You
+23:39:19
+
+that allow you to figure out the right configuration.
+
+You
+23:39:25
+
+Is also important with respect to what you're asking because when you include some overlap, you make sure
+
+You
+23:39:27
+
+not
+

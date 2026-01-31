@@ -1,0 +1,300 @@
+ByteByteGo
+23:39:47
+
+So the rich log won't be accurate. Um, so the practice chunk size is large enough so that you you get meaningful
+
+ByteByteGo
+23:39:49
+
+thing.
+
+You
+23:39:51
+
+Um, so in practice, chunk size is large enough so that you you get meaningful chunks of your document. The main purpose of this chunking is not to chunk
+
+You
+23:39:55
+
+the
+
+ByteByteGo
+23:39:57
+
+Two different paragraphs or for two different topics as one, um,
+
+You
+23:39:57
+
+two different topics as one, uh, as one entity.
+
+ByteByteGo
+23:40:30
+
+the. Okay.
+
+You
+23:40:45
+
+Um, then then are you going to implement, uh, which you all? Frank, which you all, like, which you all? Come on in. Right? Is that the question? Uh, no. They tried some
+
+ByteByteGo
+23:40:47
+
+Um, when is it good to bring something for that? Um, then probably you can comment ritual? Right? Ritual, like, ritual common event. Right? Is that the question? Uh, no. There there are some, like, a possible
+
+ByteByteGo
+23:40:56
+
+Sure. Uh, yeah. Please tell me if it's something that, um,
+
+ByteByteGo
+23:40:58
+
+helps to add content to product. I would you would see it. Okay.
+
+ByteByteGo
+23:41:05
+
+Alright. Thanks. Um, next question. Alright. Um, we have two different question.
+
+You
+23:41:07
+
+Sure. Uh, yeah. Please send me if it's something that, um, have Slack content, the product that would would consume. Okay. Thanks. Alright. Thanks. Um, next question. And, um, we created two different question. Um, my is, uh, you're waiting on to getting a
+
+ByteByteGo
+23:41:29
+
+Sure. You're asking for the best package only for the, um, documentating parts. Right?
+
+You
+23:41:51
+
+Um, it so I think it is still stuck with document processing as one one one one.
+
+You
+23:42:09
+
+So
+
+ByteByteGo
+23:42:20
+
+Is that if you are dealing with documents and resources that are simple to parse, robust ones are more reliable and also faster. So they are less costly. If you are dealing with the complex layouts and the documents you have also come within text,
+
+ByteByteGo
+23:42:27
+
+iOS. Um, so this is this is, um, this is usually the only
+
+You
+23:42:30
+
+practice for document parsing is that if you are dealing with, uh, documents and other sources that are simple to parse, or more reliable and also faster. So they are less hassle. If you are dealing with the complex layouts and the documents you have also completing text, under multimedia, images, raw base are not going to be like the So you have to use database. Um, so this is this is this is usually the only, uh, think about the net parsing when you want to keep it in this tool. Um, for chunking, I've already covered this.
+
+ByteByteGo
+23:42:43
+
+Uh, this this is still changing. Um, so I think it's always best to do some research ready for you want to use it. Um, matching has
+
+You
+23:42:43
+
+Want to use an AI based approach? Um, these these things keep changing. Um, so I think it's always best to do some research before you want to use it. Nextgen has
+
+You
+23:42:46
+
+that. They also include all other packages, and they build backers around there.
+
+You
+23:42:55
+
+So if I
+
+ByteByteGo
+23:43:06
+
+it, um, there's lots of different packages that can use. Um, but, again, it's all the best to do some research right before you give you
+
+ByteByteGo
+23:43:17
+
+Last year, there was a lot of different things. Then I wrote the agenda book. I I back in there was
+
+You
+23:43:17
+
+Like last year, there was a lot of different things. Um, then I wrote the then I wrote, I I back end, there was
+
+You
+23:43:29
+
+uh, the rest of your oh, actually. Um, so cognitive loaders is the one that your
+
+ByteByteGo
+23:43:33
+
+So, you know, um, I think
+
+You
+23:43:34
+
+So, you know,
+
+You
+23:44:33
+
+so the best practice guarantee is to use that smallest model at work
+
+ByteByteGo
+23:44:34
+
+the best package here is to use the, um, so the best practice here is to use the smallest model at work, good enough for your users. System.
+
+You
+23:44:42
+
+In general, you may want to use the smallest model that delivers the quality that much.
+
+ByteByteGo
+23:45:02
+
+So
+
+ByteByteGo
+23:45:11
+
+So I'm just going to
+
+You
+23:45:12
+
+So just wondering how can I improve it? So maybe, you know,
+
+You
+23:45:25
+
+The the best practice is to have an evaluation. So as you know, what is the impact on your on on the quality of your system,
+
+ByteByteGo
+23:45:48
+
+Yeah. Yeah. I I have
+
+You
+23:45:58
+
+Yeah. Um, I I have have some things, some open source. I'll I'll find a manager. Please ping me if I if I. Sure. Thank you. First, any other part of Rack that you have, uh, questions?
+
+ByteByteGo
+23:46:00
+
+I think I might be able to find that. Okay.
+
+ByteByteGo
+23:46:07
+
+Hey, Ali. Um, thank you. So I, um, missed a couple of, uh, previous sessions. I'm trying to catch up with the.
+
+You
+23:46:07
+
+Thank you. So I, uh, missed a couple of, uh, the previous sessions on that. I'm trying to catch up with the data
+
+ByteByteGo
+23:49:09
+
+Okay.
+
+You
+23:49:09
+
+Okay. And what what is the other first method you you mentioned? Communicate my best
+
+ByteByteGo
+23:49:17
+
+And, uh, if it are once the post signs, uh, if we have any questions, is is is this still going to work?
+
+You
+23:49:17
+
+And and, uh, if it all once the post ends, uh, if you have any questions, is is this still going to work?
+
+ByteByteGo
+23:49:50
+
+That's more pricey. Yep. That's a good question. Because sometimes, uh, in scenarios, it is that.
+
+You
+23:49:50
+
+That's more pricey. Yeah. That's a very good question because sometimes raglan board, uh, in civil answer, it is that.
+
+You
+23:50:05
+
+Or you may want to tune it to
+
+ByteByteGo
+23:50:16
+
+Yeah. I mostly think of point tuning as as something that you call short
+
+You
+23:50:23
+
+you are sure that the general representative of data find it. Uh, you know, I think it was like or, um, or if you have a very niche
+
+You
+23:50:42
+
+is a very interesting application, um, I would say. Not too different. Like, foundation wise, if you think of Glabox, it's not different. It's just, um, a software layer on top of this whole agent setup.
+
+ByteByteGo
+23:50:42
+
+Um, Clubhouse is a very interesting application, um, I would say. Not too different. Like, foundation wise, if you think of Clubbot, it's not different. It's just, um, a software layer on top of this whole agent setup.
+
+ByteByteGo
+23:50:54
+
+Because, um, again, it's it's going to be all around agents, and agents are going to be covered next week.
+
+ByteByteGo
+23:51:00
+
+Too clear. Um, basically, agents, they equip
+
+You
+23:51:02
+
+So some of the things that I say may may may sound, um, unhealthy. Too clear. Uh, basically, agents, they equip and develop these additional components. One is tools.
+
+ByteByteGo
+23:51:23
+
+ask something like, uh, how's it better again? Right? How is that better? Um, and it doesn't really better. It is so the but, like, today's better is not stored in internal So it really cannot as a party, such as that. So it has to have access to some back channels.
+
+You
+23:51:23
+
+You ask something like, uh, how is it better again? Right? How is that better? Um, and it doesn't really matter in in so the but, like, today's better is not stored in internal. It's So it really cannot answer you quietly until it searches it. So it has to have access to some kind of
+
+You
+23:51:35
+
+Right? Now so far everything was published. So if I for example, if I say, um, do something like email, this person using my Gmail, something like that.
+
+ByteByteGo
+23:51:35
+
+Right. Now so far everything was that is so if I for example, if I say, um, do something like email this person using my Gmail, something like that. Now Clockbot is bringing this whole agent
+
+You
+23:51:38
+
+Breathing this whole agent set up on your system. So basically, it sees everything. It has access
+

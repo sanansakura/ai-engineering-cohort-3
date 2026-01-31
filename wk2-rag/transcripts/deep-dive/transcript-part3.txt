@@ -1,0 +1,300 @@
+You
+13:30:16
+
+If I print the model here, can see it's just a hugging face embedding object. And it and here, it's a transformer based with some layer. So this is the model architecture. We don't have to worry about it. It's just a model that is already pre trained. It's on pre trained weights, and it works. Um, so now I have the model ready here. I just need to um, encode encode the chunks. That we obtained here.
+
+ByteByteGo
+13:30:16
+
+So if I print the model here, you can see just a hugging face embedding object. And it and here, it's a transformer based with some layer. So this is the model architecture. We don't have to worry about it. It's just a model that is already pre trained. It's on pre trained weights, and it works. Um, so now I have the model ready here. I just need to um, encode encode the chunks. That we obtained here.
+
+You
+13:30:27
+
+So here, I'm going to type embedding vector. It could and
+
+ByteByteGo
+13:30:28
+
+So here, I'm going to type embedding vector. Equal m model and
+
+You
+13:30:34
+
+mother and mother dot embed queries.
+
+ByteByteGo
+13:31:04
+
+mother dot embed quick. So I remember this because I use these a lot, but, again, nobody's expected to know this. It's often done via web search. So if web search this and this model, there is a documentation on adding phase or else there, and then you can use the and then from there, you can figure this out. Depending on the framework, also, it can be different. Uh, we just saw that hugging face was suggesting in code, uh, but the library but the matching wrapper has this embed query.
+
+You
+13:31:08
+
+So I remember this because I use this a lot, but, again, nobody's expected to know this. It's often done by a dev search. So you web search this and this model, there is a documentation on Hugging Face. Or elsewhere, and then you can use the and then from there, you can figure this out. Depending on the frameworks also, it can be different. Uh, we just saw that hugging face was adjusting in code. Uh, but the library but the 19 wrapper has its embed way. Just to see if it works, I'm going to pass a simple input here. Hello, Ward.
+
+ByteByteGo
+13:31:08
+
+Just to see if it works, I'm going to pass a simple input here. Hello, world.
+
+You
+13:31:14
+
+And then if I print this,
+
+ByteByteGo
+13:31:15
+
+And then if I print this,
+
+You
+13:31:36
+
+Oh, it's loading them up. Okay. So this is the this is simply the vector. This is the three eighty four dimensional vector. Corresponding to Hello World. Um, so that's that's great. It it shows that we are ready now to embed the entire chunks.
+
+ByteByteGo
+13:31:37
+
+Oh, it's loading them up. Okay. So this is the this is simply the vector. This is the three eighty four dimensional vector. Corresponding to Hello World. Um, so that's that's great. It it shows that we are ready now to embed the entire chunks.
+
+You
+13:31:42
+
+So going back going next let me clean this part up.
+
+ByteByteGo
+13:31:44
+
+So going back going next, and let me clean this part up.
+
+ByteByteGo
+13:33:11
+
+So okay. So, yes, we can easily now pass the chunks to this embedding model and get the embedding vector. But we ideally, we also want, uh, we need to we need to save them somewhere. So we need a vector database. And, also, we need additional functionality. There are two ways. We can implement ourselves. We can implement everything related to, um, storing dates, loading them, and performing nearest neighbor search and all those things. Or we can use some libraries that are already doing those for us. Um, I've rarely seen anybody implement nearest neighbor or app because they're already well developed. Libraries out there. One very popular example is k s It is a library that allows you to search for embeddings. And it works at at a scale efficiently. Um, so this page, if you go to a i.metall.com tools phase, they have also a tutorial page. And then you can see the usage is very simple. You often have a a vector or a list of embeddings. So here, they are creating this data. And then they beat an index.
+
+You
+13:33:58
+
+So okay. So, yes, we can easily now pass the chunks to this embedding model and get the embedding vector. But we ideally also want, uh, uh, we need to we need to save them somewhere. So we need a vector database. And, also, we need additional functionality. There are two ways. We can implement ourselves. We can implement everything related to uh, storing these, loading them, and, um, performing nearest neighbor search and all those things. Or we can use some libraries that are already doing those parts. Um, I've rarely seen anybody implement nearest neighbor or approximate nearest because they're already well developed. Libraries out there. One very popular example is Face. It is a library that allows you to search for embeddings. And it works at at a scale efficiently. Um, so this page, if you go to a i.meta.com tools face, they have also a tutorial page. And then you can see the usage is very simple. You often have a a vector or a list of embeddings. So here, they are creating this data and then they build an index. So building an index means that they are going from this list of embeddings and then they're restoring it in such a way with some data structure. They're storing it in such a way that they can retrieve them fast. So we don't need to know the internals. If you're interested, this page has lots of details. They're using different techniques to make this efficient work at a scale. But, basically, um, this whole it's it's already managed. If you are not curious about these things, we don't need to necessarily know the internals. Um, you can just rely on the index functionality of the library. And then if we use that, we can easily search later. Uh, for example, faces. Once you have the index, you can search simply. Um, you can say, hey. Search for the k nearest neighbor like, four near nearest neighbors.
+
+ByteByteGo
+13:35:47
+
+So building an index means that they are going from this start embeddings and then they are storing it in such a way with some data. They're storing it in such a way that they can retrieve them fast. We don't need to know the internals. If you're interested, this page has lots of details. They're using different techniques to make this efficient, work at a scale. But, basically, um, this whole it's it's already managed. So if you are not curious about these things, we don't need to necessarily know the internals. Um, we can just rely on the index sync functionality of the library. And then if we use that, we can easily search later. Uh, for example, faces, once you have the index, you can search simply. Um, you can say, hey. Search for the k nearest neighbor. Like, four near nearest neighbors. With these squares. Um, again, if you're interested, you can go over this Um, it's a nice documentation. And there are a lot of great, uh, basics are here, but there are again, if you want to learn that that advanced details of this uh, all these pages are quite good to learn how it works. And having it's implemented, like, approximate nearest neighbor. So that's phase. And as always, Lambda has a wrapper on top of phase. So it just makes it easier for us to use it and stay within the Lambda chain, um, environment. So here, we can see that we can easily use the once you have the embedding, you can create an index. And then you can use this phase to create this vector restore. Now this vector restore is a light wrapper on top of all those embeddings, but now the difference is that it already follows the certain internals data structures that phase has in place. So we can easily use and, uh, save it somewhere. So with that, let's go to the project and see how it would look like in practice. We already have our embedding model. We already have our chunks, so we can easily create our vector data. So we can type paste dot from documents Um, and then here, we pass all the chunks that we have and also an embedding model. So now these front documents take it takes care of everything. It runs these chunks. It passes them to the embedded model. Um, similar to how we saw here. It gets embeddings. And then it, um, creates this deck vector DB object. Now this vector DB object, let me first run this. It should be quite fast now because we have only 42 chunks. In practice, if you are building an app application at the scale with millions of chunks, it takes longer.
+
+You
+13:35:48
+
+With these queries. Um, again, if you're interested, you can go over this Uh, it's a nice documentation. And there are a lot of great um, so basics are here, but there are again, if you want to learn the the advanced details of this, uh, all these pages are quite good to learn how it works. And how it's implemented, like approximate nearest thing. So that's phase. And as always, LandChain has a wrapper on top of phase. So it just makes it easier for us to use it and stay within the Lambda chain, um, environment. So here, we can see that we can easily use, uh, once we have the embedding, we can create an index, and then we can use this face to create this vector store. Now this vector store is a light wrap on top of all those embeddings, but now the difference is that it already follows the certain internals data structures that phase has in place. So we can easily use and, uh, save it somewhere. So with that, let's go to the project. And see how it would look like in practice. We already have our embedding model. We already have our chunks, so we can easily create our vector data. So we can type face dot from documents Um, and then here, we pass all the chunks that we have and also an embedding model. So now these front documents take it takes care of everything. It runs these chunks. It passes them to the embedding model. Um, similar to how we saw here. It gets the embeddings. And then it, um, creates this deck vector DB object. Now this vector DB object let me first run this. It should be quite fast now because we have only 42 chunks. In practice, if you are building an application at this scale with millions of chunks, it takes longer.
+
+ByteByteGo
+13:35:54
+
+Now if I print the extra d b, it's probably just a, uh, a line chain object.
+
+You
+13:35:54
+
+Now if I print victory b b, it's probably just a, uh, a line chain object.
+
+ByteByteGo
+13:36:28
+
+Um, but later you can inspect it if if you are interested. Now this is ready. We have all the embedding model, embedding embedding of our chunks using this model. We need to save them. And vector DB now gives us a lot of, um, methods, and one is safe. So I can save this. We can call this index something. Face index. And then if I type so if I run this, you would see a file being appeared here.
+
+ByteByteGo
+13:36:50
+
+And it's it's, um, um, yeah. I ran this previously, so this is already here. But it's going to update that. So it says vector service 42 MBTs. So it's it, um, it already saved this file. And then here, it's showing that this vector DB, which we embedded our all our chunks. Has 42 embeddings.
+
+You
+13:36:51
+
+But later, you can inspect it if if you're interested. Now this is ready. We have all the embedding model embedding embedding of our chunks. Using this model. We need to save them. And vector DB now gives us a lot of, um, methods, and one is safe. So I can save this. We can call this index something. Base index. And then if I type so if I run this, you would see a file being appeared here. And it's it's, um, yeah, I ran this previously, so this is already there. But it's going to update that. So it says vector is stored with 42 embeddings. So it's it, um, it already saved this file, And then here, it's showing that the Spector DB, which we embedded our all our chunks, has 42 embeddings.
+
+ByteByteGo
+13:37:25
+
+Great. So it's it's simply a PTL file here, and um, index dot face. Face knows how to handle this. Okay. Question, Nava? Sorry. I missed, uh, that last one out of yours. Uh, when did you create in venues from the web vectors? Uh, can you scroll up if for that? Sure. I'm going to explain, um, in a second. Um, Yeah. Let's also, uh, keep the question for the end. But, um, for this one, I'm going to go over, um,
+
+You
+13:37:25
+
+Great. So it's it's simply a PTL file. Here and, um, uh, index dot fix. In face knows how to handle this. Okay. Question, Ali. Sorry. I missed, uh, last one out of your Uh, where did you create embeddings from the vectors? Can you scroll up if That sure. I'm going to explain, um, in a second. Um, yeah. Let's also, uh, keep the questions for the end. But, um, for this one, I'm going to go
+
+You
+13:37:39
+
+over, um, um, over it again. So here, we saw manually how it's possible to embed query. Um, we can we have this model. We pass something to it. It it gives us an embedding.
+
+ByteByteGo
+13:37:58
+
+um, over it again. So here we saw manually how it's possible to embed query. Um, we can we have this model. We pass something to it. It it gives us the embedding. Face. Already handles that. When you call that from documents, it just takes care of it. You pass all use all your chunks, in our case, 42 chunks, and you pass that model, the embedding model that you want to be used and then you just take care of it. It it computes all the embeddings with the source name in VectorDB.
+
+ByteByteGo
+13:38:15
+
+And here we are saving it. We are saving it because it's the practice. Later, we may want to load it and use it for at inference time. Right now, we are just building things. Um, so far, we are in this step of rack. We are just
+
+You
+13:38:16
+
+Face already handles that. Then you call that from documents. It just takes care of it. You pass audios all your chunks, in our case, 42 chunks. And you pass that model, the embedding model that you want to be used and then you just take care of it. It it computes all the embeddings with the source name in vector DB. And then here, we are saving it. We are saving it because the best practice. Later, we may want to load it and use it for at inference Right now, we are just building the index. Um, so far, we are in this step of that. We are just
+
+You
+13:38:26
+
+We have this data. We are just replacing with a noise index. So retrieval can be, um, then connected to it.
+
+ByteByteGo
+13:38:26
+
+We have this data. We are just replacing with a nice index. So retrieve what can be, um, then connected to it.
+
+ByteByteGo
+13:39:16
+
+Um, great. So now we have everything. Now let's get into the the building the generation and retrieval. The good thing is that retrieval is very simple. If we are following all these things. If we are following phase because phase already is implemented having nearest neighbor in mind. So in order to convert this into a a retrieval object, all we need to do is we need to have a nearest neighbor capability on top of this. That's all we want. If we have a nearest neighbor capability, whenever there is a query, we can call vector DB dot, um, query or dot whatever method is there. Pass the query, get the top gate points. Um, so here, the first thing I'm going to do um, I'm going to explain this all online and other than loading in a second. But first, let's create the every three boxes.
+
+You
+13:39:17
+
+Great. So now we have everything. Now let's get into the the building the generation and retrieval. The good thing is that retrieval is very simple if you are following all these things. If we are following phase because phase already is implemented having nearest neighbor in mind. So in order to convert this into a a retrieval object, all we need to do is we need to have a nearest neighbor capability on top of this. That's all we want. If you have a nearest neighbor capability, whenever there is a query, we can call vector DB dot query or dot whatever method is there. Pass the query, get the top k points. Um, so here, the first thing I'm going to do, uh, I'm going to explain this Olam and LLM loading in second. But first, let's create the every three boxes.
+
+You
+13:40:17
+
+So it's as simple as using this method. It's called as retrieve to convert a vector DB object into a retrieval object. Um, I'm going to implement this in a sec. I'm it's just one line of code, but, um, but, basically, if you run this as receiver on your VectorDB, now it gives you additional functionality that we were just hoping to get.
+
+ByteByteGo
+13:40:17
+
+So it's as simple as using this method. It's called as retriever to convert a vector t p object into a retriever object. Um, I'm going to implement this in a sec. I'm it's just one line of code, but, um, but, basically, if you want this as retrieve there on your vector DB, now it gives you additional functionality that we were just hoping to get.
+
+ByteByteGo
+13:40:26
+
+Including nearest neighbor and, uh, approximate nearest neighbor. So
+
+You
+13:40:26
+
+Including nearest neighbor and uh, approximate nearest neighbor. So
+
+You
+13:40:32
+
+yeah, I cannot find it here right now, but I'm going to share that documentation later.
+
+ByteByteGo
+13:40:34
+
+yeah. I cannot find it here right now, but I'm going to share the documentation as
+
+ByteByteGo
+13:40:58
+
+So what I'm going to do here is I'm going to now create my retriever. I'm going to name it retriever. And then it's going to be simply um, vector DV that we had before. I'm going to name, uh, call as retriever, and then I'm going to send send, uh, search, um, w r's.
+
+You
+13:40:59
+
+So what I'm going to do here is I'm going to now create my receiver. I'm going to name it retriever. And then it's going to be simply um, vector DB that we had before. I'm going to name, uh, call as retriever. And then I'm going to send, uh, send search, w r's.
+
+ByteByteGo
+13:42:03
+
+K. Eight. So what I'm doing here is basically, I'm just saying convert this vector DB with all those embeddings. Into an object that I can that we can treat it as a rich retrieval component. So we can run nearest neighbor search. And then use a value of k four eight. So whenever there is a query we send it, give us top k, um, most, like, closest embeddings to the embedding of the query. Now this is another thing that in practice we may want to play with. Depending on how our documents look like, what is the quality, our metrics, we may want to increase or decrease this. Um, there is also additional, um, functionality that is often provided, and that's the score. So you can you can you can pass k. So it always gives you top eight most closest embeddings. You can also pass a score as a threshold. So whenever, um, so whenever there is a point that is still between the eight uh, let me
+
+You
+13:42:05
+
+K eight. So what I'm doing here is basically, I'm just saying convert this vector DB with all those embeddings into an object that I can that we can treat it as a retrieval component. So we can run nearest neighbor search. And then use a value of k four eight. So whenever there is a query, we send it. Give us top k, um, most, uh, like, closest embeddings to the embedding of the query. Now this is another thing that in practice we may want to maybe um, depending on how our documents look like, what is quality, our metrics, we may want to increase or decrease this. Um, there is also additional, uh, functionality that is often provided, and that's this. Score. So you can you can you can pass k. So it always gives you top eight most closest candidates. You can also pass this score as a threshold. So whenever, um, so whenever there is a point that is still between the eight the
+
+ByteByteGo
+13:42:53
+
+So top k would give us the eight neighbors. You can also pass a score threshold So if some of these points are more than that threshold, those also would be discarded. Um, and that's can that can be very important because let's say the query that the user is is giving us is something very, um, like an outlier. It's very different from the the distribution here. So let's say the point belongs to here. In this case, we don't want to, um, retrieve even the nearest points, which are these because they are still far. So that score threshold helps us to control that as well. But in this case, we are going to just keep it simple and always retrieve the top eight closest points.
+
+You
+13:42:54
+
+So top k would give us the eight neighbors. You can also pass a score threshold. So if some of these points are more than that threshold, those also would be discarded. Um, that's that can be very important because let's say the query that the user is is giving us is something very, um, like an applier. It's very different from the the distribution here. So let's say the point belongs to here. In this case, we don't want to retrieve even the nearest points, which are because they are still far. So that score threshold helps us to control that as well. But in this case, we are going to just keep it simple and always retrieve the top eight closest points.
+
+You
+13:43:02
+
+Alright. So we have our retrieve object ready as well. Sorry. I have to go back and forth. I just wanna make sure that we have it closed.
+
+ByteByteGo
+13:43:02
+
+Alright. So we have a retriever object ready well. Sorry. I have to go back and forth. I just wanna make sure that we have it closed.
+
+You
+13:43:07
+
+We keep tying it to the camera so we know how what we are
+
+ByteByteGo
+13:43:11
+
+We keep tying it to the Canvas so we know how what we are. The steps that we are following. So
+
+You
+13:43:16
+
+the steps that we are following. So uh, hopefully, we have all these.
+
+ByteByteGo
+13:43:16
+
+uh, okay. We have all these.
+
+You
+13:43:38
+
+Alright. Now we have this retrieval. We have our index. Retrieval works. We need to build out generation. Generation simply means, uh, an LMS. Later, we'll see we can add more stuff to it, Uh, but for now, let's just start with an element and connect it with the retrieval.
+
+ByteByteGo
+13:43:39
+
+Alright. So now we have this retrieval. We have our index. Retrieval works. We need to build that regeneration. Generation simply means, uh, an element. Later, we can see we can add more stuff to it. Uh, but for now, let's just start with an element. And connect it with the retrieval.
+
+ByteByteGo
+13:43:43
+
+Alright. So, um,
+
+You
+13:43:44
+
+Alright. So, um,
+
+ByteByteGo
+13:44:33
+
+So in the previous project, we we used Huddl face. To load LLMs and pass some inputs. So you We manually loaded tokenizer, used tokenizer to convert the input to um, numbers, past and past those numbers to the transformer. We get the predictions. We apply softmax. We get the highest probability. We get the next token. And append it to the input again, and we in manually saw that process. Now there are lots of libraries, as I mentioned last time, that already those um, that they've already implemented those things, and it's just give us very simple API to use. One example is Olama. So Olama is just, uh, so if I search Ollama.
+
+You
+13:44:33
+
+So in the previous project, we we used Huddl. To load LLMs and add some inputs to We manually load that tokenizer, use tokenizer to convert the input to um, numbers, pass the pass those numbers to the transformer. We get the predictions. We apply softmax. We get the highest probability to get the next token, and append it to the input again, and we in manually saw that process. Now there are lots of libraries, as I mentioned last time, that already those, um, that they've already implemented those things, and it just give us very simple API keys. One example is Ollama. So Ollama is just, uh, so if I search Olama
+
+ByteByteGo
+13:44:38
+
+It says it's there, um,
+
+You
+13:44:39
+
+It says it's the
+
+ByteByteGo
+13:45:14
+
+is this way to automate your work using open models? While keeping your data safe? Um, basically, it's it's a it's it's already take care of all the loading loading, generations, formatting, um, sampling, all those stuff. All you need to do, you need to specify the model. You load it. And then you send some inputs, get the output. Um, and then then we are um, so we are going to use that. It requires some installation. I've already installed this. Um, the first step in order to run the server is to run Alamo Serve. I'm going to open a new terminal here.
+

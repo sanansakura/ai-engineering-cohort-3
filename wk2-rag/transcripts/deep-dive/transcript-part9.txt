@@ -1,0 +1,43 @@
+You
+15:50:39
+
+The contest and the user there's a questions that Mhmm. Do we need to define all all the the questions Yes. So And Yes. So here, basically, is the quest It's not going to be all the questions of different users. But for this particular session and user, um, this part needs to be replaced by the actual user's question that is determined at runtime. When the user actually type something. And same goes with the context. Context are the retrieved content. So we only know we know this only after we know the question. And we run it through our retrieval system. So that's why we create this template for uh, in the template, we just write something like this, context and question. And then later when we know the actual question,
+
+ByteByteGo
+15:50:40
+
+The contest and the user, there's a questions that do we need to define all all the the questions Yes. So And Yes. So here, basically, is the question. It's not going to be all the questions of different users. But for this particular session and user, um, this part needs to be replaced by the actual user's question that is determined at runtime when the user actually types something. And same goes with the context. Context are the retrieve content. So we only know we know this only after we know the question, and we run it through that retrieval system. So that's why we create this template for, uh, in the template. We just write something like this context and question. And then later, when we know the actual question, um, RaggedStep takes care of it.
+
+ByteByteGo
+15:50:48
+
+It formats that message with the retrieve context and the user's question. So this becomes the input, like, the actual input to the element.
+
+You
+15:50:52
+
+Ragstep takes care of it. It formats that message with the retrieve context and the user's question. So this becomes the input. Like, the actual inputs to the element. Yeah.
+
+ByteByteGo
+15:51:03
+
+Makes sense? Yeah. Yeah. Yeah.
+
+You
+15:51:04
+
+Makes sense? Yeah. Yeah. Yeah.
+
+You
+15:51:20
+
+Yeah. All all good. Yeah. Thank you. Okay. Great. So no more questions. Thank you everyone for asking lots of great questions.
+
+ByteByteGo
+15:51:26
+
+Yeah. All good. Yeah. Thank you. Okay. Great. So no more questions. Thank you everyone for asking. That's all great questions, and, um, I hope you enjoy the of your weekend and the content for this week, and see you on Wednesday. Thank you. Bye. Thank you.
+
+You
+15:51:27
+
