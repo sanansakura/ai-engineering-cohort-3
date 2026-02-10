@@ -1,0 +1,300 @@
+You
+13:41:59
+
+Create agent method, which we can use to create an agent. Um, and as you can imagine, creating an agent means to put an element in a loop with tools. So the inputs that it expects when you are creating an agent is, one, is the model because that's the the the brain of your agent. The tools, uh, which can be, let's say, a list Also, a system prompt. The system prompt is helpful because you can specify a the agent to follow certain formats, or you can actually ask it to think in a reactive style setup. Um, so a bunch of other things that are usually optional. But these two are, um, are very important to to provide. Model is is, uh, is not optional, and tools can be optional. But, ideally, uh, in most cases, you may want to provide tools. So let's just use it and see how we can simply implement what is seen before with, uh, the client check.
+
+AI
+13:42:01
+
+Create agent method, which we can use to create an agent. Um, and as you can imagine, creating an agent means to put an element in a loop with tools. So the inputs that it expects when you are creating an agent is, one, is the model because that's the the the brain of your agent. The tools uh, which can be, let's say, a list. Also a system prompt. The system prompt is helpful because you can specify the agent to follow certain formats, or you can actually ask it to think in a reactive side setup. Uh, a bunch of other things that are usually optional. But these two are, um, are very important to to provide. Model is is, uh, is not optional, and tools can be optional. But, ideally, uh, in most cases, you may want to provide tools. Um, so let's just use it and see how we can simply implement what we've seen before with, uh, with language.
+
+AI
+13:42:04
+
+So
+
+You
+13:42:06
+
+So
+
+You
+13:42:21
+
+for the tool implementation, we still we are still responsible for that. So depending on what tools we want, we may need to implement that. So this part is going to be unchanged. We need to implement tools. So I'm going to copy paste this get current better.
+
+AI
+13:42:21
+
+for the tool implementation, this still we are still responsible for that. So depending on what tools we want, we may need to implement that. So this part is going to be unchanged. We need to implement tools. So I'm going to copy paste this get current better.
+
+AI
+13:42:30
+
+As a one tool example here.
+
+You
+13:42:30
+
+As a one tool example here.
+
+AI
+13:42:43
+
+And now if you follow this, I'm going to talk more about this YBR, um, okay. Maybe before I do this, I can
+
+You
+13:42:55
+
+Now if you follow this, I'm going to talk more about this why we are, um, okay. Maybe before I do this, I am okay. So let's for now, let's move move on. It would it would uh, give us an error, but let's move on to understand why there is a need to change. Okay. So I have this function. Now I need to create the agent.
+
+You
+13:43:07
+
+This part is now super simple because we don't have to deal with it putting it in a loop and taking care of things. It just happens automatically. Let's use the same Gemma three one billing model.
+
+AI
+13:43:08
+
+okay. So let's for now, let's move move on. It would it would, uh, give us an error, but let's move on to understand why there is a need to change. Okay. So I have this function. Now I need to create the agent. Now this part is now super simple because we don't have to deal with putting it in a loop and taking care of things. It just happens automatically. Let's use the same general three one billing model.
+
+AI
+13:43:15
+
+No. Yes. Gemma three one model.
+
+You
+13:43:15
+
+No. Yes. Gemma three one kilo model.
+
+AI
+13:43:18
+
+Now tools equal
+
+AI
+13:43:47
+
+get current better. So get current better is one of the things that we want to introduce as a tool. I'm going to just simply put it in in in, you know, its Now this is this is the object, um, that is this is this is how simple it is to just pass a bunch of tools to your agent. You just put them in a list separated back on. Now I have tools. Now we need to create the agent. Create agent, um, element.
+
+You
+13:43:48
+
+Now tools equal get current better. So get current better is one of the things that we want to introduce as a tool. So I'm going to just simply put it in in in in a list. Now this is this is the tool object. Um, that is this is this is how simple it is to just pass a bunch of tools to your agent. You just put them in a list separated by comm. Now I have tools. Now we need to create the agent.
+
+AI
+13:43:53
+
+Tools. I also need to create element.
+
+AI
+13:43:57
+
+Element equal chat element.
+
+AI
+13:44:02
+
+And some temperature, a f four now zero.
+
+You
+13:44:21
+
+Create agent, um, LMM. Tools. I also need to create the LLM. LMM equals chat volumum, model equal model, and some temperature. They get for now zero. So you can see how simple it is to create an agent in live chat. We have the model, uh, we have the LLM, and we have to Now I have the agent. I can just use it. Same story. I create a messages, um, named
+
+AI
+13:44:52
+
+So you can see how simple it is to create an agent in Lecture. We have the model, uh, we have the element, and we have two sets. Now I have the agent. I can just use it. Same story. I create a messages, um, named So when you start using some tools or frameworks, you need to also follow what format they're expecting you to pass. Um, so for agents, they if you follow or read the documentations, they expect a particular dictionary live format. Um, and I'm going to follow that. So I create this dictionary. Messages. And then here is basically the same messages that you've been seeing from earlier sets. We create a list of messages with role and
+
+AI
+13:44:54
+
+role user.
+
+You
+13:44:55
+
+So when you start using some tools or frameworks, you need to also follow what format they're expecting you to pass. Um, so for agents, they if you follow or read the documentations, they expect their particular dictionary like format. Um, and I'm going to follow that. So I create this dictionary messages. And then here is basically the same messages that you've been seeing from earlier sets. You create a list of messages, pit role and role user.
+
+AI
+13:44:58
+
+Kent.
+
+You
+13:45:00
+
+Content.
+
+You
+13:45:07
+
+Why need
+
+AI
+13:45:08
+
+Why need an umbrella umbrella?
+
+AI
+13:45:11
+
+In Seattle today.
+
+You
+13:45:12
+
+in Seattle today.
+
+You
+13:45:29
+
+That's it. I have the message. I have my agent. I just need to call the agent. Now um, Plant Chain, you have this thing called invoke, agent dot invoke.
+
+You
+13:46:03
+
+Invoke. So what that basically means is that you pass your messages here. Uh, and then these messages would start going into the loop. Uh, the agent implementation would take care of that. Um, it sends it to the LLM, get the results. Whenever needed, it passes the output sends sends it to the tools, get the output, append it. It just keeps doing that. Um, so now let's see if it's going to work. Uh, output is this. And then, uh, print out
+
+AI
+13:46:06
+
+That's it. I have the message. I have my agent. I just need to call the agent. Now, um, Langchain, he has this thing called invoke, agent dot invoke. Invoke. So what that basically means is that you pass your messages here And then these messages would start going into the loop. Uh, the agent implementation would take care of that. Um, it sends it to the LMM, get the results, Whenever needed, it passes the output, sends sends it to the tools. Get the output, append it. It just keeps doing that. Um, so now let's see if it's going to work. Um, output is this. And then, uh, print out messages
+
+AI
+13:46:10
+
+minus one at contact. Hopefully, I have no typo.
+
+You
+13:46:12
+
+messages minus one, not content. Hopefully, I have no typo.
+
+You
+13:46:40
+
+Okay. So now there are a bunch of we were expecting this this errors, and now there are a bunch of issues. The first issue that this is not gonna work is that when you are using frameworks like lang chain, they rely a lot on standardizations.
+
+AI
+13:46:41
+
+Okay. So now there are a bunch of we weren't expecting these these errors. And now there are a bunch of issues. The first issue that this is not gonna work. Is that when you are using frameworks like Nank chain, they rely a lot on standardizations.
+
+You
+13:46:50
+
+We've seen that so far, we manually ask the LLM to follow a certain format, uh, which was producing this.
+
+AI
+13:46:51
+
+We've seen that so far, we manually ask the LLM to follow a certain format, uh, which was producing this
+
+You
+13:48:06
+
+Which was this this line. We manually asked the LLM to follow this But this is not good because I may manually define it this way. You as the another developer may define it in a different way. So it's not gonna work, uh, cleanly. So what happens is that there are some models that are trained to produce two calls in a in a certain format, and that format is often in a JSON format. Those models call are called, um, tool calling model, like models that are trained to be capable of calling tools in a in a structured format, which is JSON. So that's what it means. If you go to Olama and then you press tools, these are all the tool calling models, meaning that these models are trained to work with calling tools and producing, um, a very certain structured form. Um, and if you look here, Gemma is not there. Gemma three one billion is not there. So it's not going to work. Um, you can still use Gemma three for tool calling if you want, but you have to manually implement every as we saw in earlier sessions. Now if you want to use lang chain or some other tools, it's not gonna work. So first thing we need to do is we need to pick one of these models and switch to those. Um, let's just switch to LAMA 3.2.
+
+AI
+13:48:07
+
+which was this this line. We manually asked the algorithm to follow this format. But this is not good because I may manually define in this way, you as the another developer may define it in a different way. So it's not gonna work, um, um, clearly. So what happens is that there are some models that are trained to produce two calls in a in a certain form. And that format is often in adjacent format. Those models call are called, um, tool calling model, like models that are trained to be capable of calling tools in a in a structured format, which is JSON. So that's what it means. If you go to Olama and then you press tools, these are all the two calling models. Meaning that these models are trained to work with calling tools and producing, um, a very certain structured form. Um, and if you look here, Gemma three is not there. Gemma three one billion is not there. So it's not going to work. Um, you can still use Gemma three for tool calling if you want, but you have to manually implement every everything as we saw in earlier sales. Now if you want to use lang chain or some other tools, it's not gonna work. So first thing we need to do is we need to pick one of these models and switch to those Um, let's just switch to LAMA 3.2.
+
+You
+13:48:25
+
+We have actually another cell here to have this fixed, but I'm going to just fix it here.
+
+AI
+13:48:32
+
+We have actually another cell here to have this fixed. But I'm going to just fix it here. So first thing is we change this to lambda 3.2.
+
+You
+13:48:33
+
+So first thing is we change this to lambda 3.2.
+
+AI
+13:48:34
+
+Uh, 3,000,000,000.
+
+You
+13:48:34
+
+Uh, 3,000,000,000.
+
+You
+13:48:41
+
+Hello?
+
+AI
+13:48:51
+
+Is it right? Uh, 11 something doesn't look right. Oh, LAMA 3.2.
+
+You
+13:48:54
+
+Is that right? Uh, Lemo, something doesn't look correct. Oh, Lemma three point.
+
+You
+13:49:14
+
+Okay. Now I'm going to run this again. And let's see if it works. Last time, the error was this. Registry or LAMA disk, uh, Gemma three one billion does not support tools. So I've changed this to something that supports it, and let me rerun this again. It's not gonna work again, probably.
+
+AI
+13:49:14
+
+Okay. Now I'm going to run this again. And let's see if it works. Last time, the error was this. Registry all lower this. Uh, Gemma three one million does not support tools. So I've changed this to something that supports it, and let me rerun this later. It's not gonna work again probably.
+
+AI
+13:49:55
+
+Okay. Um, now what it's saying is that it's very likely that it's complaining because we have not registered these as two objects. We implemented the function, and we passed it as a as a tool. But what Lambdaan expects us is to pass tool objects. And tool is something that they've defined it. In their framework. And it's very simple to register these as tools. Um, all we need to do is we need to to use this decorator uh, here, and then say, hey. This is a a land chain tool. I want to use it as part of the tools.
+
+You
+13:49:55
+
+Okay. Um, now what it's saying is that it's very likely that it's complaining because we have not registered these as two objects. We implemented the function, and we passed it as a as a tool. But what LandTrend expects us is to pass tool objects, and tool is something that they've defined it. In their framework. And it's very simple to register these as tools. Um, all we need to do is we need to do use this decorator uh, here, and then say, hey. This is a a land change tool. I want to use it as part of the tools.
+
+You
+13:50:04
+
+And then what this is gonna do is it's going to take care of things that we've seen earlier. It's going to extract the Docker string and use it as the
+
+AI
+13:50:09
+
+And then what this is gonna do is it's going to take care of things that you've seen earlier. It's going to extract the docstring and use it as the description of the function and all those other stuff that we've seen. So now if I rerun this, let's see if it's going to work now.
+
+You
+13:50:12
+
+So now if I rerun this, let's see if it's going to work now.
+
+You
+13:50:29
+
+Uh, it's still not gonna work, and I think the reason for that is if I make a change, it may work. So if I write get better CDSTR,
+
+You
+13:50:32
+
+SDR.
+
+AI
+13:50:32
+
+It's still not gonna work, and I think the reason for that is if I make a change, it may work. So if I write get better city STR, STR, STR,
+
+You
+13:50:37
+
+Return get current better
+

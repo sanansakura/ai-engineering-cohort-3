@@ -1,0 +1,953 @@
+Office Hours
+20:05:31
+
+How, uh, RM decide to how what kind of problem we send to LRM for the reasoning and corresponding label kind of, yeah, response we get get from the LMM and to decide what can what are the corresponding what action should we take Uh, for example, if we we are talking about a a coding agent, And so let's say just the user just gave the prompt. I want to create a some unit test for this class. So given this one, what exactly gonna be sent out to the RM? And, uh, how how do we navigate through the through the action. Uh, and, uh, yeah, I think I think action and observation. Mhmm. Okay. So, um, that's a very good question. I think one reason that there might be a confusion right now is because we have not talked about resending LMS yet, and that's the topic of next week. Um, so, basically, so far, what we've talked about are just the standard elements that are not going to uh, think for reason. Uh, meaning that whenever you send a query, they would just start producing the final answer immediately without doing any kind of intermediate step reasoning or thinking. So for this part, I'm sure that next week you would have a better idea. But I can talk more about the React and how it works and what happens in coding, uh, coding coding elements. So, basically, the idea of React is very simple. It's only a prompting technique. It's not it's not training or fine tuning the model. It's not basically changing the weights of the model, but it only uses a system prompt. So that the model knows, uh, what to do. And the system prompt looks like this. Basically, it says that follow this cycle of thinking, acting, and and and observing. Uh, with some examples. And those examples are called few shot examples, So those are also included in the system prompt. And then after that, that's always part of the system prompt. So after that, whenever you have any query and you send it to the LLM, the LLM would go over the system prompt, see all those examples, see that it's asked to follow this loop, uh, thinking, acting, and observing. And then based on that, it would just continue producing tokens. Now if you, um, swap the a standard LLM, you you you replace it with a reasoning element. Suddenly, this whole circle will be more powerful because those models are trained to reason So they already know how to reason well given a certain context. Um, so that's in the prompting technique. I'm I'm happy to answer more questions if you have. Um, I've done this before, but if you ask any chatbot like chat g p t to give you a system prompt, to mimic kind of React, uh, pattern. It would it would give you something based on the, like, based on, like, other b triples out there. Um, let me also ask ask, uh, it to generate so maybe we get a better sense.
+
+You
+20:05:32
+
+I'll go over, uh, how, uh, RMBSITE how what kind of problem is sent to LRM for the reasoning. And, correspondingly, what kind of uh, yeah, response we get get from the RM and to decide what kind what are the corresponding what action should we take. For example, if we we are talking about a a coding agent, Mhmm. And so let's say just the user just gave the prompt. I want to create a some unit test for this class. So given this one, what exactly to the gonna be sent out to the IRM? And, uh, how how do we navigate through that? Through the action, uh, and, uh, yeah, think think action and observation. Mhmm. Okay. So, um, that's a very good question. I think one reason that there might be a confusion right now is because we have not talked about resending elements yet, and that's the topic of next week. So, basically, so far, what we've talked about are just a standard elements that are not going to, uh, think for a reason. Uh, putting that whenever you send a query, they would just start producing the final answer immediately without doing any kind of intermediate step presenting more thinking. Um, so for this part, I'm sure that next week you would have a better idea, but I can talk more about the React how it works and what happens in coding, uh, coding it coding elements. So, basically, the idea of React is very simple. It's only a prompting technique. It's not it's not training or fine tuning the model. It's not basically changing the weights of the model. But it only uses a system prompt so that the model knows what to do. And the system prompt looks like this. Basically, it says that follow this cycle of thinking, acting, and and and observing. Uh, with some examples. And those examples are called few shot examples. So those are also included in the system prompt. And then after that, that's always part of the system prompt. So after that, whenever you have any query and you send it to the LLM, the LLM would go over the system prompt, see all those examples, see that it's asked to follow this loop uh, thinking, acting, and observing. And then based on that, it would just continue producing tokens. Now if you, um, swap the a standard element, you you you replace it with the reasoning LLM. Suddenly, this whole cycle would be more powerful because those models are trained to reason. So they already know how to reason well given a certain context. So that's simply a a prompting technique. I'm I'm happy to answer more questions if you have. I've done this before, but if you ask any chatbot like chatty p t to give you a system prompt, to mimic kind of react, um, pattern. It would it would give you something based on the, like, based on how many people's out there. Um, let me also ask ask, uh, lead to generate so maybe we get a better sense.
+
+Office Hours
+20:06:06
+
+Um, let's see if it keeps something reasonable. Um, okay. In the meantime, does that make sense? Do you have any other questions?
+
+You
+20:06:07
+
+Let's see if it gives something resembling. But, yeah, in the meantime, does that make sense? Do you have any other questions?
+
+You
+20:06:37
+
+Yeah. That's makes sense. Thank you. Yeah. Um, let's see what it produces. I'm also gonna go over this in our, um, in our Deepgram. We are not gonna manually create this system prompt, but, basically, anytime any framework that allows you to rely on a framework, under the hood, they are just having some sort of system prompt to to improve the state behavior of the LNA.
+
+Office Hours
+20:07:31
+
+Yeah. That makes sense. Thank you. Yep. Um, let's see what it produces. We're also gonna go over this. In our, um, in our deep dive. We are not gonna manually create a CSM prompt, but, basically, anytime any framework that allows you to rely on React framework, under the hood, they are just having some sort of system prompts to to, uh, improve the state behavior of the element. So why this is okay. It says this is a system prompt template, and, um, it also searched the web and went over some, uh, dish request. So it's very likely that other, um, frameworks that support React is doing something like this. So it simply says you have access to this. These are the tools. Go, um, And then at some point so here, it's basically showing the the model that this is the example that you have to follow. You have to have taught. Um, and after thought, you can do whatever you want, any tokens you sequence of tokens you want to produce. And then after that, whenever you feel that an action is needed, produce this part so that we can easily parse it. Um, and then some tools. And then once you get the action input or observation, you can you can, uh, report this like this, and then you can continue thinking. Um, so it's it's it's as simple as this, um, react.
+
+You
+20:07:31
+
+So why this is okay. It says this is a system prompt template, and, um, it also searched the web and went over some, uh, dishriples. So it's very likely that other, um, frameworks that support React is doing something like this. So it simply says you have access to this. These are the tools. Go, um, And then at some point so here, it's basically showing the the model that this is the example that you have to follow. You have to have Todd Um, and after thought, you can do whatever you want, any tokens you sequence of tokens you want to produce. And then after that, whenever you feel that an action is needed, produce this part so that we can easily parse it um, and then some tools. And then once to get the action input or observation, you can you can, um, we put this like this, and then you can continue thinking. Um, so it's it's it's as simple as this, um, react.
+
+Office Hours
+20:07:36
+
+Yep.
+
+Office Hours
+20:07:37
+
+Um, alright. Next question, Sam.
+
+You
+20:07:39
+
+Yeah. Um, alright. Next question, Sam.
+
+You
+20:08:09
+
+Hi. This tool tool calling. So let's assume that we are using a schema in the system prompt, and we say that the name of the function is x, then we have five, uh, parameters that are going to be sent to this function. We are assume that the LLM is going to
+
+Office Hours
+20:09:04
+
+Hi. This to to calling. So let's assume that we are using a schema in the system prompt. And we say that the name of the function is x, then we have five, uh, parameters that are going to be sent to this function. We are assumed that the LLM is going to understand how to sequence the, uh, tickets the data in parameters. Correct? Which means that our user prompt has to play more or or system prompt has to explain more things about each parameter. Or is there any other way? That's my first question. Sure. So the question is, um, when we have some tools, we have to very clearly let the LLM know about those tools, about the how to call the functions, what is what, uh, what structure format it should follow and so on. Is that the constraint? Yeah. But how how does the LMM distinguish between, like, multiple parameters which might be same? Like, first name, last name, city, location, how they sometimes people have name San Francisco. Like, Francisco, for example. Mhmm. So how is the algorithm distinguish between that?
+
+You
+20:11:38
+
+how to sequence the sequence the data in parameters. Correct? Which means that our user prompt has to play more words of of system prompt has to explain more things about each parameter, or is there any other way? That's my first question. Sure. So the question is, um, we have some tools, we have to very clearly let the LLM know about those tools, about the how to call the functions, what is to what, uh, what structure format it should follow, and so on. Is that the first one? Yeah. The how does the alignment distinguish between, like, multiple parameters which might be same, like, first name, last name, city, location. How does sometimes people have name sometimes it's Like, Francisco, for example. Mhmm. So how is the relevant distinction between that? Sure. I so to answer your question, I mean, this is just we we rely on the LMM to do it based on its internal understanding of the word. So the assumption is that once you train your LRM, if they LRM is big enough, it has good capacity, it's trained already on Internet data, It has a very good understanding of the words, the concepts, the names, arguments, functions, coding, and all those things. So when you say that, hey. This is a function. This is what it does, and these are the inputs. Um, the LLM should have a good understanding of okay. In this case, since this is the name of the function and since this is the description of the function, it's very likely that these arguments are are uh, playing this role for this function. So it's all about relying on the LMM to understand if actually, the, um, in our deep dive this week, we would first start with the smaller, uh, model, and we'll see how they fit. In certain cases as as we switch to more complex, um, like tool calling scenarios. But as we switch to bigger models, for example, going from a 1,000,000,000 model 3,000,000,000 to 7,000,000,000, you'll see that suddenly the model has much, much better understanding of the tools, what they're doing, when to call them. We would also see an interesting example. Sometimes, you may want more than one tool colleague. Uh, simultaneously, you may want two tool columns or or three tool calling. Like, same tool, but calling it twice or three times. Um, the smaller models may fail. In those things, but bigger, better models are expected to know and identify these situations and produce as many tool calls that that are needed to to effectively compute complete the task. Got it. Um, and then second question is, I saw some Sorry. Sorry. Um, sorry to interrupt. One more thing I want to add. Uh, so what I shared and what um, we discussed so far is, like, the manual process of introducing tools. Um, basically, we can introduce tools, to any LLM even if that LLM was not specifically trained to cultivate and the model is expected to work if the model is good enough and big enough, but it may fail, uh, eventually. So another paradigm that has started to work well, I think it was first started by OpenAir or or I'm I'm not too sure. Um, but now these days, all companies are following that is to train on data that like, on, um, like, trajectories. So instead of training on Internet data, you also create some trajectories. Trajectories simply means data that also contains tool calling examples. Um, not only data that is on the Internet. Not this way, basically, you train a model so that it becomes really good at calling things.
+
+You
+20:11:58
+
+Things, um, and consuming more processing tools and continuing data generation. So that's basically another another thing that these days uh, you will see. So if the models like, best models that are out there are trained on trajectories. And that they're trained to, uh, on tool calling data.
+
+You
+20:12:12
+
+For example, if you go to Palama, there is these tools So what tools means is that, basically, these models are trained on on two currently. And you see, like, most of these models I mean, most new models, if if you look at them, like, you know,
+
+Office Hours
+20:12:36
+
+We you rely on the element to do it based on its internal understanding of the work. So the assumption is that once you train your element, if the element is big enough, it has good capacity, it's trained already on Internet data, It has a very good understanding of the words, the concepts, the names, arguments, functions, coding, and all those things. So when you say that, hey. This is a function. This is what it does, and these are the inputs. The LLM should have a good understanding of okay. In this case, since this is the name of the function and since this is the description of the function, it's very likely that these arguments are are uh, playing this role for this function. So it's all about relying on the LMS to understand if actually, the, um, in our deep dive, this week, we would first start with the smaller, uh, model, and we'll see how they fail. In certain cases as as we switch to more complex, um, like, tool calling scenarios. But as we switch to bigger models, for example, going from a 1,000,000,000 model to 3,000,000,000 to 7,000,000,000, you'll see that suddenly the model has much much better understanding of the tools, what they're doing, when to call them. We would also see an interesting example. Sometimes you may want more than one tool calling. Uh, simultaneously, you may want two tool callings. Or three tool calling, like, same tool but calling it twice or three times. Um, a smaller models may fail in those things. But bigger better models are expected to know and identify this situations and produce as many tool calls that that are needed to to effectively compute complete the task. Got it. Um, and then second question is, I saw I'm sorry. Sorry. Um, sorry to interrupt. One more thing I want to add. Uh, so what I shared and what uh, we discussed so far is, like, the manual process of introducing tools. Um, basically, we can introduce tools, um, to any LLM even if that LLM was not specifically trained to call tools. Um, and the model is expect expect to work if the model is good enough and big enough. But it may fail, uh, eventually. So another paradigm that has started to work well I think it was first started by OpenAir or or I'm I'm not too sure. Um, but now these days, all companies are following that is to train on data that like, on, um, like, trajectories. So instead of training on Internet data, you also create some trajectories. Trajectories simply means data that also contains two calling examples. Um, not only data that is on the Internet. Um, so this way, basically, you train a model so that it becomes really good at calling tools. And consuming more processing, tools and continuing edge generation. So that's basically another another thing that these days, um, you would see. So if the models like, best models that are out there are trained on trajectories and are trained through, uh, on tool calling data, For example, if you go to Paloma, there is this tools So what tools means is that, basically, these models are trained. On on tool calling data. And you see, like, most of these models I mean, most new models, if if you look at them, like, you need Kimmy k 2.5, Um, even k two, and and even before that, all of those are trained on on, uh, trajectories. So yeah. Go ahead. Actually, that brings me to another question. Are there tools where or or rather, uh, are these LLMs in such a way that they have the tools as well as the implementation? So we don't even have to specify use these tools.
+
+You
+20:14:34
+
+2.5, uh, even k two. And and even before that, all of those are trained on on, uh, trajectories. So yeah. Go ahead. Actually, that brings me to another question. Are there tools where or or rather, uh, are these elements in such a way that they have the tools as well as the implementation? So we don't even have to specify. Use these tools. Um, so the question is, are these LLMs going to be equipped with like, equipped with tools that we don't have to specify that these tools are available. Yeah. Like, some functionality which is common that a lot of people end up using. Yeah. Yeah. Yeah. Of course. I mean, some models like GPT models, for instance, at some point, it was trained on certain tool called it. So if you search, um, Chai GPT, it's on queries. It would automatically start using some So those are the tools that the model was trained on during its training process. And usually, the the way that it works is that those are, like, very fundamental. Like, web search, um, running uh, terminal commands and things like that, like, mad bash commands and and things like that. Um, the rest is basically up to us to introduce the model. If we have a very certain tools that we want the model to, um, to to use, then we can use MCP or or any kind of other methods to introduce these tools. But most LLMs are trained with fundamental tools that are needed, like web search and and terminal access. Very quick. And this is different for coding, and this is different for foundational coding coding models. So Composer, uh, from CareStack. Basically, if you read their documentation, it's basically so Composer is an a coding element. It's it's the same element, but it's fine tuned on a lot of coding. Data. And this coding data also includes trajectories. So it has tool called as part of its training data. So if you read this, you would see that they are introducing around 10 or maybe more than 10, um, tool colleagues in our in their training data. So the model is already trained to use those tools. And those those tools are mostly what is useful and important in coding. Like, uh, hash commands, editing, opening, reading files, and things like that.
+
+Office Hours
+20:14:35
+
+Um, so the question is, are these LLMs going to be equipped with uh, like, um, equipped with tools that we don't have to specify that these tools are relevant. Yeah. Like, some functionality, which is common that a lot of people end up using. Yeah. Yeah. Yeah. Of course. I mean, some models, like GPT models, for instance, at some point, it was trained on certain tool colleagues. So if you search, um, ChargebeeT, um, with some queries, it would automatically start using some tools. So those are the tools that the model was trained on during its training process. And usually, the the way that it works is that those are, like, very fundamental like web search, um, running uh, terminal commands and things like that. Like, mad bash commands and and things like that. Um, the rest is basically up to us to introduce to the model. If we have a very certain tools that we want the model to, um, to to use, then we can use MCP or or any kind of other methods to introduce those tools. But most LLMs are trained with fundamental tools that are needed, like web search and and terminal access. And this is different for coding. And this is different for foundational coding coding models. So Composer uh, from here, sir. Basically, if you bid there documentation, it's basically so Composer is an a coding element. It's it's the same element, but it's fine tuned on a lot of coding. Data. And this coding data also includes trajectories. So it has tool calling as part of its training data. So if you read this, you would see that they are introducing around 10 or maybe more than 10 tool collins in their in their training data. So the model is already trained to use those tools. And those those tools are mostly what is useful and important in coding. Like, uh, hash commands, editing, opening, reading files, and things like that.
+
+You
+20:14:54
+
+Um, and then I was confused between create react agent module versus create to calling agent. Actually, there were three. There was create react agent, create tool calling agent, and create agent.
+
+Office Hours
+20:14:54
+
+Okay. Cool. Um, and then I was confused between create react agent module versus create to calling agent. Actually, there were three. There was create react agent, create to calling agent, and create agent.
+
+Office Hours
+20:16:07
+
+Um, so This is, uh, all of them are kind of, um, almost the same. I mean, these days, they basically, when you create an agent, the assumption is that the agent also is equipped with tools. They can call tools. And, also, it's it's following some cycle. And that cycle can be react cycle. Um, they're not really separate things. Yes. You can create an agent that has no doesn't have access to any tools, but it doesn't make sense because, um, basically, the one, um, one key component of agents is tools. So for sure, when we are talking about agents, we need tools. And if you need tools, and its agent, if there needs to be a cycle, it cannot be like a single forward path. Because if you are running tools, there would be some results you need to continue generation and and thinking based on what the results are. So all of these often come together, and they they, um, when you combine them, it it it is the agent. So React is the cycle part. It's just a one way of creating a prompt to follow this cycle of, um, going from thinking to tool calling and then observing the results and continuing thinking. Um, tools is just the tools. Correct. Thank you. Yeah. Thanks.
+
+You
+20:16:10
+
+Um, so all of them are kind of um, almost the same. I mean, these days, basically, when you create a an agent, the assumption is that the agent also is equipped with tools, so it can call tools. And also, it's it's following some cycle, and that cycle can be reactivated. They're not really separate things. Yes. You can create an agent that has no act doesn't have access to any tools, but it doesn't make sense because, uh, basically, the one one key component of agents is tools. So for sure, when we are talking about agents, we need tools. And if we need tools and its agent, it there needs to be a cycle. It cannot be, like, a single forward pass. Because if you're running tools, there would be some results, and you need to continue generation and and thinking based on what the results are. So all of these often come together and they they, um, when you combine them, it it it is the agent. So React is the second part. It's just a one day of creating a prompt to follow this cycle of, um, going from thinking to tool calling and then observing the results and continuing thinking. Um, tools is just the tools. Okay. Thank you. Yeah. Thanks.
+
+Office Hours
+20:16:11
+
+Uh, next question, Umika.
+
+You
+20:16:13
+
+Uh, next question, Um, we got.
+
+You
+20:16:19
+
+Annie,
+
+You
+20:16:44
+
+Hi. My question is, um, uh, I've gone through the lecture. So, uh, like, um, my I want to confirm my understanding understanding of what I understood from him, uh, from this, like, yeah, so that um, I don't make the wrong concept. Like, moving forward, So, uh, the word agent and NLM is quite interchangeably used. Right?
+
+Office Hours
+20:16:45
+
+Any um, my question is, um, I've gone through the lecture. Um, so, um, like, my I want to confirm my understanding of what I undertook from him, uh, from this lecture so that um, I don't make the wrong concept, like, moving forward. So, uh, the word agent and NNM is quite used. Right?
+
+You
+20:17:10
+
+So, like, various scenarios that I want to run through. Um, uh, one of them is is that the workflow that are introduced in the live like, in the initial part, like prompt chaining and routing and things like that? That does apply only to LLM or it applies
+
+Office Hours
+20:19:49
+
+So, uh, like, various scenarios that I want to run through. Um, uh, one of them is, um, inside the work flow that are introduced in the lecture, like, in the initial part? Like, prompt chaining and routing and things like that. That does apply only to LLM or it applies to agents as well? So, um, so to answer your first question, workflows are static. And the the the main effort is basically on the developers, um, responsibility to figure this workflow out. Basically, in workflows, this graph is a static, meaning that ahead of time, depending on the task, the developer figures out what are good steps and how to break this certain task into smaller subtasks. Uh, and implement a software, a logic to work. So for example, let's say if you want to draft an email uh, or let's say, research on some complex topic, you can manually think about this task, break it into different steps, and then you come up with this sequence of Now this is going to be fixed. Now you need to implement the software. You actually start writing code. You start writing this. You say that, okay. I am going to create an element The LMM processes this prompt. Then whatever the output is, I'm gonna call this output, like, output one. And then this is another which is more efficient. Now output one goes into this LMM. So you actually implement this logic. There might be more than one LLM calls. There might be multiple LMS loading, um, in your logic. But it's fixed. There is no loop. The LLM has no autonomy. To figure out what is the right step, how long it should continue reasoning, and how long and then is the time to produce the final answer. It's it's fully aesthetic. Agents, basically, you just give this autonomy instead of you as the developer figure out the right, uh, sequences and right, uh, flow of information, You just let the agent figure that out. You create a loop And that loop, basically, you're giving full autonomy to the agent to okay. You start um, you figure out. You think. And as part of that thinking, you figure out if it's better to now break a task or um, call some tools or, um, you may even decide that, okay. It's time. I I I can produce my final answer and produce the final answer. So that's the main difference between agents and workflows. Workflows are static. Agents are dynamic, and the agent itself figures that out. Now regarding the other part of your question, agents versus elements, and if they are used interchangeably or not. So there are basically different things. LMWB itself is just a model. It has some parameters. You have some input. It predict it predicts the next token. So and if you, um, put a loop around it, it can produce outputs. Now that's that's it. Everything is is that. Now if you want to call some tools, if you want to rely on other external internal retrieval,
+
+You
+20:19:49
+
+Um, So, um, so to answer your first question, workflows are static. And the the the main effort is basically on the developers, responsibility to figure this workflow out. Basically, in workflows, this graph is a Meaning that ahead of time, depending on the task, the developer figures out what are good steps and how to break this certain task into smaller subtasks. Uh, and implement a software, a logic to work. So for example, let's say if you want to draft an email uh, or let's say research on some complex topic, you can manually think about this task, break it into different steps, and then you come up with this sequence of steps. Now this is going to be Now you need to implement a software to actually start writing code. You start writing this. You say that, okay. I'm going to create an LLM The LMM process as this prompt. Then whatever the output is, I'm gonna call this output, like, output one. And then this is another element which is more efficient. Now output one goes into this element. So you actually implement this logic. There might be more than one LLM cost. There might be multiple multiple LLM loading, um, in your logic, but it's fixed. There is no loop. The element has no autonomy to figure out what is the right step. How long it should continue reasoning, and how long and when is the time to produce the final answer. It's it's truly a static. Agents, basically, you just give this autonomy instead of you as the developer figure out the right, um, sequences and right, uh, flow of information, You just let the agent figure that out. You create a loop, and that loop, basically, you're giving full autonomy to the agent to okay. You start, um, you figure out. You think, and as part of that thinking, you figure out if it's better to now break the task or, um, call some tools or, um, you may even decide that, okay. It's time. I I I can produce my final answer and produce the final answer. So that's the main difference between agents and workflows. Workflows are static. Agents are dynamic, and the agent itself figures that out. Now regarding the other part of your question, agents versus elements and if they are used in interchangeably or not. So there are basically different things. LMS by itself is just a model. It has some parameters. You pass some input, it it predicts the next token. So and if you, um, put a loop around it, it can produce output. Now that's that's it. LMM is is that. Now if you want to call some tools, if you want to rely on other external Internet retrieval,
+
+Office Hours
+20:20:50
+
+memory and so on, then you need a logic to implement. And that thing is typically called agent runtime, and its entire component is called agent. So agent is basically nothing, but you add some other components to the element, and then you put everything in a loop. And then you implement this logic to fit to, uh, coordinate this and forth. Later, this video may help. To get a sense if if you're interested. Um, if you search what our AI agent and how do they what you would get a sense of that Uh, basically, it's this part is the element. And then this is the part that just just after that figures everything out. It's also called agent runtime in in different places. Um, and these are the tools on memory. So if you're interested, you can also, um, watch this video. Uh, sure. So, um, uh, my, uh, second question is about, like, if LLM is thinking and LLM is this
+
+You
+20:21:40
+
+memory, and so on, then you need a logic to implement. And that thing is typically called agent run time. And this entire component is called agent. So agent is basically nothing, but you add some other components to the element. And then you put everything in it. And then you implement this logic to fit to, uh, coordinate this and forth. Later, this video may help um, to get a sense if if you are interested. Um, if you search what our AI agents and how do they work, you would get a sense of that Uh, basically, it's this part is the LLM. And then this is the part that just the software that, um, figures everything out. It it's also called agent runtime. In in different places. Um, and these are the tools I'm in. So if you're interested, you can also watch this video. Oh, sure. So, um, uh, my, uh, second question is about, like, if LLM is thinking and LLM is deciding what action to take, No. Sorry. Uh, I mean, like, agent is the one which is thinking and then calling the LLM. Right? And then LLM is telling which tool to call. Right? Why why not, uh, agent itself all those tools? Right? Like, what is the need of explaining it to the LLM? Because how LLM is helping in this entire, uh, uh, like, react and, uh, those entire flow. Okay. Uh, so agent, um, by itself, um, is just a software. It's not a machine learning thing. It's not an AI thing. There is no parameters. Agent is this this rectangle. Agent Sorry. No. It it's not
+
+Office Hours
+20:21:43
+
+deciding what action to take. No. Sorry. Uh, I mean, like, agent is the one which thinking and then calling the LMM. Right? And then LLM is telling which tool to call. Right? Why why not, uh, agent itself call those tools? Right? Like, what is the need of explaining it to the LLM? Because how LLM is helping in this entire, uh, uh, like, react and, uh, those, uh, entire flow. Okay. Uh, so agent, um, by itself, um, it's just a soft It's not a machine learning thing. It's not an AI thing. There is no parameters. Agent is this this rectangle. Agent. Um, sorry. No. It it's not no longer gonna okay. Let me
+
+You
+20:21:44
+
+Okay. Let me
+
+You
+20:23:09
+
+so agent here, or it's also called agent runtime? This is just a pure software. There is no inference, no parameters, no AI involved in this. It's just pure logic that you implement. So you coordinate the, um, you coordinate between LLM tools, memory, and, um, getting input prompt from the user and producing the final output. And showing it to the user. So the agent does not think The agent also does not produce tokens or generate tokens. Um, the the LLM is the brain of this setup. The LLM always think, produce tokens, Um, it also decides when using the tool is going to be useful, what should which tool, which arguments, and so on. It only keep producing those tokens. Agent runtime is responsible to keep an eye on what LMM is producing as soon as it realizes that the LMM wants to call a tool based on the produced tokens, it parses that function. It figures out, okay, this function, these are the inputs. That I need to, uh, pass to the function. And then this one time calls a function It's it's basically just just calling it. There is no machine learning anymore. It calls that function with those inputs, gets the output, and simply appends the output to the context and sends it back to the element, and let this brain continue, um, generating generating tokens again.
+
+Office Hours
+20:23:11
+
+So agent here or it's also called agent runtime. This is just a pure software. There is no inference, no parameters, no AI involved in this. It's just pure logic that you implement. So you coordinate the you coordinate between LLM tools, memory, and getting input prompt from the user and producing the final output. And showing it to the user. So the agent does not think The agent also does not produce tokens or generate tokens. Um, the the LLM is the brain of this setup. The LLM always think previous tokens. Um, it also decides when using a tool is going to be useful, what should which tool, which arguments, and so on. It only keep producing those tokens. Agent runtime is responsive to keep an eye on what LLM is producing as soon as it realizes that the LMM wants to call a tool based on the produced tokens. It parses that function. It figures out, okay, this function, these are the inputs. That I need to, uh, pass to the function. And then this runtime calls a function. It's it's basically just just calling it. There is no machine learning involved. It calls that function with those inputs, gets the output. And simply appends the output to the context and sends it back together. And let this brain continue, uh, generating generating tokens again.
+
+You
+20:24:40
+
+Uh, so now the content part of the same portion. Why do we really need agent? Then why not let NLM do everything and let NLM calls the tools. Right? Like, what I entered from, uh, video is that first, it consume token, and the second LLM job is to generate the net token. But now when LLM knows about tools and everything, if it's smart enough, right, uh, what is the need of agent? And unless we are going with multi agent and things like that. Right. So the LMM basically, LLM is just a machine learning model. And as we signed last time, uh, week one, machine learning models are are simply a bunch of numbers in matrices. They are they are stored. Right? Um, so whenever we say a neural network or a machine learning model or an LLM, It's simply a mathematical expression that converts some inputs to output. That's all it does. It has it does not have capability to um, call tools or do things like that because it's if you go inside if you zoom into this LLM, it's the transformer. The transformer is simply a bunch of, uh, matrices. As as it states. So there is no way at this these matrices can call an element. You need, like, you need an actual,
+
+Office Hours
+20:24:51
+
+So now the conference are the same. Sorry. Go ahead. Uh, so now the concept part of the same question. Why do we really need agenda? Then why not let NLM do everything and let NNM calls the tools. Right? Like, what I ended up from, uh, video is that first date consumed token, and the second LLM job is to just generate the net token. But now an LLM knows about tools and everything, it is smart enough. Right? Uh, what is the need of agent and unless are going with multi agent and things like that. Right. So the LLM basically, LLM is just a machine learning model. And as we signed last week in, uh, week one, machine learning models are are simply a bunch of numbers in matrices. They are they are stored. Right? Um, so whenever we say a neural network or a machine learning model or an element, It's simply a mathematical expression that converts some inputs to output. That's all it does. It has it does not have capability to um, call tools or do things like that because it's if you go inside if you zoom into this LMM, it's the transformer. And the transformer is simply a bunch of, uh, matrices. At at its weight. So there is no way that these these matrices can call an element. You need, like, you need an actual, quote and logic to implement to make that happen. So that's why LLM alone cannot it's a neural net It cannot do anything. You pass some input numbers, it produces some output numbers. That's it.
+
+You
+20:24:51
+
+code and logic to implement to make that happen. So that's why LLM alone cannot it's a neural network. It cannot do anything. You pass some input numbers, it produces some output numbers. That's it.
+
+You
+20:24:56
+
+Uh-huh.
+
+Office Hours
+20:25:28
+
+I see. Okay. Yeah. Uh, I appreciate it a lot. Thank you. Yeah. And that's I think that mostly that's that's answers your your your, um, your question. LLM by itself cannot do anything. So that's why in the first place, we have to implement these run times. It's just, um, software like that Python code. Um, that's coordinates. It works with the LMM. It passes inputs look at the what LMM is producing whenever it's the time, it parses it. Sends to the tools, get responses back. It's the software that you as the developer uh, or some framework implements.
+
+You
+20:25:57
+
+I used to be. Okay. Yeah. I appreciate it a lot. Thank you. Yeah. And that's I think that mostly that's that's answers your your, um, your question. LLM wide sales cannot do anything. So that's why in the first place, we have to implement this one It's just some software like that Python code, um, that coordinates. It works with the LMM. It passes inputs We get the what is producing. Whenever it's the time, it parses it sends to the tools, get responses back. It's the software that you as the developer uh, or some framework and things see home. Sure. Okay. So, uh, I haven't gone through the project yet, but uh, looks like when we will define the, uh, MCP and, like, uh, MCPs and all. So agent will also know about tool because obviously, it needs to call an LMM. We'll also know about the tool because it need to understand time, there is some tools edges. But it does not need to know. LLM does not need to know or can anyone know
+
+Office Hours
+20:26:34
+
+Okay. So, uh, I haven't gone through the project yet, but but, uh, looks like when we will define the MCP protocols and, like, MCP servers and all, So agent will also know about rules because, obviously, it needs to call, and LMM will also know about the tool because it need to and that time, there is some tools edges. But it does not need to know does not need to know or can't anyone know, um, where the tools like this and things like it. To rely on agent to do everything of that. So at at eventually, it needs to know. Because if it doesn't know about certain tools, there is no way can produce tokens saying that I want to use these tools. Right? But agent is handling that. Agent basically looks at all the available tools, including the ones that are, uh, coming from MCP servers. And then once it has a good list, it sends that list to the LMS. Uh, as part of its context. So this way, basic agent front end takes care of letting element know about what tools are available. So the everyone can, uh, rely on those. Once it's start producing tokens.
+
+You
+20:26:36
+
+So, Elena, I I Yeah. Um, Eventually, it needs to know. Because if it doesn't know about certain tools, there is no way it can produce tokens saying that I want to use these tools. Right? But agent is handling that. Agent basically looks at the available tools, including the ones that are, uh, coming from MCP savers. And then once it has a good list, it sends that list to the LMS. Um, as part of its context. So this way, basically, agent run time takes care of letting LMS know about what is already there. So the LLM can, uh, rely on those. Once it's start producing tokens.
+
+Office Hours
+20:26:38
+
+Okay. Thank you. Yeah. Thanks.
+
+You
+20:26:40
+
+Yeah. Thanks.
+
+Office Hours
+20:26:50
+
+Uh, Diti? Hey. Hi, Ali. Um, thank you for us. So I had question around NCP.
+
+Office Hours
+20:28:25
+
+So what what, uh, what is the difference between MCP and a plug in? And how do we decide when to use what? And I can give you some context. So at my company, we use Versus Code. And we have Atlassian to, uh, we use Atlassian products. So Jira, basically. Mhmm. It's available as a plug in for Versus Core, and that is also available as an MCP for Versus Code. And there's a lot of discussion that happens whether to use plug in or whether to use MCP. So what I'm trying to understand, like, what is the difference between plug in and NCP and, um, where do where where does MCP fits the use case versus where does the plug in fit the use case? Um, I have to do some research on the plug in. I don't have enough um, knowledge that I can share. Um, but I know what they are. I don't know, like, technically how they're implemented. So um, let me do some research on that. But MCP, I can share my thoughts. So, basically, to to do it, it's actually covered in there mostly in the guided learning, so I'm not gonna say something new. But basically, with the MCP, the idea is to, um, standardize some process instead of every company implementing a function, also called tools, to perform certain tasks on, let's say, Slack or Google Drive and so on. We rely on existing MCP servers that are already implemented
+
+You
+20:30:54
+
+Hi, Ali. Hi. Thank you for I had question regarding SCT. So what what, uh, what is the difference between MCP and a plug in, and how do we decide when to use what? And I can give you some context. So at my company, we use Versus code, and we have Atlassian uh, we use Atlassian products, so Jira, basically. Mhmm. It's available as a plug in for Versus Code, and that is also available as an MCT for Versus Code. And there's a lot of discussion that happened whether to use plug in or whether to use MCP. So what I'm trying to understand, like, what is the difference between plug in and MCP and, um, where do where where does MCP fits the use case versus where does the plug in fit the use case? Mhmm. Um, I have to do some research on the plug in. Don't have enough, uh, knowledge that I can share. Um, I I know what they are. I don't know, like, technically how they're implemented. So uh, let me do some research on that. But MCP, I can share my thoughts. So, basically, to to be like, it's actually covered in the mostly in the guided there, so I'm not gonna say something new. But basically, with the MCP, the idea is to, um, standardize some process instead of every company implementing a function, also called tools, to perform certain tasks on, let's say, Slack or Google Drive and so on. Uh, we rely on existing MCP servers that are already implemented by by the product owners, let's say. So if the Slack implements, let's say, uh, rechannel or or some other, uh, functionalities, um, it it is implemented once, and then from there forward, we don't have to implement it for our for our, um, agent to use those tools. We can simply rely on that API, whether it's on the cloud or somewhere, and just pass the SIP fine function signature. To our LML. And then LML would know how to call back. Sometimes it can be an API. Sometimes it can be, um, like, local implementations. But that's basically what MCP, um, is and why it's helpful. So you don't have to basically go and implement all these things when you're gone. You just go and see what MCP tool MCP servers are out there, And if they are available to use, you can just, uh, with minimal number of, um, code changes, you start adding those filler as as as your tool set. Basically, you just need to update your adjacent file and saying, hey. These are additional service that I want to use, and this is how you can use them. Okay. And then so so that means that if I build my AI system tomorrow, I can very well have, like, a MCP um, server for my system. Of course. Yeah. There are lots of MCP servers out there. You can basically go and, um, use any of those MCT servers that are already implemented once, and they're they're there for people to, um, use. Okay. You can also implement your own local and self serve. Yeah. You just need to follow what company is doing. So you based on what tools you want to your, um, you want to equip your LMS, you implement them as MCP servers. And then you expose them. So your LMM can simply still go to these servers, the JSON, but use your local MCP servers. Okay. Got it. Um, and my second question was around, again, the between so is there a difference between AI agent and agentic AI systems? Those those terms keeping, um, interchangeably used are seen I've read some articles, uh, that are trying to explain the differences. I don't find those articles useful. And in general, they are they're not coming from, um, like, very reliable places. Um, I'm sure if you search agent tech AI versus
+
+You
+20:31:57
+
+AI agents, you would see a lot of articles, and those are there just so, um, you get you know, they get clicks and so on. But I haven't seen any technical paper from reliable sources that they clearly, um, differentiate between these terms. But and I think the reason for that is because these terms being keep being evolving and changing over time. But, basically, AI agent itself is also, um, um, so the way I see this is that AI agent is when you equip your LLM with additional components like tools, and then you, um, wrap it. Uh, with an agent. So that's an agent. Agent is just a loop with your LLM and additional to additional components like tools. Agent system is basically the various CDSs they entire system that relies on some agents and maybe some other things, and it has some autonomy. But, again, this is just the way that I look at this. If you search the web, you would see different uh, different, um, descriptions and differentiations.
+
+Office Hours
+20:32:00
+
+by by the product owners, let's say. So if Slack implements, let's say, uh, rechannel or or some other, uh, functionality case, um, it it is implemented once. And then from there forward, we don't have to implement it for our for our, um, agent to use those sorts. We can simply rely on that API, which whether it's on the cloud or somewhere, and just pass the sick fine function signature. To our editor. And then editor would know how to call that. Sometimes it can be an API. Sometimes it can be um, like, local implementations. But that's basically what MCP, um, is and why it's helpful. You don't have to basically go and implement all these things on your own. Um, you just go and see what MCP tool MCP servers are up there, And if they are available to use, you can just, uh, with minimal number of, um, code changes, you start adding those to your as as as your toolset. Uh, basically, you just need to update your adjacent file and saying, hey. These are addition additional service that I want to use, and this is how you can use them. Okay. And then so so that means that if I build my AI system tomorrow, I can very well have, like, a MCP um, server for my system. Of course. Yeah. There are lots of MCP servers out there. You can basically go and, um, any of those MCP servers that are already implemented once, and they're they're there for people to, um, use. Okay. We cannot implement your own local MCU servers. Yeah. You just need to follow what companies do also. So you based on what tools you want to your, um, you want to equip your element with, you implement them as MTP servers. And then you expose them. So your element can simply still go to the servers.json, but use your local MCP servers. Okay. Got it. Um, and my second question question was around, again, difference between so is there a difference between AI agent and agentic AI systems? Those those terms keeping, um, interchangeably use apps seen I've read some articles, um, that are trying to explain the differences. I don't find those articles used useful. And in general, they are they're not coming from, um, like, very reliable places. Um, I'm sure if you search AgentKai versus it says, uh, AI agents, you would see a lot of RTT articles, and those are there just so, um, you get you know, they get clicks and so on. But I haven't seen any technical papers from reliable sources that they clearly um, differentiate between these terms. But and I think the reason for that is because these terms be keep being evolving and changing over time. But, basically, AI agent itself is also, um, so the way I see this is that AI agent is menu equip your LLM with additional components like tools, and then you, um, wrap it. Um, with an agent. So that's an agent. Agent is just a loop with your element and additional to additional components like tools. Agent system is basically the way I see this is the entire system that relies on some agents and maybe some other things, and it has some autonomy. But again, this is just the way that I look at this. If you search the web, you would see different, uh, different, uh, descriptions and differentiations. Okay. Okay.
+
+You
+20:32:00
+
+Okay. Okay.
+
+Office Hours
+20:32:36
+
+Yeah. I think it it it matches to what I just um, explained. So, basically, AI agent is simply that wrapper that you create around your elements. Um, so that is called AI agent. It's it's it's just a software that you implement, and then you add um, tools and a bunch of stuff to your element, and you implement you manually implement a loop. So this is by itself is an AI agent. But agentic system is basically more generic. It can be your entire AI system as part of it has some agents and their micros and other components involved.
+
+You
+20:32:36
+
+Yeah. I think it it it matches to what I just, um, explained. So, basically, AI agent is simply in that wrapper that you create around your elements. Um, so that is called AI agent. It's it's it's just a software that you implement, and then you add, um, tools and a bunch of the stuff to your element, and you implement you manually implement the So this is by itself is an AI agent. But agenting system is basically more generic. It can be your entire AI system as part of it has some agents. And there might be some other components involved.
+
+Office Hours
+20:32:42
+
+Okay. Okay. Thank you. Yeah. Uh, Sukiya?
+
+Office Hours
+20:34:31
+
+Actually, I think everybody was asking questions. Because I'm learning just listening. Uh, so my question now couple of questions. One, I'm realizing until everything stabilizes, uh, the more tools an agent calls, the level of non determinations starts to increase. Is that right? So, again, goes back when you are in a highly deterministic governed governed environment, how do you deploy those solutions? Yep. You're right. And that's a big challenge in general. And that's why multi agent systems, it was very difficult to production. And I I'm not aware of any successful multi agent system that is already out there and it's working at the scale and it's actually bringing value. It's exactly because of that. As you add more components to these systems, um, again, the extreme case is multi agent systems. Where you have multiple agents and each agent has access to multiple tools and they are in a loop and they also have to coordinate with each other. The problem is that a lot of things may go wrong at any given time. Um, including the coordination between agents. And then, um, then, um, the context window is keep growing and growing. So, basically, the problem with agents is that you are putting the LLM in a loop. Um, since it's in a loop, as it starts calling modules, you have to keep appending the result So at some point, this context window, it keeps growing and growing. And their performance of the LLM would, um, would Decreate. Decreate. Exactly. And that's because, um, LLMs are not super good when their context window is very high. Um, they may drift. They may forget about certain parts, like in the middle of their context and things like that.
+
+Office Hours
+20:36:50
+
+So what I'm seeing that the community is moving toward, and KI Labs are mostly doing is instead of instead of, um, keeping everything in a system prompt and in your active memory, you will store them in files and read them when necessary. And you can also, um, combine this with techniques for uh, like, in context management to summarize our compact context. So, basically, these two allow to continue your loop in a with a more managerial context size. But the best thing that I'm seeing, especially quoting agents, are benefiting a lot is um, you basically, um, just write everything in files. Even you write the observations and the result of two kinds, in a file and save them somewhere. And you don't not not you, but the but the agent does that. So whenever the agent calls a tool, it sees the results. And whenever it feels that this is unnecessary to keeping the active memory, it just saves it somewhere in some markdown file. And then it just keeps track of some metadata that, okay, these are all the files, and this is the conversation history. These are the locations of those microphones and so on. So as it continue, um, operating within that loop, whenever it feels that some conversation from the past or some results from the like, tool call in results from the past is needed, then it figures out which file it has to read. It opens that file, put that into active memory, continue producing tokens. And whenever it is not necessary, again, it just removes it from the context window. So this is this seems to be working there, uh, working actually really well. So, you know, like, Clock Code is heavily relying on that. Setup. So if you use Cloud Code in your, uh, codebase, you would see that it keeps opening files, reading files, changing files, and I don't know what's going on under the hood, but under the hood, probably it's all keep saving, uh, things. Yeah. So it just goes to the classic, uh, storage management, caching, and, uh, kicking it out of the memory and bringing it back depending on the relevance, I'm assuming. Mhmm. Exactly. Exactly. So now coming back to the previous conversation about what does an agent do and what does LLM do. Of course, we know LLM is able to predict the next token.
+
+You
+20:36:52
+
+Okay. Okay. Thank you. Yeah. Uh, Sophia? Actually, I think everybody was asking questions because I'm learning just listening. Uh, so my question now a couple of questions. One, I'm realizing until everything stabilizes, uh, the more tools an agent calls, the level of nondeterminations starts to increase. Is it right? So, again, goes back when you are in a highly deterministic govern governed environment. How do you deploy those nuisance? Yeah. You're right. And that's a big challenge in general. And that's why multi agent systems, it was very difficult to production. And I I'm not aware of any success with multi agent system that is already out there, and it's working at a scale and it's actually bringing value. Uh, it's exactly because of that. As as you add more components to the system, um, again, the extreme case is multi agency So where you have multiple agents and each agent has access to multiple tools and they are in a loop and they also have to coordinate with each other. The problem is that a lot of things may go wrong at any given time. Um, including the coordination between agents. And then, um, and then, um, the context window is keep growing and growing. So, basically, the problem with agents is that you are putting the LNM in a loop, um, since it's in a loop. As it starts calling more tools, you have to keep appending the results. So at some point, this context window is keeps growing and growing, and the performance of the LLM would would, um, decrease. Uh, exactly. And that's because um, LMS are not super good when their context window is very high. Um, they may drift. They may forget about certain parts, like in the middle of their context, and things like that. Um, so what I'm seeing that the community is moving toward and data labs are mostly doing is instead of instead of, um, keeping everything in a system prompt and in your active memory, you store them in files and read them when necessary. And you can also, um, combine this with techniques for uh, like, in context management to summarize our compact context. So, basically, these two allow to continue your loop you know, with a more manageable contact size. Um, But the best thing that I'm seeing, especially, coding agents, are benefiting a lot is um, you basically, um, just write everything in files. Even you write the observations and the result of two calling in a file and save them somewhere. And you don't not not you, but the but the agent does that. So whenever the agent calls a tool, it sees the results. And whenever feels that this is unnecessary to keep in the active memory, it just saves it somewhere in some marked info. And then it just keeps track of some metadata that, okay, these are all the files and this is the conversation history. These are the locations of those so on. So as it continue, um, operating within that loop, whenever it feels that some conversation from the past or some results from the like, tool calling results from the past is needed, then it figures out which file it has to read It opens that file, put that in the active memory, continue producing tokens, and whenever it feels it's not necessary again, it just removes it from their context menu. So this is this seems to be working well, uh, working actually really well. So, you know, like, CloudCall is heavily relying on that. Setup. So if you use CloudCall in your, uh, code base, you would see that it keeps opening files, reading files, changing files, and I don't know what's going on under the hood, but under the hood, probably, it's also keep saving, uh, things. Yeah. So it just goes to the classic, uh, storage management caching, and, uh, kicking it out of the memory and bringing it back depending on the relevance, I'm assuming. Right? Mhmm. Exactly. Exactly. Yeah. So now coming back to the previous conversation about what does an agent do and what does the LLM do. Of course, we know LLM is able to predict the next token.
+
+You
+20:36:57
+
+Is an agent. I'm assuming agent
+
+Office Hours
+20:36:57
+
+Is an agent. I'm assuming agent. Does agent by itself
+
+Office Hours
+20:39:04
+
+make a decision what's the right tool? Or is it dependent on the Never. The agent the agent is actually just a one time. It's basically a logic that you implement to keep looking at the outputs of element. Whenever the output of LMM is is following a certain format to which indicates that it needs to call some tools, It just simply parses it and sends it to that tool. Execute that tool, get the results back, send it back to element. So it's more like in a MVC, a controller. Or an orchestration. Exactly. It's in many places, you would see this agent front end. It's also called Orchestrate. Um, it It does nothing but just to orchestrate. So if you think of this as a runtime or a simple orchestrator Yes. Then you know, this entire thing is what people, uh, say say when they say, um, agent. So you know, agent is like a little bit abstract. Uh, this is agent. If you go inside agent, then you would see a broadcast speaker. And then all these components. That's right. But here's my question now. When you have multi agent environment, who's making the decision on what the next step should be? Mhmm. One of the agents decision or the l l l making the decision? You're talking about multi agent systems. Right? Yes. Or even, like, in a workflow, you're basically saying in an agentic environment, the difference is the workflow gets decided in real time. Is that right? It's not predecided by the developer. Mhmm. So I'm trying to make sure which component is deciding what will LLM is. I'll wait LLM. I mean, this is the brain. These guys are just they're so you can think of I mean, you would we would see this in our Deepgram. Discussion. But these are just, like, let's say, 10 lines of code that's just, um, send some input to it, looks at the output, parse it, execute it. So are you saying LMM has two paths of the seasoning? One is forecasting the next token and also forecasting the next need of the tool.
+
+You
+20:39:07
+
+Does agent by itself make a decision what's the right tool? Or agent dependent on the LOB? Neither. The agent the agent is actually just a one time. It's basically the logic that we implement to keep looking at the outputs of LMS. Whenever the output of is is following a certain format to each indicates that it needs to call some tools. It just simply parses it and sends it to the tool, execute that tool. Get the results back, send it back to the link. So it's more like in a MVC, a controller. Or an orchestration. Exactly. It's in many places, you would see this agent run time. It's also also called Orchestrator. Uh, okay. It does nothing but just to Orchestrate. So if you think of this as a run time or a simple art orchestrator, um, um, then, you know, this entire thing is what? People, uh, say when they say, uh, agent. So, you know, agent is, like, a little bit abstract. Uh, this is agent. Uh, if you go inside agent, then you will see an RTS creator and then all these components. That's right. But here's my question now. When you have multi agent environment, who's making the decision on what the next step should be? Mhmm. One of the agent making the decision or the LLM making the decision? You're talking about multi agent systems. Right? Yes. Or even, like, in a workflow, you're basically saying in a gentec environment, the difference is the workflow gets decided in real time. Is it right? It's not predecided by the developer. Mhmm. So I'm trying to make sure which component is deciding what will LMS. I'll wait LLM. I mean, this is the brain. These guys are just they're so you can think of I mean, you would we would see this in our deep dive. Session. But these are just, like, let's say, 10 lines of code that just um, send some input to this, looks at the output, parse it, as if you want to. So you're saying LLM has two paths of the seasoning? One is forecasting the next token, and also forecasting the next need of the tool.
+
+Office Hours
+20:39:46
+
+It's trying to forecast what will the next token, as well as the next actor that may be needed to provide us some information. Oh, yeah. Yeah. Of course. Yeah. And then at any given time, it looks its entire, um, history, like, entire context like, tokens within its context. Then based on that, it simply produces the next tokens, like, one by one. And then at was yeah. Go ahead. And at any given time, if it if it feels that in order to continue producing tokens, the best way moving forward is to rely on some tools then it produces those tool coming, uh, things. Okay. Okay. Okay.
+
+Office Hours
+20:40:34
+
+Alright. Yeah. That that that's what I said. So there are almost, like, two types of decision. Yes. Based on my context or the corpus, I'm always trying to find what would be the next uh, uh, uh, you know, token. And I'm also trying to so how is the corpus of the toolset defined in LLL? Okay. This speed we will also go over this in our deep dive. So it's going to look something like this. So let's say let's say I'm going to mimic so let's say I'm an element. So whatever I type, basically, imagine that the element is producing that. Right? Yes. So I not now. Um, right now, let me type this. So you have access
+
+You
+20:40:38
+
+It's trying to forecast what will be the next token as well as the next actor that may be needed to provide us some information. Oh, yeah. Yeah. Of course. Yeah. LLM, at any given time, it looks at its entire, um, history, like, entire context, like, tokens within its context. Then based on that, it simply produces the next tokens, like, one by one. And then I I guess Go ahead. And at any given time, if if if it feels that, in order to continue producing tokens, the best way moving forward is to rely on some tools, then it produces those two calling, uh, link. Okay. Okay. Okay. Alright. Yeah. That that that's what I'm saying. So they're almost like two types of decision. Yes. Based on my context or the corpus, I'm always trying to find what will the next, uh, uh, uh, you know, token. And I'm also trying to so how is the corpus of the toolset defined in the LLL? Okay. This would we would also go over this in our deep dive. So it's going to look something like this. So let's say let's say I'm going to mimic so let's say I'm an LMM. So whatever I type, basically, imagine that the LMM is producing Right? Um, Yes. So I not now. Um, right now, let me type this. So you have access
+
+You
+20:40:40
+
+to a tool named uh, put together.
+
+Office Hours
+20:40:41
+
+to a tool named Sure. Together.
+
+You
+20:40:46
+
+Let's just keep it simple. So, um, so I send
+
+Office Hours
+20:40:46
+
+Let's just keep it simple. So um, so I send
+
+You
+20:40:53
+
+so this is the system, and this is coming from the user. Right? So these two go into that agent front.
+
+Office Hours
+20:41:12
+
+so this is the system, and this is coming from the user. Right? So these two go into the agent front end. Not not these two. So this is the user query. It goes into the agent runtime. And then agent runtime, you implemented the log It basically appends the system from the display. Okay? And now this goes into the element. Agent run time sends these two to the element.
+
+You
+20:41:13
+
+Not not these two. So this is the user query. It goes into the agent front time. And then agent runtime, you implemented the logic. You basically appends this system prompt to this guy. Okay? And now this goes into the element. Agent run time sends these two to the element.
+
+You
+20:41:29
+
+Okay. And now LMM is basically saying this content. You have access to a tool named Getbetter. How is the better? If it's a thinking or reasoning LMM, this is what the LMM this can be one way that LML start producing tokens. So, um,
+
+Office Hours
+20:41:31
+
+Okay. And now element is basically seeing this context. You have access to a tool named getter there. How is the better? If it's a thinking or reasoning element, this is what the element this can be one way that element start producing tokens. So, um, it already has this.
+
+You
+20:41:34
+
+it already has this.
+
+Office Hours
+20:41:35
+
+And then
+
+You
+20:41:55
+
+And then okay. So from here, I I would imagine I'm the element. So me as element, I go over this. Okay. You have access to this. How is the better? And now I need to start the tokens one by one. I may produce things like um, let me think clearly.
+
+You
+20:42:58
+
+The user wants to know how the veteran is I have also access to, uh, to name Getbetter. So these are all the tokens that the engine may decide to produce. And then here, it may say, okay. Then let me call it and then look at the, um, output. And then here, it produces two call Yep. GetWeather. With some location of the user, assuming that it knows the location of the user. SF, for instance. And then at this point, before it continue producing tokens, the agent suddenly sees this particular format. It just stops the generation loop. It parses this. It knows that the user it sees that the user wants call this. It calls a function, get the results back, appends it, so appends it like this.
+
+Office Hours
+20:42:59
+
+okay. So from here, I I would imagine I'm the element. So me as LMM, I go over this. Okay. You have access to this. How is the weather? And now I need to start the tokens one by one. I may produce things like uh, let me think clearly. Uh, the user wants to know uh, how the weather is I have also access to, uh, to name Getbetter. So these are all the possible tokens that the engine may decide to produce. And then here, it may say, okay. Then let me call it and then look at the, uh, output. And then here, it produces two call. Yep. GetWeather with some location of the user, assuming that it knows the location of the user. Uh, SF, for instance. And then at this point, before it continue producing tokens, the agent suddenly sees this particular format. Yeah. It stops the generation loop. It parses this. It knows that the user it sees that the user wants to call this. It calls the function and get the results back, appends it, So appends it like this.
+
+Office Hours
+20:44:12
+
+So the agent takes care of this part, and it includes observation, um, whatever. Like, for sure. Let's see. Um, and then sends it back to the LRM. Now the LRM sees this, and it simply continue the generation. So, basically, it looks, reads all this, It figures what happened. It figures it asked for tool called it. It figures that this this was the outcome, and can use to produce tokens. Sure. Sorry. It took a bit long, but just wanted to walk through this this Oh, no. Very good. Yep. So technically, I, um, you always have a corpus of, uh, decisions on data. And then you need to have a context around what tools you have access to. Yeah. Here, it was a single one, but in practice, you would see, like, a large system front is listing all the all the tools. Sure. And it's always there. So always at any given point, the LLM has that as parts of its context. So it knows exactly which tools are available. And it's making a contextual mapping of the prompt and saying, okay. This means I can use this, uh, tool. Yeah. Exactly.
+
+Office Hours
+20:44:58
+
+Thank you. Yeah. Thanks. Oh, I did had a technical issue when I was trying to run the MCP server, uh, uh, you know, maybe I'll just text you on the side. Uh, it kept saying, hey. It looks like you really don't have a note, uh, j s, uh, version. Uh, you have a Python one. Maybe some of the instructions are incorrect. And maybe it's my mistake, but that's the last message I I received, and I haven't talked to them. Sure. Yeah. Can you share it, please? I I I ran the solution, and it was working. But, yeah, Can you please share it? Yeah. I'm sure I made a mistake. Yeah. I will share it there. Okay. Thank you. Thank you. Uh, Mohan.
+
+You
+20:44:59
+
+So the agent takes care of this part. And it includes observation, um, whatever. Like, for let's see. Um, and then it sends it back to the l l. Now the LLM, so sees this, and it simply continues generation. So, basically, it loops, reads all this, It figures what happened. It figures it asked for tool call. It figures that this this was the outcome, and it continues to produce tokens. Sure. Sorry. It took a bit long, but just wanted to walk through this this whole thing. No. Very good. Yep. So, technically, I, um, you always have a corpus of, uh, decisions or data and then you need to have a context around what tools you have access to. Yeah. Here, it was a single one, but in practice, you would see, like, a large And prompt is listing all the all the tools. Sure. And it's always there. So always at any given point, the LLM has that as parts of its context. So it knows exactly which tools are available. And it's making a contextual mapping of the prompt, uh, and saying, okay. This means, uh, I can use this car too. Yeah. Exactly. Thank you. Oh, I did have a technical issue. When I was trying to run the MCP server, uh, you know, I was maybe I'll just text you on the side. Uh-huh. It kept saying, hey. It looks like you really don't have a node JS, uh, version, uh, your Python one. Maybe some of the instructions are incorrect. And maybe it's my mistake, but that's the last message I I received. Back in the bug there. Sure. Um, Yeah. Can you share it, please? I I I ran the solution as I was working, but yeah. Can you please share it? Uh, I'm sure I missed a mistake. Yeah. I will share that. Okay. Thank you. Uh, Mohan?
+
+Office Hours
+20:45:14
+
+No. I don't. You wanna go ahead? Yeah. Can you can you hear me? Yes.
+
+Office Hours
+20:47:26
+
+Sure. Uh, so I I have yet to go, uh, through the, uh, lessons, but, uh, my question, uh, generally is, uh, so how we can verify the, uh, output of let's say, um, your RAD system or a CLM. Agent system. So, uh, meaning, like, let's let's take an example of a RAD, and then if I implement a RAG system, and then how can I make sure that whatever the, uh, output of the RAG is accurate? Yep. So if there is any, uh, any like, a process or is this isn't there already some metrics that you that, you know, like, uh, not not really speak about using. Sure. I mean, the simplest way that I've seen it works in RACS is you basically use another element, or if you efficient one, and then you ask it to to check the references. So that's the most common way to, um, ensure that in a rack setup, what your element first element called produced based on the retrieved content, it matches those. So, basically, pass everything to a different element or it can be the same element, but it often a different LLM because it's a simpler task. So the LLM can be a smaller, more efficient way of, like, more efficient LLM. So you pass everything to a different LLM as your second element call, and then you ask it to just verify everything. They'll make sure that references are correct and so on. So this is for right. But the problem is that the retrieved content may not be as accurate, or there might still be some hallucinations going on. And there is nothing you can do about this. So that's why the industry moved toward using tools because tools are generally more reliable. Uh, when somebody asks, like, how's the better? Even if you look at your internal knowledge base and you look for the parts or or chunks that are about the better, it's not going to be accurate anyway. Uh, even if you use a LLM to check your references and everything, it's not it's an outdated data not live data. So when you equip your model with tools and you keep using tools to always go and and check search the web and, um, get the most recent out, uh, data. Then it reduces the hallucination.
+
+You
+20:47:28
+
+Nuhan, do you wanna go ahead? Yeah. Can you can you hear me? Yes. Sure. Uh, so I have here to go, uh, through the, uh, lessons, but, uh, my question, uh, generally is, uh, so how we can verify the, uh, output of let's say, uh, your RAG system or a CLP. AI agent system. So, uh, meaning, like, let's let's take an example of a RAD. And then if I implement a RAD system, and then how can I make sure that whatever we output of the rack is accurate? Yeah. So is there is any, uh, any, uh, like, a process or is this isn't there already some metrics that you um, that we, you know, like, have now how many people are using. Sure. I mean, the simplest way that I've seen it works in rags is you basically use another element or a efficient one, and then you ask it to to check the references. So that's the most common way to, um, ensure that in a rack setup, what your LLM first LLM call produced Based on the weekly content, it matches those. So, basically, pass everything to a different element or it can be the same element, but it often a different LLM because it's a simpler task. So the LLM can be as smaller, more efficient version or, like, more efficient LLM. So you pass everything to a different element as your second element call. And then you ask it to just verify everything. Make sure that references are correct. So this is for rank. But the problem is that the retrieved content may not be as accurate, or there might still be some conversations going on, and there is nothing you can do about it. So that's why the industry moved toward using tools because tools are generally more reliable. Uh, when somebody asks, like, how's the better? Even if you go to your internal knowledge base and you look for the parts or or chunks that are about the weather, it's not going to be accurate anyway. Um, even if you use a LLM to check preferences and everything, it's not it's an outdated data not a live data. So when you equip your model with tools and you keep using tools to always go and and check, search the data and uh, get the most recent out. See Home Shield. Then introducing the hallucination.
+
+You
+20:48:42
+
+Okay. Uh, but uh, but it it says in the meet with the, uh, the currently uh, you know, companies are using to Oh, they make so these days, the the the metric yes. There are some benchmarks for assassination. So if you, um, I can share more, but if you also search there are lots of, uh, benchmarks to measure hallucination. But the simplest way that this happens is that, um, you there so in the benchmark, there is a query and there is also the current cost. So when you want to measure how good your model is doing, you pass this query to your system. Or element. You get the output. Then you pass this output and the correct output to another element, and you ask it to be a judge and figure out if my model had a sentence or not. So that's all that's the most common way that you can also, uh, evaluate. The other approach is if if the, um, in simpler, like, verifiable domains like math or coding, you can always run. Like, for example, in coding, you can run unit test and see if it passes or not. If it doesn't pass, it means that your your output was incorrect. Um, so But in more, like, open domains Zoom ID is the straightforward. Edit them as a judge
+
+Office Hours
+20:48:43
+
+Okay. Uh, but uh, but if if there is any metric that, uh, that currently uh, you know, like, companies are using to Oh, the metric. These days, the metric yes. There are some benchmarks for hallucination. So if you, um, I can share more, but if you also search, there are lots of uh, benchmarks to measure hallucination. But the simplest way that this happens is that um, you there so in the benchmark, there is a query, and there is also the current output. So when you want to measure how good your model is doing, you pass this query to our system or element. You get the output. Then you pass this output and the correct output to another LLM, and you ask it to be a judge. And figure out if my mother had a senate or not. So that's all that's the most common way that you can also, um, evaluate. Now their approach is if if the um, in simpler, like, verifiable domains like math or coding, you can always run. Like, for example, in coding, you can run unit test and see if it passes or not. If it doesn't pass, it means that your your output was incorrect. But in more, like, open domains, usually, you use LMM as a judge to figure hallucinations.
+
+You
+20:49:09
+
+Okay. Uh, so if I'm understand correctly, I'm sorry. So the first thing is, like, once, uh, let's say, you I I put the RAG system models, uh, the AI agents, Then, uh, what was the output? And then I use the same old the same query and give to the more c one. So And then just compare, uh, I asked that more powerful one to compare this query. Yeah. Uh, and then
+
+You
+20:51:33
+
+And it it it And underneath, is there any, like Mhmm. Yeah. Sorry. Go ahead. Uh, no. Uh, is is there is anything, like, let let's say if it generates, uh, you know, like, a a a 100 words out of, let's say, thousand thousand words. You know, like, so each and every word, uh, comparison or is is going to be like a comp, comp like, context based? How how they No. Yeah. No. Of course, it's going to be con like, semantic and context. So that's also another benefit of LLM as a So even if the forwarding is different, but at at its core, it's correct. Um, the LLM would would know that and would not analyze, um, just the fact that your output was just using a different terminology or different phrasing. Okay. Okay. And and and, uh, let let's say, uh, you know, like, production environment, if if everything is correct, we deploy in the production Uh, and let's say user is not happy, you know, user is complaining that it is not accurate. Uh, so is is there is a way that we can, you know, like, ask user to give the user feedback directly into the system orders in, like, how how how that process is moving? Yeah. That's that's basically more like a PM question, um, depending on the product, if that's okay to put some places for people to provide, like, textual feedback. Um, my understanding is that a lot of times, users are not willing to spend extra time writing the stuff, at least majority of the users. Um, they might be open to give, like, quick feedback, like, it comes up, comes down. And that's why, you know, mothers like Chachi PD, they have this thumbs up, thumbs down. But even if here you press bad response, I don't think there is a place where it tasks for, like, their reason. Um, that's simply because people majority of people won't do that. Um, for but but, again, it it really depends on the product, your user base, and it's more a PM decision if you want to to go that route or not. Uh, of course, if you get if you call as like, the more feedback you collect from your users, it's going to be more useful because we can automate use some LLMs to analyze those and figure out, you know, is why people are not happy. Is it safety? Is it, um, like, hallucination? Is it any or other things? And then you can you have better starting point to start improving. Um, but the again, the problem is people want some time to to share feedback. Okay.
+
+Office Hours
+20:51:34
+
+Okay. Uh, so if I understand correctly, I'm trying to sum summarize. So, uh, the first thing is, like, once, uh, let's say, I I put the RAD system orders, uh, the AI agents, then, uh, what are the output? And then I use the same of the same query and then give to the more powerful model and then just compare Uh, I I asked that more powerful model to compare with this, or Yeah. And then answer is correct or not. And, uh, okay. And, like, is is there any, like Yes. Sorry. Go ahead. No. Uh, is is there is anything, like let let's say, if if it generates, uh, you know, like, uh, uh, uh, 100 words or let's say, thousand thousand words. You know, like so each and every word, uh, comparison or is it is going to be like a con cons you know, like, context based. How how they, uh, you know, more No. Yeah. No. Of course. It's going to be con like, semantically. And context wise. So that's also another benefit of adding them as a judge. So even if the wording is different, but at at its core is correct, um, the Eleventh would would know that and would not penalize, um, just the fact that your output was just using a different terminology or different phrasing. Okay. Okay. And and and, uh, let let's say, uh, like, in in the production environment, if if everything is correct, we deploy in the production. Uh, and let's say user is not happy, you know, like, user is complaining, like, it is not accurate. Uh, so is is there is a way that we can, you know, like, ask user to give give a feedback directly into the system or else, like, uh, how how how that process is work? Yeah. That's basically more of, like, a PM question, um, depending on the product, if that's okay to put some place as for people to provide, like, textual feedback. Um, my other understanding is that a lot of times users are not willing to spend extra time writing the stuff at least majority of the users. They might be open to give, like, quick feedback, like, a thumbs up, thumbs down. And that's why, uh, mothers like charity PD, they have this thumbs up, thumbs down. But even if here you press add response, I don't think there is a place where it asks for, like, the reason. Um, that's simply because people majority of people won't do that. But but, again, it it really depends on the product, your user base, and it's more a PM decision if you want to do to go that route or not. Of course, if you get if you call as like, the more feedback you collect from your users, going to be more useful because you can automate use some elements to analyze those and figure out, you know, is why people are not happy. Is it safety? Is it um, a hallucination? Is it or other things, and then you can you have better starting point to start improving. Um, But the again, the problem is people want to spend time to share with that.
+
+You
+20:51:39
+
+Sure. Yeah. Yeah. Then thanks, Alain. That's my question. Thanks. Jeff?
+
+Office Hours
+20:51:40
+
+Okay. Sure. Yeah. Yeah. Then thanks, Aliyah. That's my question. Thank you. Thanks. Jeff?
+
+Office Hours
+20:55:45
+
+Hi, uh, Adi. So this is for the. Regards still regarding the React. I wonder whether, uh, from software point of view, well, they're exactly the same. I mean, uh, whether it's for, uh, cat dealership or insurance company, uh, at least exactly using the same kind of software. Think about it. So the reasoning actually is handled by our end. Right? It's which could be configurable and talking to different, uh, RM. As configured. Also, the the memory point, uh, the memory part probably got the the conversation memory. It's kind of generic very generic, uh, across industries. And, uh, for the tool calling, this part is a very big industry, and, uh, but still a for let's say just, uh, the car dealership can just plug in a bunch of four tool they want. And, uh, the, uh, insurance company can plug in another set, etcetera. And, uh, even the coding agent has its own set of for, uh, the the the tools. Right? And after this one, it's it's not gonna be like a a very generic, uh, agent. We try to play yeah. So so I wonder whether, uh, are there people still people still are working on the, um, React agent. Right? Right? So just by the way, if we, uh, if there's such a need since it seem to me like a a very generic one. Um, sure. So your question is that, um, regardless of the domain, this setup seems to be very generic. Except that tools are going to be different, um, within different domains. And then, um, you're you're thinking why why react or why not something different based on the use case and domain. Right? Yes. I I think maybe there's is already some kind of generic, uh, react model or React React generic one. So people can just plug in their tools, and there's no need to even to development at all. Yeah. That's right. Um, like, over time, for example, um, some companies may not follow this React. I mean, what is important is to follow a loop. So that loop is important. Now how you want to, uh, put that loop in place, that a different story. So one example that we covered was React, and that was one of the earliest methods that make this entire impossible. And it was also very simple. Because it's a prompting technique. You can just write um, as part of your system prompt, how you want the element to to to, um, follow or continue this cycle. And then it would figure out. But that doesn't necessarily mean that that's the only way that you have to do. At the end of the day, it's just part of system prompt. So you can write whatever system prompt you want, whatever like, setup you want your model to continue operating in that cycle. It doesn't have to be react. And, you know, over time before I share over time what happened, but so one more thing I want to share is that you are right in terms of that. Most of these are generic. Because this runtime is just simply a runtime. Now element is easily replaceable with anything. So this part, you can think of it as a black box. You can easily just at any given time, replace it with the best LLM out there or most efficient LLM out there. And your entire system will continue working. Tools is the part that is different between domains. Uh, for example, coding agents, the tools the command tools are reading, editing, uh, files, access to ASH comments. Um, in a different domain, tools might be different. Uh, and save for memory. So most of these are very, very generic. So that's why in the first place, some frameworks has started developing agents. And they are very successful because this whole thing is very generic. So regardless of which too many you are working can go to that framework like blockchain and you create an agent. So, you know, we have this in our, uh, project. Like, if you see
+
+You
+20:55:45
+
+Hi, uh, Ali. So just a follow-up, regards still regarding the React. I wonder whether, uh, from software point of view, whether they are exactly the same. I mean, uh, whether it's for a calculation or insurance company, Uh, are these exactly using the same kind of software? Think about it. So the reason they actually is handled by our end. Right? It's which could be configurable and talking to different, uh, parts. RM as configured. Also, the the memory point the memory part probably got the conversation memory. It's kind of generic very generic, uh, accounts industries. And, uh, for the tool coding, this part is a very, like, industry and but still, if for let's say, just the car dealership can just plug in a bunch of two two date points, and the the, uh, insurance company can plug in another set, etcetera. And, uh, even the coding agent has its own set of the the the tools. Right? Mhmm. And after this one, it's it's not gonna be like a a very generic, uh, agent. We try to play Mhmm. Yeah. So so I wonder whether, uh, are there people still people still are working on the React agent. Right? Right? So just wonder why if you, uh, if there are such need since it seem to me like a a very generic one? Um, sure. So your question is that, um, regardless of the domain, the setup seems to be very generic. Except that tools are going to be different, um, within different domains. And then, um, your your thinking why why React why not something different based on the use case and domain. Right? Yes. I I think maybe there's is already some kind of generic, uh, react model or React React generic one. So people can just plug in their tools, and there's no need to even Mhmm. To build development at all. And that's right. Um, like, over time, for example, um, so some companies may not follow this React. I mean, what is important is to follow a loop. So that loop is important. Now how you want to, uh, put that loop in place, that's a different story. So one example that we covered was React, and that was one of the earliest methods that made this entire thing possible. And it was also very simple. Because it's a prompting technique. You can just write um, as part of your system prompt, how you want the element to to to, um, follow or continue this cycle. And then it would figure out. But that doesn't necessarily mean that the only way that you have to do. At the end of the day, it's just part of system. Prompt. So you can write whatever system prompt you want, whatever, um, like, setup you want your model to continue operating in that cycle. It doesn't have to be react. And, you know, over time, before I share over time what happened, but so one more thing I want to share is that you are right in terms terms of that. Most of these are generic because this runtime is just simply a runtime. Elevent is easily replaceable with any So this part, you can think of it as a black box. You can easily just at any given time, replace it with the best LLM out there or most efficient LLM out there. And your entire system would continue working. Tools is the part that is different between domains. Uh, for example, coding agents tools the comment tools are reading, editing, uh, files. Access to hash comments. Um, in a different domain, tools might be different. Um, and say for memory. So most of these are very, very generic. So that's why in the first place, some frameworks has started developing agents. And they are very successful because this whole thing is very generic. So regardless of this domain you are working, you can go to that framework like blockchain, and you create an agent. So, you know, we have this in our, uh, project, like,
+
+You
+20:55:58
+
+if you see like, land chain has no idea about your domain. Right? But it has this create agent and then you can just call it to create an agent.
+
+Office Hours
+20:56:36
+
+like, blockchain has no idea about your domain. Right? But it has this create agent, and then you can just call it to create an agent. And add some system prompt you want. And that system prompt would explain how to operate in that cycle, in that loop. As it it's it's something very generic. Um, so one thing that observed over the years has been changed is that open air also started introducing this harmony, uh, format. It's basically uh, a different format that keep things clear and more manageable. Um, it's just a response format at its core. Opening a harmony is just a response format that it follows a certain format in its output, and then it's it's easier to parse that output. For example, instead of
+
+You
+20:56:36
+
+And pass some system prompt that you want. And that system prompt would explain how to operate in that subtle in that loop. That's it. It's it's something very generic. One thing that I observed over the years has been changed is that open area also started introducing this Harmoni, uh, format. It's basically at all. A different format that keep things clear and more manageable. Um, it's just a response format. At its core, harmony is just a response format that it follows a certain format in its output. And then it's it's easier to parse that output. For example, instead of
+
+You
+20:57:47
+
+instead of the element following this particular format, whenever it wants to call a tool, it it just produced this tokens to call. It can follow this format and, um, let me see if there are any examples. You can follow this format, and whenever it requires a tool call, it can say, um, channel tool, or whenever it's time to produce the final output, it could So, basically, it just follows as a very well defined format that is also easily parceled. Um, actually, the open rate models that OpenAir produce, g GPT for s s, they are trained on harmonic forming. So, um, if you use those open based models to build an agent, you need to parse out a different way. Like, your agent runtime needs to be uh, aware of this harmony format. Uh, so this is a good example that you may want to deviate a little bit from React setup, and you create your own system prompt based on what the output is. Um, and just the whole thing would work. Yeah. Short short answer to your question, it it's very generic. Just the tools are different, and you can use any framework that allows you to create agent, um, to create your agent.
+
+Office Hours
+20:58:18
+
+instead of the element following this particular format whenever it wants to call a tool, it it just produced these tokens to call. It can follow this format and, um, let me see if there are any examples. You can follow this format. And whenever it requires a tool call, it can't say um, channel tool. Or whenever it's time to produce the final output, it So, basically, it just follows this very well defined format that is also easily parceled. Um, actually, the open rate models that OpenAir produce, g g GPT OSS, um, they are trained on hormone format. So um, if you use those open rate models to build an agent, you need to parse out differently. Like, your agent's runtime needs to be, uh, aware of disharmony format. Uh, so this is a good example that you may want to deviate a little bit from React setup, and you create your own system prompt based on what the output is. Um, and just the whole thing would work. Yeah. Short short answer to your question. It's it's very generic. Just the tools are different, and you can use any framework that allows you to create agent um, to create your agent. Yeah. Thank you. Another question, uh, regarding the agency level. So there, uh, you so in your, uh, your lecture, you mentioned that there are multiple ones. Right? And I wonder whether, uh, in the current industry, which one or which ones are the most, uh, mostly used. Yeah. Matter is that agents are what mostly being used, uh, basically, what we were just discussing.
+
+You
+20:58:22
+
+Thank you. Another question regarding the agency level. So there, uh, so in your your lecture, you mentioned that there are multiple ones. Right? And, uh, I wonder whether, uh, in the current industry, which one or which ones are the most mostly used. Mhmm. Yeah. Multiply step agents are what mostly being used. Um, basically, what we were just discussing. Um, it's a it's a let me bring this.
+
+Office Hours
+20:58:22
+
+Um, it's a it's a let me bring this up.
+
+You
+20:59:00
+
+Yeah. This is what mostly is is used. Um, there is often a single agent front end, and it coordinates with the LMM, and it's given access to tools. Um, a lot of companies, like, bigger ones and advanced, like, AI Labs are trying to make multi agent systems work, and then there has been some success But it's not still to a point where they can, uh, productionize it at a scale and people actually find, like, some real benefits from it.
+
+Office Hours
+20:59:01
+
+Yeah. This is what mostly this is used. Uh, there is often a single agent run time, and it coordinates with the element, and it's given access to tools. Um, a lot of companies like bigger ones and advanced, like like AI Labs, are trying to make multi agent systems work. And then there has been some success Uh, but it's not still to a point where they can uh, productionize it at a scale and people actually find, like, some real benefits from that.
+
+Office Hours
+20:59:41
+
+But there are applications out there. I mean, for example, in charge EPT, if you um, select this deep research. Deep research is a we'll cover next week, but, um, it's a multi agent system. There is not a single agent. There are multiple agents, and there is one agent that coordinates this effort and, um, starts various agents and so on. So there are, um, services out there that are built based on multi multi agent systems. But the most common one is multi step agent, like a single agent.
+
+You
+20:59:41
+
+But there are applications For example, in Chargebee t, if you, um, select this deep research, Deep research is a we'll cover it next week, but, um, it's a multi agent. System. There is not a single agent. There are multiple agents, and there is one agent that coordinates this effort and, uh, starts various agents and so. So there are, um, services out there that are built based on multi multi agent system. But the most common one is multi step agent, like a single agent.
+
+Office Hours
+21:00:24
+
+Thank you very much. Uh, sorry for dominating the question. So I have another question regarding this one. It's about, uh, uh, uh, uh, phase. Uh, probably, I don't really have the AI, uh, given the experience, so I don't really know for the based the hugging face. I just wonder whether you can provide some kind of pointers so that we can I can, uh, easily find the models and the search resources, etcetera? Yeah. Sure. Yeah. Please send me a message, um, on the course portal, and I'm happy to share. But it's it's it's usually very simple. Like, if it's Google hugging face, open, and then and see if it brings anything.
+
+You
+21:00:25
+
+Thank you very much. Uh, sorry for the dumbing the question. So I have another question regarding this one. It's about, uh, uh, uh, hub interface. Uh, first, I don't really have the AI, uh, human experience, so I don't really not familiar with the hugging face. I just wonder whether you can provide some kind of pointers so that we can I can easily find the models and the search resources, etcetera? Mhmm. Sure. Yeah. Please send me a message. On the course portal, and I'm happy to share. But it's it's it's usually very simple. Like, if it's Google hugging face, um, open LLMs. Let's see if it could bring anything.
+
+You
+21:00:47
+
+Yeah. I have to find a good link, but maybe an easier pass would be to actually search some of them. Kimmy k two.
+
+Office Hours
+21:00:49
+
+Yeah. I have to find a good link, but maybe an easier path would be to actually search some of them. Um, Kimmy k two.
+
+Office Hours
+21:01:24
+
+So, for example, q m k two is an example of a model. Um, so I searched hard interface q m k two. This is the page where where the model is documented and it's hosted. So here, you can press use this model. And then if you want to use a Hugging like a transformers back end, if you click this, you would see how you can use this. It's usually a few lines of code. Now So if you copy paste this code into your ID and run it, assuming that the model is small enough so it can be run on your, uh, system. You it should work. You can pass whatever question you have here, and then when you bring the output, you will see the final output.
+
+You
+21:01:25
+
+So for example, Kiwi k two is an example of a model. Um, so I searched Hugging Face Kiwi k two. This is the page where where the model is documented and it's hosted. So here, you can press use this model. Then if you want to use the argon, like, transformers back end, if you click this, you would see how you can use this. Usually, a few lines of code. So if you copy paste this code into your ID and run it, assuming that the model is small enough so it can be run on your, uh, system, You it should work. You can pass whatever question you have here, and then when you bring the output, you would see the final app.
+
+Office Hours
+21:02:16
+
+Yeah. Here is also the list of my. You just simply need to go to hidingface.seal. And here, they're all models, and you can also pitch Like, these are trending last seven days, but you can also go select models here. So you see, like, Kiwi k two, GLM OCR, which came out very recently. And so on. So whichever model you want to use, you can just click them and then, um, you you go to this part. Also, here, it I has documentations on how to use in other with other back ends. I think they removed it maybe. But if you click via that, for instance, you can see how you can send request to your VLM server to use this model. Yep.
+
+You
+21:02:18
+
+Yeah. Here is also the rest of my life. You just simply need to go to hubinface.co. And then here, they're all models, and you can also pick, like, these are trending last seven days, but we can also go select models here. So you see, like, kimmy k two, GLM OCR, which came out very recently. And so on. So whichever model you want to use, you can just click them and then, um, you you go to this one. Also, here, it adds documentations on how to use in other with other patterns. Um, I think they removed it maybe. And if you click VLM, for instance, you can see how you can send request to your VLM server to use this model. Yeah.
+
+You
+21:02:28
+
+Does that make sense, Keith? Yeah. Sure. Yeah. Thank you. K.
+
+You
+21:03:54
+
+Thank you. Hi, Adi. Um, when I want to call my you know, admin or agent or whatever, uh, and I have some kind of information coming from my platform, like, from from the database. Is it is it better to send this page out as a JSON into the JSON format, or would it be better to convert it to a JSON or any under special format? Uh, that's a good question. Um, yeah, that's a good question. Technically, it depends on how that element was trained. So for example, if there there is a let's say, imagine there is a company that's training LLMs on a lot of JSON, like, inputs. Um, then those models will probably work better if you send those content that you want as check-in in a JSON format. From what I know, most, um, elements work good in marketing. So that's why a lot of times the system prompts are written in markdown. So, ideally, if you have some, um, some data that you want to include in your context and you can it makes sense to to represent it in a markdown format, that should be preferred. Unless it doesn't make sense logically. For example, if you have some actual, like, JSON payloads coming from something or you have, like, coding questions, it doesn't make sense to convert the JSON payload or some coding, like, um, like, fail fail messages to mark them for me.
+
+Office Hours
+21:03:56
+
+Does that make sense, Jeff? Yeah. Sure. Yeah. Thank you. Yep. Uh, Jason. Sure. Yeah. Thank you, Anthony. Um, when I want to call my you know, admin or agent or whatever, uh, and I have some yeah, kind of information coming from my platform. Right? From from the database. Is it is it better to send this payload as a JSON with the JSON format, or would it be better to convert it to Markdown or any other special format? Um, that's a good question. Yeah. That's a good question. Technically, it depends on how that element was trained. So for example, if there there is let's say, imagine there is a company, it's training LLMs on a lot of JSON like inputs. Then those models would probably work better if you send those content that you want that's checked in in a JSON format. From what I know, most, uh, elements work good in marketing. So that's why a lot of times system prompts are written in markdown. So, ideally, if you have some some data that you want to include in your context, then you can it makes sense to to represent it in a markdown format, that should be preferred. Unless it doesn't make sense logically. For example, if you have some actual, like, JSON payloads coming from something or you have, like, coding questions, it doesn't make sense to convert the JSON payload or some coding, like, um, like, fail fail messages to markdown
+
+You
+21:05:32
+
+I said, you don't follow-up. Sorry. This man information is coming from let's let's say, the all this information is coming from the data Right? So we are getting into with the JSON from the rest API. Right? And let's say that I'm using Cloud Summit or CloudOps. Right? One of the at shopping models. In in this case, would it be better and and you know what? It is a little hard to convert this information with one format. Is it better to have another model? Let's say, another agent convert this case on file to the markdown first and then pass it to the the main agent to generate something for me or look like the rest? Yeah. Can you can you tell me again what those JSONs are? Um, I'm I'm extracting some information from the database. Right? So if if I make some edit back call, for this purpose to do some queries and get the get the result, It's gonna work with it's a normal REST API. Right? So it's gonna be JSON. Right. So in those cases, again, so that was exactly what I meant. Right? So in those cases, if something is doesn't make sense to be represented in a markdown, format, then probably it's not gonna work, um, as good. So it's better just to keep whatever they're, um, their format are, um, because that's so think of it like that. How these models are trained. Right? So these model trained probably on lots of data, and in places where it made sense for anthropic to clean up their data to be in a marked down format. Probably, they've done those. And in cases where it doesn't make sense, they didn't. Right? For example, you know, whenever there are training data, their, uh, extractions from databases and so on, probably they'll keep them as is. So the model has already uh, uh, the model has already very good idea how to deal with those kind of input formats.
+
+Office Hours
+21:05:34
+
+me. I said, did you not have sorry. This man information is coming from let let's say, you know, all this information is coming from the database. Right? So we are getting into a data from a be that REST API. Right? And let's say, again, I'm getting a cloud. Or cloud outpost. Right? One of the edge shopping models. In in this case, um, it would be better and and you know what? It is a little bit hard to convert this information with more conformant. Is it better to have another model, let's say, another agent to convert this JSON file to the marketing first and then pass it to the the main agent to generate something for me or But it's can yeah. Can you can you tell me again what those JSONs are? Um, I'm I'm extracting some information from the database. Right? So if if I'm getting some API call for this purpose to do some queries and get the get the result, it's gonna work with it's a normal API Right? So it's gonna be JSON. Right. So in those cases, again, so that was what I meant. Right? So in those cases, if something is doesn't make sense to be represented in a format, then probably it's not gonna work, uh, as good. So it's better just to keep whatever their, um, their format are, uh, because that's so think of it like that. How these models are trained? Right? So these model trained probably in lots of data and in places where it meets sense for Entropic to clean up their data to be in a markdown format. Probably, they've done those. And in cases where it doesn't make sense, they didn't. Right? For example, in whenever they're in their training data, their, uh, extractions from databases and so on, probably they are keeping as is. So the model has already the model has already very good idea how to deal with those kind of input formats.
+
+Office Hours
+21:05:40
+
+Okay. And one more thing, uh, you know, you you will discuss
+
+You
+21:08:00
+
+Mhmm. Okay. And one more thing. Uh, you know, you you were discussing the thought marked on file. Cloud called mark on file. Mhmm. And when it comes to define you know, I I we can we can introduce skills to them as young as we get that that what she's providing. So how we can, you know, load these skills? Do we need to make let's say, define a new tool to read these skills from the marketing file? And use it today? Yeah. That that's that's a great question. Um, a skills goes into a folder, simply. Like, you let's say you want to create a folder. By a skill. You create a folder. You write whatever expertise and clear instructions you have in mind for that particular scale. And you put you write it in a skill dot m d, like in Markhamfile. And you put that skill dot m d in your folder. Right? You can optionally include the scripts. Like Python files in that folder or some resources. So these are the three key parts of the skills. You have the skill markdown file, which is necessary. You have to have it. And then optionally, you can have resources and, um, the scripts. Now now imagine you have a bunch of the scripts. A bunch of folders. Right? So what you do is that first you create a metadata Right? Your agent run time can take care of this. You can create a metadata on the skill name and descriptions, and include this as part of your context when you are sending this to the l l. So moving forward, the l l knows what is skills are available. Whenever it feels that one of those are necessary, they would commit a tool call. And that tool call is open file. So Mhmm. Basically produces the path of that skill. Um, to load their skill dot m d file. And then it loads at the the agent one time to load that skill dot m d in happens it to the context, sends it back to the element. Now, start, um, from this point forward, the LMM knows about those clear instructions and expertise. That were within the skill.nd for that particular skill. Um, and it continues producing tokens again. That's right. And the point is that it also needs to call those scripts that were in the folder. Uh, it already knows the path. So it just ends at two call and says open the script or or call this Python function. Yeah. But is there any any meeting like autoformatting tool? Sorry. Is there anything like auto formatting for tools here? For this user as well to have a have a standard way of defining the skills.
+
+You
+21:08:05
+
+So if you've looked at
+
+Office Hours
+21:08:07
+
+And when it comes to define you know, I I we can we can introduce skills to the agent maybe that approach is alright. So how we can, you know, load these skills? Do we need to make, you know, let's say, define a new tool to read these skills from the markdown file. And it's gonna say today? Yeah. That that's that's a great question. It skips goes into a folder simply. Like, you let's say you want to create a folder a SKIP. You create a folder. You write whatever expertise and clear instructions you have in mind for that particular escape. And you put you write it in a skill dot m d, like a markdown file. And you put that skill dot m d in your folder. Right? You can optionally include the scripts, like Python files in that folder. Or some resources. So these are the three key parts of a skills. You have a skill markdown file, which is necessary. You have to have it. And then optional, you can have resources and, um, the scripts. Now now imagine you have a bunch of SKUs, bunch of folders. Right? So what you do is that first, you create a metadata Right? Your agent runtime can take care of this. You can create a metadata on the skill name and descriptions, and include this as part of your contact when you are sending this to the LMM. So moving forward, the LMM knows what skills are available. Whenever it feels that those are necessary, it would commit a tool call. And that tool call is open file. So basically produces the path of that skill. Um, to load their skill dot m d file. And then it loads at the agent runtime to load that skill dot m d. That brings it to the context, sends it back to the element. Now, from this point forward, the element knows about those clear instructions and expertise. That were within the skill dot m d for that particular skill. Um, and it continues producing tokens again. Okay. So any point it is that it also needs to call those scripts that were in the folder, uh, it already knows the path. So it just ends at two call and says open the script or or call this Python function. Yeah. But is there any any anything, like, also formatting for alright. Is there anything, like, auto formatting for tools here for this skill as well to have an an standard way of defining the skills. Um, so if you've looked at, um,
+
+You
+21:08:13
+
+I don't know what this
+
+Office Hours
+21:08:16
+
+I don't know. Like, yes. AI agents? No. There are there is a
+
+You
+21:08:31
+
+AI agent assist. Mhmm. No. There are there is a a nice repo with a lot of, uh, skills. I'm trying to find that. Let's see if no. Not this one. Open and see if that is search, which is from Versa. Maybe you can keep working on that.
+
+Office Hours
+21:08:33
+
+a nice repo with a lot of, uh, skills. I'm trying to find that. Let's see if no. Not this one. Then we can open and skip that as such, which is from where so maybe you can you can do that.
+
+Office Hours
+21:08:36
+
+Let me go to what you shared.
+
+You
+21:08:38
+
+Okay. Give me go to what you're showing.
+
+You
+21:09:06
+
+There should be a link to the actual definition of this video. Yes. I think what I what I want to show is is maybe slightly different. Okay. Give me one second. Okay. This is probably a good one.
+
+Office Hours
+21:09:06
+
+There's should be a link to the actual definition. It is still here. Yeah. I think what I what I want to show is is maybe a slightly different. Okay. Give me one second. Okay. This is probably a good one.
+
+You
+21:10:19
+
+This is the standardization part. So most of the skills, if you look at them, they start with something like this. This is the metadata. Like, it has a name, it has a description, and it's not optional. When you want to create an skilldom.md, this part is not optional. You must uh, include this. So this way, you can easily parse these parts when you are automatically creating a metadata to send to in the third like in in the in the beginning to send it to the l l. So this way, the l l m has only access to this like, short descriptions on the name of all the skills available. Mhmm. Okay. Thank you. And I know we are out of time, but are we gonna, uh, you know, discuss that a little bit caching somewhere in the future in the coming weeks? Or No. LRD caching is not going to be, we are not gonna talk more about those in the guided learning. But if you have any question or if you want details, let me know. Yeah. Attention. Yep. It's basically, um, it's a it's a simple concept, and there is some underlying, um, technical details. Uh, depending on at what depth you want to learn, let me know. I can share resources.
+
+Office Hours
+21:10:20
+
+This is the standardization part. So most of the skills, if you look at them, they start with something like this. And this is the metadata. Like, it has a name. It has a description, and it's not optional. When you want to create an SKILLDOM that empty, this part is not optional. You must, um, include this. So this way, you can easily parse these parts when you are automatically creating a metadata to send to in the per like, in in the in the beginning to send it to the LN. So this way, the LN has only access to this like, short descriptions and the name of all the skills available. Okay. Thank you. And and and we are out of time, but, uh, uh, are we gonna have you know, discuss the l l n cashing somewhere in the future in the coming weeks or No. L l n cashing is not going to be, uh, we're not gonna talk more about those in the guided learning. But if you have any question, we you want details, let me know. Yeah. I can share. Yep. It's basically, um, it's a it's a simple concept, and there is some underlying, um, technical details. Uh, depending on at what tech you want to learn, let me know. I can share resources.
+
+Office Hours
+21:10:24
+
+Yep. Thanks. Um, Nikki?
+
+Office Hours
+21:13:53
+
+Yeah. Hi, Adi. Uh, yeah. So my question is on MCP. So, uh, as per my use case, uh, what I have to do is, you know, to collect the to connect to my, uh, cloud SQL database. Right? So, uh, via Twi calling, via some, uh, creating an MCP client, I can connect to my louder. This is basically a Google Cloud. So I have to connect to to SQL, my data things. But my database stores, uh, say five to six stable. And, uh, those stable has various problems. So, uh, I guess this, uh, the client side, whatever the, uh, the service provider exposes the API. It just exposes the API. Right? Regarding all the day my own database and my own specific table, uh, it wouldn't have any knowledge of that. So I have to write I believe, prompt to understand those table to make those complex choice to get me the output, uh, whatever I'm, uh, I want. Like, like, test. Well, agent, I'm trying to see it. Yeah. Exactly. If if, uh, for whatever reason, based on the use case. If it's a complex use case or, like, a very custom use case, um, you have to clarify through prompt. Um, if you believe that the LLM is not good enough, on processing that without providing additional instructions, yes. It's it's basically your responsibility to add those clarification as part of this system prompt. Okay. Okay. Got it. Great. Yeah. Because without those, basically, they are just showing a bunch of function names, like signatures, descriptions, and how to use them to the LLM. And the LLM, it's it's it's up to the LLM to decide when to use them. If, um, some function hadn't required needs more explanation, it's basically a response. Or even if the results of the function needs more clarification, it's usually your response. Um, so the thing is when you create MCP servers, let's say, local MCP, uh, tools, you can specify. You can write description for them. So in that description, you can write those additional clarifications once. And then you don't have to make any manual changes. To this entire setup. Like, everything would still work because when you are adding an MCP, there is, um, this, like, the runtime would load the tools, and it's some kind of an I don't know what's going on under the hood in many of these, um, um, agents because they are closed, but, um, but, basically, they there is a day. They so the all they need is the MCP servers and how to use those. Based on that, they they create a system prompt and then include that system prompt, send it to the So as long as you clarify everything in the description of your MCP tool, uh, you don't need to manually touch any anything outside of that. Okay. So, basically, I have to, uh, in a detailed manner, I have to, uh, discuss describe my table and all the columns, right, so that it understand. Yes. We can see that. Got it. Got it. Mhmm. That's that's the clearance. Right? Yeah. Because you don't have to touch the rest of the system or manually go and do prompt surgery or change system prompts. Okay. Okay. Got it. Yeah. Thanks. Yeah. Uh, Uvi?
+
+You
+21:13:54
+
+Yeah. Thanks. Um, meeting? Yeah. Hi, Ali. Uh, yeah. So my question is on MCP. So, uh, as for my use case, uh, what I have to do is, you know, to collect, uh, to connect to my, uh, cloud SQL database. Right? So, uh, via tool calling, via some, uh, creating an MCP client, I can connect to my cloud at the is basically a Google Cloud. So I have to connect to the SQL my database. But my database stores, uh, say, five to six stable. And and those table has various columns. So, uh, I guess this, uh, the client side, whatever the, uh, the service provider exposes the API. It just exposes the API. Right? Regarding all the day my own database and my own specific table, uh, it it wouldn't have any knowledge of that. So I have to write ivory from to understand those table to make those complex joins to get me the output, uh, whatever, uh, I want. Like like, test well, agent I'm trying to see. Yeah. Exactly. If if, uh, for whatever reason, based on the use case, if it's a complex use case or, like, a very custom use case, um, you have to clarify through prompt. Um, if you believe that the LLM is not good enough, on processing that without providing additional instructions, yes. It's it's basically your responsibility to add those clarification as part of the system project. Okay. Okay. Got it. Thanks. Yeah. Because without those, basically, we are just showing a bunch of function names, like signatures, descriptions, and how to use them to the LLM. And the LLM, it's it's it's up to the LLM to decide when to use them. If, um, some function hadn't required needs more explanation, it's basically a response. Or even if the results of the function needs more clarification, it's usually your responsibility. Um, so the thing is when you create MCP servers, let's say, local MCP, uh, tools, you can specify specify. You can write description for them. So in that description, you can write those additional clarifications once, and then you don't have to make any manual changes to this entire setup. Everything would still work because when you are having an MCP, there is, um, this, like, the runtime would load tools. And it's some kind of an I don't know what's going on under the hood many of these, um, agents. Because they are closed. But, um, but, basically, they there is a they so all they need is the MCPs. Servers on how to use those. Based on that, they they create a system and then include that system prompt, send it to the heavily. So as long as you clarify everything in the description of your MCP tool, uh, you don't need to manually touch any anything outside of that. So, basically, I have to, uh, in a detailed manner, I have to, uh, describe my table and all the columns, right, so that it understands. Yes. It is. Okay. Got it. Got it. That's that's the cleanest thing. Yeah. Because you don't have to touch the rest of the system. We'll manually go and do prompt surgery or change system prompts. Yep. Yep. Got it. Thanks. Yeah. Uh, to me?
+
+You
+21:14:00
+
+Yes. Uh, I have a question.
+
+Office Hours
+21:14:00
+
+Yes. I I have a question.
+
+You
+21:14:08
+
+It's mostly the term of architecture Mhmm. If you have a multi agent system,
+
+You
+21:14:31
+
+we know that, uh, the the the the agents are async, right, to to produce the result. Mhmm. Yeah. If you did you need some coordination, uh, which tool are are used? To to coordinate all the responses and send back to the end user. I I I wanted just to have a high level in term of, uh, solution architecture.
+
+Office Hours
+21:14:33
+
+It's mostly the term of architecture. If you have a multi agent system, we do not uh, the the the the agents are async, right, to to produce the result. Mhmm. Yeah. If you need you need some coordination, uh, which tool are are used? To to coordinate all the responses and send back to the end user. I I I wanted just to have a a high level in camera solution architecture.
+
+Office Hours
+21:14:37
+
+Right.
+
+You
+21:15:40
+
+Um, right. I have to actually go and read the source code of that You're right. They are pacing. So perhaps there is some connection going on. So when they start so when the manager, agent, or whatever call it, lead agent, when they start multiple agents, They probably start some connection, keep the connection, uh, open, And then whenever the agent is done, um, would send a message back to the manager agent. So the manager agent would know that, okay, these agents are done, and then whenever all the agents are done, manager agent can start, uh, collecting everything and, um, drafting final The details, I don't know. I can I can check? But that's basically the high level idea. It's very similar to probably how chat does it when you when you use deep research or when you use promo. Because when I use Chrome mode and then I, um, close my laptop, and then, um, at some point, I get a notification on my phone that this is done. So what that means is that, basically, there is a connection open, and then whenever it's done, some one time just sends me a notification and let's me know let me know that um, it's completed.
+
+Office Hours
+21:15:41
+
+I have to actually go and read the source code of that. You're right. They are async. So perhaps there is some connection going on. So when they start so when the manager, agent, or whatever call it, lead agent, when they start multiple agents, they probably start some connection, keep the connection, uh, open. And then whenever the agent is done, um, it would send a message back to the manager agent. So the manager agent will know that, okay. These agents are done. And then whenever all the agents are done, manager agent can start uh, collecting everything and, um, drafting final output. Um, the details, I don't know. I can I can check? But that's basically the hardware. Like, it's very similar to probably how chat g p t it when you when you use deep research or when you use promote. Because when I use Chrome mode and then I, uh, close my laptop, And then, um, at some point, I get a notification on my phone that this is done. So what that means is that, basically, there is a connection open, and then whenever it's done, some one time just sends me a notification or let me know let me know that uh, it's completed.
+
+Office Hours
+21:15:59
+
+All of these are the same. I mean, basically, once you know, like, how deep research takes care of it, probably for multi agent systems, it's the same or even um, with Pro. So yeah. Now if I type something here, do a comprehensive research
+
+You
+21:15:59
+
+Yeah. All of these are the same way. I mean, basically, once you know, like, how deep research takes care of it, probably for multi agent systems, it's the same or even um, with Pro. So yeah. Now if I type something here, do a comprehensive research,
+
+You
+21:16:03
+
+on quantum computing.
+
+Office Hours
+21:16:03
+
+on quantum computing.
+
+You
+21:16:13
+
+So, basically, now we just start at that. So, um, even if I close this tab, I would get a notification.
+
+Office Hours
+21:16:14
+
+So, basically, now you just start at that. So, um, even if I close this tab, I would get a notification.
+
+You
+21:17:08
+
+Okay. And if I have to to build it, uh, for my home, this manager Mhmm. Agent manager, Which tool should I use for that? Oh, the tool is not going to be too different. I mean, as long as you stick to a tool that you can create a single agent, you can use the same tool the same framework to create multiple agents. Just your, um, the logic of your runtime would be more complicated. You may want to, uh, store separate system plans for each engine. So that's the only only part. Um, but, basically, you can stick to whatever framework you are using. For instance, if it's line chain, it's still going to be line You just create agents multiple times. Uh, in our our assignment, we are going to create
+
+Office Hours
+21:17:09
+
+Okay. And if I have to to build it, uh, for my home, uh, this manager agent manager, which tool should I use for that? Oh, the tool is not going to be too different. I mean, as long as you stick to a tool that you can create a single agent, you can use the same tool the same framework to create multiple agents. Just your the logic of your runtime would be more complicated. You may want to, uh, store separate system plans for each agent. So that's the only only part. But, basically, you can stick to whatever, um, framework you are using. For instance, if it's live chains, it's still going to be live chain. You just create agents multiple multiple times. Uh, in our in our assignment, we are going to create agent here and then use it.
+
+You
+21:17:18
+
+agent here and then use it. If it's a multistage agent system, you need to create multiple agents. And, also, you manually implement the logic out, like, the coordination logic.
+
+Office Hours
+21:17:18
+
+If it's a multis agent system, you need to create multiple agents. And, also, you manually implement the logic at, like, the coordination logic.
+
+You
+21:18:01
+
+If you do worries, it's it's becoming a little bit more complex. Right? Is going to be more complex, of course. Yeah. And it requires a lot of things because but, basically, many of those challenges can at least, as of now that I'm talking, are fixed through system problems. So for example, if some agents are taking forever to respond or they are getting stuck in a loop, it's often like, AI labs often go to their system content and add some explicit instructions to avoid those kind of issues instead of implementing some software code.
+
+Office Hours
+21:18:01
+
+This is where it's it's becoming a little bit more complex. Right? It is going to be more complex, of course. Yeah. And it requires a lot of things because but, basically, many of those challenges can at least, as of now that I'm talking about, fixed through system problems. So for example, if some agents are taking forever to respond or they are getting stuck in a loop, it's often like, AI labs often go to their system content and adds up explicit instructions to avoid those kind of issues instead of implementing some software code.
+
+Office Hours
+21:18:12
+
+So this is the anthropic deep research, um, repo.
+
+You
+21:18:13
+
+So this is the anthroscopic deep research repo.
+
+Office Hours
+21:18:20
+
+No. That is
+
+You
+21:18:20
+
+No. Not this.
+
+Office Hours
+21:18:46
+
+Yep. I'll try to find that and send it to you. But if you actually go and look at the like, the system prompts that or deep research they are using, it's very, very long. And it explicitly says what to do, what not to do if you bought a stock. Know, don't do this to don't do that, all those things.
+
+You
+21:18:47
+
+I'll try to find and and send it to you. But if you actually go and look at the app like, the system prompts tab, for deep research they are using, it's very, very long. And it takes explicitly says what to do, what not to do if you got a stock. Know, don't do this to don't do that, all those things.
+
+Office Hours
+21:19:11
+
+Okay. Thank you. Yeah. Thanks. But, again, this is how people are handling it these days. I mean, it's made a difference. Um, in the future. These days, there it seems it's it's very challenging, and the best way to fix many of the issues are just through system point. Um, yeah. Thanks. Uh, next question. Monica.
+
+You
+21:19:12
+
+Okay. Thank you. Yeah. Thanks. But, again, this is how people are handling it easily. I mean, it's made it different. Uh, in the future. These days, there it seems it's it's very challenging, and the best way to fix many of the issues are just through Um, yeah. Thanks. Uh, next question. Rumika.
+
+You
+21:21:19
+
+Yeah. My question is quite similar to what uh, earlier you can ask. So, um, like, earlier, uh, in my company, what we were doing here uh, any code can be made, uh, to test it, we were doing it manually. Other than the unit and, uh, integration test. Um, So there is some base database rules that are created for each account. And then we were comparing it manually. So what I did is, uh, with the help of, uh, basically, I created some kind of a tool uh, so that it can connect to DB. Like, a script that we created, and then uh, it compares the data rules and all those. Initially, when I asked, it says I cannot connect to database. So I wrote the scripts, and it worked quite successfully. Now if I want to give it to everybody in the company wide, um, right now, I'm using cursor interface to do that. Um, so am I creating the tool? Like, am I creating an agent, basically, and then distributing other utility? Or it's, like, because under the hood, like, Arthur is also using Jet chat and, uh, things like that. Right? So how can I give it as a utility to other? So I think the main question is you want to create MCP server, um, or not. Because with most, um, with most chatbots, if you have some MCP, um, servers, we can also expose those to your chatbot, and then the chatbot would suddenly know about be able to use those tools. So I think that's probably the cleanest day You will implement your own NCP server. And you add it to your to the to your chatbot client, for example, if you're using control pick you have the app cloud, and then they they there is a place where can add your MCP servers. So if you do so, then, um, the child would be able to use the tool.
+
+Office Hours
+21:21:22
+
+Yeah. My question is quite similar to what, uh, earlier Nathan asked. So, um, like, earlier, uh, in my company, what we were doing here uh, any code can be made, uh, to test it, we were doing it manually. Other than the unit and, uh, integration test. So there is some base database rules that are created for each account, and then we were comparing it manually. So what I did is, uh, with the help of cursor, uh, basically, I created some kind of a tool uh, so that it can connect to. Like, a script that we created. And then it compare the data rules and all those. Initially, when I asked, it says I cannot connect to database. So I wrote the scripts, and it worked quite successfully. Now if I want to give it to everybody in the company wide, Right now, I'm using cursor interface to do that. So am I creating a tool? Like, am I creating an agent, basically, and then distributing other utility or it's, like, because under the home, like, Cartel is also using it to me and, uh, think like that. Right? So how can I can I, uh, give it as a utility to other? So I think your main question is you want to create MCP server or not. Because with most um, with most chatbots, if you have some MCP um, servers, you can also expose those to your chatbot. And then a chatbot would suddenly know about and be able to use those tools. So I think that's probably the cleanest way. You implement your own MCP server, and you add it to your to the to your chatbot client. For example, if you're using control pick you have the app cloud, and then they they there is a place where you can add your MCP servers. So if you do so, and, um, and the channel would be able to use the tool. Does that answer your question?
+
+You
+21:21:24
+
+Does that answer your question?
+
+You
+21:22:03
+
+I think from, yeah, your perspective, like, from my side, I was, uh, like, I I don't I didn't get the enough details. Like, to be an instrumented. What what like, so MCSP server will be doing data or the like, what and that too, basically, the agent already in Geta, I need to create an another user defined agent on top of But you are saying just having them, CP server will be enough for this requirement. Yes. So I have done this before. So for example, in cloud desktop app, I believe you can also
+
+Office Hours
+21:22:39
+
+I think from, yeah, your perspective, like, from my side, I don't, uh, like, I I don't I didn't get the enough details. Like, to to get implemented. What what like uh-huh. So m c c server will be doing the enough or the like, what I know today, basically, the agent already agreed. I need to create an another user defined agent on top of it. But you are saying just having time, CP server will be enough for this requirement. Yes. So I have done this before. So for example, in cloud desktop app, I believe you can also, um, yeah. Let me yeah. Local MCT server supporting their cloud desktop app. So, uh, basically, what this line is saying is that you can implement an MCB server, which is the whatever tool you want. And then you can go to the cloud desktop app. You expose your MCP server. You add the how to you basically there is a JSON file you added. How do you tell Cloud how to use it. And then that's it. You you simply do not need any any additional agents. DeepClot, which is an agent by itself it would just take care of it. It already knows about the tool, and it knows how to call the how to use the tool, so it's going to use it.
+
+You
+21:23:08
+
+yeah. Let me yeah. Local MCP server supporting the cloud desktop app. So, uh, basically, what this line is saying is that you can implement an MCP server, which is the whatever tool you want, and then you can go to the cloud desktop app You expose your MCP server. You add how to you basically there is a JSON file you added how to you tell cloud how to use it. And then that's it. You you simply do not need any any additional agents. The club, which is an agent by itself, it will just take care of it. It already knows about the tool, and it knows how to call the how to use the tool, so it's going to use it. I I so there is a very good example on how to implement MCP server and connect it to client. I'll find it and share it with you. Okay. So is it still going to use the cursor, uh, or I can just directly call the JetGPT, and there's no need of a cursor anymore because, uh, after this MTP server will be created.
+
+Office Hours
+21:23:10
+
+K. I so there is a very good example on how to implement MCP server and connect it to client. I'll find it and share it with you. Okay. So is it still going to use the cursor, uh, or I can just directly call the JTPT, and there's no need of a cursor anymore because, uh, after this MTP server will be created.
+
+You
+21:23:38
+
+Um, can you can you elaborate a bit more? Uh, so right now, like, everything is, uh, like, I I'm using the cursor chat input box. Right? To give it all details. Like, okay. Connect to database. Compare this raw skew meter event. Um, but when I want to release it as utility, I I believe there is no need of cursor anymore. Right? I can have the MCP server as you suggested, and
+
+You
+21:24:24
+
+will connect to JettyPT and then, uh, do the same what cursor is allowing me to. Uh, no. Probably, that's not gonna happen that way. It depends on how Cursor is under the hoodies calling that element. Because for example, this link that I showed, you manually go to this app, Cloud Desktop app. And then you introduce your m c system. So as long as you are staying within this app, it would be aware of this. If you are using some third party apps, let's say, that under the hood is is using bug, it's probably using their cloud, like, cloud, uh, API. So it's not using this. So it no longer has access to, um, to the MCP tool. Um, so for Karesen, You know, openly introduced this, um, codecs app
+
+Office Hours
+21:24:24
+
+Um, can you can you elaborate a little more? Uh, so right now, like, everything is, uh, like, I I'm using the concern or chat, uh, input box. Right? To give it all details. Like, okay. Connect to database, compare this rules, limit the event. Um, but when I want to release it as a utility, I I believe there's no need of cursor anymore. Right? I can have the MCP server as you suggested, and that will connect to JettyPT and then, uh, do the same what cursor is allowing No. Probably, that's not gonna happen that way. It depends on how Cursor is under the hood is calling that area. Because, for example, this link that I showed, you manually go to this app. Cloud desktop app, and then you introduce your MTP server. So as long as you are staying within this app, it would be aware of this. If you are using some third party apps, let's say, that under the hood is is using bot, It's probably using their cloud, like, cloud uh, API. So it's not using this. So it no longer has access to, um, to the MCP tool. Um, so for care set, you know, OpenAI introduced this, um, codecs app codecs
+
+You
+21:24:49
+
+codecs app. App, recently. Yes. Yes. Um, and if you if if you your use case is coding, um, if you install this, there is also a place where you can, um, add your MTP servers. Um, yeah. I'm I have it. I've I've seen it. I didn't add MCP servers yet, but
+
+Office Hours
+21:24:50
+
+App recently. Yes. Yes. Um, and if you if if you your use case is coding, Um, if you install this, there is also a place where you can, um, add your MCP servers. Yeah. I I have it. I've I've seen it. I didn't add MCP servers yet, but
+
+Office Hours
+21:24:54
+
+Let me see if I can show it here.
+
+You
+21:24:56
+
+let me see if I can show it here.
+
+You
+21:25:02
+
+So there are skills,
+
+Office Hours
+21:25:03
+
+So there are skills.
+
+You
+21:25:38
+
+Yeah. So you're trying to add servers. And then if it's local server, you can say, you know, if it's if it's over HTTP or or SDI. So you can keep these, and then you can basically, you can add whatever um, MCP server you have. And then from that point forward, Cortex would know that that's one, uh, um, MCP server as a tool that you want to use.
+
+You
+21:26:22
+
+Okay. And one more basic question I have. Like, when we go to chatgpt.com, a website, right, like that, you, uh, goes to. Right? And then um, the LNIM is running behind this chat box or this, uh, you, uh, website. Uh, are do we call them, like, domain specific or general purpose, and then they're more what do we call them? Oh, so the the underlying model are called yes, they are they are in in in chatbots. They are general purpose analytics. They are an they are elements that are trained to handle day to day tasks.
+
+Office Hours
+21:26:22
+
+Yeah. So you can add servers. And then if it's local server, you can say, you know, like, if it's if it's over HTTP or or SDR, So you can keep this, and then you can basically, you can add whatever um, MCP server you have. And then from that point forward, codecs would know that that's one, um, MCP server as a tool that you want to use. Okay. And one more basic question I have. Like, when we go to chattypt.com, that site, right, like, that you, uh, goes to. Right? And then, um, there and I'm running behind this chat box. Or this, uh, you, uh, website. Uh, it Uh, do we call them, like, domain specific or general purpose? And then they're more more do we call them? Oh, so the the underlying model are called yes, they are they are in in in chatbots. They are general purpose analytics. They are an they are elements that are trained to handle day to day tasks.
+
+Office Hours
+21:27:43
+
+Yeah. But if you for example, yeah. I mean, for chatbots, like Gemini, um, if you go to cloud.ai, or even chatgpd.com, the underlying models that are serving these chatbots are general elements. Uh, in the case of chat g t p Changem p t, there are two models. Only. One is the instant, and one is thinking. So they only have two models that are supporting chat GPT. Like g p GPT five. I'm I'm talking about GPT five. So there is one GPT 5.2 instant, which is a non thinking model. And there is GPT 5.2 thinking, which thinks Uh, and then auto and pro is is still relying on these two. Okay. And the same models, we can also call. Right? Like, in the office environment, like, we can, uh, look what's running behind it, like, for example, 5.2 pro, can we call the same model uh, as well? You can basically use any of these models. You can use some API Uh, if that's your question about, like, sending API calls, yes. You can use. I think is some of these are commercial, so you may need to have tokens or paid. Uh, but in general, yes. Almost to the best of my knowledge, all AI labs that are offering chatbot services, they allow you to send to specify which model you want to use and send some, uh, request to their API.
+
+You
+21:27:51
+
+Yeah. But if you for example, yeah. I mean, for chatbots, like, Gemini, uh, if you go to product.ai, or even chatgpt.com. The underlying models that are serving these chatbots are general purpose. Um, in the case of chat, g t, uh, chat g t, there are two models. One is the instant, and one is thinking. So they only have two models that are supporting Chai GPT. Like g p GPT five. I'm I'm talking about GPT five. So there is one GPT 5.2 instead, which is a non thinking model. And there is GPT 5.2 thinking, which thinks uh, and auto and pro is is still relying on these two. Okay. And the same models we can also call. Right? Like, in our office environment, like, we can what's behind it. Like, for example, 5.2 pro, can we call the same model uh, as well? You can basically use any of these models. You can use some API Uh, if that's your question about, like, sending API calls, yes, you can use. Um, I think is some of these are commercial, so you may need to have tokens or pay. Uh, but in general, yes. Almost to the best of my knowledge, all AI labs that are offering chatbot services, they allow you to send to specify which model you want to use and send some request to their API. Okay. Thank you so much. Yeah. Thanks. Uh, so
+
+Office Hours
+21:27:51
+
+Okay. Thank you so much. Yeah. Thanks. Uh, South.
+
+You
+21:30:34
+
+Hey. Hello, Ellie. Good night. My question is related to memory. Um, as I know there are two kind of memories, short term memory or long term memory. But I didn't understand how we act like, how the agent access to the memory and how store the data. We're all good. Um, I understood the tools, but not the memory. Call. That's when when is this memory loop. Yeah. Happening and, uh, sorry. Just well, the thing How we difference or how the agent's different between short term memory and long term memory and when to use. Sure. Um, so short term memory is just, like, the context window. Whatever is in the context, that's the short term memory. That's what the LLM is going to see uh, at any given point. For example, in this example, I don't know if you were in the meeting while I was explaining this, but um, this example that is passed to the element as part of its its context, this is short term memory. So the LLM sees this. Now long term memories, anything outside of that, that you just source somewhere, and you have some components to load them as needed. So that could mean, um, so, basically, the memory long term memory can be simply what you learned so far from the user. So it can be just a list of, you know, like, this user prefers tile seats or this user prefers this and that. Or it can be coming from retrieval companies. So in last week, content, we have we have Rack. Right? So Rack has this reachable app. So retrieval can also, um, whenever needed, based on the prompts, you can you can like, your onetime can retrieve relevant content from your knowledge base. Right? So retrieval has access to knowledge base here. It always re can return some chunks. Depending on what the existing prompt is, and then it would the runtime would include to us and has and put them to be in the short term memory. Of the LLA. So so, again, we have short term memory, which is equivalent to the context. What is what is actually in the context. We have long term memory, which is everything outside of that that whenever is needed, you can load based on like, dynamically based on what the input is at this point. And then you move stuff, whatever you loaded into the context menu. So, basically, you move it into the short term memory.
+
+Office Hours
+21:30:34
+
+Hey. Hello, Ali. Good night. My question is related to memory. Um, as I know there are two kind of memories, short term memory or long term memory. But I didn't understand how we access like, how the agent access to the memory and how store the data. We're all good. Um, I understood the tools, but not the memory. Call. That's when when is is memory live? Happening and, uh, sorry. Just one more thing. And how we difference or how the agent's different between short term memory and long term memory? And what to use. Sure. Um, so short term memory is just like the context menu. Whatever is in the context, that's the short term. That's what the LLM is going to see, um, at any given point. Example, in this example, I don't know if you were in the meeting while I was explaining this, but um, this example, that is passed to the element as part of its its context. This is short term memory. So the LLM sees this. Now long term memory is anything outside of that. That you just saw somewhere and you have some components to load in as needed. So that could mean, um, so, basically, the memory long term memory can be simply what you learned so far from the user. So it can be just a list of, you know, like, this user prefers idle seats or this user prefers this and that. Or it can be coming from retrieval components. Um, so in last week content, we have we had RAC. Right? So RAC has this retrieval. So retrieval can also, whenever needed based on the prompt, you can you can let your one time can retrieve relevant content. From your knowledge base. Right? So retrieval has access to knowledge base here. It always can return some chunks depending on what the existing prompt is. And then it would their runtime would include those and pass and put them to in the short term memory of the element. So so, again, we have short term memory, which is equivalent to the context, what is what is actually in the context. We have long term memory, which is everything outside of that, that whenever is needed, you you can load based on like, dynamically based on what the input is at this point. And then you move stuff, whatever you loaded into the uh, context window. So, basically, you move it into the short term memory.
+
+Office Hours
+21:30:52
+
+Okay. And the long term memory could be, like, simple of data a dynam database or migrate one for Yeah. Exactly. It can be a lot of databases here. You have retrieval here. Yeah.
+
+You
+21:31:30
+
+Okay. And the long term memory could be a simple, a data bay a dynamo database or Right. Right. Right. Right. Right. Yeah. Exactly. It can be a lot of databases here. You have retrieval here. Yeah. Okay. Um, one last question is Sorry. Before before the next question. For example, this is a very common setup in coding agents. I mean, because coding agents they're not going to load the entire code base, um, into their active memory. It's not gonna fit So what they do is that they store your entire code base here, They follow all the best practices that we learned in the rank chapter. In the RAG, uh, week. Uh, they embed everything as well. And then the code base sits somewhere here. Whenever there is a question based on how things are going, the retrieval component would also retrieve relevant chunks of the call base and put it in the active memory.
+
+Office Hours
+21:31:34
+
+Okay. And one last question is Uh, sorry. Before before the next question, for example, this is a very common setup in coordinate. Agents again. Because coding agents, they're not going to load the entire code base. Uh, into their active memory. It's not gonna fit. So what they do is that they store your entire code base here, um, They follow all the best practices that we learned in the RAC chapter. In the RAC, uh, week. Uh, they embed everything and so on. And then the code base sits somewhere here. Whenever there is a question based on how things are going, a retrieval component would also retrieve relevant chunks of the code base and put it in the active memory.
+
+Office Hours
+21:32:35
+

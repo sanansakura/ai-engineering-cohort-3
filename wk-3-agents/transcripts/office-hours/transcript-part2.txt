@@ -1,0 +1,300 @@
+Office Hours
+20:39:04
+
+make a decision what's the right tool? Or is it dependent on the Never. The agent the agent is actually just a one time. It's basically a logic that you implement to keep looking at the outputs of element. Whenever the output of LMM is is following a certain format to which indicates that it needs to call some tools, It just simply parses it and sends it to that tool. Execute that tool, get the results back, send it back to element. So it's more like in a MVC, a controller. Or an orchestration. Exactly. It's in many places, you would see this agent front end. It's also called Orchestrate. Um, it It does nothing but just to orchestrate. So if you think of this as a runtime or a simple orchestrator Yes. Then you know, this entire thing is what people, uh, say say when they say, um, agent. So you know, agent is like a little bit abstract. Uh, this is agent. If you go inside agent, then you would see a broadcast speaker. And then all these components. That's right. But here's my question now. When you have multi agent environment, who's making the decision on what the next step should be? Mhmm. One of the agents decision or the l l l making the decision? You're talking about multi agent systems. Right? Yes. Or even, like, in a workflow, you're basically saying in an agentic environment, the difference is the workflow gets decided in real time. Is that right? It's not predecided by the developer. Mhmm. So I'm trying to make sure which component is deciding what will LLM is. I'll wait LLM. I mean, this is the brain. These guys are just they're so you can think of I mean, you would we would see this in our Deepgram. Discussion. But these are just, like, let's say, 10 lines of code that's just, um, send some input to it, looks at the output, parse it, execute it. So are you saying LMM has two paths of the seasoning? One is forecasting the next token and also forecasting the next need of the tool.
+
+You
+20:39:07
+
+Does agent by itself make a decision what's the right tool? Or agent dependent on the LOB? Neither. The agent the agent is actually just a one time. It's basically the logic that we implement to keep looking at the outputs of LMS. Whenever the output of is is following a certain format to each indicates that it needs to call some tools. It just simply parses it and sends it to the tool, execute that tool. Get the results back, send it back to the link. So it's more like in a MVC, a controller. Or an orchestration. Exactly. It's in many places, you would see this agent run time. It's also also called Orchestrator. Uh, okay. It does nothing but just to Orchestrate. So if you think of this as a run time or a simple art orchestrator, um, um, then, you know, this entire thing is what? People, uh, say when they say, uh, agent. So, you know, agent is, like, a little bit abstract. Uh, this is agent. Uh, if you go inside agent, then you will see an RTS creator and then all these components. That's right. But here's my question now. When you have multi agent environment, who's making the decision on what the next step should be? Mhmm. One of the agent making the decision or the LLM making the decision? You're talking about multi agent systems. Right? Yes. Or even, like, in a workflow, you're basically saying in a gentec environment, the difference is the workflow gets decided in real time. Is it right? It's not predecided by the developer. Mhmm. So I'm trying to make sure which component is deciding what will LMS. I'll wait LLM. I mean, this is the brain. These guys are just they're so you can think of I mean, you would we would see this in our deep dive. Session. But these are just, like, let's say, 10 lines of code that just um, send some input to this, looks at the output, parse it, as if you want to. So you're saying LLM has two paths of the seasoning? One is forecasting the next token, and also forecasting the next need of the tool.
+
+Office Hours
+20:39:46
+
+It's trying to forecast what will the next token, as well as the next actor that may be needed to provide us some information. Oh, yeah. Yeah. Of course. Yeah. And then at any given time, it looks its entire, um, history, like, entire context like, tokens within its context. Then based on that, it simply produces the next tokens, like, one by one. And then at was yeah. Go ahead. And at any given time, if it if it feels that in order to continue producing tokens, the best way moving forward is to rely on some tools then it produces those tool coming, uh, things. Okay. Okay. Okay.
+
+Office Hours
+20:40:34
+
+Alright. Yeah. That that that's what I said. So there are almost, like, two types of decision. Yes. Based on my context or the corpus, I'm always trying to find what would be the next uh, uh, uh, you know, token. And I'm also trying to so how is the corpus of the toolset defined in LLL? Okay. This speed we will also go over this in our deep dive. So it's going to look something like this. So let's say let's say I'm going to mimic so let's say I'm an element. So whatever I type, basically, imagine that the element is producing that. Right? Yes. So I not now. Um, right now, let me type this. So you have access
+
+You
+20:40:38
+
+It's trying to forecast what will be the next token as well as the next actor that may be needed to provide us some information. Oh, yeah. Yeah. Of course. Yeah. LLM, at any given time, it looks at its entire, um, history, like, entire context, like, tokens within its context. Then based on that, it simply produces the next tokens, like, one by one. And then I I guess Go ahead. And at any given time, if if if it feels that, in order to continue producing tokens, the best way moving forward is to rely on some tools, then it produces those two calling, uh, link. Okay. Okay. Okay. Alright. Yeah. That that that's what I'm saying. So they're almost like two types of decision. Yes. Based on my context or the corpus, I'm always trying to find what will the next, uh, uh, uh, you know, token. And I'm also trying to so how is the corpus of the toolset defined in the LLL? Okay. This would we would also go over this in our deep dive. So it's going to look something like this. So let's say let's say I'm going to mimic so let's say I'm an LMM. So whatever I type, basically, imagine that the LMM is producing Right? Um, Yes. So I not now. Um, right now, let me type this. So you have access
+
+You
+20:40:40
+
+to a tool named uh, put together.
+
+Office Hours
+20:40:41
+
+to a tool named Sure. Together.
+
+You
+20:40:46
+
+Let's just keep it simple. So, um, so I send
+
+Office Hours
+20:40:46
+
+Let's just keep it simple. So um, so I send
+
+You
+20:40:53
+
+so this is the system, and this is coming from the user. Right? So these two go into that agent front.
+
+Office Hours
+20:41:12
+
+so this is the system, and this is coming from the user. Right? So these two go into the agent front end. Not not these two. So this is the user query. It goes into the agent runtime. And then agent runtime, you implemented the log It basically appends the system from the display. Okay? And now this goes into the element. Agent run time sends these two to the element.
+
+You
+20:41:13
+
+Not not these two. So this is the user query. It goes into the agent front time. And then agent runtime, you implemented the logic. You basically appends this system prompt to this guy. Okay? And now this goes into the element. Agent run time sends these two to the element.
+
+You
+20:41:29
+
+Okay. And now LMM is basically saying this content. You have access to a tool named Getbetter. How is the better? If it's a thinking or reasoning LMM, this is what the LMM this can be one way that LML start producing tokens. So, um,
+
+Office Hours
+20:41:31
+
+Okay. And now element is basically seeing this context. You have access to a tool named getter there. How is the better? If it's a thinking or reasoning element, this is what the element this can be one way that element start producing tokens. So, um, it already has this.
+
+You
+20:41:34
+
+it already has this.
+
+Office Hours
+20:41:35
+
+And then
+
+You
+20:41:55
+
+And then okay. So from here, I I would imagine I'm the element. So me as element, I go over this. Okay. You have access to this. How is the better? And now I need to start the tokens one by one. I may produce things like um, let me think clearly.
+
+You
+20:42:58
+
+The user wants to know how the veteran is I have also access to, uh, to name Getbetter. So these are all the tokens that the engine may decide to produce. And then here, it may say, okay. Then let me call it and then look at the, um, output. And then here, it produces two call Yep. GetWeather. With some location of the user, assuming that it knows the location of the user. SF, for instance. And then at this point, before it continue producing tokens, the agent suddenly sees this particular format. It just stops the generation loop. It parses this. It knows that the user it sees that the user wants call this. It calls a function, get the results back, appends it, so appends it like this.
+
+Office Hours
+20:42:59
+
+okay. So from here, I I would imagine I'm the element. So me as LMM, I go over this. Okay. You have access to this. How is the weather? And now I need to start the tokens one by one. I may produce things like uh, let me think clearly. Uh, the user wants to know uh, how the weather is I have also access to, uh, to name Getbetter. So these are all the possible tokens that the engine may decide to produce. And then here, it may say, okay. Then let me call it and then look at the, uh, output. And then here, it produces two call. Yep. GetWeather with some location of the user, assuming that it knows the location of the user. Uh, SF, for instance. And then at this point, before it continue producing tokens, the agent suddenly sees this particular format. Yeah. It stops the generation loop. It parses this. It knows that the user it sees that the user wants to call this. It calls the function and get the results back, appends it, So appends it like this.
+
+Office Hours
+20:44:12
+
+So the agent takes care of this part, and it includes observation, um, whatever. Like, for sure. Let's see. Um, and then sends it back to the LRM. Now the LRM sees this, and it simply continue the generation. So, basically, it looks, reads all this, It figures what happened. It figures it asked for tool called it. It figures that this this was the outcome, and can use to produce tokens. Sure. Sorry. It took a bit long, but just wanted to walk through this this Oh, no. Very good. Yep. So technically, I, um, you always have a corpus of, uh, decisions on data. And then you need to have a context around what tools you have access to. Yeah. Here, it was a single one, but in practice, you would see, like, a large system front is listing all the all the tools. Sure. And it's always there. So always at any given point, the LLM has that as parts of its context. So it knows exactly which tools are available. And it's making a contextual mapping of the prompt and saying, okay. This means I can use this, uh, tool. Yeah. Exactly.
+
+Office Hours
+20:44:58
+
+Thank you. Yeah. Thanks. Oh, I did had a technical issue when I was trying to run the MCP server, uh, uh, you know, maybe I'll just text you on the side. Uh, it kept saying, hey. It looks like you really don't have a note, uh, j s, uh, version. Uh, you have a Python one. Maybe some of the instructions are incorrect. And maybe it's my mistake, but that's the last message I I received, and I haven't talked to them. Sure. Yeah. Can you share it, please? I I I ran the solution, and it was working. But, yeah, Can you please share it? Yeah. I'm sure I made a mistake. Yeah. I will share it there. Okay. Thank you. Thank you. Uh, Mohan.
+
+You
+20:44:59
+
+So the agent takes care of this part. And it includes observation, um, whatever. Like, for let's see. Um, and then it sends it back to the l l. Now the LLM, so sees this, and it simply continues generation. So, basically, it loops, reads all this, It figures what happened. It figures it asked for tool call. It figures that this this was the outcome, and it continues to produce tokens. Sure. Sorry. It took a bit long, but just wanted to walk through this this whole thing. No. Very good. Yep. So, technically, I, um, you always have a corpus of, uh, decisions or data and then you need to have a context around what tools you have access to. Yeah. Here, it was a single one, but in practice, you would see, like, a large And prompt is listing all the all the tools. Sure. And it's always there. So always at any given point, the LLM has that as parts of its context. So it knows exactly which tools are available. And it's making a contextual mapping of the prompt, uh, and saying, okay. This means, uh, I can use this car too. Yeah. Exactly. Thank you. Oh, I did have a technical issue. When I was trying to run the MCP server, uh, you know, I was maybe I'll just text you on the side. Uh-huh. It kept saying, hey. It looks like you really don't have a node JS, uh, version, uh, your Python one. Maybe some of the instructions are incorrect. And maybe it's my mistake, but that's the last message I I received. Back in the bug there. Sure. Um, Yeah. Can you share it, please? I I I ran the solution as I was working, but yeah. Can you please share it? Uh, I'm sure I missed a mistake. Yeah. I will share that. Okay. Thank you. Uh, Mohan?
+
+Office Hours
+20:45:14
+
+No. I don't. You wanna go ahead? Yeah. Can you can you hear me? Yes.
+
+Office Hours
+20:47:26
+
+Sure. Uh, so I I have yet to go, uh, through the, uh, lessons, but, uh, my question, uh, generally is, uh, so how we can verify the, uh, output of let's say, um, your RAD system or a CLM. Agent system. So, uh, meaning, like, let's let's take an example of a RAD, and then if I implement a RAG system, and then how can I make sure that whatever the, uh, output of the RAG is accurate? Yep. So if there is any, uh, any like, a process or is this isn't there already some metrics that you that, you know, like, uh, not not really speak about using. Sure. I mean, the simplest way that I've seen it works in RACS is you basically use another element, or if you efficient one, and then you ask it to to check the references. So that's the most common way to, um, ensure that in a rack setup, what your element first element called produced based on the retrieved content, it matches those. So, basically, pass everything to a different element or it can be the same element, but it often a different LLM because it's a simpler task. So the LLM can be a smaller, more efficient way of, like, more efficient LLM. So you pass everything to a different LLM as your second element call, and then you ask it to just verify everything. They'll make sure that references are correct and so on. So this is for right. But the problem is that the retrieved content may not be as accurate, or there might still be some hallucinations going on. And there is nothing you can do about this. So that's why the industry moved toward using tools because tools are generally more reliable. Uh, when somebody asks, like, how's the better? Even if you look at your internal knowledge base and you look for the parts or or chunks that are about the better, it's not going to be accurate anyway. Uh, even if you use a LLM to check your references and everything, it's not it's an outdated data not live data. So when you equip your model with tools and you keep using tools to always go and and check search the web and, um, get the most recent out, uh, data. Then it reduces the hallucination.
+
+You
+20:47:28
+
+Nuhan, do you wanna go ahead? Yeah. Can you can you hear me? Yes. Sure. Uh, so I have here to go, uh, through the, uh, lessons, but, uh, my question, uh, generally is, uh, so how we can verify the, uh, output of let's say, uh, your RAG system or a CLP. AI agent system. So, uh, meaning, like, let's let's take an example of a RAD. And then if I implement a RAD system, and then how can I make sure that whatever we output of the rack is accurate? Yeah. So is there is any, uh, any, uh, like, a process or is this isn't there already some metrics that you um, that we, you know, like, have now how many people are using. Sure. I mean, the simplest way that I've seen it works in rags is you basically use another element or a efficient one, and then you ask it to to check the references. So that's the most common way to, um, ensure that in a rack setup, what your LLM first LLM call produced Based on the weekly content, it matches those. So, basically, pass everything to a different element or it can be the same element, but it often a different LLM because it's a simpler task. So the LLM can be as smaller, more efficient version or, like, more efficient LLM. So you pass everything to a different element as your second element call. And then you ask it to just verify everything. Make sure that references are correct. So this is for rank. But the problem is that the retrieved content may not be as accurate, or there might still be some conversations going on, and there is nothing you can do about it. So that's why the industry moved toward using tools because tools are generally more reliable. Uh, when somebody asks, like, how's the better? Even if you go to your internal knowledge base and you look for the parts or or chunks that are about the weather, it's not going to be accurate anyway. Um, even if you use a LLM to check preferences and everything, it's not it's an outdated data not a live data. So when you equip your model with tools and you keep using tools to always go and and check, search the data and uh, get the most recent out. See Home Shield. Then introducing the hallucination.
+
+You
+20:48:42
+
+Okay. Uh, but uh, but it it says in the meet with the, uh, the currently uh, you know, companies are using to Oh, they make so these days, the the the metric yes. There are some benchmarks for assassination. So if you, um, I can share more, but if you also search there are lots of, uh, benchmarks to measure hallucination. But the simplest way that this happens is that, um, you there so in the benchmark, there is a query and there is also the current cost. So when you want to measure how good your model is doing, you pass this query to your system. Or element. You get the output. Then you pass this output and the correct output to another element, and you ask it to be a judge and figure out if my model had a sentence or not. So that's all that's the most common way that you can also, uh, evaluate. The other approach is if if the, um, in simpler, like, verifiable domains like math or coding, you can always run. Like, for example, in coding, you can run unit test and see if it passes or not. If it doesn't pass, it means that your your output was incorrect. Um, so But in more, like, open domains Zoom ID is the straightforward. Edit them as a judge
+
+Office Hours
+20:48:43
+
+Okay. Uh, but uh, but if if there is any metric that, uh, that currently uh, you know, like, companies are using to Oh, the metric. These days, the metric yes. There are some benchmarks for hallucination. So if you, um, I can share more, but if you also search, there are lots of uh, benchmarks to measure hallucination. But the simplest way that this happens is that um, you there so in the benchmark, there is a query, and there is also the current output. So when you want to measure how good your model is doing, you pass this query to our system or element. You get the output. Then you pass this output and the correct output to another LLM, and you ask it to be a judge. And figure out if my mother had a senate or not. So that's all that's the most common way that you can also, um, evaluate. Now their approach is if if the um, in simpler, like, verifiable domains like math or coding, you can always run. Like, for example, in coding, you can run unit test and see if it passes or not. If it doesn't pass, it means that your your output was incorrect. But in more, like, open domains, usually, you use LMM as a judge to figure hallucinations.
+
+You
+20:49:09
+
+Okay. Uh, so if I'm understand correctly, I'm sorry. So the first thing is, like, once, uh, let's say, you I I put the RAG system models, uh, the AI agents, Then, uh, what was the output? And then I use the same old the same query and give to the more c one. So And then just compare, uh, I asked that more powerful one to compare this query. Yeah. Uh, and then
+
+You
+20:51:33
+
+And it it it And underneath, is there any, like Mhmm. Yeah. Sorry. Go ahead. Uh, no. Uh, is is there is anything, like, let let's say if it generates, uh, you know, like, a a a 100 words out of, let's say, thousand thousand words. You know, like, so each and every word, uh, comparison or is is going to be like a comp, comp like, context based? How how they No. Yeah. No. Of course, it's going to be con like, semantic and context. So that's also another benefit of LLM as a So even if the forwarding is different, but at at its core, it's correct. Um, the LLM would would know that and would not analyze, um, just the fact that your output was just using a different terminology or different phrasing. Okay. Okay. And and and, uh, let let's say, uh, you know, like, production environment, if if everything is correct, we deploy in the production Uh, and let's say user is not happy, you know, user is complaining that it is not accurate. Uh, so is is there is a way that we can, you know, like, ask user to give the user feedback directly into the system orders in, like, how how how that process is moving? Yeah. That's that's basically more like a PM question, um, depending on the product, if that's okay to put some places for people to provide, like, textual feedback. Um, my understanding is that a lot of times, users are not willing to spend extra time writing the stuff, at least majority of the users. Um, they might be open to give, like, quick feedback, like, it comes up, comes down. And that's why, you know, mothers like Chachi PD, they have this thumbs up, thumbs down. But even if here you press bad response, I don't think there is a place where it tasks for, like, their reason. Um, that's simply because people majority of people won't do that. Um, for but but, again, it it really depends on the product, your user base, and it's more a PM decision if you want to to go that route or not. Uh, of course, if you get if you call as like, the more feedback you collect from your users, it's going to be more useful because we can automate use some LLMs to analyze those and figure out, you know, is why people are not happy. Is it safety? Is it, um, like, hallucination? Is it any or other things? And then you can you have better starting point to start improving. Um, but the again, the problem is people want some time to to share feedback. Okay.
+
+Office Hours
+20:51:34
+
+Okay. Uh, so if I understand correctly, I'm trying to sum summarize. So, uh, the first thing is, like, once, uh, let's say, I I put the RAD system orders, uh, the AI agents, then, uh, what are the output? And then I use the same of the same query and then give to the more powerful model and then just compare Uh, I I asked that more powerful model to compare with this, or Yeah. And then answer is correct or not. And, uh, okay. And, like, is is there any, like Yes. Sorry. Go ahead. No. Uh, is is there is anything, like let let's say, if if it generates, uh, you know, like, uh, uh, uh, 100 words or let's say, thousand thousand words. You know, like so each and every word, uh, comparison or is it is going to be like a con cons you know, like, context based. How how they, uh, you know, more No. Yeah. No. Of course. It's going to be con like, semantically. And context wise. So that's also another benefit of adding them as a judge. So even if the wording is different, but at at its core is correct, um, the Eleventh would would know that and would not penalize, um, just the fact that your output was just using a different terminology or different phrasing. Okay. Okay. And and and, uh, let let's say, uh, like, in in the production environment, if if everything is correct, we deploy in the production. Uh, and let's say user is not happy, you know, like, user is complaining, like, it is not accurate. Uh, so is is there is a way that we can, you know, like, ask user to give give a feedback directly into the system or else, like, uh, how how how that process is work? Yeah. That's basically more of, like, a PM question, um, depending on the product, if that's okay to put some place as for people to provide, like, textual feedback. Um, my other understanding is that a lot of times users are not willing to spend extra time writing the stuff at least majority of the users. They might be open to give, like, quick feedback, like, a thumbs up, thumbs down. And that's why, uh, mothers like charity PD, they have this thumbs up, thumbs down. But even if here you press add response, I don't think there is a place where it asks for, like, the reason. Um, that's simply because people majority of people won't do that. But but, again, it it really depends on the product, your user base, and it's more a PM decision if you want to do to go that route or not. Of course, if you get if you call as like, the more feedback you collect from your users, going to be more useful because you can automate use some elements to analyze those and figure out, you know, is why people are not happy. Is it safety? Is it um, a hallucination? Is it or other things, and then you can you have better starting point to start improving. Um, But the again, the problem is people want to spend time to share with that.
+
+You
+20:51:39
+
+Sure. Yeah. Yeah. Then thanks, Alain. That's my question. Thanks. Jeff?
+
+Office Hours
+20:51:40
+
+Okay. Sure. Yeah. Yeah. Then thanks, Aliyah. That's my question. Thank you. Thanks. Jeff?
+
+Office Hours
+20:55:45
+
+Hi, uh, Adi. So this is for the. Regards still regarding the React. I wonder whether, uh, from software point of view, well, they're exactly the same. I mean, uh, whether it's for, uh, cat dealership or insurance company, uh, at least exactly using the same kind of software. Think about it. So the reasoning actually is handled by our end. Right? It's which could be configurable and talking to different, uh, RM. As configured. Also, the the memory point, uh, the memory part probably got the the conversation memory. It's kind of generic very generic, uh, across industries. And, uh, for the tool calling, this part is a very big industry, and, uh, but still a for let's say just, uh, the car dealership can just plug in a bunch of four tool they want. And, uh, the, uh, insurance company can plug in another set, etcetera. And, uh, even the coding agent has its own set of for, uh, the the the tools. Right? And after this one, it's it's not gonna be like a a very generic, uh, agent. We try to play yeah. So so I wonder whether, uh, are there people still people still are working on the, um, React agent. Right? Right? So just by the way, if we, uh, if there's such a need since it seem to me like a a very generic one. Um, sure. So your question is that, um, regardless of the domain, this setup seems to be very generic. Except that tools are going to be different, um, within different domains. And then, um, you're you're thinking why why react or why not something different based on the use case and domain. Right? Yes. I I think maybe there's is already some kind of generic, uh, react model or React React generic one. So people can just plug in their tools, and there's no need to even to development at all. Yeah. That's right. Um, like, over time, for example, um, some companies may not follow this React. I mean, what is important is to follow a loop. So that loop is important. Now how you want to, uh, put that loop in place, that a different story. So one example that we covered was React, and that was one of the earliest methods that make this entire impossible. And it was also very simple. Because it's a prompting technique. You can just write um, as part of your system prompt, how you want the element to to to, um, follow or continue this cycle. And then it would figure out. But that doesn't necessarily mean that that's the only way that you have to do. At the end of the day, it's just part of system prompt. So you can write whatever system prompt you want, whatever like, setup you want your model to continue operating in that cycle. It doesn't have to be react. And, you know, over time before I share over time what happened, but so one more thing I want to share is that you are right in terms of that. Most of these are generic. Because this runtime is just simply a runtime. Now element is easily replaceable with anything. So this part, you can think of it as a black box. You can easily just at any given time, replace it with the best LLM out there or most efficient LLM out there. And your entire system will continue working. Tools is the part that is different between domains. Uh, for example, coding agents, the tools the command tools are reading, editing, uh, files, access to ASH comments. Um, in a different domain, tools might be different. Uh, and save for memory. So most of these are very, very generic. So that's why in the first place, some frameworks has started developing agents. And they are very successful because this whole thing is very generic. So regardless of which too many you are working can go to that framework like blockchain and you create an agent. So, you know, we have this in our, uh, project. Like, if you see
+
+You
+20:55:45
+
+Hi, uh, Ali. So just a follow-up, regards still regarding the React. I wonder whether, uh, from software point of view, whether they are exactly the same. I mean, uh, whether it's for a calculation or insurance company, Uh, are these exactly using the same kind of software? Think about it. So the reason they actually is handled by our end. Right? It's which could be configurable and talking to different, uh, parts. RM as configured. Also, the the memory point the memory part probably got the conversation memory. It's kind of generic very generic, uh, accounts industries. And, uh, for the tool coding, this part is a very, like, industry and but still, if for let's say, just the car dealership can just plug in a bunch of two two date points, and the the, uh, insurance company can plug in another set, etcetera. And, uh, even the coding agent has its own set of the the the tools. Right? Mhmm. And after this one, it's it's not gonna be like a a very generic, uh, agent. We try to play Mhmm. Yeah. So so I wonder whether, uh, are there people still people still are working on the React agent. Right? Right? So just wonder why if you, uh, if there are such need since it seem to me like a a very generic one? Um, sure. So your question is that, um, regardless of the domain, the setup seems to be very generic. Except that tools are going to be different, um, within different domains. And then, um, your your thinking why why React why not something different based on the use case and domain. Right? Yes. I I think maybe there's is already some kind of generic, uh, react model or React React generic one. So people can just plug in their tools, and there's no need to even Mhmm. To build development at all. And that's right. Um, like, over time, for example, um, so some companies may not follow this React. I mean, what is important is to follow a loop. So that loop is important. Now how you want to, uh, put that loop in place, that's a different story. So one example that we covered was React, and that was one of the earliest methods that made this entire thing possible. And it was also very simple. Because it's a prompting technique. You can just write um, as part of your system prompt, how you want the element to to to, um, follow or continue this cycle. And then it would figure out. But that doesn't necessarily mean that the only way that you have to do. At the end of the day, it's just part of system. Prompt. So you can write whatever system prompt you want, whatever, um, like, setup you want your model to continue operating in that cycle. It doesn't have to be react. And, you know, over time, before I share over time what happened, but so one more thing I want to share is that you are right in terms terms of that. Most of these are generic because this runtime is just simply a runtime. Elevent is easily replaceable with any So this part, you can think of it as a black box. You can easily just at any given time, replace it with the best LLM out there or most efficient LLM out there. And your entire system would continue working. Tools is the part that is different between domains. Uh, for example, coding agents tools the comment tools are reading, editing, uh, files. Access to hash comments. Um, in a different domain, tools might be different. Um, and say for memory. So most of these are very, very generic. So that's why in the first place, some frameworks has started developing agents. And they are very successful because this whole thing is very generic. So regardless of this domain you are working, you can go to that framework like blockchain, and you create an agent. So, you know, we have this in our, uh, project, like,
+
+You
+20:55:58
+
+if you see like, land chain has no idea about your domain. Right? But it has this create agent and then you can just call it to create an agent.
+
+Office Hours
+20:56:36
+
+like, blockchain has no idea about your domain. Right? But it has this create agent, and then you can just call it to create an agent. And add some system prompt you want. And that system prompt would explain how to operate in that cycle, in that loop. As it it's it's something very generic. Um, so one thing that observed over the years has been changed is that open air also started introducing this harmony, uh, format. It's basically uh, a different format that keep things clear and more manageable. Um, it's just a response format at its core. Opening a harmony is just a response format that it follows a certain format in its output, and then it's it's easier to parse that output. For example, instead of
+
+You
+20:56:36
+
+And pass some system prompt that you want. And that system prompt would explain how to operate in that subtle in that loop. That's it. It's it's something very generic. One thing that I observed over the years has been changed is that open area also started introducing this Harmoni, uh, format. It's basically at all. A different format that keep things clear and more manageable. Um, it's just a response format. At its core, harmony is just a response format that it follows a certain format in its output. And then it's it's easier to parse that output. For example, instead of
+
+You
+20:57:47
+
+instead of the element following this particular format, whenever it wants to call a tool, it it just produced this tokens to call. It can follow this format and, um, let me see if there are any examples. You can follow this format, and whenever it requires a tool call, it can say, um, channel tool, or whenever it's time to produce the final output, it could So, basically, it just follows as a very well defined format that is also easily parceled. Um, actually, the open rate models that OpenAir produce, g GPT for s s, they are trained on harmonic forming. So, um, if you use those open based models to build an agent, you need to parse out a different way. Like, your agent runtime needs to be uh, aware of this harmony format. Uh, so this is a good example that you may want to deviate a little bit from React setup, and you create your own system prompt based on what the output is. Um, and just the whole thing would work. Yeah. Short short answer to your question, it it's very generic. Just the tools are different, and you can use any framework that allows you to create agent, um, to create your agent.
+
+Office Hours
+20:58:18
+
+instead of the element following this particular format whenever it wants to call a tool, it it just produced these tokens to call. It can follow this format and, um, let me see if there are any examples. You can follow this format. And whenever it requires a tool call, it can't say um, channel tool. Or whenever it's time to produce the final output, it So, basically, it just follows this very well defined format that is also easily parceled. Um, actually, the open rate models that OpenAir produce, g g GPT OSS, um, they are trained on hormone format. So um, if you use those open rate models to build an agent, you need to parse out differently. Like, your agent's runtime needs to be, uh, aware of disharmony format. Uh, so this is a good example that you may want to deviate a little bit from React setup, and you create your own system prompt based on what the output is. Um, and just the whole thing would work. Yeah. Short short answer to your question. It's it's very generic. Just the tools are different, and you can use any framework that allows you to create agent um, to create your agent. Yeah. Thank you. Another question, uh, regarding the agency level. So there, uh, you so in your, uh, your lecture, you mentioned that there are multiple ones. Right? And I wonder whether, uh, in the current industry, which one or which ones are the most, uh, mostly used. Yeah. Matter is that agents are what mostly being used, uh, basically, what we were just discussing.
+
+You
+20:58:22
+
+Thank you. Another question regarding the agency level. So there, uh, so in your your lecture, you mentioned that there are multiple ones. Right? And, uh, I wonder whether, uh, in the current industry, which one or which ones are the most mostly used. Mhmm. Yeah. Multiply step agents are what mostly being used. Um, basically, what we were just discussing. Um, it's a it's a let me bring this.
+
+Office Hours
+20:58:22
+
+Um, it's a it's a let me bring this up.
+
+You
+20:59:00
+
+Yeah. This is what mostly is is used. Um, there is often a single agent front end, and it coordinates with the LMM, and it's given access to tools. Um, a lot of companies, like, bigger ones and advanced, like, AI Labs are trying to make multi agent systems work, and then there has been some success But it's not still to a point where they can, uh, productionize it at a scale and people actually find, like, some real benefits from it.
+
+Office Hours
+20:59:01
+
+Yeah. This is what mostly this is used. Uh, there is often a single agent run time, and it coordinates with the element, and it's given access to tools. Um, a lot of companies like bigger ones and advanced, like like AI Labs, are trying to make multi agent systems work. And then there has been some success Uh, but it's not still to a point where they can uh, productionize it at a scale and people actually find, like, some real benefits from that.
+
+Office Hours
+20:59:41
+
+But there are applications out there. I mean, for example, in charge EPT, if you um, select this deep research. Deep research is a we'll cover next week, but, um, it's a multi agent system. There is not a single agent. There are multiple agents, and there is one agent that coordinates this effort and, um, starts various agents and so on. So there are, um, services out there that are built based on multi multi agent systems. But the most common one is multi step agent, like a single agent.
+
+You
+20:59:41
+
+But there are applications For example, in Chargebee t, if you, um, select this deep research, Deep research is a we'll cover it next week, but, um, it's a multi agent. System. There is not a single agent. There are multiple agents, and there is one agent that coordinates this effort and, uh, starts various agents and so. So there are, um, services out there that are built based on multi multi agent system. But the most common one is multi step agent, like a single agent.
+
+Office Hours
+21:00:24
+
+Thank you very much. Uh, sorry for dominating the question. So I have another question regarding this one. It's about, uh, uh, uh, uh, phase. Uh, probably, I don't really have the AI, uh, given the experience, so I don't really know for the based the hugging face. I just wonder whether you can provide some kind of pointers so that we can I can, uh, easily find the models and the search resources, etcetera? Yeah. Sure. Yeah. Please send me a message, um, on the course portal, and I'm happy to share. But it's it's it's usually very simple. Like, if it's Google hugging face, open, and then and see if it brings anything.
+
+You
+21:00:25
+
+Thank you very much. Uh, sorry for the dumbing the question. So I have another question regarding this one. It's about, uh, uh, uh, hub interface. Uh, first, I don't really have the AI, uh, human experience, so I don't really not familiar with the hugging face. I just wonder whether you can provide some kind of pointers so that we can I can easily find the models and the search resources, etcetera? Mhmm. Sure. Yeah. Please send me a message. On the course portal, and I'm happy to share. But it's it's it's usually very simple. Like, if it's Google hugging face, um, open LLMs. Let's see if it could bring anything.
+
+You
+21:00:47
+
+Yeah. I have to find a good link, but maybe an easier pass would be to actually search some of them. Kimmy k two.
+
+Office Hours
+21:00:49
+
+Yeah. I have to find a good link, but maybe an easier path would be to actually search some of them. Um, Kimmy k two.
+
+Office Hours
+21:01:24
+
+So, for example, q m k two is an example of a model. Um, so I searched hard interface q m k two. This is the page where where the model is documented and it's hosted. So here, you can press use this model. And then if you want to use a Hugging like a transformers back end, if you click this, you would see how you can use this. It's usually a few lines of code. Now So if you copy paste this code into your ID and run it, assuming that the model is small enough so it can be run on your, uh, system. You it should work. You can pass whatever question you have here, and then when you bring the output, you will see the final output.
+
+You
+21:01:25
+
+So for example, Kiwi k two is an example of a model. Um, so I searched Hugging Face Kiwi k two. This is the page where where the model is documented and it's hosted. So here, you can press use this model. Then if you want to use the argon, like, transformers back end, if you click this, you would see how you can use this. Usually, a few lines of code. So if you copy paste this code into your ID and run it, assuming that the model is small enough so it can be run on your, uh, system, You it should work. You can pass whatever question you have here, and then when you bring the output, you would see the final app.
+
+Office Hours
+21:02:16
+
+Yeah. Here is also the list of my. You just simply need to go to hidingface.seal. And here, they're all models, and you can also pitch Like, these are trending last seven days, but you can also go select models here. So you see, like, Kiwi k two, GLM OCR, which came out very recently. And so on. So whichever model you want to use, you can just click them and then, um, you you go to this part. Also, here, it I has documentations on how to use in other with other back ends. I think they removed it maybe. But if you click via that, for instance, you can see how you can send request to your VLM server to use this model. Yep.
+
+You
+21:02:18
+
+Yeah. Here is also the rest of my life. You just simply need to go to hubinface.co. And then here, they're all models, and you can also pick, like, these are trending last seven days, but we can also go select models here. So you see, like, kimmy k two, GLM OCR, which came out very recently. And so on. So whichever model you want to use, you can just click them and then, um, you you go to this one. Also, here, it adds documentations on how to use in other with other patterns. Um, I think they removed it maybe. And if you click VLM, for instance, you can see how you can send request to your VLM server to use this model. Yeah.
+
+You
+21:02:28
+
+Does that make sense, Keith? Yeah. Sure. Yeah. Thank you. K.
+
+You
+21:03:54
+
+Thank you. Hi, Adi. Um, when I want to call my you know, admin or agent or whatever, uh, and I have some kind of information coming from my platform, like, from from the database. Is it is it better to send this page out as a JSON into the JSON format, or would it be better to convert it to a JSON or any under special format? Uh, that's a good question. Um, yeah, that's a good question. Technically, it depends on how that element was trained. So for example, if there there is a let's say, imagine there is a company that's training LLMs on a lot of JSON, like, inputs. Um, then those models will probably work better if you send those content that you want as check-in in a JSON format. From what I know, most, um, elements work good in marketing. So that's why a lot of times the system prompts are written in markdown. So, ideally, if you have some, um, some data that you want to include in your context and you can it makes sense to to represent it in a markdown format, that should be preferred. Unless it doesn't make sense logically. For example, if you have some actual, like, JSON payloads coming from something or you have, like, coding questions, it doesn't make sense to convert the JSON payload or some coding, like, um, like, fail fail messages to mark them for me.
+
+Office Hours
+21:03:56
+
+Does that make sense, Jeff? Yeah. Sure. Yeah. Thank you. Yep. Uh, Jason. Sure. Yeah. Thank you, Anthony. Um, when I want to call my you know, admin or agent or whatever, uh, and I have some yeah, kind of information coming from my platform. Right? From from the database. Is it is it better to send this payload as a JSON with the JSON format, or would it be better to convert it to Markdown or any other special format? Um, that's a good question. Yeah. That's a good question. Technically, it depends on how that element was trained. So for example, if there there is let's say, imagine there is a company, it's training LLMs on a lot of JSON like inputs. Then those models would probably work better if you send those content that you want that's checked in in a JSON format. From what I know, most, uh, elements work good in marketing. So that's why a lot of times system prompts are written in markdown. So, ideally, if you have some some data that you want to include in your context, then you can it makes sense to to represent it in a markdown format, that should be preferred. Unless it doesn't make sense logically. For example, if you have some actual, like, JSON payloads coming from something or you have, like, coding questions, it doesn't make sense to convert the JSON payload or some coding, like, um, like, fail fail messages to markdown
+
+You
+21:05:32
+
+I said, you don't follow-up. Sorry. This man information is coming from let's let's say, the all this information is coming from the data Right? So we are getting into with the JSON from the rest API. Right? And let's say that I'm using Cloud Summit or CloudOps. Right? One of the at shopping models. In in this case, would it be better and and you know what? It is a little hard to convert this information with one format. Is it better to have another model? Let's say, another agent convert this case on file to the markdown first and then pass it to the the main agent to generate something for me or look like the rest? Yeah. Can you can you tell me again what those JSONs are? Um, I'm I'm extracting some information from the database. Right? So if if I make some edit back call, for this purpose to do some queries and get the get the result, It's gonna work with it's a normal REST API. Right? So it's gonna be JSON. Right. So in those cases, again, so that was exactly what I meant. Right? So in those cases, if something is doesn't make sense to be represented in a markdown, format, then probably it's not gonna work, um, as good. So it's better just to keep whatever they're, um, their format are, um, because that's so think of it like that. How these models are trained. Right? So these model trained probably on lots of data, and in places where it made sense for anthropic to clean up their data to be in a marked down format. Probably, they've done those. And in cases where it doesn't make sense, they didn't. Right? For example, you know, whenever there are training data, their, uh, extractions from databases and so on, probably they'll keep them as is. So the model has already uh, uh, the model has already very good idea how to deal with those kind of input formats.
+
+Office Hours
+21:05:34
+
+me. I said, did you not have sorry. This man information is coming from let let's say, you know, all this information is coming from the database. Right? So we are getting into a data from a be that REST API. Right? And let's say, again, I'm getting a cloud. Or cloud outpost. Right? One of the edge shopping models. In in this case, um, it would be better and and you know what? It is a little bit hard to convert this information with more conformant. Is it better to have another model, let's say, another agent to convert this JSON file to the marketing first and then pass it to the the main agent to generate something for me or But it's can yeah. Can you can you tell me again what those JSONs are? Um, I'm I'm extracting some information from the database. Right? So if if I'm getting some API call for this purpose to do some queries and get the get the result, it's gonna work with it's a normal API Right? So it's gonna be JSON. Right. So in those cases, again, so that was what I meant. Right? So in those cases, if something is doesn't make sense to be represented in a format, then probably it's not gonna work, uh, as good. So it's better just to keep whatever their, um, their format are, uh, because that's so think of it like that. How these models are trained? Right? So these model trained probably in lots of data and in places where it meets sense for Entropic to clean up their data to be in a markdown format. Probably, they've done those. And in cases where it doesn't make sense, they didn't. Right? For example, in whenever they're in their training data, their, uh, extractions from databases and so on, probably they are keeping as is. So the model has already the model has already very good idea how to deal with those kind of input formats.
+
+Office Hours
+21:05:40
+
+Okay. And one more thing, uh, you know, you you will discuss
+
+You
+21:08:00
+
+Mhmm. Okay. And one more thing. Uh, you know, you you were discussing the thought marked on file. Cloud called mark on file. Mhmm. And when it comes to define you know, I I we can we can introduce skills to them as young as we get that that what she's providing. So how we can, you know, load these skills? Do we need to make let's say, define a new tool to read these skills from the marketing file? And use it today? Yeah. That that's that's a great question. Um, a skills goes into a folder, simply. Like, you let's say you want to create a folder. By a skill. You create a folder. You write whatever expertise and clear instructions you have in mind for that particular scale. And you put you write it in a skill dot m d, like in Markhamfile. And you put that skill dot m d in your folder. Right? You can optionally include the scripts. Like Python files in that folder or some resources. So these are the three key parts of the skills. You have the skill markdown file, which is necessary. You have to have it. And then optionally, you can have resources and, um, the scripts. Now now imagine you have a bunch of the scripts. A bunch of folders. Right? So what you do is that first you create a metadata Right? Your agent run time can take care of this. You can create a metadata on the skill name and descriptions, and include this as part of your context when you are sending this to the l l. So moving forward, the l l knows what is skills are available. Whenever it feels that one of those are necessary, they would commit a tool call. And that tool call is open file. So Mhmm. Basically produces the path of that skill. Um, to load their skill dot m d file. And then it loads at the the agent one time to load that skill dot m d in happens it to the context, sends it back to the element. Now, start, um, from this point forward, the LMM knows about those clear instructions and expertise. That were within the skill.nd for that particular skill. Um, and it continues producing tokens again. That's right. And the point is that it also needs to call those scripts that were in the folder. Uh, it already knows the path. So it just ends at two call and says open the script or or call this Python function. Yeah. But is there any any meeting like autoformatting tool? Sorry. Is there anything like auto formatting for tools here? For this user as well to have a have a standard way of defining the skills.
+

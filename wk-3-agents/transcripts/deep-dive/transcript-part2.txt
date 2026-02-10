@@ -1,0 +1,300 @@
+You
+13:14:25
+
+Get current weather, San Francisco,
+
+You
+13:15:10
+
+So it says it's, uh, 23 c and San Francisco. So it's going to be always the same. Uh, but I want to keep this simple intentionally. I, um, let's not switch to a real better API. Um, okay. So we have a function. It's working. It's not typed yet. It doesn't have the asterisk here. Uh, we'll go over all these. Just a simple function that you can implement to get a bit. Now we have this. The next part is we create a prompt to teach the LMM about this tool, and we tell the LMM, hey. This tool exists. It looks like this. These are the input arguments, and you can use them if you want. Um, so for that, we need a system prompt and user question. User question, we can create something simple like, uh,
+
+AI
+13:15:14
+
+So it says it's, uh, Twenty Three C And San Francisco. So it's going to be always the same. Uh, but I want to keep this simple intentionally. I, um, let's not switch to a real vendor API. Okay. So we have the function. It's working. It's not typed yet. It doesn't have the asterisk here. Uh, we'll go over all these. It's a simple function that you can implement to get a better. Now we have this. The next part is we create a prompt to teach the LMM about this tool. And we tell the LMM, hey. This tool exists. It looks like this. These are the input arguments, and you can use them if you want. Um, so for that, we need a system prompt and user question. User question, we can create something simple like, um,
+
+AI
+13:15:39
+
+user question equal what is the weather in San Diego today? So this is our user quest user user question. Now for the system front, here is basically we can put in general, like, a high level of guidances and about, uh, like, what to follow, what to do, what not to do. Um, so I'm I have something I can copy paste.
+
+You
+13:15:39
+
+user question what what is the vendor in San Diego or today? So this is our user first. User prompt user question. Now for the system prompt, here is basically we can put in general, like, a high level guidances and about, um, like, what to follow, what to do, what not to do. Um, so I'm I have something I can copy paste.
+
+You
+13:17:47
+
+So what I'm going to do is, just for clarity, and, uh, having a cleaner code code, instead of introducing the tools here in the system prompt, I'm going to introduce it in a separate uh, string. So system prompt, I'll just keep it high level and define, like, high level goals. Like, you are an assistant that can call tools. Then the user asks something requiring fresh data, respond only with a JSON like, toolkart. So what I'm doing here is I'm I'm teaching the model that, hey. There might be some tools available. If needed, use them. And this part is very important. I'm teaching it to follow a structured format. I'm telling you to, hey. Whenever you wanna use tool, exactly follow this format. It's very important. Um, it is very important that the LLM follows this format because if it doesn't, it becomes very difficult for us to parse it. If it produces in a different format, then there is no way to automatically parse the output of the LMM and figure out if it needs any two calls or not. So for now, we'll start with something simple like this and see if it works. Now we have user question. We have the system prompt. Now we need to also start explaining about each tool individually. Um, so for that, I'll tool it I'll call it tool aspect. And then it's essentially the same. This case, it's very simple because we have only one function. Um, in practice, you can imagine it can be very, very messy. If you have multiple, uh, functions that you want to teach a model to use. But for now, we have only one single function implemented. So here, we like you can call exactly one tool. And then we follow this format. This is just arbitrary arbitrary. I decided to use this format. You can you can deviate from this. Um, but, basically, I have this dash name get current better. Which is the name of the function, a short description, return the current better for a CID. And then arguments, city and unit. So this is basically all the LLM needs to know in order to emit a tool called request.
+
+AI
+13:18:23
+
+So what I'm going to do is just for clarity and, uh, having a cleaner quote quote instead of introducing the tools here in the system front, I'm going to introduce it in a separate uh, string. So system prompt, I'll just keep it high level and define, like, high level goals. Like, you are an assistant that can call tools. Then the user asks something requiring fresh data, respond only with adjacent like, um, So what I'm doing here is I'm I'm teaching the model that, hey. There might be some tools available. If needed, use them. And this part is very important. I'm teaching you to follow a structured format. I'm telling you to, hey. Whenever you wanna use tool, exactly follow this format. It's very important. Um, it is very important that the LLM follows this format because if it doesn't, it becomes very difficult for us to parse it. If it produces in a different format, then there is no way to automatically parse the output of the LLM and figure out if it needs any two call or not. So for now, we'll start with something simple like this and see if it works. Now we have user question. We have the system prompt. Now we need to also start explaining about each tool individually. Um, so for that, I'll tool it I'll call it tool spec. And then it's essentially the same. In this case, it's very simple because we have only one function. In practice, you can imagine it can be very, very messy. If you have multiple, uh, functions that you want to teach a model to use. But for now, we have only one single uh, function implemented. So here, meanwhile, you can call exactly one tool. And then we follow this format. This is just arbitrary arbitrary. I decided to use this format. You can you can deviate from this. Um, But, basically, I have this dash name, get current better. Which is the name of the function, a short description, return the current better for CD, and then argument city and unit. So this is basically all the LLM needs to know in order to emit a tool called request. Great. So now we have all our prompts that we might need. Let me run this. Okay. Now the next part is actually, we use it. We, um, create, uh, as, um, a small model. And we send a request to it and see if it can actually decide to use the tool that we teach the element to use. So here, these parts are similar to what we saw from, um, before. We'll use the OpenAI API Um, I'll set API key here. Alamo.
+
+You
+13:18:23
+
+Um, great. So now we have all our prompts that we might need. Let me run this. Okay. Now the next part is actually we used to be create, uh, as, um, a small model. And we send a request to it and see if it can actually decide to use the tool that we teach the LLM to use. So here, these parts are similar to what we saw from, um, before. We'll use the OpenAI API Um, I'll set API key here, Olamo.
+
+AI
+13:18:26
+
+And then
+
+You
+13:18:29
+
+And then
+
+You
+13:18:33
+
+ace ace URL
+
+AI
+13:18:33
+
+base base URL.
+
+AI
+13:18:42
+
+I keep having lots of typos today.
+
+You
+13:18:43
+
+I keep having lots of typos today.
+
+You
+13:18:46
+
+The call host
+
+AI
+13:18:47
+
+Host.
+
+AI
+13:19:05
+
+So this is a very standard way to create a client so you can use Bit four. So now I have this client I can also decide on a model. I can I can, um, choose this model from Olama? Uh, so here, it's instructed that we can use this
+
+You
+13:19:05
+
+So this is a very standard way to create a client so you can use it all on. Now I have this client. I can also decide on a model. I can I can, um, choose this model from Olama? Uh, so here, it's instructed that we can use this.
+
+You
+13:19:09
+
+Um, thank you. HTTP.
+
+AI
+13:19:10
+
+Thank you. HTTP.
+
+AI
+13:19:17
+
+So the model, I can set I can set it Gemma three. One b.
+
+You
+13:19:17
+
+So the model I can set I can set it JEMR three one b.
+
+You
+13:20:11
+
+Great. Now I have the client and the model. I just need to send a request, and I have all the prompts that I need. Now one thing that this API requires is the list of messages. Um, and this list of messages is simply it's a list. And then it has a a a sequence of dictionaries, and each dictionary is a specifying a message, whether it's a user prompt or system prompt or assistant prompt. Which is going to be useful when you want to maintain the history. So then the chatbot gets back to you. That is going to be labeled as, let's say, assistant. So in this case, we only have system prompt and user prompt. Let's create our messages. Going to be a list, and then each item is a dictionary. It has a role. Which we for this one, we say the role is system prompt. And then, uh, has also a contact. Um, so the content is the system
+
+AI
+13:20:12
+
+Great. Now I have the client and the model. I just need to send the and I have all the prompts that I needed. Now one thing that this API requires is the list of messages. Um, and this list of messages is simply it's a list and then it has a a a sequence of the channels, and each dictionary is specifying the message, whether it's a user prompt or assistant prompt or assistant prompt. Um, which is going to be useful when you want to maintain the history. So when the chatbot gets back to you, that is going to be labeled as, let's say, assistant. So in this case, we only have system prompt and user prompt. Let's create our messages. Going to be a list, and then each item is a dictionary. It has a role. Which we for this one, we say the role is system prompt. And then, uh, has also a contact. So the content is the system system
+
+You
+13:20:12
+
+system
+
+AI
+13:20:22
+
+system prompt. We also need to append the tool as that we created. So I'm going to just create, um, add, like, two new lines.
+
+You
+13:20:24
+
+system prompt. We also need to append the two less like epic created. So I'm going to just create, um, add, like, two new lines.
+
+You
+13:20:28
+
+And then by a pen to a space.
+
+AI
+13:20:32
+
+And then by a pen to list it.
+
+You
+13:20:34
+
+Tool. Tool.
+
+AI
+13:20:34
+
+Tool, tools.
+
+You
+13:21:06
+
+Okay. So this is our system prompt. In our messages that we want to send to the model. Now we also need to send the actual question. So for now, we hard coded the question. In practice, the question is coming from the user. So you get the question and then you put it here. So we saw some examples in the last deep dive about creating templates, uh, like template string, and then whenever at runtime, we have the actual input from the user, we can replace and format this string. But in this case, we are just using a hard coded question.
+
+You
+13:21:24
+
+User question. So this is my messages, and now I can just send it to the model using the client that I've created. So we can write risk bonds equal, like,
+
+AI
+13:21:38
+
+Okay. So this is our system prompt in our messages that we want to send to the model. Now we also need to send the actual question. So for now, we hard coded question. In practice, the question is coming from the user. So you get the question, and then you put it here. So we saw some examples in the last deep dive about creating templates. Um, like template string. And then deliver at one point, we have the actual input from the user. We can replace and format this string. But in this case, we are just using a hard coded question. User question. So this is my messages, and now I can just send it to the model using the client that I've created. So we can write risk funds equal, like, client dot chat dot completions completions dot create. Bypass the model, bypass the messages,
+
+You
+13:21:39
+
+client dot chat dot com patient cum a dot create. Bypass the model bypass the messages,
+
+You
+13:22:04
+
+And then, optionally, I can uh, pass also a temperature. I I I send a temperature of zero to have the highest certainty for now. So I don't want the model to be novel at this point. Um, so this should give us the response and then I can extract the actual cutout from the response. Response.
+
+AI
+13:22:22
+
+And then, optionally, I can, uh, pass also temperature. Right? I I send a temperature zero to have the highest certainty for now. So I don't want the model to be novel at this point. So this should give us the response and then I can extract the actual output from the response. Response dot choice hands dot I mean, most of these are you usually need to print and see how it looks and then figure this out. But I already know this. I'm just writing it. I've never memorized this. Um, I just since I know it, I'm right In practice, I just keep printing until I figure out how to extract the actual output.
+
+You
+13:22:23
+
+Sure it says that And most of these are you usually need to click and see how it looks and then figure this out. But I've already noticed, so I'm just writing it. Um, I've never memorized this. Um, I just since I know it, I'm writing In practice, I just keep printing until I figure out how to extract the actual output.
+
+AI
+13:22:35
+
+That message, that content. So now if I print output, basically, it's going to send these messages, uh, before I do this. Let me print messages to see if it looks good.
+
+You
+13:22:37
+
+That message, that content. So now if I print output, basically, it's going to send these messages, uh, before I do this. Let me print messages to see if it looks good.
+
+You
+13:22:49
+
+Um, do I need syntax perhaps?
+
+AI
+13:22:51
+
+Um, embedded syntax perhaps in common.
+
+AI
+13:23:00
+
+Okay. So the messages looks good. There is role system, and then um, the tool specs description.
+
+You
+13:23:01
+
+Okay. So the messages looks good. There is roles system and then, uh, the tool specs description
+
+AI
+13:23:23
+
+And then also the user request. So this looks good. Now I'm going to send it to the model and see what Gemma one would, uh, produce. Ideally, since the question is how's the letter, it should decide to use a tool that we we, uh, we teach. In their tool list. So let's see if it's going to output it.
+
+You
+13:23:25
+
+and then also the user request. So this looks good. Now I'm going to send it to the model and see what Gemma one would, uh, produce. Ideally, since the quiz is how's the weather, it should decide to use the tool that we we, uh, we teach. In that tool as well. So let's see if it's going to output it.
+
+AI
+13:23:34
+
+Uh, again, I have some typos.
+
+You
+13:23:34
+
+Uh, again, I have some typos.
+
+You
+13:24:42
+
+Okay. Great. So the model produced this. This is awesome. This is exactly what we were hoping for. The model realized about the format at the the structured format that we introduced in the system prompt, It also learned from the tool aspect, like get current better. Now it's it's successfully also produced the right arguments. In this case, San Diego. Um, so this is how how tools are introduced and connected to This is this is the core of everything else that you hear these days like agents, like skills, uh, agent and like, all those things are just, uh, built on top of the LMM tools, and tools are as simple as this. So if we have, like, standard protocols, it's all about how to standardize this process, how to write a piece of software so that instead of the manually write these things, it would just figure it out. Uh, somehow and create these prompt somehow. So everything else is just built on top of this. But at its core, if you just zoom into it, it this this is gonna happen. At some point, whether you are using a framework or some other tools.
+
+AI
+13:24:43
+
+Okay. Great. So the model produced this. This is awesome. This is exactly what we were hoping for. The model realized about the format at the the structured format that we introduced in the system prompt. It also learned from the tool aspect like get current better. Now it's it's successfully also produced the right arguments. In this case, San Diego. Um, so this is how how tools are introduced and connected to LMS. This is this is the core of it. Everything else that you hear these days, like agents, like skills or agent and like, all those things are just, um, built on top of the LMS tools, and tools are as simple as this. So if we have, like, a standard protocols, it's all about how to standardize this process, how to write a piece of software so that instead of the manually write these things, it would just figure it out. Uh, somehow and create these prompts somehow. So everything else is just built on top of this. But at its core, if you just zoom into it, it is this is gonna happen at some point, whether you are using the framework or some other tools.
+
+AI
+13:25:06
+
+Okay. So this worked. Now in agents, there is a loop. So it's not only one one step. Kind of generation. Um, the talked about this in the guided learning. We put the LLM in a loop We ask the LLM to think and observe and decide to call tools and, again, think and observe until you have a good idea about their final answer.
+
+You
+13:25:07
+
+Okay. So this work Now in agents, there is a loop. So it's not only one one step kind of generation. We talked about this in the guided learning. We put the LLM in a loop We ask the LLM to think and observe and decide to call tools and again think and observe until you have a good idea about the final answer.
+
+AI
+13:25:51
+
+And because of that, um, things are in a loop. In this example, it's just one step, uh, but since things are in a loop, we need to figure out a way to parse that output and actually call the function. Right now, this is not good. This is just a sequence of tokens that the LLM just generated. Now it's our responsibility to write a function to parse their function and extract the right arguments here and then call the actual function that we've implemented and get the results. This is what we are gonna implement here. This part requires a little bit of software engineering. It's not AI related, so I'm going to copy paste the code and and uh, stream.
+
+You
+13:26:24
+
+And because of that, um, things are in a loop. In this example, it's just one step. Uh, but since things are in a loop, we need to figure out a way to parse the output and actually call the function. Right now, this is not good. This is just a sequence of tokens that the LLM just generated. Now it's our responsibility to write a function to parse their function and extract the right arguments here, and then call the actual function that they've implemented and get their results. So this is what we are gonna implement here. Um, this part requires a little bit of, um, software engineering. It's not AI related, so I'm going to copy paste the code and and uh, explain. So I'm not going to explain regular expression on how we are, like, how I mean, it's if you are interested, if you put this in chat, typically, it would clearly explain what each part is and why we are using this kind of expression to extract the the the tool cup. But, basically, high level is here we are defining a pattern, and we are saying that, hey. When you find this tool call, in the output of the LMM, it means that the LMM wants to use a call. So now it's time to match. And if there is a match, you extract all the function and arguments.
+
+AI
+13:26:24
+
+So I'm not going to explain regular expression and how we are, like, like, how I mean, it's if you are interested, if you put this in chat, it would clearly explain what each part is and why we are using this kind of expression to extract the the tool cup. Um, but, basically, high level is here, we are defining a pattern, and we are saying that, hey. When you find these two cut in the output of the 11, it means that the LML wants to use a cut. So now it's time to match. And if there is a match, you all the function and arguments.
+
+You
+13:26:42
+
+Alright. So we define this pattern. We match. With the output of the LMM. And then if it matches, it means that now that the model is actually asking to follow through. Um, so what we do here, we if I print just so you get a sense. If I print
+
+AI
+13:26:43
+
+Alright. So we define this pattern. We match. With the output of the element. And then if it matches, it means that now that the model is actually asking to call a tool. Um, so what we do here, we if I print, just so you get a sense. If I print
+
+AI
+13:27:00
+
+If I print that here, you'll see it's a regular expression object. Um, and the match is this. And then based on the match, and the output and and these things, you can write this this logic.
+
+You
+13:27:01
+
+If I print match here, you'll see it's a regular expression object. Um, and the match is this. And then based on the match and the output and these things, you can write this this logic.
+
+You
+13:27:17
+
+So here, we are just going to go from, uh, get to the match and try to load it as a JSON object so that we can easily extract the arguments. Um, and then function name, basic. So if I print call JSON here,
+

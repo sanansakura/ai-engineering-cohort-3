@@ -1,0 +1,300 @@
+AI
+14:18:11
+
+Uh, these parts, I need to go through that. To see what's going on, but it was it was it did work. And it says that the Python website provides various resources for users including this and this and this and this. So, again, the important part is that we were able to use tools in our agent that we created here, and those tools are coming from outside. Now, um, we covered this um, fetch MCP server, but we can potentially see what is what else is out there. We can also create our own MCP, um, server servers. Um, which is this example. Um, I also found this online, um, But, basically, here, you are just explaining in the MCP server how this should be used. So, like, the command is MDX, and these are argument, and this is, um, what needs to be run. So this now this is going so if I, um, so when we call session dot list tools, it would give us all tools available. So if I print this,
+
+AI
+14:18:59
+
+we can see that this server had one tool called fetch, File system server has lots of tools for reading file, reading read text file, read media file and so on, big descriptions. This is how you can easily incorporate MCP servers from outside or even the ones that you implement um, locally. And benefit from the tools. Um, that's MCP. I also plan to create, uh, another walk walk through notebook for MCP with more example. Um, I don't know when I would be able to do that, Probably very soon. But once I create that, I would also share it with with all of you. So if you are interested to learn more and see more examples with MCC servers and MCP clients, um, you can just walk over that.
+
+You
+14:18:59
+
+we can see that this server and one tool called fetch File system server has lots of tools for reading file, reading read text file, read media file, and so on with descriptions. So this is how you can easily incorporate MCP servers from outside or even the ones that you implement, um, locally. And benefit from the tools. Um, that's MCP. I also plan to create a another walk walk through notebook for MCP with more examples Um, I don't know when I would be able to do that. Probably very soon. But once I create that, I would also share it with, uh, with all of you. So if you are interested to learn more and see more examples with MCP servers and MCP clients, you can just walk over that.
+
+AI
+14:19:08
+
+So that's it. And then one last part is just a optional minimal UI.
+
+You
+14:19:08
+
+So that's it. And then one last part is just the optional minimal UI.
+
+AI
+14:19:39
+
+So there was some frameworks uh, over the years that are built for UI, like, one common example was a Streamlit, which was always very easy to create a single UI when you build an application. Um, you simply do pit install it extremely, and you write a Python function, and then run the server on your local machine, and then you can open it in your browser. So there are also other
+
+You
+14:19:40
+
+So there was some frameworks uh, over the years that are built for UI. Like, one common example was Streamlit, which was always very easy to create a simple UI when you build an application. So you simply do pip install streamlet and you write a Python function, and then it runs a server on your local machine, and then you can open it in your browser. So there are also other
+
+AI
+14:20:17
+
+other tools like this. Um, so it just basically gives you its like, common functionalities that you need to render things in your in a UI. Um, so one thing that is um, that is built specifically for everyone that agents is chain links. Um, it's still the same, um, idea. It has documentation. It gives you access to some common functionality and UI components, and you can just write a Python function so that the UI looks like this. So it's only UI related. So and we are going to use Chainlink, um, here.
+
+You
+14:20:18
+
+other tools like this. Um, so it just basically gives you its, like, common functionalities that you need to render things in your in a UI. Um, so one thing that is um, that is built specifically for LMS agents is Chainlink. Um, it's still the same, um, idea, It has documentation. It gives you access to some common functionality and UI components, and you can just write a Python function so that the UI looks like this. So it's only UI related. So and we are going to use Chainlink. Yeah.
+
+AI
+14:20:19
+
+So
+
+You
+14:22:30
+
+So so here are the explanations. Again, the we just need to put all of these together when we are creating the UI. Uh, meaning that we create we define our search tool, we create the agent, we create the mass, uh, the tools, And then this part is the actual UI part where we are saying that, okay. If the user click here, you should now, um, follow this process. And if it's on chat, they start to do this. So um, I followed the documentation to implement this part. And I'm going to just copy paste it here. So this is the code. You just need to in a Python file, you just need to write this and save it. Or what I'm doing here, I'm having this this line. Right? File, change it at app store. What I'm saying is that right this entire cell into chain link dot app dot file. App dot app. So it's going to create a new file here. Uh, I need that because I need to run that Python file so it creates the server local server from. But if you go over this, it's it's it's very familiar. Uh, web search tool here, it's implemented. It's registered as a line chain. Um, the model we are going to use is Lambda 3.2, it LLM and agent. And then this is just the UI part. Um, just, um, some UI things. And that's it. So now if I run this, it's going to create this Chainlink dot app with the exact, uh, sequence of lines. And now I need to run it. Now to run this, I have this terminal open here. I go to I just need to do a chain link. One app. Chainlink.app.pie. Now when I run this, it's going to run the what was just created here, and then it is likely to give me a server on my local machine. So, uh, this is on my local, and these are just the messages that I hard coded. But, um, it's basically waiting for my request for my query here. Um, so if I again, say what are some sport
+
+AI
+14:22:34
+
+so here are the explanations. Again, the we just need to put all of this together when we are creating a UI. Uh, meaning that we create we define our search tool, we create the agent, we create the mass, uh, the tools, And then this part is the actual UI part where we are saying that, okay. If the user click here, you should should now, um, follow this process. Um, and if it's on chat, they start to do this. So, um, I followed the documentation to implement this part. And I'm going to just copy paste it here. So this is the code. You just need to in a Python file, you just need to write this and save it. Or what I'm doing here, I'm having this this line write file, change it at app. So what I'm saying is that right this entire cell into 3.2, the NLM an agent. And then this is just the UI part. Um, just, um, some UI things. And that's it. So now if I run this, it's going to create this Chainlink dot app with the exact sequence of lines. And now I need to run it. Now to run this, I have this terminal open here. I go to I just need to do chain link. Run app. Chain link dot app dot pie. Now when I run this, it's going to run the what was just created here. And then it is likely to give me a server on my local machine. So, uh, this is on my local, and these are just a massive hardcoded. But, um, basically waiting for my request for my query here. Um, so if I again, say what are some sport events in San Francisco, it should work.
+
+You
+14:22:34
+
+events in San Francisco. It should work.
+
+You
+14:22:50
+
+Um, it's probably gonna take a what? Under the hood, it's doing the reasoning, and it says, okay. It says use web search, use uh, search results, and so on. Let's see if it actually works. I
+
+AI
+14:22:50
+
+Um, it's probably gonna take a while. Under the hood is doing everything and it says, okay. It says use that search, use, um, search results, and so on. Let's see if it actually works. I
+
+You
+14:23:01
+
+Okay. Great. So it's just it's just returning these things. So this is a very simple implementation of Perplexity.
+
+AI
+14:23:02
+
+Okay. Great. So it's just it's just returning these things. So this is a very simple implementation of Perplexity.
+
+You
+14:23:06
+
+Herballexity.
+
+AI
+14:23:19
+
+Perplexity. There you can type something here, and then you would search the web. And return the results of what are some sport events. Going on in sand? Francisco.
+
+You
+14:23:22
+
+There you can type something here, and they would search it up. And return the results of our car, some sport, events, uh, going on in San Francisco.
+
+You
+14:23:33
+
+So, yeah, it's just much faster and better and more accurate. So, um, yeah, that's it. With that, we can. And wrap up the session and get to the questions.
+
+AI
+14:23:38
+
+So, yeah, it's just much faster and better and more accurate. So, um, yeah, that's it. With that, we can wrap up the session and get to the questions. We covered everything. So, yeah, let's go to the questions.
+
+You
+14:23:38
+
+We covered everything. So, yeah, let's go to the questions.
+
+AI
+14:23:44
+
+Uh, Sophia?
+
+You
+14:23:47
+
+Uh, Sophia?
+
+You
+14:23:56
+
+Uh, simple question. Uh, number one, uh, Can you quickly upload this
+
+AI
+14:24:11
+
+Simple question, man. Number one, uh, can you quickly upload this a coin and the the, uh, notebook because all I wanna do is use the afternoon to compare your call with mine and, uh, re revise it. Sure. Yeah. The the call is already uploaded. So if you go to the course portal,
+
+You
+14:24:12
+
+recording and, uh, the, uh, notebook because what I wanna do is use the, uh, afternoon to compare your call with mine and re revise it. Sure. You understand? Yeah. Yeah. The the code is already uploaded. So if you go to the course portal,
+
+You
+14:25:38
+
+you find deep dive project three. And it's on their files. So it's the same solution that I just implemented. The the recording, I would upload. It generally takes a couple of hours for Zoom to provide their recording on the cloud once it's available. Usually, in, like, five hours or like, seven hours from after we finish the meeting. So second question that I have is, uh, whenever you get a chance, uh, please, uh, look at what I've uploaded. You know, uh, because you were able to do it much simply. While I was using Chargebee, it became a little bit more complex. So that's the reason I wanna compare. And the third question is you talked about uh, you know, if, uh, you're using online available, uh, tools Mhmm. For example, we talked about, uh, GetWethr. Mhmm. How can we make sure the standard enough that I can remove a GetWethr and maybe a GetWethr too and I can use it without having any downstream impact in my code. Are there any standards there or you think I will have to really look at what kind of results the new uh, you know, service is providing. Mhmm. So the question is if you want to, at some point, add your own tools and implement them, what are some I know. No. Not not my own. Maybe in the market, I suddenly have five services that provide the same capability. Mhmm.
+
+You
+14:26:08
+
+Um, I think there are a bunch of things. One is that whether it's out whether it's coming from open source or it's your own implementation, you there are a couple of things. One is you need to make sure that it comes with, um, types and docket string because that's how under the hood No matter which framework you are using, that's how under the hood tools are being included as part of the system prompt to the element. So even if there are multiple MFP services, they may not be consistent with each other.
+
+AI
+14:26:08
+
+you find you type project three. And it's on their files. So it's the same solution that I just implemented. The recording, I would upload. It generally takes a couple of hours for Zoom to provide their recording on the cloud. Once it's available, usually, like, five hours or like, seven hours from after we finish the meeting. So second question that I have is, uh, whenever you get a chance, uh, please, uh, look at what I've uploaded. You know, uh, because you were able to do it much simply Uh, while I was using chat to be key, it became a little bit more complex. So that's the reason I wanna compare. And the third question is you talked about uh, you know, if, uh, you're using online available, uh, tools. Mhmm. For example, we talked about, uh, GetWethr. How can we make sure the standard enough that I can remove a GetWeather and maybe a GetWeather two and I can use it without having any downstream impact, uh, in my code. Are there any standards there, or you think I will have to really look at what kind of results the new, uh, you know, service is providing. So the question is if you want to, at some point, add your own tools and implement them, what are some best practices? Not my own. Maybe in the market, I suddenly have Uh-huh. Five services that provide the same capability. Mhmm. Um, I think there are a bunch of things. One is that whether it's outside, whether it's coming from open source or it's your own implementation, you there are a couple of things. One is you need to make sure that it comes with, um, types and docstring because that's how under the hood matter which framework you are using, that's how under the hood those are being included as part of the system prompt to the element. But even if there are multiple MFT services, they may not be consistent with each other.
+
+You
+14:26:31
+
+Um, can you can you elaborate on on that? So, for example, you said, hey. You know what? If, uh, this MFT service already has, uh, functions that you can call. Right? Oh, yeah. So even those, um, when you want to build your own MCP server, you are also you have to you have to also
+
+AI
+14:28:17
+
+Can you can you elaborate more on that? So, for example, you said, hey. You know what? If, uh, this MFT service already has uh, functions that you can call. Right? Oh, yep. So even those, um, when you want to build your own MCP server, you are also you have to you have to also um, specify the description and all those important fields. So it's it's mandatory. Those are mandatory fields. Uh, so anybody that creates so it's it's part of the protocol, MCT protocol. So create MCT server, you have to specify the types and that, um, like, arguments and the description. Um, and that's um, otherwise, the old entity package would fail because it would look for those. Sure. Okay. Okay. I think that those were the only three questions. Yeah. And and sorry. Uh, one more thing to add. So if you end up implementing your own MCP servers, you may need to implement some function Right? So, um, so one thing is just following the protocol, like, Docker string and everything. The other thing is making sure your function is reliable enough. So that's something it's your responsibility in general. Right? Um, make sure you have, like, try, accept, log, and if, like, good fallbacks, if something goes wrong, you it would get back to, um, send back the results at some point. It's not gonna hand forever. I think, like, that. So those are basically the developers responsibility to make sure that the function can be reliably used. Right. Yeah. I think, uh, right now, just focus on consuming existing MCP services. You know what I'm saying? Yeah. Yeah. That's the easiest way. I mean, once you understand all these um, like, under the hood how it works, um, you you you saw that here. It was just a few lines of code, um, to suddenly start using all the MCP servers that are out there. So which is huge. It can be very beneficial. Um, because with these lines, it's always there. Um, and then you can uh, do session dash initialize and then from the session can list tools. And you get a bunch of tools, and you can, um, simply pass this to your line chain agent, uh, as you start. Yeah. Okay. And, uh, the last question is, while I was trying to, you know, learn from JetJP team, they also said uh,
+
+AI
+14:29:19
+
+you can manage your, uh, orchestration by using line graph. Right? And hear any comments that you had on that. Yeah. Yeah. I I to be honest, I'm not super expert on all different functionality and components that length graph especially provides. I haven't worked with all of I think nobody has worked with all all different components. Okay. They are they are, like an ecosystem around agents. Um, but I know that they have a lot of, uh, features and components that you can use. Um, especially LandGraph provides more allows you to like, gives more, um, like, customization capabilities so you can actually control a lot more things than lang chains. So lang chains is a bit more abstract. So um, if you want to build something simple or if you don't want to change a lot of things, then a lot of default behaviors, that's good. Um, but line graph, you it gives you just more more ability to customize and make changes. Okay. Okay. Thank you very much. Yeah. Thanks.
+
+You
+14:29:21
+
+So it's, uh, it's mandatory. Those are mandatory fields. Uh, but anybody that creates it's it's part of the protocol. So when you create MCP server, you have to specify the types and that the, um, like, arguments and the description. Um, and that's um, otherwise, the whole MC package would fail because it would look for those. Sure. Okay. Okay. I think, uh, those were the only three questions. Yeah. I'm I'm sorry. Uh, one more thing to add. So if you end up implementing your own MCP servers, you may need to implement some functions. Right? So um, so one thing is just following the protocol. Like, talk history and everything. The other thing is making sure your function is reliable. So that's something it's your responsibility in general. Right? Um, make sure you have, like, try, accept, blocks and if, like, good fallbacks, if something goes wrong, you it would, um, get back to, uh, send back the results at some point. It's not gonna hand forever and things like that. So those are basically the developers' responsibility. To make sure that the function can be reliably used. That's right. Yeah. I think I, right now, just focus on consuming existing MCP services. You know what I'm saying? Yeah. Yeah. That's the easiest way. I mean, once you all these, um, like, under the hood how it works, um, you you you saw that here. It was just a few lines of code, um, to suddenly start using all the MCP service that are out there. So which is huge. It can be very beneficial. Um, because with these lines, it's always there. Um, and then you can do session dash initialize. And then from the session, you can list to And you get a bunch of tools, and you can, um, simply pass this to your line chain agent. Uh, as you start. Yeah. Okay. And, uh, the last question is, uh, while I was trying to, you know, learn from Chad JPT, they also said, uh, you can manage your, uh, orchestration, uh, by using LangGraph. Right? And I wanted to hear any comments that you had on that. Um, yeah. I I to be honest, I'm not super expert on all different functionality and components that line graph especially provides. I haven't worked with all of them. I think nobody has worked with all all different components of them. They are they are, like, an ecosystem around agents. Um, but I know that they have a lot of, uh, features and components that you can use. Um, especially LambGraph provides more allows you to like, gives more, um, like, customization. So you can actually control a lot more things than land chains. So land chains is a bit more abstract. So, um, if you want to build something simple or if you don't want to change a lot of things at a lot of default behaviors, that's good. Um, but line graph, you it gives you just more more ability to customize and make changes. Okay. Okay. Thank you very much. Yeah. Thanks.
+
+AI
+14:29:22
+
+Imran?
+
+You
+14:29:24
+
+Ibrahim?
+
+AI
+14:31:27
+
+Hey. Ellie, uh, one question I had was, like, I know, like, we are we are using, like, all our other models. In, like, all examples. Right? Like, can we use, uh, proprietary models, like, OpenAI and probably Canada as well? Like, uh, how would that work? Yep. That would be very simple. Right now, we started a local server on our machine. Right? And then we put these models in earlier instructions. We put them. So the rates are actually leaving on my machine. And then here, when I call this API, um, like, chat, all of my API, I send it. It's going to send the request to my local server, get the result back, and then put it. So If you can easily replace this this line or these two lines with like, external, I guess. Open AI, cloud, um, depending on how they should be used, like, how the API looks like, you can just simply replace this uh, with those. Uh, and really, do we have access to, like, those API if I have, like, the consumer subscription? Like, for example, if I have like, uh, OpenAI. I I do not support. Yeah. I I believe no. Um, you have to check the documentation. Last time I checked, I think you need to have tokens and pay for the API requests. There might be some free tier I don't know. Uh, you may want to check that. Also, we do point out that, um, you may end up, um, so, you know, as long as everything is on is sitting on your local machine, things are easier. You have more control. Right? So that's why you can just, um, you have control over everything. As soon as you, um, deviate from that, like, let's say different use, different API, different, uh, frameworks, and so on, you need to make sure that everything is compatible. That's that's the only thing that you may need to think about. Um, and this thing to each should work. But in general, you may end up implementing some of these, uh, by yourself instead of relying on the on the framework like Lion Chain. But most of the other use cases, it it it would work.
+
+AI
+14:33:32
+
+Okay. And, uh, another thing I had, uh, Adi, was, like, with the speed change. Right? Like, because, like, if I'm using third party APIs, when I'm calling them, like, won't it, like, make it, like, more slower? Like, is it better to, like, load the models and then use the Like, how how would that Oh, it yeah. I think it depends on the use case. Like, if you are if you want to just quickly prototype something, and you have some idea and you want to see how it works, um, you can do everything locally. Um, so the thing is if you switch to bigger models, not gonna work on your local machine. I mean, all these models that we are, uh, we've selected here are intentionally lightweight so that we can run them. And that's always a good start. It's not because just because we have the machine. Even if the machine is good enough, it's always good to start, you know, with the simplest setup possible, fastest models, and see how good they are. And then as slowly you replace them with better models. But in practice, these models are not good enough. Uh, even 3,000,000,000 models may not may not work. Uh, so if you want to actually build something and deploy it for production, you may want to stick to either, like, uh, advanced APIs that are app to, like, commercial ones, like, Gemini and, uh, uh, uh, Chagivity. Or if you want to rely on some open source models, you may want to stick to the best ones, which is usually, like, tens or hundreds of billions of parameters. Uh, and, Ali, like, I had another question for you. Like, from your personal use, Which one did you like more, like, uh, between OpenAI, uh, Claude and, like, m I or even complexity? Yeah. It says this keeps changing. I mean, I started with chatty p t, and I was biased in general. To open it. I add many friends there, and then I always, you know, really, um, I think they were doing really great job, especially in earlier days. So I've always been biased to that. So I think for a very long time, I've been using Jajibiki. Then Gemini three came out, and then I started using that, and I also like that a lot. So for a lot of use cases, I felt that it's more, uh, precise.
+
+You
+14:33:32
+
+Hello? Kelly, uh, one question I had was the I know that we are we are using, like, Volum and other models. In, like, all examples. Right? Like, can we use, uh, proprietary models, like OpenAI, topic analysis as well? Like, uh, how would that work? Yeah. That would be very simple. Right now, we started a local server. On our machine. Right? And then we pulled these models in earlier instructions with business, so the dates are actually living on my machine. And then here, when I call this API, um, like, chat or Loma API, I send it. It's going to send the request to my local server, get the result back, and then put it If you can easily replace this this line or these two lines with like, external APIs. Mhmm. OpenAI, cloud, um, depending on how they should be used, like, how the API looks like, you can just simply replace this um, with those. Uh, and really, do we have access to, like, those API if I have, like, the consumer subscription? Like, for example, if I have like, uh, OpenAI I I believe so. Yeah. I yeah. I believe no. Um, you have to check the documentation. Last time I checked, I think you need to have tokens and pay for the API requests. There might be some free tier. I don't know. Uh, you may want to check that. Also, I have to point out that, um, you may end up so, you know, as long as everything is on is sitting on your local machine, things are easier. You have more control. Right? So that's why you can just um, you have control over everything. As soon as you, um, deviate from that, like, let's say different use, different APIs, different different, uh, frameworks, and so on, you need to make sure that everything is compatible. That's that's the only thing that you may need to think about. Um, In these things, it should work, but in general, you may end up implementing some of these, uh, by yourself instead of relying on the on the framework like line chain. But for simple use cases, it should it it would work. Okay. And, uh, another thing I had uh, Adi, was, like, will the speed change? Right? Like, because, like, if I'm using third party APIs when I'm calling them, like, won't it, like, make it, like, more slower? Like, is it better to, like, load the models and then use it? Like, how how would that Oh, it yeah. I think it depends. On the use case. Uh, like, if you are if you want to just quickly prototype something, and you have some idea and you want to see how it works, um, you can do everything locally. Um, so the thing is if you switch to bigger models, it's gonna work on your local machine. I mean, all these models that we are, um, we've selected here are intentionally lightweight so that we can run them. And that's always a good start. It's not because just because we don't have the machine. Even if the machine is good it's always good to start, you know, with the simplest setup possible, fastest models, and see how good they are. And then slowly, you replace them with better models. But in practice, these models are not good enough. Um, even 3,000,000,000 models may not may not work. If you want to actually build something and deploy it for production, you may want to stick to either like, uh, advanced APIs that are have to, like, commercial ones, like, Gemini and, uh, uh, Chantivity. Or if you want to rely on some open source models, you may want to stick to the best ones, which is usually, like, tens or hundreds of billions of parameters. Mhmm. And, Ali, like, I had another question for you. Like, from your personal use, Which one did you like more, like, uh, between OpenAI, ClorRed, and, like, Gemini or even Complexity? Oh, yeah. This is this keeps changing. I mean, I started with Chai GPT, and I was biased in general. To open a I had many friends there, and then I always, you know, really, um, uh, I think they they're doing really great job as especially in earlier days. So I've always been biased to that. So I think for a very long time, I've been using Then Gemini three came out, and then I started using that, and I also like that a lot. So for a lot of use cases, I felt that it's more, uh, precise.
+
+You
+14:35:54
+
+And, um, like, not as verbose as strategy p t. But again, it can be different from use case to use case. Sometimes ChagPT works better, sometimes, uh, Gemini. And then very recently, I started using uh, Cloud, and I also like that a lot. So I think this keeps changing a lot. I mean, these days, my it depends if if I have a writing task or if I have written something and I want to see what, you know, where else it can be improved, I would probably stick to Club. For coding, probably, I would first use cloud code. And if I'm not if it fails, then I would switch to, uh, codecs. Uh, but all these would can change easily, um, in one day. Like, last week, two new models came out, OPUS uh, point, uh, 4.6. And also OpenAir introduced new products. And those both are seems to be doing really great. I've started using Opus 4.6, and it's awesome. Um, so these things keep just keep changing. And, um, at any given time, you just need to see which ones are are better. And, like, OpenAir and Cloud now has these models, but Gemini was quiet for a while, so I I expect Google would also, uh, probably release something very soon. And that may again, uh, just raise all the standards and catch once. Mhmm. And, really, how why would you even use public city? Because they don't have their own model. Right? They are internally calling all of three these other models. Yeah. I don't see it. Why are they but but it has been, like, quite popular. Right? Like, in Yeah. I think they were first in the market. And then they were focusing on slightly a different narrative. I yeah. I don't know what what is their bigger plan and, you know, how they're, like, surviving plan is. To me, it seems a lot of things that they're offering is I get kind of similar quality and outputs from other chatbots. But it may work better for actual search like, as a search engine for certain queries. I don't know. But I feel like they are they are becoming less and less. Like, their unique value is becoming less and less. As as as other companies, uh, as other AI labs are introducing better models. This is just my feeling. I mean, at any point, they may give it to something else. I suddenly works. Yeah. Yeah. And last question, Adi. I remember, like, last like, in one of the sessions, previous sessions, we like you said, like, in in the future, you might include, uh, like, the previous cohorts in, like, the cap
+
+AI
+14:36:57
+
+And, um, like, not as verbose as strategy fatigue. But, again, it can be different from use case to use case. Sometimes strategy pretty works better, sometimes, uh, Gemini. And then very recently, I started using uh, Cloud, and I also like that a lot. So I think this keeps changing a lot. I mean, these days, my it depends if if I have a writing pad or if I have written something and I want to see what you know, where else it can be looked, I could probably stick to a clock. For coding, probably, I would first use cloud code. And if I'm not if it fails, then I would switch to, uh, Codecs. Uh, but all these would can change easily, um, in one day. Like, last week, two new models came out of s uh, phone, uh, 4.6, um, and also OpenAir introduced new products. And those both are seems to be doing really great. I've started using Office 4.6, and it's awesome. Um, so these things keep just keep changing. And, um, any given time, you just need to see which ones are are better. And like, OpenAir and Clotna has these models, but Gemini was quiet for a while, so I I expect we are also, uh, probably release something very soon. And that may again, um, just raise all the standards and benchmarks. And, really, how why would you even use public key? Because they don't have their own model. Right? Internally calling all of these other models. Yeah. I don't use private. Why are they But it has been, like, quite popular. Right? Like, Yeah. I think they were first in the market, and then they were focusing on slightly a different narrative. Um, I yeah, I don't know what what is their bigger plan and, you know, how they're, like, surviving plan is. Um, to me, it seems a lot of things that they're offering is I get kind of similar quality and outputs from other chatbots, but it may work better for actual search like, as a search engine for certain queries. I don't know. But I feel like they are they are becoming less and less. That their unique value is becoming less and less. As as other companies, uh, as other AI labs are introducing better models. Is just my feeling. I mean, at any point, they may pivot to something else and it suddenly works. Yeah. Yeah. One last question, Adi. I remember, like, last like, in one of the sessions, period sessions we like you said, like, in in the future, you might include, uh, like, the previous cohorts in, like, the cap one product or, like, even maybe in, like, the q and a. Sessions? Like like, were you able to figure out more on that one? No. For um, it's not a sit final list. So we are planning to consider, um, opening the space for people from previous cohorts to join the demo day. Uh, so this course demo day is twenty second, and all the presentations would be saved from people that from this cohort. Um, but passcodes can join and see their projects. And this would go on for future course assessment. So, um, people from core three can potentially, um, join cohort four, cohort five, um, demo day only. Yeah. I'll I'll sign more. I'll send announcement for that. Okay. And we can still ask questions. Right? Like, once the code is done, like, if you have any question for doubt, like, we should be still able to Of course. Yeah. And I suggest all of us to, um, also help with answering, not not only in so if if there's a question, you know the answer. If you have good, uh, resources, please feel free to share or engage. Thank you. Yeah. Thanks.
+
+You
+14:36:58
+
+sessions? Like like, were you able to figure out more on that one? So for, um, it's not a state finalize, so we are planning to consider um, opening the space for people from previous course to join the demo day. Uh, so this course demo day is twenty second, and all the presentations would be still from people that from this cohort. Um, but past cohorts can join and see their projects, and this would go on for future course as well. So, um, people from core three can potentially, um, join core four, core five, um, per demo day only. Yeah. We are I'll send more I'll send announcement for that. Okay. And we can still ask questions very, like, once the call is done. Like, if you have any question, or doubts, like, we should be still Of course. Yeah. And I suggest all of us to um, also have it answered, not not only in the end. So if if there's a question, you know the answer. If you have good, um, resources, please feel free to share or engage. Thank you. Yep. Thanks.
+
+AI
+14:37:00
+
+Uh,
+
+You
+14:37:01
+
+Uh, Duly?
+
+You
+14:37:07
+
+Yeah. Uh, I have two questions.
+
+You
+14:38:48
+
+When we put the the final solution for each lab, There? There or then? Where? Where? Oh, there. Um, so if you go to the course portal, this is their course portal. Right? Um, on the deep dive project, like, depending on which solution you want, like, deep dive project one, project two. Today, we did project three. So if I go to deep dive project three, there is this button here about files. It's just an icon. And then you can see the actual solution. You can download this and open this in your ID. Ah, okay. Solution. Okay. Okay. And then another question, do do you expect us to to pull request your the our solutions? Or what what what is the effect of No. So there is no, uh, grading mechanism. Um, basically, the 10 templates that are released, like, the next week's project that is already released today, Um, so it has these parts, like your code your code here. These are more for you to practice the learnings from guided material. And then prepare for our Deepgram. Um, so there is no guided um, there is no grading mechanism. Um, it's just for you to practice. And then on Saturday, like, the following Saturday, we would do the deep dive any manning and release the solution. And the last question, um, for the the web portal, I don't know how to spell it. Is it possible to specify instead of, um, how how can we specify? Instead of, um, telling the tool, go to the web and search everything? Can we specify the can add more more specific guidance to the how how can we can we do that? Let's say, yeah. I wanna find Guidance on, like, which websites to search and things like that. Yeah. Yeah. Yeah. Yeah.
+
+AI
+14:38:50
+
+Yeah. Um, I have uh, two questions. Uh, where do you put the the finance solution for each lab? Uh, they're they're open. Where? Where? Oh, there. Um, so if you go to the course portal, this is their course portal. Right? Um, on the DeepGard project, like, depending on which solution you want, like Deep Dive project one, project two. Today, we did project three. If we move to Deep Dive project three, so there is this button here called files. It's just an icon. And then you can see the actual solution. You can download this and open this in your ID. Okay. Solution. Okay. Okay. And then another question, do do you expect us to to pull request your the our solutions? Or what what what is the effect No. So there is no, uh, grading mechanism. Um, basically, the templates that are released, like, in next week's project that is already released today. Um, so it has these parts, like your code your quote here. These are more for you to practice the learnings from guided material. And then prepare for our deep dive. Um, so there is no guided There is no grading mechanism. Um, it's just for you to practice. And then on Saturday, like, the following Saturday, we would do the deep dive any band implement and release the solution. Okay. And the last question, um, uh, for the the web portal, I don't know how you're supposed to call it. Is it possible to specify instead of, um, how how can we specify instead of, um, getting a tool, go to the web and search everything? Can we specify the can we have more more specific guidance to the how how can we can we do that? Yeah. So yeah. I wanna say Guidance guidance on, like, which websites to search and Yeah. Yeah. Yeah. Yeah. Yeah.
+
+AI
+14:40:15
+
+Um, if if you have those kind of constraints and you want to introduce, perhaps the best way is to still to put it in your system product. Okay. Okay. Yeah. And LMM LMs are very good these days. They can they can easily follow those kind of requests. Okay. Perfect. Thank you. So that's one thing. The other thing is, again, we used, um, we used DD dot dot dot two code for search API. That's very simple. Setup. I don't recommend you using that for building actual actual applications. For actual applications, you may want to use the um, the packages that are more, like, built for search. One example is Tableau. So it's you create this with your API key, and then you can call methods like extract. So it would extract the content of this, and you can print response. So these have a lot of APIs and and, uh, methods that you can rely on. And and some of those might be you find relevant to your question. So if, for example, you want to rely only on certain websites with certain, um, like, page rank is score, or things like that. They may actually give some of functionalities too. You can't just specify in their argument. I don't know all their like, uh, like, there is this SDK reference and lots of things that they allow you to do. Um, so you may find some of those relevant to that to the question that you asked. Thank you.
+
+You
+14:43:32
+
+Um, if if you have those kind of constraints and you want to introduce perhaps the best way is still to put it in your system prompt. Okay. Okay. Yeah. And the LLM LLMs are very good these days. They can they can easily follow those kind of requests. Okay. Perfect. Okay. Thank you. So that's one thing. The other thing is, again, we used, um, we used didi..co for search API. That's very simple. Setup. I don't recommend you using that for building actual actual applications. For actual applications, you may want to use the um, the packages that are more, like, built for search. One example is Tableau. So it's you create this with your API key, and then you can call methods like extract. So it would extract the content of this, and you can print response. So these have a lot of APIs and and, uh, methods that you can rely on. And and some of those might be you find relevant to your question. So if, for example, you want to rely only on certain websites with certain, uh, like, page rank and score or things like that, They may actually give some of those functionalities too. You can just specify in their argument I don't know all their like, uh, like, there's this this SDK reference, and there are lots of things that they allow you to do. So you may find some of those relevant to that to the question that you asked. Thank you. Yeah. Thanks. Um, next question, uh, cream. Hey, uh, Aris. Thanks so much for the walkthrough. So my question is more like a generic one to Aris question. So if later on, we have multiple tools that actually have overlapped functions, uh, what yeah. What would be the best way to actually guide the eye larger language model like a Yeah. Best practice which one to use. If we expect specific the rules, just like you just said, put it into the system prompt, I I mean, fear when the scenario gets comp more and more complicated complicated, it's difficult to maintain. So, yeah, work more some suggestions you wanna Yeah. If that's correct. Yeah. That's a very, very good question. And it happens a lot practice, um, especially in production, uh, production escape. So it also depends on how many tools you are dealing with. I mean, in general, if you are dealing with one, five, 10 tools, even if there are some duplicates or some, uh, conflicts, the LMM the agent may still figure out if the LMM that we're using is good enough to which one is better or more reliable to use because these models are also thinking model. We are covering in the guided learning of this week about thinking models, but they think before they answer. So during that thinking process, they may figure out which function, which which of those tools are better, um, to rely on. Um, but as these the number of tools increase, like 100 or thousands of tools, then that may not on your work. Also, the issue is that if you want to put all of these as your in your toolbox and then eventually those would be introduced as in in the system prompt. Right? So that's not an efficient way. So, um, a lot of times, what you may want to do is you want to use the a add a retrieval component to for depending on the query, it figures out which tools are relevant for this query and only use those tools on the flight. That's that's the most common way at at in a production scale develop handle, having lots of tools. So let's say you have thousand tools and you you don't want to, from the various start, introduce all those thousand tools to your uh, LMS in the system. So you just keep them somewhere, have a metadata about them. And then whenever the users card, query come, your retrieval component looks at the user query and all the tools and pick some of those tools. Let's say top 10 relevant tools. And those tools are becoming the tools that the agent would see in that situation. Okay. Just follow-up on that because, you know, all those tools like a cursor, they release this, like, a functionality called a plan mode. Is that is that a basic way they show you and ask the user feedback saying, hey. I'm going to plan to maybe using this kind of tool. Asking the user to confirm the execute. Okay. Yeah. That's also, uh, again, this is, like, evolving so fast. I mean, the last couple of weeks, there has been, like, newer trends and paradigms that these things can, like, again, agent skills. Like, now you write a script instead of defining all your tools. You write the script somewhere, and then you let the model just read the files whenever needed. Um, so this keeps changing. And, yes, the plan mod is also one way that it confirms with the user about the tools that might be useful in this round and if it can use it or not. Okay. Got it. Thank you so much. Yeah. Thanks.
+
+AI
+14:43:35
+
+Yeah. Thanks. Um, next question. Uh, Clint, Hey, uh, Aris. Thanks so much for the walkthrough. So my quest is more like a generic one to Aris' question. So if later on, we have multiple tools that actually have overlapped functions, Uh, what yeah. What would be the best way to actually guide the larger language model? Like Yeah. That's correct. This which one to use. If we spec specific the rules, just like you said, put it into the system prompt, I'm I'm in fear when the scenario gets comp more and more complicated. Complicated, it's difficult to maintain. So, yeah, what what are some suggestions? You know? Yeah. That's a yeah. That's a very, very good question. And it happens a lot in practice. Especially in production, uh, at production scale. So it also depends on how many tools you are dealing with. I mean, in general, if you are dealing with one, five, 10 tools, even if there are some duplicates or some comp conflicts, the LLL and the agent may still figure out if the LLL that you're using is good enough to which one is better or more reliable to use. Because these models are also thinking models. I mean, we are covering in the guide learning of this week about thinking models, but they think before they answer. So during that thinking process, they may figure out which function, which which of those tools are better. Um, to rely on. Um, but as these the number of tools increase, like 100 or thousand of tools, then that may no longer work. Also, the other issue is that if you want to put all of this as your in your toolbox, and then eventually those will be introduced as in in the system prompt. Right? So that's not an efficient way. So, um, a lot of times, what you may want to do is you want to use the add a retrieval component to for depending on the query, figures out which tools are relevant for this query and only use those tools on the fly. That's that's the most common way at at at production scale. People, um, handle having lots of tools. Let's say you have thousand tools and you you don't want to, from the various start, introduce all those thousand tools to your, um, in the system front. So you just keep them somewhere, have a metadata about it, And then whenever the users card query come, your retrieval component, looks at the user query and all the tools and pick some of those tools. Let's say top 10 relevant tools. And those tools are becoming the tools that the agent would see in that iteration. Okay. Just to follow-up on that because, you know, all those tools and, like, a cursor, they release this, like, a functionality called plan mode. Is that is that a basic way they show you and ask the user feedback saying, hey. I'm going to plan to maybe using this kind of tool. Asking the user to confirm the execute group. Okay. Yeah. Yeah. Yeah. That's also again, this is, like, evolving so fast. I mean, like, last couple of weeks, there has been, like, newer trends and paradigms that these things can, like, again, agent skills. Like, now you write a script instead of defining all your tools. You write the script somewhere, and then you let the model just read the files whenever needed. Uh, so this keeps changing. And, yes, the plan note is also one day that it confirms with the user about the tools that might be useful in this round. And if it can use it or not. Okay. Got it. Thank you so much. Yeah. Thanks. Um, Maria?
+
+You
+14:44:02
+
+Um, Mario? Hi. Uh, hi, Adi. Thank you. Uh, my question is, um, when we're using that agent feature from Llama. Um, so I got a little bit confused Uh, specifically section three, um, I feel like my my my agent is not using the tools that I sent. Because I hard we hard coded the function. Right? Mhmm. Maybe I can
+
+AI
+14:44:02
+
+Hi. Uh, hi, Adi. Thank you. Uh, my question is, um, when we're using the agent feature from Llama, Um, sorry. We're a little bit confused. Uh, specifically section three, um, I feel like my my my agent is not using the tools that I sent. Because I had we hard coded the function. Right?
+
+AI
+14:45:06
+
+Send you an image of exactly what I see. On the chat. Sure. So we hard coded, um, it's 25 degrees, and I also hard coded well then. If if there's no unit, then it's Celsius. But when I asked the question and send the tool using that specific function. Um, I get that it's around 25 degrees. Fahrenheit. So I know it's, like, very specific but I'm I'm I'm confused on how how is the agent creating this answer if I actually said specific tools, and it's giving me an answer probably from the web or I don't know. Mhmm. Mhmm. Um, sure. I can, um, I think I cannot open the the file now. I can open it later, the image that you shared. Okay. If if you can also share your code, um, you can DM me your code I can also look into it, um, to see if I can figure out what what the difference might be in the in the implementation there and um, the implementation here.
+
+AI
+14:46:51
+
+Okay. So just to kind of, like, have a better idea, when you when you define this function, the current weather and return, it's like a very hard coded answer. When you um, apply that tool to your agent and then you ask a question, would you expect to get the 25 degrees? Uh, if it's 23 here, I'm sorry. 23. Yeah. Yes. Yes. I so I basically, this is the workflow that I expect when I have this set up. I send a request to the agent. The agent is aware of these two only because this is registered as two. Uh-huh. So the agent knows okay. There is this tool called get better, and whenever I want to use it, it requires a city. It looks at the query. It feels that, okay. Get Better tool is helpful. So it emits some tokens and says, I want to use this call, get better. And the city is, let's say, San Diego. Now the agent runtime parses that. It knows that the model want to use this function, and this function is already there. So the agent run time sends the city, which was San Diego, to this function. Now this function at this ticket, it calls get current weather. Sends the city there. Now this function returns this So therefore, get with get better returns this. And this is returned to the this is now returned back to the agent runtime. Right? The agent that they created using call and create agent. Now this agent is seeing okay. The result of get better is this this string. Now let me append it to the current con conversation history and send it back to the LMM. So the LMM knows that, okay. I ran this function, and this is the results that, uh, I received.
+
+AI
+14:47:17
+
+Oh, so we defined two functions. So one to read a tool and another one to read the actual tool. I want to read the channel. Yeah. Um, I so you can I mean, for you simplicity, you can think of it this way? I mean, this would still work. You can, um, Okay. Yeah. Because that's what I did. I didn't have to. Yeah. This would work. Okay. Yeah.
+
+You
+14:47:17
+
+send you a an image of exactly what I see. On the chat. Sure. So we had coded, um, it's 25 degrees, and I also hard coated Waldem. If if there's no unit, then it's Celsius. But when I ask the question and send the tool using that specific function, um, I get that it's around 25 degrees Fahrenheit. So I know it's, like, very specific, but I'm I'm I'm confused on how how is the agent creating this answer if I actually sent specific tools and it's giving me an answer probably from the web or I don't know. Mhmm. Mhmm. Um, sure. I can, um, I think I can open the the file now. I can open it later, the image that you shared. Okay. If if you can also share your code, um, you can DM me your code. I can also look into it, um, to see if I can figure out what the what the difference might be in the in the implementation there and um, the implementation here. Okay. Okay. So just to kind of, like, have a better idea, when you when you define this function, the current weather and return it like a very hard coded answer. Mhmm. When you um, apply that tool to your agent and then you ask a question, would you expect to get the 25 degrees? Uh, if it's 23 here? I'm sorry. 23. Yeah. Yes. Yes. I so I basically, this is the workflow that I expect. When I have this setup. I send a request to the agent. The agent is aware of this tool only. Because this is registered as tool. Uh-huh. Uh-huh. So the agent knows, okay. There is this tool called GetBetter, and whenever I want to use it, it requires a city. It looks at the query. It feels that, okay, GetBetter tool is helpful. So it emits some tokens and says, I want to use this call. Get better. And the city is, let's say, San Diego. Now the agent run time passes that. It knows that the model want to use this function, and this function is already there. So the agent run time sends the city, which was San Diego, to this function. Now this function has the city. It calls get current weather, sends the city there. Now this function returns this therefore, get with get better returns this. And this is returned to the this is now returned back to the agent runtime. Right? The agent that we created using call and create agent. Now this agent is seeing okay. The result of get better is this this string. Now let me append it to the current con conversation history and send it back to the LMS. So the LMS knows that, okay. I ran this function, and this is the results that, uh, I received. So so we defined two functions. One to read a tool and another one to read the actual tool? Like, one to read the channel? Yeah. Um, I so you can I mean, for you for simplicity, you can think of it this I mean, this would still work? You can, um Okay. Yeah. Because that's what I think I didn't have to Yeah. It this would work. Okay. Yeah.
+
+AI
+14:47:50
+
+You implement this get better, and then it always took ten days. And then, um, and then yeah. So the only thing is you need to just take care of the unit. Like, how you want to handle it. I mean, one way is just you come up with some default. One way is to as I as I, uh, mentioned in the in the, uh, today um, you can replace the city with a different type of query, or it can be a dictionary. And that dictionary can contain both city and the unit. So inside this function, you can, um, extract those, like city, um, unit, equal, like, query.
+
+You
+14:47:50
+
+You Internet is getting better, and then it always returns. And then, um, and then yeah. So the only thing is you need to just take care of the unit, like how you want to handle I mean, one way is just you come up with some default. One way is to as I as I, um, mentioned in the in the, uh, today um, you can replace the city with a different thing like query. Or it can be a dictionary. And that dictionary can contain both city and the unit. So inside this function, you can, um, extract those, like city, um, unit equal, like, query.
+
+You
+14:47:56
+
+Query zero, query one. But just for simplicity, let's say it's a list.
+

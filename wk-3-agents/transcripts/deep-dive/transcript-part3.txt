@@ -1,0 +1,300 @@
+AI
+13:27:18
+
+So here, we are just going to go from, uh, get to the match and try to load it as a JSON object. So that we can easily extract the arguments. Um, and then function name, basic. So if I print call JSON here,
+
+You
+13:27:55
+
+And then I'm going to comment everything. If I run this, then you call json...netnet group. So, basically, it's giving me a a really good JSON object that I needed. I can easily extract a name of the function that the element wants and also the arguments. So the rest of this code is just doing that. It gets the function name from the name um, key. It is also getting the arguments with some default values of zero. And then, um, then right after that, it's going to call the function. It goes, uh,
+
+AI
+13:27:55
+
+and then I'm going to comment everything. If I run this, then you call JSON dot plus match dot groups Basically, it's giving me a j a a really good JSON object that I needed. I can easily extract the name of the function that the l l m wants and also arguments. So the rest of this code is just doing that. It gives gets the function name from the name, key. It is also getting the arguments with some default values of zero. And then, um, then right after that, it's going to call the function. It does, um,
+
+AI
+13:29:33
+
+arguments. So here, we actually call that function. To get the result and print the result. The result is going to be that fixed thing. It's 23, uh, degrees in, uh, in San Diego. Um, so let me run this. Great. So the result is it is 23 c. So this is basically the output of the l n. We were able to hear successfully parse the output of LN. We, um, we we match it, meaning that we know that the LLM wants to call a function. After it's matched, we call the function to get the results. And now these results needs to be sent back the element in a typical agent take loop. We just need to append these results to the existing conversation history and then send it back. To the element so the element can continue figuring out. So this is this is that's that's it. Function calling and then entire tools and agents is just simply this. Uh, we were able to successfully introduce, um, tools to our element and correctly parse it. Now this process is very was very manual. We have we had to manually implement a function for here. We had to also manually create these tools as tech. So it can easily get out of control. Uh, as soon as we introduce more tools, like calculator, web search, and so on, every time, we have to go back here and do some prompt surgery, make changes here, and make sure everything else is also correct. Um, so the next part that we are going to talk about is to how how to standardize this tool kit.
+
+You
+13:29:33
+
+arguments. So here, we actually call that function. To get the result and print the result. The result is going to be that fixed thing. It's 23, uh, degrees in, uh, in San Diego. Um, so let me run this. Great. So the result is it is 23 c. This is basically the output of the l l. We were able to hear successfully parse the output of l m. The, um, the the magic, meaning that we know that the LLM wants to call a function, After it's matched, we call the function to get the results. And now these results needs to be sent back to the LML in a typical agentic loop. Um, we just need to append these results to the existing conversation history and then send it back to the element. So the LMM can continue figuring out. So this is this is that's that's it. Function calling and the entire tools and agents is just simply this. Um, we were able to successfully introduce, um, tools to our l l and correctly parse it. Now this process is very was very manual. We have we had to manually implement a function for here. We had to also manually create these tools as tech so it can easily get out of control. Um, as soon as we introduce more tools like calculator, web search, and so on, every time, they have to go back here and do some prompt surgery, make changes here, and make sure everything else is also correct. Um, so the next part that we are going to talk about is to how how to standardize this tool called.
+
+AI
+13:29:36
+
+So
+
+You
+13:29:37
+
+So
+
+AI
+13:30:04
+
+the typical way, as also shared in the guided learning, is to when we are implementing the function, we set some, um, standards. We can say that when we implement any tool, we have to make sure that it's typed, the arguments are typed. There is, uh, an output type as well. And also there is a docstring. So docstring here, we can in a string, we can just type something that this function
+
+AI
+13:30:49
+
+does this. And then CT can be a star. So we clearly are saying that the type of the CT is STR and and and and so on for other part units and all other functions. If we do this, if all of us follow these standard, uh, process when we implement tools, Then we don't have to manually take care of these tool aspect. We can just write a function once to go over this all the functions at our tools. Extract this automatically, extract all these arguments and their type, and then it creates thing like this, but all automatically. So that's what we are gonna do as the natural next step to to improve what we've built. So let me clean this up.
+
+You
+13:30:50
+
+the typical way, as also shared in the guided learning, is to when we are implementing the function, we set some, um, standards. We can say that when we implement any tool, we have to make sure that it's typed, the arguments are typed, There is, uh, an output type as well. And, also, there is a Docker string. So Docker string here, we can in a string, we can just type something that this function does this. And then CT can be STR. So we clearly are saying that the type of the CT is STR and and and and and so on for other arguments and all other functions. If we do this, if all of us follow this standard, uh, process when we implement tools, then we don't have to manually take care of these two We can just write a function once to go over this all the functions that are tools, extract this automatically, extract all these arguments automatically under type, and then it creates something like this, but all automatically. So that's what we are gonna do as the natural nexus step to to improve what we've built. So let me clean this up.
+
+AI
+13:31:01
+
+Let me copy this here.
+
+You
+13:31:02
+
+Let me copy this here.
+
+You
+13:31:11
+
+Actually, let me
+
+AI
+13:31:11
+
+Actually, let me
+
+AI
+13:32:06
+
+Okay. So the main changes are these types, output type and then data string. Asset. So now I re implemented this function, but in a nice survey. Now we have this, and we can potentially have other functions, uh, which we don't have right now. And now we want to implement a function that automatically extracts the tool perspective from this. And, again, this part is also like a software engineering thing. There are packages that help you to implement this. Such as the inspect part and inspect dot signature. We give you the signature of the function. So for example, here, if I print signature and if I pass this function to this new function, you'll get the um, it will print the signature.
+
+You
+13:32:06
+
+Okay. So the main changes are these types. Output type and the data stream. That's it. So now I re implemented this function, but in a nice survey. Now we have this, and we can potentially have other functions uh, which we don't have right now. Um, and now we want to implement a function that automatically extracts the tool aspect from this. And, again, this part is also like a software engineering thing. There are packages that help you to implement this, such as the inspect part and inspect that signature will give you the signature of the function. So for example, here, if I print signature and if I pass this function to this new function, you'll get the uh, it will print the signature.
+
+You
+13:32:34
+
+For now, let me just return something empty to see how signature looks like. Great. So it's actually giving me the signature of the function. It's saying city, s t r unit, please. The output is this. So it automatically is giving me that. Now there are also, in general, other functions that and other packages that allow you to parse different parts of this function. Um, so what I'm going to do, I'm going to here
+
+AI
+13:32:35
+
+For now, let me just return something empty to see how signature looks like. Great. So it's actually giving me the signature of the function. It's saying city, s t r, unit is, and the output is this. So it automatically is giving me that. Now there are also, in general, other functions that and other packages that allow you to parse different parts of this function. Um, so what I'm going to do, I'm going to here
+
+You
+13:32:49
+
+Implement this. So signature, we've already seen it. And then the rest of it, it's basically, um,
+
+AI
+13:33:43
+
+Implement this. So signature, we've already seen it. And then the rest of it is basically, um, um, just going over the signature, what the signature allows us. It has, like, parameters. And then for each of the parameter and names, we create this so that we can just create a a noise dictionary out of this signature. And then at the very end, what we would output is the name of the function the description, and the parameters. That's basically all we need. Um, but this function is doing extracting all this automatically now. Now if I run this, it's going to give me this dictionary um, every time I send it a function. Um, here, I'm sending it a get current better function, and then I'm going to print it. So it is it was, um, extracted the docket string and then everything else. Now this is great because moving forward, I don't have to worry about two spec anymore. I can just implement the functions and follow the best practices. And then just pass all of them to the tool schema.
+
+You
+13:33:43
+
+um, just going over the signature, what the signature allows It has, like, parameters, and then for each of the parameter and names, we create this so that we can just create a a noise dictionary out of this signature. And then at the very end, what we would output is the name of the function, the description, and the parameters. That's basically all we need. Um, but this function is doing extracting all this automatically. Now if I run this, it's going to give me this dictionary um, every time I send it a function. Um, here, I'm sending it the get current better function, and then I'm going to print it. So it is it was, um, it extracted the docket string and then everything else. Now this is great because moving forward, I don't have to worry about two anymore. I can just implement the functions and follow the best practices. And then just pass all of them to the two schema.
+
+AI
+13:33:53
+
+Great. And now here it's simply the same thing, but I just wanna show that we no longer need any uh, kind of functionality that we had last time.
+
+You
+13:33:55
+
+Great. And now here it's simply the same thing, but I just wanna show that we no longer need any um, kind of prompt search that we had last time.
+
+AI
+13:34:12
+
+Here is the list of messages, system prompt. The tool spec, this time I'm just relying on the tool schema. Instead of my own, uh, hard coded, uh, tool aspect. To maximize what we received here. It is this object.
+
+You
+13:34:13
+
+Um, here is the list of messages. System prompt. The tool aspect, this time, I'm just relying on the tool schema. Instead of my own, uh, hard coded, uh, tool aspect. Tool estimate is what we received here. It is this object.
+
+You
+13:34:37
+
+Alright. So here, I am putting that, uh, I'm putting it as a system prompt as well. I'm just naming it for clarity. And the content is to the schema. And then the prompt here is is Boston warm. Before doing this, let me change it to
+
+You
+13:34:46
+
+what is the letter in Sandia. Same format. Um, and then model.
+
+AI
+13:34:46
+
+Alright. So here, I'm putting that, uh, I'm putting it as a system file as well. I'm just naming it for clarity. And the content is to the SCO. And then, uh, prompt here is is Boston one. Before doing this, let me change it to what is the weather in San Diego? Same format. And then model.
+
+AI
+13:34:52
+
+Going to be general three. One b.
+
+AI
+13:35:00
+
+Output equal client. Going to copy paste.
+
+You
+13:35:02
+
+Going to be Gemma three. One b. Output to the client Copy paste.
+
+You
+13:35:12
+
+Alright. So I'm just going to repeat it. Um, just send this message and see if the model will produce the two call.
+
+AI
+13:35:12
+
+Alright. So I'm just going to repeat it. Um, just send this message and see if the model will produce that will come.
+
+You
+13:35:25
+
+Okay. Great. So the model actually followed the, um, the prompts and produced this tool call.
+
+AI
+13:35:26
+
+Okay. Great. So the model actually followed the, um, the prompts and produced this to call.
+
+You
+13:35:32
+
+And this is great because
+
+You
+13:35:37
+
+now everything was automatic. You didn't have to specify this.
+
+AI
+13:35:52
+
+And this is great because because now everything was automatic. We didn't have to specify this. Um, so now one thing one more thing I want to show you now is if we make this prompt more, um, complex. For example, if we set it to East Boston, warmer today or Seattle.
+
+You
+13:35:54
+
+Um, so now one thing one more thing I want to show you now is if we make this prompt more, uh, complex. For example, if we set it to is Boston warmer today, or Seattle.
+
+AI
+13:35:56
+
+Let's see what happens.
+
+You
+13:35:58
+
+Let's see what happens.
+
+You
+13:37:15
+
+It correctly produced the tool call. The in exact oh, by the way, the last time that the LLM produced something was different. And that was not good. It was following a different structure, which was fine. It was a JSON structure format, but it was not following the format that I explicitly asked you to follow, um, like, this tool call. And the reason this is happening is because geometry is not a perfect model. It's not too big. It's it's usually good for day to day, uh, simple tasks. Um, if I run this again, it may null it may again deviate from this and mess with the with the right format, reducing the right format. But now now the problem is a bit deeper. So the model produced this tool called GetCurrent Better. And the city is Boston. But the query is requiring is asking that Boston is warmer today or Seattle. So it also needs to ask, uh, uh, the better for Seattle. So it ideally, had to produce two tool cuts, not one. Um, so It may continue producing if we just append the results and pass it again to the model. But a better model may produce both at the same time. Um, let's switch to a better model and see if it makes any difference. Like, LAMA 3.2.
+
+You
+13:37:17
+
+3,000,000,000.
+
+AI
+13:37:18
+
+It correctly produced a tool called The in exact oh, by the way, the last time that the LLM produced something was different. And that was not good. It was following a different structure, which was fine. It was a JSON structured format, but it was not following the format that I explicitly asked it to follow, um, like this tool call. And the reason this is happening is because Gemma three is not perfect model. It's not too big. It's it's usually good for day to day, uh, simple tasks. Um, if I run this again, it may will it may again deviate from this and mess with the with the right format reducing the right format. But now now the problem is a bit deeper. So the model produced this tool called get current better. And the city is Boston. But the query is required is asking that Boston is warmer today or Seattle. So it also needs to ask the, uh, the better for Seattle. So it ideally, had to produce two tool cuts, not one. Um, It may continue producing if we just append the results and pass it again to the model. But a better model may produce both at the same time. Um, let's switch to a better model and see if it makes any difference, like gamma 3.2. 3,000,000,000.
+
+You
+13:37:27
+
+So everything else is the same. Query is the same. I'm just replacing the model with a bigger one, like, 3,000,000,000 parameters.
+
+AI
+13:37:27
+
+So everything else is the same. Query is the same. I'm just replacing the model with a bigger one, like, 3,000,000 parameters.
+
+You
+13:38:35
+
+It's also taking longer because the model is, um, bigger. Great. So now here, you can see that it actually produced two tool calls. Um, which is great because now we can parse the two calls uh, in parallel and call the functions. And in general, it can be faster. So a lot of companies and TheraLABS that train, um, agents or agentic foundation models, they try to inject this kind of capability into this model. So that whenever there are there are needs to predict to call multiple tools, just produce them in par. Um, so we can parse all of them and run all of them in, uh, in Para. Now this tool is very simple. We implemented it. It's just kind of instant. Um, but tools in general can be more expensive and can take longer. Um, so in those cases, it becomes important to parallelize as much as possible. Great. So I just wanted to show this that switching to better models can give us a lot of benefits And now, Lamont theory, it seems to be working perfectly for this particular comment.
+
+AI
+13:38:36
+
+It's also taking longer because the model is um, bigger. Great. So now here, you can see that it actually produced two tool calls, um, which is great because now we can parse the two calls in parallel and call the functions. And in general, it can be faster. So a lot of companies and AO Labs that train, um, agent or agentic foundation models, they try to inject this kind of capability into these models. So that whenever there are there needs to to call multiple tools, just produce them in parallel. Um, so we can parse all of them and run all of them in, uh, in parallel. Now this tool is very simple. We implemented. It's just kind of instant. Um, but tools in general can be more expensive and can take longer. Um, so in those cases, it becomes important to parallelize as much as possible. Great. So I just wanted to show this that switching to better models can give us a lot of benefits And now, LaMDA reads seems to be working perfectly for this particular kind.
+
+AI
+13:38:47
+
+Great. So this part is done And then next part is we are going to switch to NAG chain. Um, so so far, we've seen how we can manually
+
+You
+13:38:56
+
+Great. So this part is done. And then next part is we are going to switch to land chain. Um, so so far, we've seen how we can manually um, implement or inject tool calling capability into just any element like Gemma three.
+
+You
+13:39:45
+
+There are libraries and tools that have implemented all of this for us, so we don't have to actually, uh, go over all of this. Um, we don't have to worry about, um, writing this to a schema to automatically get this. It's just already there, and it works. And that's what we are going to, um, explore next. Blockchain is the framework that allows, uh, it's built for agent take applications. Um, and it can easily allow you it's built around tools and agents. So it easily allow you to implement functions, define them, or register them as tools, and then introduce those tools to your agents. In a very simple way. But what is going to happen under the hood by lantern is this is what we just implemented. Uh, we just it's it's just invisible from the user's perspective.
+
+AI
+13:40:17
+
+implement or inject tool calling capability into just any LMS, like Gemma three. There are libraries and tools that have implemented all of this for us, so we don't have to actually, um, go over all of this. We don't have to worry about, um, writing this to a schema to automatically get this. It's just already there, and it works. And that's what we are going to, um, explore next. Log chain is the framework that allows, uh, it's built for agentic applications. Um, and it can easily allow you it's built around tools and agents. So it easily allow you to implement functions define them, or register them as tools. And then introduce those tools to your agent in a very simple way. But what is going to happen under the hood by is this. Is what we just implemented. Uh, we just it's it's just invisible from the user's first perspective. So, yeah, that's that's what we are going to now see next. Another thing I want to point out before I move is that everything we've seen so far was just a single step. As I mentioned before, agents are in a loop So if you really want to implement everything manually, um, from scratch, this entire thing needs to be put in a loop. Um, you put this in a loop. You get the output. You get you you parse it. Um, this function for, uh, this function,
+
+You
+13:40:27
+
+Um, so, yeah, that's that's what we are going to now see next. Another thing I want to point out before I move, is that everything we've seen so far was just a single step. As I mentioned before, agents are in a loop. So if you really want to implement everything manually, um, from scratch, this entire thing needs to be put in a loop. Um, you put this in a loop, you get the output, you get you you parse it, Um, this function for, uh, this function uh, the parser basically parses the output. Calls a function, get the results, append it to the output, and send it back to this. And so there is a while loop.
+
+AI
+13:40:30
+
+uh, the parser basically parses the output. Calls the function, get the results, append it to the output, and send it back to this. And so there is a void loop.
+
+AI
+13:40:35
+
+So alright. So that's it. Now line check.
+
+You
+13:40:36
+
+So alright. So that's it. Now launching.
+
+AI
+13:40:45
+
+Um, live chat, in the earlier versions, they had different signatures to call their to create agents. Um, previously, they had create
+
+You
+13:40:45
+
+Lion King, in the earlier versions, they had different signatures to call there to create agents. Previously, they had create
+
+You
+13:40:59
+
+React Agent, Lambda Chain. But in their newer versions, they no longer support it. They they've moved the stuff And then right now, they have only a single create agent.
+
+AI
+13:40:59
+
+React Agent, Lambda, but in their newer versions, they no longer support it. They they've moved the stuff And then right now, they have only a single create agent.
+

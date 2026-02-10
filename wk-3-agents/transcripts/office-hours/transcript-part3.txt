@@ -1,0 +1,300 @@
+You
+21:08:05
+
+So if you've looked at
+
+Office Hours
+21:08:07
+
+And when it comes to define you know, I I we can we can introduce skills to the agent maybe that approach is alright. So how we can, you know, load these skills? Do we need to make, you know, let's say, define a new tool to read these skills from the markdown file. And it's gonna say today? Yeah. That that's that's a great question. It skips goes into a folder simply. Like, you let's say you want to create a folder a SKIP. You create a folder. You write whatever expertise and clear instructions you have in mind for that particular escape. And you put you write it in a skill dot m d, like a markdown file. And you put that skill dot m d in your folder. Right? You can optionally include the scripts, like Python files in that folder. Or some resources. So these are the three key parts of a skills. You have a skill markdown file, which is necessary. You have to have it. And then optional, you can have resources and, um, the scripts. Now now imagine you have a bunch of SKUs, bunch of folders. Right? So what you do is that first, you create a metadata Right? Your agent runtime can take care of this. You can create a metadata on the skill name and descriptions, and include this as part of your contact when you are sending this to the LMM. So moving forward, the LMM knows what skills are available. Whenever it feels that those are necessary, it would commit a tool call. And that tool call is open file. So basically produces the path of that skill. Um, to load their skill dot m d file. And then it loads at the agent runtime to load that skill dot m d. That brings it to the context, sends it back to the element. Now, from this point forward, the element knows about those clear instructions and expertise. That were within the skill dot m d for that particular skill. Um, and it continues producing tokens again. Okay. So any point it is that it also needs to call those scripts that were in the folder, uh, it already knows the path. So it just ends at two call and says open the script or or call this Python function. Yeah. But is there any any anything, like, also formatting for alright. Is there anything, like, auto formatting for tools here for this skill as well to have an an standard way of defining the skills. Um, so if you've looked at, um,
+
+You
+21:08:13
+
+I don't know what this
+
+Office Hours
+21:08:16
+
+I don't know. Like, yes. AI agents? No. There are there is a
+
+You
+21:08:31
+
+AI agent assist. Mhmm. No. There are there is a a nice repo with a lot of, uh, skills. I'm trying to find that. Let's see if no. Not this one. Open and see if that is search, which is from Versa. Maybe you can keep working on that.
+
+Office Hours
+21:08:33
+
+a nice repo with a lot of, uh, skills. I'm trying to find that. Let's see if no. Not this one. Then we can open and skip that as such, which is from where so maybe you can you can do that.
+
+Office Hours
+21:08:36
+
+Let me go to what you shared.
+
+You
+21:08:38
+
+Okay. Give me go to what you're showing.
+
+You
+21:09:06
+
+There should be a link to the actual definition of this video. Yes. I think what I what I want to show is is maybe slightly different. Okay. Give me one second. Okay. This is probably a good one.
+
+Office Hours
+21:09:06
+
+There's should be a link to the actual definition. It is still here. Yeah. I think what I what I want to show is is maybe a slightly different. Okay. Give me one second. Okay. This is probably a good one.
+
+You
+21:10:19
+
+This is the standardization part. So most of the skills, if you look at them, they start with something like this. This is the metadata. Like, it has a name, it has a description, and it's not optional. When you want to create an skilldom.md, this part is not optional. You must uh, include this. So this way, you can easily parse these parts when you are automatically creating a metadata to send to in the third like in in the in the beginning to send it to the l l. So this way, the l l m has only access to this like, short descriptions on the name of all the skills available. Mhmm. Okay. Thank you. And I know we are out of time, but are we gonna, uh, you know, discuss that a little bit caching somewhere in the future in the coming weeks? Or No. LRD caching is not going to be, we are not gonna talk more about those in the guided learning. But if you have any question or if you want details, let me know. Yeah. Attention. Yep. It's basically, um, it's a it's a simple concept, and there is some underlying, um, technical details. Uh, depending on at what depth you want to learn, let me know. I can share resources.
+
+Office Hours
+21:10:20
+
+This is the standardization part. So most of the skills, if you look at them, they start with something like this. And this is the metadata. Like, it has a name. It has a description, and it's not optional. When you want to create an SKILLDOM that empty, this part is not optional. You must, um, include this. So this way, you can easily parse these parts when you are automatically creating a metadata to send to in the per like, in in the in the beginning to send it to the LN. So this way, the LN has only access to this like, short descriptions and the name of all the skills available. Okay. Thank you. And and and we are out of time, but, uh, uh, are we gonna have you know, discuss the l l n cashing somewhere in the future in the coming weeks or No. L l n cashing is not going to be, uh, we're not gonna talk more about those in the guided learning. But if you have any question, we you want details, let me know. Yeah. I can share. Yep. It's basically, um, it's a it's a simple concept, and there is some underlying, um, technical details. Uh, depending on at what tech you want to learn, let me know. I can share resources.
+
+Office Hours
+21:10:24
+
+Yep. Thanks. Um, Nikki?
+
+Office Hours
+21:13:53
+
+Yeah. Hi, Adi. Uh, yeah. So my question is on MCP. So, uh, as per my use case, uh, what I have to do is, you know, to collect the to connect to my, uh, cloud SQL database. Right? So, uh, via Twi calling, via some, uh, creating an MCP client, I can connect to my louder. This is basically a Google Cloud. So I have to connect to to SQL, my data things. But my database stores, uh, say five to six stable. And, uh, those stable has various problems. So, uh, I guess this, uh, the client side, whatever the, uh, the service provider exposes the API. It just exposes the API. Right? Regarding all the day my own database and my own specific table, uh, it wouldn't have any knowledge of that. So I have to write I believe, prompt to understand those table to make those complex choice to get me the output, uh, whatever I'm, uh, I want. Like, like, test. Well, agent, I'm trying to see it. Yeah. Exactly. If if, uh, for whatever reason, based on the use case. If it's a complex use case or, like, a very custom use case, um, you have to clarify through prompt. Um, if you believe that the LLM is not good enough, on processing that without providing additional instructions, yes. It's it's basically your responsibility to add those clarification as part of this system prompt. Okay. Okay. Got it. Great. Yeah. Because without those, basically, they are just showing a bunch of function names, like signatures, descriptions, and how to use them to the LLM. And the LLM, it's it's it's up to the LLM to decide when to use them. If, um, some function hadn't required needs more explanation, it's basically a response. Or even if the results of the function needs more clarification, it's usually your response. Um, so the thing is when you create MCP servers, let's say, local MCP, uh, tools, you can specify. You can write description for them. So in that description, you can write those additional clarifications once. And then you don't have to make any manual changes. To this entire setup. Like, everything would still work because when you are adding an MCP, there is, um, this, like, the runtime would load the tools, and it's some kind of an I don't know what's going on under the hood in many of these, um, um, agents because they are closed, but, um, but, basically, they there is a day. They so the all they need is the MCP servers and how to use those. Based on that, they they create a system prompt and then include that system prompt, send it to the So as long as you clarify everything in the description of your MCP tool, uh, you don't need to manually touch any anything outside of that. Okay. So, basically, I have to, uh, in a detailed manner, I have to, uh, discuss describe my table and all the columns, right, so that it understand. Yes. We can see that. Got it. Got it. Mhmm. That's that's the clearance. Right? Yeah. Because you don't have to touch the rest of the system or manually go and do prompt surgery or change system prompts. Okay. Okay. Got it. Yeah. Thanks. Yeah. Uh, Uvi?
+
+You
+21:13:54
+
+Yeah. Thanks. Um, meeting? Yeah. Hi, Ali. Uh, yeah. So my question is on MCP. So, uh, as for my use case, uh, what I have to do is, you know, to collect, uh, to connect to my, uh, cloud SQL database. Right? So, uh, via tool calling, via some, uh, creating an MCP client, I can connect to my cloud at the is basically a Google Cloud. So I have to connect to the SQL my database. But my database stores, uh, say, five to six stable. And and those table has various columns. So, uh, I guess this, uh, the client side, whatever the, uh, the service provider exposes the API. It just exposes the API. Right? Regarding all the day my own database and my own specific table, uh, it it wouldn't have any knowledge of that. So I have to write ivory from to understand those table to make those complex joins to get me the output, uh, whatever, uh, I want. Like like, test well, agent I'm trying to see. Yeah. Exactly. If if, uh, for whatever reason, based on the use case, if it's a complex use case or, like, a very custom use case, um, you have to clarify through prompt. Um, if you believe that the LLM is not good enough, on processing that without providing additional instructions, yes. It's it's basically your responsibility to add those clarification as part of the system project. Okay. Okay. Got it. Thanks. Yeah. Because without those, basically, we are just showing a bunch of function names, like signatures, descriptions, and how to use them to the LLM. And the LLM, it's it's it's up to the LLM to decide when to use them. If, um, some function hadn't required needs more explanation, it's basically a response. Or even if the results of the function needs more clarification, it's usually your responsibility. Um, so the thing is when you create MCP servers, let's say, local MCP, uh, tools, you can specify specify. You can write description for them. So in that description, you can write those additional clarifications once, and then you don't have to make any manual changes to this entire setup. Everything would still work because when you are having an MCP, there is, um, this, like, the runtime would load tools. And it's some kind of an I don't know what's going on under the hood many of these, um, agents. Because they are closed. But, um, but, basically, they there is a they so all they need is the MCPs. Servers on how to use those. Based on that, they they create a system and then include that system prompt, send it to the heavily. So as long as you clarify everything in the description of your MCP tool, uh, you don't need to manually touch any anything outside of that. So, basically, I have to, uh, in a detailed manner, I have to, uh, describe my table and all the columns, right, so that it understands. Yes. It is. Okay. Got it. Got it. That's that's the cleanest thing. Yeah. Because you don't have to touch the rest of the system. We'll manually go and do prompt surgery or change system prompts. Yep. Yep. Got it. Thanks. Yeah. Uh, to me?
+
+You
+21:14:00
+
+Yes. Uh, I have a question.
+
+Office Hours
+21:14:00
+
+Yes. I I have a question.
+
+You
+21:14:08
+
+It's mostly the term of architecture Mhmm. If you have a multi agent system,
+
+You
+21:14:31
+
+we know that, uh, the the the the agents are async, right, to to produce the result. Mhmm. Yeah. If you did you need some coordination, uh, which tool are are used? To to coordinate all the responses and send back to the end user. I I I wanted just to have a high level in term of, uh, solution architecture.
+
+Office Hours
+21:14:33
+
+It's mostly the term of architecture. If you have a multi agent system, we do not uh, the the the the agents are async, right, to to produce the result. Mhmm. Yeah. If you need you need some coordination, uh, which tool are are used? To to coordinate all the responses and send back to the end user. I I I wanted just to have a a high level in camera solution architecture.
+
+Office Hours
+21:14:37
+
+Right.
+
+You
+21:15:40
+
+Um, right. I have to actually go and read the source code of that You're right. They are pacing. So perhaps there is some connection going on. So when they start so when the manager, agent, or whatever call it, lead agent, when they start multiple agents, They probably start some connection, keep the connection, uh, open, And then whenever the agent is done, um, would send a message back to the manager agent. So the manager agent would know that, okay, these agents are done, and then whenever all the agents are done, manager agent can start, uh, collecting everything and, um, drafting final The details, I don't know. I can I can check? But that's basically the high level idea. It's very similar to probably how chat does it when you when you use deep research or when you use promo. Because when I use Chrome mode and then I, um, close my laptop, and then, um, at some point, I get a notification on my phone that this is done. So what that means is that, basically, there is a connection open, and then whenever it's done, some one time just sends me a notification and let's me know let me know that um, it's completed.
+
+Office Hours
+21:15:41
+
+I have to actually go and read the source code of that. You're right. They are async. So perhaps there is some connection going on. So when they start so when the manager, agent, or whatever call it, lead agent, when they start multiple agents, they probably start some connection, keep the connection, uh, open. And then whenever the agent is done, um, it would send a message back to the manager agent. So the manager agent will know that, okay. These agents are done. And then whenever all the agents are done, manager agent can start uh, collecting everything and, um, drafting final output. Um, the details, I don't know. I can I can check? But that's basically the hardware. Like, it's very similar to probably how chat g p t it when you when you use deep research or when you use promote. Because when I use Chrome mode and then I, uh, close my laptop, And then, um, at some point, I get a notification on my phone that this is done. So what that means is that, basically, there is a connection open, and then whenever it's done, some one time just sends me a notification or let me know let me know that uh, it's completed.
+
+Office Hours
+21:15:59
+
+All of these are the same. I mean, basically, once you know, like, how deep research takes care of it, probably for multi agent systems, it's the same or even um, with Pro. So yeah. Now if I type something here, do a comprehensive research
+
+You
+21:15:59
+
+Yeah. All of these are the same way. I mean, basically, once you know, like, how deep research takes care of it, probably for multi agent systems, it's the same or even um, with Pro. So yeah. Now if I type something here, do a comprehensive research,
+
+You
+21:16:03
+
+on quantum computing.
+
+Office Hours
+21:16:03
+
+on quantum computing.
+
+You
+21:16:13
+
+So, basically, now we just start at that. So, um, even if I close this tab, I would get a notification.
+
+Office Hours
+21:16:14
+
+So, basically, now you just start at that. So, um, even if I close this tab, I would get a notification.
+
+You
+21:17:08
+
+Okay. And if I have to to build it, uh, for my home, this manager Mhmm. Agent manager, Which tool should I use for that? Oh, the tool is not going to be too different. I mean, as long as you stick to a tool that you can create a single agent, you can use the same tool the same framework to create multiple agents. Just your, um, the logic of your runtime would be more complicated. You may want to, uh, store separate system plans for each engine. So that's the only only part. Um, but, basically, you can stick to whatever framework you are using. For instance, if it's line chain, it's still going to be line You just create agents multiple times. Uh, in our our assignment, we are going to create
+
+Office Hours
+21:17:09
+
+Okay. And if I have to to build it, uh, for my home, uh, this manager agent manager, which tool should I use for that? Oh, the tool is not going to be too different. I mean, as long as you stick to a tool that you can create a single agent, you can use the same tool the same framework to create multiple agents. Just your the logic of your runtime would be more complicated. You may want to, uh, store separate system plans for each agent. So that's the only only part. But, basically, you can stick to whatever, um, framework you are using. For instance, if it's live chains, it's still going to be live chain. You just create agents multiple multiple times. Uh, in our in our assignment, we are going to create agent here and then use it.
+
+You
+21:17:18
+
+agent here and then use it. If it's a multistage agent system, you need to create multiple agents. And, also, you manually implement the logic out, like, the coordination logic.
+
+Office Hours
+21:17:18
+
+If it's a multis agent system, you need to create multiple agents. And, also, you manually implement the logic at, like, the coordination logic.
+
+You
+21:18:01
+
+If you do worries, it's it's becoming a little bit more complex. Right? Is going to be more complex, of course. Yeah. And it requires a lot of things because but, basically, many of those challenges can at least, as of now that I'm talking, are fixed through system problems. So for example, if some agents are taking forever to respond or they are getting stuck in a loop, it's often like, AI labs often go to their system content and add some explicit instructions to avoid those kind of issues instead of implementing some software code.
+
+Office Hours
+21:18:01
+
+This is where it's it's becoming a little bit more complex. Right? It is going to be more complex, of course. Yeah. And it requires a lot of things because but, basically, many of those challenges can at least, as of now that I'm talking about, fixed through system problems. So for example, if some agents are taking forever to respond or they are getting stuck in a loop, it's often like, AI labs often go to their system content and adds up explicit instructions to avoid those kind of issues instead of implementing some software code.
+
+Office Hours
+21:18:12
+
+So this is the anthropic deep research, um, repo.
+
+You
+21:18:13
+
+So this is the anthroscopic deep research repo.
+
+Office Hours
+21:18:20
+
+No. That is
+
+You
+21:18:20
+
+No. Not this.
+
+Office Hours
+21:18:46
+
+Yep. I'll try to find that and send it to you. But if you actually go and look at the like, the system prompts that or deep research they are using, it's very, very long. And it explicitly says what to do, what not to do if you bought a stock. Know, don't do this to don't do that, all those things.
+
+You
+21:18:47
+
+I'll try to find and and send it to you. But if you actually go and look at the app like, the system prompts tab, for deep research they are using, it's very, very long. And it takes explicitly says what to do, what not to do if you got a stock. Know, don't do this to don't do that, all those things.
+
+Office Hours
+21:19:11
+
+Okay. Thank you. Yeah. Thanks. But, again, this is how people are handling it these days. I mean, it's made a difference. Um, in the future. These days, there it seems it's it's very challenging, and the best way to fix many of the issues are just through system point. Um, yeah. Thanks. Uh, next question. Monica.
+
+You
+21:19:12
+
+Okay. Thank you. Yeah. Thanks. But, again, this is how people are handling it easily. I mean, it's made it different. Uh, in the future. These days, there it seems it's it's very challenging, and the best way to fix many of the issues are just through Um, yeah. Thanks. Uh, next question. Rumika.
+
+You
+21:21:19
+
+Yeah. My question is quite similar to what uh, earlier you can ask. So, um, like, earlier, uh, in my company, what we were doing here uh, any code can be made, uh, to test it, we were doing it manually. Other than the unit and, uh, integration test. Um, So there is some base database rules that are created for each account. And then we were comparing it manually. So what I did is, uh, with the help of, uh, basically, I created some kind of a tool uh, so that it can connect to DB. Like, a script that we created, and then uh, it compares the data rules and all those. Initially, when I asked, it says I cannot connect to database. So I wrote the scripts, and it worked quite successfully. Now if I want to give it to everybody in the company wide, um, right now, I'm using cursor interface to do that. Um, so am I creating the tool? Like, am I creating an agent, basically, and then distributing other utility? Or it's, like, because under the hood, like, Arthur is also using Jet chat and, uh, things like that. Right? So how can I give it as a utility to other? So I think the main question is you want to create MCP server, um, or not. Because with most, um, with most chatbots, if you have some MCP, um, servers, we can also expose those to your chatbot, and then the chatbot would suddenly know about be able to use those tools. So I think that's probably the cleanest day You will implement your own NCP server. And you add it to your to the to your chatbot client, for example, if you're using control pick you have the app cloud, and then they they there is a place where can add your MCP servers. So if you do so, then, um, the child would be able to use the tool.
+
+Office Hours
+21:21:22
+
+Yeah. My question is quite similar to what, uh, earlier Nathan asked. So, um, like, earlier, uh, in my company, what we were doing here uh, any code can be made, uh, to test it, we were doing it manually. Other than the unit and, uh, integration test. So there is some base database rules that are created for each account, and then we were comparing it manually. So what I did is, uh, with the help of cursor, uh, basically, I created some kind of a tool uh, so that it can connect to. Like, a script that we created. And then it compare the data rules and all those. Initially, when I asked, it says I cannot connect to database. So I wrote the scripts, and it worked quite successfully. Now if I want to give it to everybody in the company wide, Right now, I'm using cursor interface to do that. So am I creating a tool? Like, am I creating an agent, basically, and then distributing other utility or it's, like, because under the home, like, Cartel is also using it to me and, uh, think like that. Right? So how can I can I, uh, give it as a utility to other? So I think your main question is you want to create MCP server or not. Because with most um, with most chatbots, if you have some MCP um, servers, you can also expose those to your chatbot. And then a chatbot would suddenly know about and be able to use those tools. So I think that's probably the cleanest way. You implement your own MCP server, and you add it to your to the to your chatbot client. For example, if you're using control pick you have the app cloud, and then they they there is a place where you can add your MCP servers. So if you do so, and, um, and the channel would be able to use the tool. Does that answer your question?
+
+You
+21:21:24
+
+Does that answer your question?
+
+You
+21:22:03
+
+I think from, yeah, your perspective, like, from my side, I was, uh, like, I I don't I didn't get the enough details. Like, to be an instrumented. What what like, so MCSP server will be doing data or the like, what and that too, basically, the agent already in Geta, I need to create an another user defined agent on top of But you are saying just having them, CP server will be enough for this requirement. Yes. So I have done this before. So for example, in cloud desktop app, I believe you can also
+
+Office Hours
+21:22:39
+
+I think from, yeah, your perspective, like, from my side, I don't, uh, like, I I don't I didn't get the enough details. Like, to to get implemented. What what like uh-huh. So m c c server will be doing the enough or the like, what I know today, basically, the agent already agreed. I need to create an another user defined agent on top of it. But you are saying just having time, CP server will be enough for this requirement. Yes. So I have done this before. So for example, in cloud desktop app, I believe you can also, um, yeah. Let me yeah. Local MCT server supporting their cloud desktop app. So, uh, basically, what this line is saying is that you can implement an MCB server, which is the whatever tool you want. And then you can go to the cloud desktop app. You expose your MCP server. You add the how to you basically there is a JSON file you added. How do you tell Cloud how to use it. And then that's it. You you simply do not need any any additional agents. DeepClot, which is an agent by itself it would just take care of it. It already knows about the tool, and it knows how to call the how to use the tool, so it's going to use it.
+
+You
+21:23:08
+
+yeah. Let me yeah. Local MCP server supporting the cloud desktop app. So, uh, basically, what this line is saying is that you can implement an MCP server, which is the whatever tool you want, and then you can go to the cloud desktop app You expose your MCP server. You add how to you basically there is a JSON file you added how to you tell cloud how to use it. And then that's it. You you simply do not need any any additional agents. The club, which is an agent by itself, it will just take care of it. It already knows about the tool, and it knows how to call the how to use the tool, so it's going to use it. I I so there is a very good example on how to implement MCP server and connect it to client. I'll find it and share it with you. Okay. So is it still going to use the cursor, uh, or I can just directly call the JetGPT, and there's no need of a cursor anymore because, uh, after this MTP server will be created.
+
+Office Hours
+21:23:10
+
+K. I so there is a very good example on how to implement MCP server and connect it to client. I'll find it and share it with you. Okay. So is it still going to use the cursor, uh, or I can just directly call the JTPT, and there's no need of a cursor anymore because, uh, after this MTP server will be created.
+
+You
+21:23:38
+
+Um, can you can you elaborate a bit more? Uh, so right now, like, everything is, uh, like, I I'm using the cursor chat input box. Right? To give it all details. Like, okay. Connect to database. Compare this raw skew meter event. Um, but when I want to release it as utility, I I believe there is no need of cursor anymore. Right? I can have the MCP server as you suggested, and
+
+You
+21:24:24
+
+will connect to JettyPT and then, uh, do the same what cursor is allowing me to. Uh, no. Probably, that's not gonna happen that way. It depends on how Cursor is under the hoodies calling that element. Because for example, this link that I showed, you manually go to this app, Cloud Desktop app. And then you introduce your m c system. So as long as you are staying within this app, it would be aware of this. If you are using some third party apps, let's say, that under the hood is is using bug, it's probably using their cloud, like, cloud, uh, API. So it's not using this. So it no longer has access to, um, to the MCP tool. Um, so for Karesen, You know, openly introduced this, um, codecs app
+
+Office Hours
+21:24:24
+
+Um, can you can you elaborate a little more? Uh, so right now, like, everything is, uh, like, I I'm using the concern or chat, uh, input box. Right? To give it all details. Like, okay. Connect to database, compare this rules, limit the event. Um, but when I want to release it as a utility, I I believe there's no need of cursor anymore. Right? I can have the MCP server as you suggested, and that will connect to JettyPT and then, uh, do the same what cursor is allowing No. Probably, that's not gonna happen that way. It depends on how Cursor is under the hood is calling that area. Because, for example, this link that I showed, you manually go to this app. Cloud desktop app, and then you introduce your MTP server. So as long as you are staying within this app, it would be aware of this. If you are using some third party apps, let's say, that under the hood is is using bot, It's probably using their cloud, like, cloud uh, API. So it's not using this. So it no longer has access to, um, to the MCP tool. Um, so for care set, you know, OpenAI introduced this, um, codecs app codecs
+
+You
+21:24:49
+
+codecs app. App, recently. Yes. Yes. Um, and if you if if you your use case is coding, um, if you install this, there is also a place where you can, um, add your MTP servers. Um, yeah. I'm I have it. I've I've seen it. I didn't add MCP servers yet, but
+
+Office Hours
+21:24:50
+
+App recently. Yes. Yes. Um, and if you if if you your use case is coding, Um, if you install this, there is also a place where you can, um, add your MCP servers. Yeah. I I have it. I've I've seen it. I didn't add MCP servers yet, but
+
+Office Hours
+21:24:54
+
+Let me see if I can show it here.
+
+You
+21:24:56
+
+let me see if I can show it here.
+
+You
+21:25:02
+
+So there are skills,
+
+Office Hours
+21:25:03
+
+So there are skills.
+
+You
+21:25:38
+
+Yeah. So you're trying to add servers. And then if it's local server, you can say, you know, if it's if it's over HTTP or or SDI. So you can keep these, and then you can basically, you can add whatever um, MCP server you have. And then from that point forward, Cortex would know that that's one, uh, um, MCP server as a tool that you want to use.
+

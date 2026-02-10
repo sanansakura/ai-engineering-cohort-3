@@ -1,0 +1,53 @@
+You
+21:26:22
+
+Okay. And one more basic question I have. Like, when we go to chatgpt.com, a website, right, like that, you, uh, goes to. Right? And then um, the LNIM is running behind this chat box or this, uh, you, uh, website. Uh, are do we call them, like, domain specific or general purpose, and then they're more what do we call them? Oh, so the the underlying model are called yes, they are they are in in in chatbots. They are general purpose analytics. They are an they are elements that are trained to handle day to day tasks.
+
+Office Hours
+21:26:22
+
+Yeah. So you can add servers. And then if it's local server, you can say, you know, like, if it's if it's over HTTP or or SDR, So you can keep this, and then you can basically, you can add whatever um, MCP server you have. And then from that point forward, codecs would know that that's one, um, MCP server as a tool that you want to use. Okay. And one more basic question I have. Like, when we go to chattypt.com, that site, right, like, that you, uh, goes to. Right? And then, um, there and I'm running behind this chat box. Or this, uh, you, uh, website. Uh, it Uh, do we call them, like, domain specific or general purpose? And then they're more more do we call them? Oh, so the the underlying model are called yes, they are they are in in in chatbots. They are general purpose analytics. They are an they are elements that are trained to handle day to day tasks.
+
+Office Hours
+21:27:43
+
+Yeah. But if you for example, yeah. I mean, for chatbots, like Gemini, um, if you go to cloud.ai, or even chatgpd.com, the underlying models that are serving these chatbots are general elements. Uh, in the case of chat g t p Changem p t, there are two models. Only. One is the instant, and one is thinking. So they only have two models that are supporting chat GPT. Like g p GPT five. I'm I'm talking about GPT five. So there is one GPT 5.2 instant, which is a non thinking model. And there is GPT 5.2 thinking, which thinks Uh, and then auto and pro is is still relying on these two. Okay. And the same models, we can also call. Right? Like, in the office environment, like, we can, uh, look what's running behind it, like, for example, 5.2 pro, can we call the same model uh, as well? You can basically use any of these models. You can use some API Uh, if that's your question about, like, sending API calls, yes. You can use. I think is some of these are commercial, so you may need to have tokens or paid. Uh, but in general, yes. Almost to the best of my knowledge, all AI labs that are offering chatbot services, they allow you to send to specify which model you want to use and send some, uh, request to their API.
+
+You
+21:27:51
+
+Yeah. But if you for example, yeah. I mean, for chatbots, like, Gemini, uh, if you go to product.ai, or even chatgpt.com. The underlying models that are serving these chatbots are general purpose. Um, in the case of chat, g t, uh, chat g t, there are two models. One is the instant, and one is thinking. So they only have two models that are supporting Chai GPT. Like g p GPT five. I'm I'm talking about GPT five. So there is one GPT 5.2 instead, which is a non thinking model. And there is GPT 5.2 thinking, which thinks uh, and auto and pro is is still relying on these two. Okay. And the same models we can also call. Right? Like, in our office environment, like, we can what's behind it. Like, for example, 5.2 pro, can we call the same model uh, as well? You can basically use any of these models. You can use some API Uh, if that's your question about, like, sending API calls, yes, you can use. Um, I think is some of these are commercial, so you may need to have tokens or pay. Uh, but in general, yes. Almost to the best of my knowledge, all AI labs that are offering chatbot services, they allow you to send to specify which model you want to use and send some request to their API. Okay. Thank you so much. Yeah. Thanks. Uh, so
+
+Office Hours
+21:27:51
+
+Okay. Thank you so much. Yeah. Thanks. Uh, South.
+
+You
+21:30:34
+
+Hey. Hello, Ellie. Good night. My question is related to memory. Um, as I know there are two kind of memories, short term memory or long term memory. But I didn't understand how we act like, how the agent access to the memory and how store the data. We're all good. Um, I understood the tools, but not the memory. Call. That's when when is this memory loop. Yeah. Happening and, uh, sorry. Just well, the thing How we difference or how the agent's different between short term memory and long term memory and when to use. Sure. Um, so short term memory is just, like, the context window. Whatever is in the context, that's the short term memory. That's what the LLM is going to see uh, at any given point. For example, in this example, I don't know if you were in the meeting while I was explaining this, but um, this example that is passed to the element as part of its its context, this is short term memory. So the LLM sees this. Now long term memories, anything outside of that, that you just source somewhere, and you have some components to load them as needed. So that could mean, um, so, basically, the memory long term memory can be simply what you learned so far from the user. So it can be just a list of, you know, like, this user prefers tile seats or this user prefers this and that. Or it can be coming from retrieval companies. So in last week, content, we have we have Rack. Right? So Rack has this reachable app. So retrieval can also, um, whenever needed, based on the prompts, you can you can like, your onetime can retrieve relevant content from your knowledge base. Right? So retrieval has access to knowledge base here. It always re can return some chunks. Depending on what the existing prompt is, and then it would the runtime would include to us and has and put them to be in the short term memory. Of the LLA. So so, again, we have short term memory, which is equivalent to the context. What is what is actually in the context. We have long term memory, which is everything outside of that that whenever is needed, you can load based on like, dynamically based on what the input is at this point. And then you move stuff, whatever you loaded into the context menu. So, basically, you move it into the short term memory.
+
+Office Hours
+21:30:34
+
+Hey. Hello, Ali. Good night. My question is related to memory. Um, as I know there are two kind of memories, short term memory or long term memory. But I didn't understand how we access like, how the agent access to the memory and how store the data. We're all good. Um, I understood the tools, but not the memory. Call. That's when when is is memory live? Happening and, uh, sorry. Just one more thing. And how we difference or how the agent's different between short term memory and long term memory? And what to use. Sure. Um, so short term memory is just like the context menu. Whatever is in the context, that's the short term. That's what the LLM is going to see, um, at any given point. Example, in this example, I don't know if you were in the meeting while I was explaining this, but um, this example, that is passed to the element as part of its its context. This is short term memory. So the LLM sees this. Now long term memory is anything outside of that. That you just saw somewhere and you have some components to load in as needed. So that could mean, um, so, basically, the memory long term memory can be simply what you learned so far from the user. So it can be just a list of, you know, like, this user prefers idle seats or this user prefers this and that. Or it can be coming from retrieval components. Um, so in last week content, we have we had RAC. Right? So RAC has this retrieval. So retrieval can also, whenever needed based on the prompt, you can you can let your one time can retrieve relevant content. From your knowledge base. Right? So retrieval has access to knowledge base here. It always can return some chunks depending on what the existing prompt is. And then it would their runtime would include those and pass and put them to in the short term memory of the element. So so, again, we have short term memory, which is equivalent to the context, what is what is actually in the context. We have long term memory, which is everything outside of that, that whenever is needed, you you can load based on like, dynamically based on what the input is at this point. And then you move stuff, whatever you loaded into the uh, context window. So, basically, you move it into the short term memory.
+
+Office Hours
+21:30:52
+
+Okay. And the long term memory could be, like, simple of data a dynam database or migrate one for Yeah. Exactly. It can be a lot of databases here. You have retrieval here. Yeah.
+
+You
+21:31:30
+
+Okay. And the long term memory could be a simple, a data bay a dynamo database or Right. Right. Right. Right. Right. Yeah. Exactly. It can be a lot of databases here. You have retrieval here. Yeah. Okay. Um, one last question is Sorry. Before before the next question. For example, this is a very common setup in coding agents. I mean, because coding agents they're not going to load the entire code base, um, into their active memory. It's not gonna fit So what they do is that they store your entire code base here, They follow all the best practices that we learned in the rank chapter. In the RAG, uh, week. Uh, they embed everything as well. And then the code base sits somewhere here. Whenever there is a question based on how things are going, the retrieval component would also retrieve relevant chunks of the call base and put it in the active memory.
+
+Office Hours
+21:31:34
+
+Okay. And one last question is Uh, sorry. Before before the next question, for example, this is a very common setup in coordinate. Agents again. Because coding agents, they're not going to load the entire code base. Uh, into their active memory. It's not gonna fit. So what they do is that they store your entire code base here, um, They follow all the best practices that we learned in the RAC chapter. In the RAC, uh, week. Uh, they embed everything and so on. And then the code base sits somewhere here. Whenever there is a question based on how things are going, a retrieval component would also retrieve relevant chunks of the code base and put it in the active memory.
+
+Office Hours
+21:32:35
+

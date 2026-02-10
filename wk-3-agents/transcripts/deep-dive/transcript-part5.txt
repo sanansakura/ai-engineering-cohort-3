@@ -1,0 +1,300 @@
+You
+13:50:49
+
+C d. First, let's see if it works, and then I'll explain. And instead of registering this tool, I'm going to register this as a tool. And this function internally calls this function.
+
+AI
+13:50:52
+
+return yet current better. City. First, let's see if it works, and then I'll explain. And instead of registering this tool, I'm going to register this as a tool. And this function internally calls this function. Okay. Get better.
+
+You
+13:50:53
+
+Okay. Get better.
+
+AI
+13:51:01
+
+Now if I rerun this and I change this to get better now,
+
+You
+13:51:02
+
+Now if I rerun this, and I change this to get better now,
+
+You
+13:51:41
+
+Oh, okay. Great. So now it's saying that the function must must have a data string if description is not correct. So so that's what I was referring to. When we are registering functions as tools, we need to provide this stuff history. Um, this one, since it's not registered, it doesn't matter. Nobody is gonna see this. It's never gonna appear in the system prompt. At the end of the day. This is going to appear in the system prompt. So this name this topic string, and this now let me rerun this. Okay. Worked. This also worked.
+
+AI
+13:51:41
+
+Oh, okay. Great. So now it's saying that the function must must have a docstring if description is not provided. So, um, so that's what I was referring to. When we are registering functions as what we need to provide this stuff history. Um, this one, since it's not registered, it doesn't matter. Nobody is gonna see this. It's never gonna appear in the system prompt at the end of the day. This is going to appear in the system prompt. So this name, this doc history, and this Now let me rerun this. Okay. It worked. This also worked.
+
+AI
+13:52:11
+
+Okay. So it worked this time. So what happened was that, again, it goes back the implementation of lang chain and what are certain things that lang chain expect you to follow. Land chain expect you, when you implement a tool, the argument should be one argument only. This is just for simplicity. It's implemented that way. If you have multiple arguments, it's not it's going to fail.
+
+AI
+13:52:41
+
+So so that's why we we created this function, get rid of CD. And then inside it, we are calling this. Um, it can be the default value. The unit. Or if you want to influence the other arguments, you can change the type of this to dictionary. So instead of expecting get better to um, have a CD as the STR, it can be a query and then the type can be dictionary. And then, um, inside that dictionary, it can be the actual,
+
+You
+13:52:41
+
+Okay. So it worked this time. So what happened was that, again, it goes back to the implementation of language chain and what are certain things that lang chain expect you to follow. Lambdaem expects you, when you implement a tool, the argument should be one argument only. This is just for simplicity. It's implemented that way. If you have multiple arguments, it's not it's going to fail. So so that's why we we created this function, get better city, And then inside it, we are calling this, um, it can be the default value the unit. Or if you want to influence the other arguments, you can change the type of this to dictionary. So instead of expecting get better to um, have a CD as the STR, it can be a query and then the type can be dictionary. And then, um, inside that dictionary, it can be the actual
+
+You
+13:53:31
+
+um, city as well as the unit. So this is how you get around with the limitation of nine chain. Uh, you just you just, um, you always stick to a single argument. And if needed, you make it a dictionary or it can still be a query, and then you can parse different parts of, uh, different arguments from this. Here. Um, but for now, we'll just keep it simple. I just wanted to um, explain that lang chain expects the single arguments only. Great. So this is how we can use, uh, long chain create agent and introduce some tools to it and make it work. Um, so here we saw that it produced this What happened was that this loop happened internally. It just didn't see it.
+
+AI
+13:53:32
+
+city as well as the unit. So this is how you get around with the limitation of nine chain. Um, you just you just, um, you always stick to a single argument. And if needed, you make it a dictionary or it can still be a query, and then you can parse different parts of, uh, different arguments from this yet. Um, but for now, let's just keep it simple. I just wanted to um, explain that lang Shen expects a single arguments only. Great. So this is how we can use, uh, launching create agent and introduce some tools to it and make it work. Um, so here we saw that it produced this What happened was that this loop happened internally. It just didn't see it.
+
+AI
+13:53:36
+
+So
+
+You
+13:53:36
+
+So
+
+You
+13:54:18
+
+and there might be also some other ways in their newer versions. I've seen a lot of people where in in general complaining about this. It's it's not a cleanest way to have this limitation that functions should have always a single argument. So in their newer versions, there might be some other or better cleaner ways of doing that. Um, but this is obviously one simple workaround. So if there are other ways, let me know or please share in the in the, um, course portal so I can make some updates. Um, great. So we have this. We have the agent. We have this. And we saw that how it's fixed and how we should only stick to that who calling models. And this part is done. We've already done this, and we we managed to have it work.
+
+AI
+13:55:17
+
+and there might be also some other base in their newer versions. I've seen a lot of people where in in general complaining about this. It's it's not the cleanest way to have this limitation that functions should have always a single argument. In their newer versions, there might be some other or better, cleaner base of doing that. Um, but this is obviously one simple workaround. So if there are other ways, let me know or please share in the in the, um, course portal so I can make some updates. Um, great. So we have this. We have the agent. We have this. And we saw that how it's fixed and how we should only stick to that recording models. And this part is done. We've already done this, and it we managed to have it work. Now the next part is now going to be CPaaS because we learned about the foundations, how tools are defined, and how easily to frameworks like Lambda allow us to, uh, like, take care of everything. Now a real example is, like, a web search agent. The implementation is going to be very similar to what you've seen. Um, the main difference is that now we are going to change the uh, the tool. We are going to introduce a depth search tool instead of a toy, uh, get card better tool. So this is what we are gonna do here. For web search, there are multiple packages and leveries that it can be used A simple, um, package is DDGS. Uh, from Docker Compose. So you can specify the query, and then we'll search and return some results. But this is only for prototyping purpose. If you have production use cases, there are other libraries and tools that are implemented for that. There are also some,
+
+You
+13:55:18
+
+Now the next part is now going to be simple. Because we learned about the foundations how tools are defined, and how easily to frameworks like LandChain allow us to uh, like, take care of everything. Now a real example is like a web search agent. The implementation is going to be very similar to what we've seen. Um, the main difference is that now we are going to change the the tool. We are going to introduce a depth search tool instead of a toy, uh, get current better tool. So this is what we are gonna do here. For web search, there are multiple packages and libraries that it can be used as simple, um, package is DDGS. Uh, from Docker Compose. So you can specify the query, and then you will search and return some results. But this is only for prototyping purpose. If you have production use cases, there are other libraries and tools that are implemented for that. There are also some, um,
+
+You
+13:55:23
+
+agent
+
+AI
+13:55:23
+
+agent
+
+AI
+13:55:26
+
+agent with web search.
+
+You
+13:55:28
+
+agentic web search.
+
+AI
+13:55:34
+
+Agent click web search. API.
+
+You
+13:55:34
+
+Agent with web search API.
+
+You
+13:56:14
+
+So this tabling is the probably one of the most popular ones. And they are they've built this, um, search system, and it's optimized for, um, agent reviews. So if you actually want to build a real system and use it in production with web search, you may want to use these APIs. You have to pay, get some tokens, and then use that token to get the outputs. Basically, what they're doing is that they're not simply going to they're not simply um, using your query to to search a bit, but they take into account a lot of other factors, like the score of different websites and so on. Um, so just wanted to say that, like, have any or there's some other, um, tools as well?
+
+AI
+13:56:20
+
+So this Catalina is probably one of the most popular ones. Um, and they are they've built this, um, search system, and it's optimized for, um, agent use. So if you actually want to build a real system and use it in production with web search, you may want to use these APIs. You have to pay, get some token, and then use that token to get the outputs. Basically, what they're doing is that they're not simply going to they're not simply um, using your query to to search the bed, but they take into account a lot of other factors, like the score of different websites and so on. So I just wanted to say that, like, heavily, or there's some other, tools as well. But Tableau is is is very popular.
+
+You
+13:56:20
+
+But Tableau is is is very popular.
+
+AI
+13:56:24
+
+Anyway, but DDGS
+
+AI
+13:56:32
+
+API is what we are going to use. Um, since it's very simple to use it.
+
+You
+13:56:32
+
+Anyway, but did the g s API is what we are going to use. Um, since it's very simple to use it.
+
+You
+13:56:53
+
+We simply create an object and then, um, send that request and get the results back. So I'm going to implement it. It's uh, just two lines of code. But there are a lot of functionalities that are provided.
+
+AI
+13:56:58
+
+Um, we simply create an object and then, um, send out request and get the results back. So I'm going to implement it. It's uh, just two lines of code. But there are a lot of functionalities that are provided. Anyway, so let me go here and implement an actual web search.
+
+AI
+13:57:05
+
+If search web Uh, query is the query of the user.
+
+You
+13:57:06
+
+Anyway, so let me go here and implement an actual web search. If search web query is the query of the user.
+
+AI
+13:57:12
+
+And next,
+
+AI
+13:57:14
+
+results.
+
+You
+13:57:17
+
+And max results.
+
+AI
+13:57:29
+
+She's been. K. And the output is going to be the, uh, a string. So let me copy paste that data string here.
+
+You
+13:57:31
+
+Just didn't. Ten. And the output is going to be the, uh, a string. So let me copy paste the Docker string here.
+
+You
+13:57:42
+
+And for simplicity, so that I just don't have to implement another uh, function with one argument, for now, I'm going to just remove these and set the max um,
+
+AI
+13:57:42
+
+And for simplicity so that I just don't have to implement another function with one argument, for now, I'm going to just remove this and set the max
+
+AI
+13:57:46
+
+results here.
+
+You
+13:57:47
+
+results here.
+
+AI
+13:58:23
+
+Alright. So we create a list of results. And then using, uh, the DDGS is very simple. Um, we just need two lines of code. I if you follow the documentation, you can find the exact usage. So we open it, and then we can say for a result in d d g s dot text, which we just saw. And then we send a query um, and max results max results equal max results.
+
+You
+13:58:24
+
+Alright. So we create a list of results and then using, uh, the DDGS is very simple. Uh, we just need two lines of code. I've if you follow the documentation, you can find the exact usage. So we open it, and then we can say for a result in d d g s dot text, which we just saw. And then we send a query, um, and max results max results equal max results.
+
+AI
+13:59:36
+
+Result at append. And then here, I just need to clean it up. Because the result has title and references and um, like, the HREF, which shows the other links within that, So, um, I just need to do some cleanup here. I'm going to format the results this way. I'm going to say, okay. This is the title, and this is the the link of the result. We are doing right now just as a, uh, for simplicity, we are just uh, going to use this. But in practice, you can also inspect the body of the return results or or request for the actual content of, um, websites. But this is how we can search the web. Get the results, and, uh, put everything in a list and um, return it. And return here is needs to be an string, so we'll use the join, um, functionality that we just saw this time and append all of them with a new line. Showing results. So now this should work. Let me test it. Search web.
+
+You
+13:59:39
+
+Result at append And then here, I just need to clean it up. Because the result has title and references and, um, like, uh, h ref which shows the other links within that. So, um, I just need to do some cleanup here. So I'm going to format the results this way. I'm going to say, okay. This is the title, and this is the the link of the result. We are doing right now just as a for simplicity, we are just, uh, going to use this. But in practice, you can also inspect the body of the return results or or request for the actual content of, um, websites. Um, but this is how we can search the web, get the results, and, um, put everything in a list and, um, return it. And return here is needs to be in a string, so we'll use the join functionality that we just saw this time and append all of them with a new line. Showing results. So now this should work. Let me test it. Search web.
+
+AI
+13:59:41
+
+What are some events today?
+
+You
+13:59:44
+
+What are some events today?
+
+You
+13:59:48
+
+And then I'm going to set this max result to four.
+
+AI
+13:59:48
+
+And then I'm going to set this max result to four.
+
+AI
+14:00:55
+
+Okay. Great. So it actually worked. It searched the web, and it's giving me the titles, like, in the same format that I specified. And the actual, uh, website. Um, and it's giving me four items here. So I'm going to change this back to 10. And then, um, again, in practice, you may want to inspect each title individually. So once you have these, um, um, each web each each URL. So once you have this URLs from here, you can still use some, uh, packages to get the content of that website. Um, in this case, we'll just keep it simple, and we'll have this as output. Great. So I have this. I need to register it as a line chain tool. Um, it's going to be as simple as this. It's it's good that I have the topic stream, so this is gonna work. It automatically gets this as the description. Um, and it's typed. Um, great. So let me comment this. And, um, the next part is we initialize the app agent.
+
+You
+14:00:57
+
+Okay. Great. So it actually worked. It searched the web, and it's giving me the titles, like, in the same format that I specified. And the actual, uh, website. Um, and it's giving me four items here. So I'm going to change this back to 10. And then, um, again, in practice, you may want to inspect each title individually. So once you have this, um, sorry, each web each each URL. So once you have this URLs from here, you can still use some, uh, packages to get the content of that website. Um, in this case, we'll just keep it simple and build have this as the output. Great. So I have this I need to register it as a lang chain tool. Uh, it's going to be as simple as this. It's great. Good that I have the doctor's screen, so this is gonna work. It automatically gets this as the description. Um, and it's typed. Um, great. So let me comment this. And now the next part is we initialize the web agent.
+
+AI
+14:01:16
+
+Again, there is nothing new here. It's just what we saw earlier. We just need to put them together. So here, I'm going to implement a um, well, first saying I want this model 3,230,000.
+
+AI
+14:01:58
+
+Other than chat on model, model, and temperature. Maybe zero, uh, tools. I'm going to have a single tool for now. Potentially, for more complex use cases, we can add more tools here. Um, common tools are, like, access to camera notes, reading files, opening files, and things like that. You know? But for now, we'll only need the, uh, web search. Alright. So I have my LM. I have my tools. I need to create my web agent. I call it web agent. I use create agent, LMM, and tools.
+
+You
+14:01:58
+
+Again, there is nothing new here. It's just what we saw earlier. You just need to put them together. So here, I'm going to implement a um, first saying I want this model 3,230,000,000. Other than chat, model, equal model, and temperature. Maybe zero, tools. I'm going to have this, um, single tool for them. Potentially, for more complex use cases, people add more tools here. Common tools are, like, access to terminals, reading files, opening files, and things like that. You know? But for now, we only need deep, uh, web search. Alright. So I have my LLM. I have my tools. I need to create my web agent. Call this web agent. I use create agent, LLM, and tools.
+
+You
+14:02:06
+
+Let me just run it to see if it's working.
+
+AI
+14:02:06
+
+Happy just run it to see if it's working.
+
+AI
+14:02:15
+
+Web search is not defined.
+
+You
+14:02:16
+
+Web search is not different.
+
+You
+14:02:19
+
+Search web.
+

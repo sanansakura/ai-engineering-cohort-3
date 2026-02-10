@@ -1,0 +1,300 @@
+AI
+14:02:21
+
+Search web.
+
+You
+14:02:37
+
+Okay. It worked. Now basically, I can start using this web agent in a similar way that we saw before. Um, I can just invoke it with whatever we want.
+
+AI
+14:02:39
+
+Okay. Now basically, I can start using this web agent in the survey that we saw before. Um, I can just invoke it with whatever we want.
+
+AI
+14:02:43
+
+So
+
+You
+14:02:44
+
+So
+
+You
+14:02:54
+
+okay. So this is this may probably not gonna work, but let's see. What are some events around
+
+AI
+14:02:56
+
+okay. So this is this may probably not gonna work, but let's see. What are some events around me?
+
+AI
+14:03:32
+
+It is not gonna work because it's not it doesn't work this way. If you read the documentation, it doesn't work with a single stream. Um, so because of that, I've implemented another function um, just to take care of these things. Um, so I'm going to copy paste. It's not going to add much learning value. But right after this web agent, I have this one agent with reasoning. And it's just a bunch of clean up. So it expects the agent and the question, and it takes care of it. Basically, it has some printer stuff, um, final answer. And then each time it, um, it goes over
+
+You
+14:03:33
+
+It is not gonna work because it's not it doesn't work this way. If you read the documentation, it doesn't work with the senior industry. Um, so because of that, I've implemented another function um, just to take care of these things. Um, so I'm going to copy paste. It's not going to add much learning value. But right after this web agent, I have this run agent with reasoning. And it's just a bunch of clean up. So it expects the agent and the question, and it takes care of it. Basically, it has some printed stuff, um, final answer. And then each time it, um, it goes over
+
+AI
+14:03:56
+
+um, it sends the request to the agent gets the output. If the output has some tool calling these are for printing. I have implemented this, so we get we see what actually the model is producing in this reasoning loop. But it's not necessary. You can just, um, later I'll upload the solution notebook. You can comment this to see the actual output.
+
+You
+14:03:56
+
+um, it sends the request to the agent. It gets the output. If the output has some tool calling, these are for printing. I have implemented this so we get we see what actually the model is producing in its reasoning loop. But it's not necessary. You can just, um, later I'll upload the solution notebook. You can comment this to see the actual output.
+
+AI
+14:04:12
+
+Yeah. But it's mostly to print the tools and the arcs. Um, and then if the model is done with producing the final answer, it would, um, put the content into final answer and return
+
+AI
+14:04:20
+
+So with this helper on function, now I don't need to worry about creating the messages. Let me run this. And now if I pass this,
+
+You
+14:04:20
+
+Yeah. But it's mostly to print the tools and the arts. Um, and then if the model is done with producing the final answer, it would, um, the content into final answer and return it. So with this helper function, now I don't need to worry about creating the messages. Let me run this. And now if I pass this,
+
+You
+14:04:27
+
+um, instead needs to call dysfunction.
+
+AI
+14:04:27
+
+um, ID is that needs to have this function.
+
+You
+14:05:01
+
+That agent So again, um, I might have, um, gone a bit fast on this, but it's nothing. It's just, um, formatting and producing the outputs of the agent. But what is the main thing is that it expects agent and quest and it takes care of sending my question to the agent and and producing it and getting its final response and return. So here, now if I run this, it would work.
+
+AI
+14:05:01
+
+Web agent. So and, um, I might have, um, gone a bit fast on this, but it's nothing. It's just, um, formatting and producing the outputs of the agent. But what is the meaning is that it expects agent and question, and it takes care of sending the question to the agent and and producing it. I'm getting its final response and return it. So here now if I run this, it would work.
+
+AI
+14:05:38
+
+So you can see here that all of my serve. Server. It's just, um, some stuff is going on. And then the model has started to work. Um, so this was our question. The model said the model the first thing that it did was it asked for the search web tool. With this query, events near me, which is not good. Uh, the model oh, actually, because my query was vague, it has no way to identify the location. But, anyway, this was what the model produced. Now the agent runtime parse this call the BDGS, search the web, and produce this.
+
+You
+14:05:39
+
+So you can see here the Oloma serve server. It's just, um, some stuff is going on. And then the model has started to work. Um, so this was our question. The model says the model the first thing that it did was it asked for the search request. The g square events near me, which is not good. Uh, the model oh, actually, because my query was waived, has no way to identify the location. But anyway, this was what the model produced. Now the agent runtime parsed this, called the DGGS, searched the web, and produced this.
+
+AI
+14:06:16
+
+And then here, the model continues. So now the model sees all of this. The model continues with this. Um, here are some events happening around you. But this time, note that the model produced this as the final answer. It's no longer a tool call. So because it's a final answer, the loop is going to be stopped. And then the agent runtime, we just produce this as the final output for us. Normally, we won't see, um, we won't see these. These are going to happen under the hood. What we are going to see only by the uh, chatbots is the final answer.
+
+AI
+14:06:36
+
+Um, but here we are. Since we've implemented, we had access to the internals, so we were able to print this. Now we can say what are some sport events going on in San Francisco.
+
+AI
+14:06:51
+
+What about past Let's see if if it figure it out. If if let's see if the agent can actually go multiple rounds of call recording and collecting the results. I've never run this, uh, prompt, so I don't know if it's going to work or not, but let's see.
+
+You
+14:06:52
+
+Um, and then here, the model continues. So now the model sees all of these. The model continues with this. Um, here are some events happening around you. But this time, note that the model produced this as the final answer. It's no longer a tool call. So because it's a final answer, the loop is going to be stopped. And then the agent runtime would just produce this as the final output for us. Normally, we won't see, um, we won't see these. These are going to happen under the pool, but we are going to see only by the uh, chatbots is the final answer. Um, but here we are Since we've implemented, we had access to the internal, so we were able to print this. Now we can say what are some sport events going on in San Francisco. Um, what about Boston? Let's see if if it figures out. If if let's see if the agent can actually go multiple rounds of tool calling and collecting the results. I've never run this, uh, prompt, so I don't know if it's going to work or not. But let's see.
+
+You
+14:07:03
+
+Okay. So the model produce tool tool, uh, search bed for San Francisco. This is great. Also for Boston, this is great.
+
+AI
+14:07:04
+
+Okay. So the model produce tool tool, uh, search web. For San Francisco. This is great. Also for Boston, this is great.
+
+AI
+14:07:13
+
+We'll get these results and these results from San Francisco and Boston. And then a model produced, uh, output.
+
+You
+14:07:14
+
+We'll get these results and these results from San Francisco and Boston. And then the model produced the output.
+
+You
+14:07:43
+
+Yeah. Um, there are also a lot of arguments that you can specify in terms of, like, how many like, right now, I have a lot of truncation in place, uh, just to keep things manageable. So I think if you if I remove many of these, it would just uh, work better. And by the way, uh, what is being printed here is just uh, the prints here. It's not the final answer. This is going to be shown to the user. So if I if I do this, find
+
+AI
+14:07:45
+
+Yeah. Um, there are also a lot of arguments that you can specify in terms of, like, how many like, right now, I have a lot of truncation in place, uh, just to keep things manageable. So I think if you if I remove many of these, it would just uh, work better. And by the way, um, what is being printed here is just uh, the prints here. It's not the final answer. This is going to be shown to the user. So if I if I do this, fine.
+
+AI
+14:07:48
+
+Find the answer and I print this,
+
+You
+14:07:53
+
+find out answer and I print this, And then,
+
+AI
+14:07:53
+
+And then,
+
+AI
+14:08:00
+
+uh, my answer. It's going to wanna include the last part of the this.
+
+You
+14:08:01
+
+uh, right now, sir, it's going to only include the last part of the this.
+
+AI
+14:08:14
+
+So I'm printing this final answer, and you can see, uh, all the results.
+
+You
+14:08:16
+
+So I'm printing this final answer, and you can see, uh, all the results.
+
+AI
+14:08:46
+
+Great. So it it just worked. It's it's, um, there are a lot of places and room for improvement One is to go again and actually extract the body of the, um, the actual content of the URLs. We can potentially switch from DDGS to, uh, to better, um, web search APIs.
+
+You
+14:09:13
+
+Great. So it it just worked. It's it's, um, there are a lot of places and room for improvement. One is to go again and actually extract the body of the, um, the actual content of the URLs we can potentially switch from DDGS to, to better, um, web search APIs. Um, but this is just simply working. It can also potentially think about implementing multi agent system. So we have an optional section in the next, um, project of implementing multi agent systems. But I believe I'm not sure, but I believe that uh, like, larger scale systems like Perplexity, they are having multi agency systems for even for web search. So it's not only a single agent going answer ship. Um, but I'm not sure. This is just I'm just speculating.
+
+AI
+14:09:14
+
+But this is just simply working. We can also potentially start, uh, think about implementing multi agent system. So we have an optional section in the next, um, project. Um, implementing multi agent systems. But I believe I'm not sure, but I believe that uh, like, largest health systems, like, Perplexity, they are having multi agent systems. For even for web search. So it's not only a single agent going and searching. Um, but I'm not sure. This is just I'm just speculating.
+
+You
+14:10:10
+
+So, yeah, that's it. Now we can, um, go to the next part. So this part is optional. So I'm, uh, I I would include the code in the released, uh, solution so you can go over those. Again, the reason that it's optional is because from here, moving forward, it's just more packages and libraries. We just need to uh, read the MCP package and see how you can actually use it to introduce some MCP servers or use some externally hosted MCP servers, create your MCP client, and use it. So I'm going to briefly explain the implementation. And later, you can go over the lines in the solutions and, um, go over them one by one and, uh, search them. But it's not going to add much learning. Um, it's just how these these libraries implemented MCP.
+
+AI
+14:10:11
+
+So, yeah, that's it. You know, we can, um, go to the next part. So this part is optional. So I'm, uh, I would include the code in the released, um, solution so you can go over those. Again, the reason that it's optional is because from here moving forward, it's just more packages and libraries. We just need to read the MCP package and see how you can actually use it to introduce some MCT servers or use some externally hosted MCP servers, create your MCP client, and use it. So I'm going to briefly explain the implementation. And later, you can go over the lines in the solutions and, um, go over them one by one and, uh, search them. But it's not going to add much learning. Um, it's just how these these libraries implemented MCP.
+
+You
+14:11:24
+
+Um, just a couple of things I want to share before I, uh, paste the solution is that when you want to use MCP, uh, there are usually two libraries you need. One is the MCP here, This gives you all the basic functionalities that MCP, uh, needs. So all those standardization protocol, um, all those things. And then the other thing you need is, um, we are using Lambda So we need the bridge between this entity and the land chain. So this takes care of that. So there is this package called land chain MCP adapters, Um, and this seems this simply gives you some tools that you can connect the MCP with your LANCH. So it's just a bridge. Uh, between land chain and MCP. Those are the main things and main libraries that you need to just go and uh, read the documentation and see how you can, uh, use them. At the core, the way that these softwares are implemented is kind of very similar to what we just saw and implemented. It's just based on the protocol. It goes and parses the output and creates the system prompt. Um, so, yeah, that's all basic. I wanted to share before MCP. Now let me let's see some examples.
+
+AI
+14:11:25
+
+Just a couple of things I want to share before I, uh, paste the solution is that when you want to use MCP, there are usually two libraries you need. One is the MCP here. This gives you all the basic functionalities that MCP, uh, needs. So all those are standardization protocol, um, all those things. And then the other thing you need is, um, we are using Langchain. So we need a bridge between this MCP and the Lambda. So this takes care of that. So there is this package called Lambda chain MCP adapters. Um, and this seems this simply gives you some tools that you can connect the MCP with your blockchain. So it's just a bridge. Uh, between blockchain and MCP. Um, those are the main things and main libraries that you need to just go and, uh, read the documentation and see how you can, uh, use them. At the core, the way that these softwares are implemented is kind of very similar to what we just saw and implemented. It's just based on the protocol. It goes and parses the output and creates the system prompt. So, yeah, that's all basic I wanted to share for MCP. Now let me let's see some examples.
+
+AI
+14:11:50
+
+So if you search the web with MCT, you would see a lot of examples that you can use for m c for MCP. Um, I've searched a bit, and then I found that these are some MCP servers that are already out there, and you can use them. Um, one is, um, so let me
+
+You
+14:11:51
+
+Um, so if you search the web with MCT, you would see a lot of examples that you can use for m c. For MCP. Um, I've searched the web and then I found that these are some MCP service that are already out there. And you can use them. Um, one is, um, so let me
+
+AI
+14:11:54
+
+Any first one is
+
+You
+14:11:55
+
+let me first one this.
+
+You
+14:12:30
+
+Okay. So here we are going to have two different, um, MCP servers, and this is how we are going to create them. So one is, uh, this MCP server. And, again, I had no idea about this. I I searched it up and realized that this is one way that you can, uh, there is apparently this, um, m c MCP server fetch. It's somebody who wrote it and it's on there, and this is how it can be used.
+
+AI
+14:12:30
+
+Okay. So here we are going to have two different, um, MTP servers, and this is how we are going to create them. So one is, uh, this MCP server. And, again, I had no idea about this. I I searched it up and realized that this is one way that you can, uh, there is, apparently, this, um, m c MCT server fetch. It's somebody wrote it and it's somewhere, and this is how it can be used.
+
+AI
+14:13:21
+
+Yeah. Patch MCP server. So if you go over this, you'll see how you can use um, an MCP server. You would just install it and you follow the documentation to create a MCP server. But, again, I don't think there would be much learning value in this things. You typically need to just follow their exact, um, documentation and guidelines to create your MCP server and client. Um, so the code works so you can later inspect it in more detail. So that's one, uh, MCP server. Let me comment this and
+
+You
+14:13:22
+
+Yep. That's MCP server. So if you go over this, you'll see how you can use um, an MCP server. You just install it, and you follow the documentation to create a MCT serve. But, again, I don't think there would be much learning value in this things. You typically need to just follow their exact documentation and guidelines to create your MCP server endpoint. Um, so the code works so you can later install inspect it in more detail. So that's one, uh, MCP server. Let me comment this and
+
+You
+14:14:24
+
+So this MCP server has only one tool, um, and the tool is named fetch It fetches a URL from the Internet and optionally extracts its contents as markup. So this is an MCP tool that somebody wrote and and created this server. We can keep install it, and then we can access this fetch as a tool. So remember, previously, we were implementing our tools. And registering them with line chain. Now this is coming directly from MCP. So that's the advantage. We don't have to even register to We can easily access a lot of tools that are already out there, and you're just gonna give an so that survey is gonna give all the tools that are available. In this case, it's only a single tool. It's called fetch. Now I can use this fetch to create my agent and introduce this fetch to my agent. Um, so let's go over that. I'm going to come back to this in a second. It's just another MCP server with more tools.
+
+AI
+14:14:24
+
+So this MTP server has only one tool. And the tool is named fetch It fetches a URL from the Internet and optionally extracts its contents as markup. So this is an MCP tool that somebody wrote and and create the server. We can keep installing, and then we can access this fetch. As a tool. So remember, previously, we were implementing our tools. And registering them with blockchain. Now this is coming directly from MCP. So that's the advantage. We don't have to even register tools. We can easily access a lot of tools that are already out there, and we are just gonna give an that survey is gonna give all the tools that are available. In this case, it's only a single tool. It's called fetch. Now I can use this fetch. To create my agent and introduce this fetch to my agent. Um, so let's go over that. I'm going to come back to this in a second. It's just another MCP server with more tools.
+
+AI
+14:14:28
+
+So
+
+You
+14:15:34
+
+So here is very, um, probably, it's going to be very final here because we've already um, ventured, uh, in most of the parts. So here, we we create our LLM same as before. We create our agent same as before. It expects LLM and tools. And then we send some messages like fetch this and summarize the page. This is just an example of a user message. Now there are some minor differences. I'm going to explain that. But for now, the the overall setup is the same as before. LLM agent, and we call agent dot invoke with user count. Now let's see how we created the tools here. Now the tools, instead of v, implement a tool and register it, we rely on this load MCP tools. This is a a library that we installed, and then it's just, um, an adapter between MCP and blockchain. So you can create a an MCP client here. This is again, I'm not gonna
+
+You
+14:16:50
+
+explain this. These are just pure software engineering, and you need to go through the documentation. But the key part is here. When I create this session, I said that, hey. Give me a tool object with all the tools that are available in this MCP server, um, fetch params. Which was one tool only. So these tools is going to have one single tool named fetch. So instead of writing our own, we get it from MCP server. That's the main difference. And this part are template You always need to have that. It's just, um, like async process so that functions can, um, so you don't get blocked as the functions are processing your request and getting back back the results to you. So these are always almost always template, and you need have them. You just need to, um, you just need to you just need to create the right serve MCT service that you want and extract your tools. Um, and the rest is just here. So if I run this now if I run this with this query, which is fetch this and summarize the page, like, the content of the page, it it would work even though we have not implemented any tool. So let me run this and see if it works.
+
+AI
+14:16:50
+
+here, is very, um, probably, it's going to be very fine here. Because we've already, uh, ventured it, uh, in most of the parts. So here, we have we create our element same as before. We create our agent same as before with x expect LLM and tools. And then we send some messages like fetch this and summarize the page. This is just an example of a user message. Now there are some minor differences. I'm going to explain them. But for now, the the overall setup is the same as before. LMM agent and we call agent dot inbox with user prompt. Now let's see how we created the tools here. Now the tools, instead of v, implement a tool and register it, we rely on this load MCP tools. This is a a library that we installed, and then it just, um, an adapter between MCP and blockchain. So you can create an MCP client here. This is again, I'm not gonna explain this. These are just pure software engineering, and you need to go through the documentation. But the key part is here. When I create this session, I say that, hey. Give me a tool object with all the tools that are available in this MCP server, um, fetch farms. Which was one tool only. So these tools is going to have one single tool named fetch. So instead of writing our own we get it from MCP server. That's the main difference. And these part are templates. You always need to have that. It's just um, like, async process so that functions can so you don't get blocked as the functions are processing your request and getting back back the results to you. Um, so these are always almost always template, and you need have them. You just need to, um, you just need to, um, you you just need to create the right serve MCP service that you want and extract your tools. Um, and the rest is just here. So if I run this now if I run this with this query, which is fetch this and summarize the page, like, the content of the page, it it would work even though we have not implemented any tool. Tool. So let me run this and see if it works.
+
+You
+14:17:30
+
+Um, these parts, I need to go through that. To see what's going on, but it was it was it did work. And it says that the Python website provides various resources for users including this and this and this and this. So, again, the important part is that we were able to use tools in our agent that we created here, and those tools are coming from outside.
+
+You
+14:18:11
+
+Now, um, we covered this um, fetch MCP server. But we can potentially see what is what else is out there. We can also create our own MCP, um, server servers. Um, which is this example. Um, I also found this online. But, basically, here, you are just explaining in the MCP server how this should be used, like the command is NPX and these are the argument and this is, um, what needs to be run. So this now this is going so if I, um, um, so when we call session dot list tools, it would give us all the tools available. So if I print this,
+

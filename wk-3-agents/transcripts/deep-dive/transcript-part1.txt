@@ -1,0 +1,300 @@
+AI
+13:00:03
+
+Recording in progress.
+
+You
+13:00:04
+
+Recording in progress.
+
+You
+13:00:55
+
+Hello, everyone.
+
+AI
+13:00:55
+
+Hello, everyone.
+
+AI
+13:01:03
+
+Good morning. Good morning. How are you?
+
+You
+13:01:03
+
+Morning. Good morning. Hi,
+
+You
+13:01:12
+
+Ali, you're ready to go to a party or something?
+
+AI
+13:01:13
+
+Audi, are you ready to go to a party or something? Why?
+
+You
+13:01:15
+
+Why?
+
+AI
+13:01:34
+
+Looking good. Oh, no. It's cold. It's mornings are usually cold here. Um, Yeah. But last week was the weather was quite good. Um, it was warm. Where do you live? I'm in Bay Area. Oh, okay. Don't complain about cold to me. I live in
+
+You
+13:01:34
+
+Looking good. Oh, no. It's cold. It's mornings are usually cold here. Um, Yeah. But last week was the weather was quite good. Um, it was warm. Where do you live? I'm in Bay Area. Oh, okay. I don't complain about cold.
+
+AI
+13:01:56
+
+Yeah. I have some friends when they come from, um, um, East Coast, and they usually see me in jackets and they're, like, they they they just make fun of me, and they're like, big t shirts. So yeah. Um, alright. Let me set up my environment.
+
+You
+13:01:58
+
+Yeah. I have some friends, and they come from uh, East Coast, and they usually saving jackets, and they're, like, they they they just made fun of me, and they're, like, the t shirts. So yeah. Um, alright. Let me set up my environment.
+
+You
+13:02:14
+
+Okay. Recording is on. Then I
+
+AI
+13:02:15
+
+Okay. Recording is on. And I have everything.
+
+AI
+13:02:18
+
+Set up here.
+
+AI
+13:02:25
+
+And you can see my my ID. Okay. Great.
+
+You
+13:02:27
+
+And you can see my my ID. Okay. Great.
+
+You
+13:06:54
+
+Okay. Uh, I think we can start. Hello, everyone. Welcome to day three. And then to actually, it's week four, and, um, we're gonna do the deep dive of project three. Um, project three was asked at the agent, and this week, um, last week, all the content was about agents. What we are gonna do, I have a bunch of things open as as usual. We are going to complete the project line by line and at the very end, we'll take questions. Um, and then I have these tabs open here so we can go back and forth between the ID and here in case, uh, a few things needs explanation. Basically, what we are gonna explore in this project is agents. In general, how to build them. And agents the key component of agents is tool calling. So if we really understand tool calling well, we learn how can we, uh, teach a model to use a tool how tool cutting works, then it can be easily extended to agents. So we'll go over all those, and then we'll rely on some libraries and frameworks like lang Chain to easily create, uh, an agent without having to do all those things. Uh, but first, we'll start with foundations. We understand what's going to happen under them. Great. So I have the project open here, and project four is already released. It's going to be about deep research. Installation and dependencies are similar. Um, it's they are um, expected to run locally. Feel free to run them on Google Colab, but the instructions are here to run locally. You can use either Conda or UV. UV is faster. Uh, requirement that text is already provided here and if you wanna do con, uh, conduct environment, the analyst here as well. Um, and then yep. You can go over this, and next week, we'll do the deep dive anyway. And then the main part of this is the deep research agent. And after that, there is this optional part where you try building and extending the single agent to multi agent deep research. Optional parts usually mean that we are not gonna complete in the dive in the deep dive unless we have time. Um, but the reason that they are optional is you're not gonna add a lot of learning. Um, so that's why they are they are labeled optional. And in the solutions that we would release, we would release the codes for these optionals as well anyway so you can take a look. But in in our deep dive, significant time, we always, um, try to, um, uh, implement them and explain them blindly. But it's mostly an extension of the nonoptional part. So any anytime you see optional, it's usually an extension of nonoptional parts. Alright. So that's the next project. Also, the content has been released. Uh, one uh, two more things. Please um, add your projects, um, into this project dashboard. Our demo day, we would go over this list in order Um, so if you have more clarity on your projects and if you're open to present them, feel free to add them here. Um, so Even if you don't plan to present and you you want to just, uh, keep track so it's it helps if you, uh, feel and put your project And then for present on February, you can write TBD or no or yes. Um, and then these links are optional. So you don't have to include git. Uplink and project link. Um, if you include, that's perfect, uh, but it's optional. Um, so that's one reminder. The other reminder is please join our Discord channel. Uh, Discord is mostly gonna be used as an alumni, uh, channel so we can, uh, continue communicating there even after the cohort ends. I would probably start sending, uh, invites to folks from Haskell board. And also from future cohort with this would join this Discord. So, please, if you haven't, um, joined the server, I would also start sharing some resources there because there is a dedicated channel there called knowledge sharing or something. So I would just um, start sharing those things there. Um, the link is here. If you are if you want to join, you go to start here. At the very end, you can see the the channel. So if you click here, you can join the Discord channel. Um, alright. With that, we can just start.
+
+AI
+13:06:55
+
+Okay. I think we can start. Hello, everyone. Back on to big three. And then to actually, it's with four, and, um, we are gonna do the deep dive out project three. Um, and project three was asked about agent, and this week, uh, last week, all the content was about agents. What you are gonna do, I have a bunch of things open as as usual. We are going to complete the project line by line, and at the very end, we'll take questions. Um, and then I have these tabs open here, so we can go back and forth between the ID and here in case, uh, a few things needs explanation. Basically, what we are gonna explore in this project is agents. In general, how to build them. And agents the key component of agents is tool calling. So if we really understand tool calling well, we learn how can we um, teach a model to use a tool, how tool calling works. Then it can be easily extended to agents. So we'll go over all those. And then we'll rely on some libraries and frameworks like blockchain to easily create a agent without having to do all those things. Uh, but first, we start with foundations. So we understand what's going to happen under the hood. Great. So I have the project open here. And project four is already released. It's going to be about deep research Um, the installation and dependencies are similar. Um, it's they are um, expected to run locally. Feel free to run them on Google Colab, but the instructions are here to run locally. You can use either Conda or UV. UV is faster. Uh, requirement that text is already provided here. And if you wanna do con conduct environment analytics here as well. And then yep. You can go over this, and next week, we'll do the deep dive. Anyway, And then the main part of this is the deep research agent. And after that, there is this optional part where you try building and extending the single agent to multi agent deep research. Optional parts usually mean that we are not gonna complete in the dive in the deep dive unless we have time. Um, but the reason that they are optional is they're not gonna add a lot of learning, um, so that's why they're they're labeled optional. And in the solution, that we would release, uh, we would release the code for these optionals as well anyway so you can take a look. But in in our deep dives, if you get time, we always, um, try to, um, implement them and explain them time by time. But it's mostly an extension of nonoptional parts. So any anytime you see optional, it's usually an extension of nonoptional part. Alright. So that's the next project. Also, the content has been released. Uh, one, uh, two more things. Please uh, add your projects, um, into this project dashboard. Uh, our demo table will go over this list in order Um, so if you have more clarity on your projects and if you're open to present them free to add them here. Um, even if you don't plan to present and you you want to just, uh, keep track. So it's it helps if you film and put your project here. And then for present on February, you can write TBD or no. Yes. Um, and then these links are optional. So you don't have to include git, uplink, and project link. Uh, if you include, that's perfect, um, but it's optional. Um, so that's one reminder. The other reminder is please join our Discord channel. Um, Discord is mostly gonna be used as an alumni, uh, channel so we can, uh, continue communicating there even after the cohort ends. I would probably start sending, uh, invites to folks from Haskell Ford. And also from future cohort with this who joined this Discord. So please, if you haven't, please, um, join the the server. I would also start sharing some resources there because there is a dedicated channel there called knowledge sharing or something. So I would just uh, start sharing those things there. Um, the link is here. If you are if you want to join. You go to a start here. At the very end, you can see the the channel. So if you click here, you can join the Discord channel. Um, alright. With that, we can start.
+
+AI
+13:07:01
+
+Alright. Everything is good. Let me close this one.
+
+You
+13:07:02
+
+Alright. Everything is good. Let me close this one.
+
+AI
+13:08:05
+
+Okay. So in this project, uh, we are going to build an ASK the web agent. Basically, Ask A Web Agent is still, uh, the power it's powered by LMS. So at the at the core, we need an LLM, but then we are going to add capabilities to its these elements, such as tools. And then combination of element and tool and an agent runtime, it basically allows us to search the debt, collect information, and return results. If the user's query requires that. For example, if you ask something like, what are the recent events in in Boston or in San Francisco? Um, there is no way that the LLM can use its internally internal rates to produce those outputs because this requires some, uh, web search. So ideally, at the end of this project, we would have something that can actually go and search it and return the results. And as part of that, we'll start very simple. First, we'll start with very simple element, and we try to manually implement some tools and push it to use those tools. Um, and then slowly, we'll we'll iterate and make it, uh, more advanced.
+
+AI
+13:09:53
+
+Okay. So for the installation, last night, we did conduct. This time, I want to go over UBE. Um, I've already installed this, and then I just ran this command before our session. U b b n f this, and I've activated it. Uh, which is this time. And then I installed the requirements that x. It it took, like, a few seconds. Um, and once you run this too, you will see this new folder appearing here. This is basically your, um, isolated dependencies limit here, so it's not gonna mess with other, uh, installations on your system. So it's isolated. It's here. And then this project and this notebook, I've selected this environment. So it's going to uh, use this. So from this point forward, um, we have all these libraries installed in these versions. And another change, as I mentioned last time, in this project, we've switched to the latest versions of line chain and line code. So um, today, we are going to use basically what is what is latest. Um, the problem is that the latest changes in lang change is not a problem, but the latest changes in lang, they've moved a lot of stuff and packages, uh, around. Um, and the aim was to manualize this. So, uh, it's more modular now, but it may need a little bit more learning cave curve. Um, but those are fine. We'll go over those. I have already the setup. Let me activate my environment. I right now, it's right now, it's not activated. The visual environment that I created here. So if I, um, as a sanity check, lang chain, if I do PIP, show lang chain. It says it does not exist. So if I activate my um, virtual environment source,
+
+You
+13:09:53
+
+Okay. So in this project, uh, we are going to build an ASD webpage. Basically, Ask the Web Agent is still, uh, the power it's powered by elements, So at the at its core, we need an LMS. But then we are going to add capabilities to it. This LLM, such as tools. And then combination of LLM and tool and an agent runtime, it basically allows us to search the web, collect information, and return results. If the user's query requires that. For example, if he has something like, what are the recent events in in Boston or in San Francisco? Um, there is no way that the LLM can use its internally internal weight to produce those outputs because this requires some, uh, web search. So, ideally, at the end of this project, we would have something that can actually go and search it and return the results. And as part of that, we'll start very simple. First, we'll start with very simple elements, and we try to manually implement some tools. And push it to use those tools. Um, and then slowly, we'll we'll iterate and make it uh, more advanced. Um, okay. So for the installation, last time, we did condo. This time, I want to go over UV. Um, I've already installed this, and then I just ran this command before our session, u v v n f this, and I've activated it. Uh, which is this one. And then I installed it requirements dot x. It it took, like, a few seconds. Um, and once you run this too, you would see this new folder appearing here. This is basically your, um, isolated dependencies living here, so it's not gonna mess with other uh, installations on your system. So it's isolated. It's here. And then this project and this notebook, I've selected this environment. So it's going to uh, use this. So from this point forward, we have all these libraries installed with this version. And another change, as I mentioned last time, in this project, if switched to the latest versions of lang chain and langcoin. So um, today, we are going to use basically what is what is latest. Um, the problem is that the latest changes in language chain, it's not a problem, but the latest changes in lang chain, they've moved a lot of the stuff and packages uh, around. Um, and the game was to modularize this. So, uh, it's more modular now, but it may need a little bit more learning. Care. Um, but those are fine. We'll go over those. I have already the setup. Let me activate my environment. Right now, it's right now, it's not activated, the usual environment that I created here. So if I, um, as a sanity check, long chain, if I do keep show long chain. It says it does not exist. So if I activate my uh, virtual environment, source
+
+AI
+13:10:02
+
+Now you see from base, it now it shows this. And by expect that if I run PIP show, it would work now.
+
+You
+13:10:04
+
+Now you see from base, it now it shows this. And I expect that if I run DeepShoe, it would work now.
+
+You
+13:10:19
+
+Let me check here.
+
+AI
+13:10:20
+
+Let me check here.
+
+AI
+13:10:39
+
+Am I missing something? Anybody in the notes? What is missing?
+
+You
+13:10:40
+
+Am I missing something? Anybody in the notes that is missing?
+
+AI
+13:10:53
+
+I have a typo.
+
+You
+13:10:54
+
+I have a typo.
+
+You
+13:11:25
+
+Okay. Great. Um, anyway, so we are good for this setup. And then in this project, we'll do, uh, we'll use these two models, uh, Gemma three and Lamma 3.2. I've already pulled these. I have them ready. And then, uh, the first thing that I'm going to do is I'm going to um, create a terminal, open a new terminal, and then run
+
+AI
+13:11:25
+
+Okay. Great. Uh, anyway, so we are good for this setup. And then in this project, we'll do we'll use these two models, uh, Gemma three and Lamma 3.2. I've already put these. I have them ready. And then, um, the first thing that I'm going to do is I'm going to uh, create a terminal, open a new terminal, and then run
+
+You
+13:11:31
+
+Olana serve.
+
+AI
+13:11:31
+
+Hold on. Serve.
+
+AI
+13:11:51
+
+So this is running now. And then if I run this cell, it would show that Paloma is running, and these are the models that I have installed on my system. And then you can see three one billion is there, and then the other one is also there. Great. So we have everything set up now to a colleague.
+
+You
+13:11:53
+
+So this is running now. And then if I run this cell, it would show that Olama is running, and these are the models that I have installed on my system. And then you can see three one billion is there, and then the other one is also there. Great. So we have everything set up now to call it.
+
+AI
+13:11:54
+
+So
+
+AI
+13:12:28
+
+as you might have gone through the guided learning, the idea of tool calling is we still have this element. We implement some functions or it can be some external APIs. And then we write a software to connect this element with those functions. Um, so now we are gonna do that. We are going to first create a simple LMS, and then we try to implement a simple Python function for getting better. And then we'll see if the LML we can introduce this function to this LLL manually. Uh, so let's do it.
+
+You
+13:12:29
+
+So as you might have gone through the guided learning, the idea of tool calling is we still have this LLM We implement some functions or it can be some external APIs. And then we write a software to connect this LLM with those functions. Um, so now we are gonna do that. We are going to first create a simple telemetry, and then we try to implement a simple Python function for getting better and then we'll see if the LMM can introduce this function to this level manually. Uh, so let's do it.
+
+You
+13:12:43
+
+Here, the instruction is just implement a function. This is going to be our two, our our very first toy tool.
+
+You
+13:12:45
+
+So, um, we can implement something like get current weather.
+
+AI
+13:12:47
+
+So here are things. Is just implement a function. This is going to be our tool, our our very first toy tool. Um, so we can implement something like get current better.
+
+You
+13:13:03
+
+And then we pass c d. And then we can pass unit, and we'll set it some default value for now. Celsius.
+
+AI
+13:13:03
+
+And then we pass city. And then we can pass unit. And we'll set that some default value for now. Celsius.
+
+You
+13:13:37
+
+So that's it. Now we return some Now here we have two options. One is we actually implement a a a correct get current weather, uh, function. There are some external APIs that you can use to get uh, real better. Um, or for now, we can just implement a dummy function. Um, so we'll go with this option just to keep things simple. Um, but at any point, the implementation of this function can be changed to use a real API. Um, so here, I'm simply going to return, uh, a string. It is let's say, 23, um,
+
+AI
+13:13:38
+
+So that's it. Now let me return some Now here we have two options. One is we actually implement a a a correct get current better, uh, function. There are some external APIs that you can use to get uh, real better. Um, or for now, we can just implement a dummy function. So we'll go with this option just to keep things simple. Um, but at any point, the implementation of this function can be changed to use a real API. Um, so here, I'm simply going to return, uh, a string. It is let's say, 23.
+
+AI
+13:13:40
+
+23, uh,
+
+AI
+13:13:43
+
+unit.
+
+You
+13:13:45
+
+23 unit.
+
+AI
+13:13:53
+
+I can get the first character of the unit, whether it's Celsius or Fahrenheit.
+
+You
+13:13:53
+
+Um, I can get the first character of the unit failure says you so far. Right?
+
+AI
+13:14:08
+
+I'm going going to also call Opera just to for standardization. So always, it's either capital c or capital f. And now it is this.
+
+AI
+13:14:13
+
+And sunny in city.
+
+AI
+13:14:20
+
+So now this one check should should work.
+
+You
+13:14:20
+
+I'm going to also call Otter just to for standardization. So always, it's either capital c or capital f. And now it is this and sunny. In city. So now this function should should work.
+
+AI
+13:14:22
+
+Get current vendor.
+
+AI
+13:14:25
+
+San Francisco.
+
