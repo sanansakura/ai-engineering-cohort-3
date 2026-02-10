@@ -1,0 +1,300 @@
+You
+22:46:15
+
+Hey, everyone. Welcome to big four. This week, our focus would be on thinking and reasoning models. A lot of the amazing stuff that we see or hear these days are all mostly covered by Zendesk because they are basically the most capable of handling that are, uh, availability.
+
+Class
+22:46:16
+
+Hey, everyone. Welcome to week four. This week, our focus would be on thinking and reasoning models. A lot of the amazing stuff that we see or hear these days are all or mostly powered by Amazon because they are basically the most capable telecoms that are, um, available.
+
+You
+22:46:18
+
+So we'll
+
+You
+22:46:30
+
+And then we'll talk, uh, about two main strategies to build business models. And another is training models we present.
+
+Class
+22:46:33
+
+And then we'll talk, uh, about two main strategies to build with anyone. One is in fairness time scaling, and another is, uh, training models with training capability. So for inferencer side scaling, their values
+
+Class
+22:46:47
+
+And we'll also talk about outcome reward modeling and process reward modeling plus reinforcement learning. And after that, we'll go over
+
+You
+22:47:01
+
+And we'll also talk about outcome reward modeling and process reward modeling, plus reinforcement learning, And after that, we'll go over approaches to an internalized step into the model. And finally, we'll explore deep research as a as an example of machine model and tools. And finally, we have project four, which is building a deep search light system. So this is our to be. What is everything about it? Infusion is for complex prompt prompts
+
+Class
+22:47:02
+
+And finally, we explore deep research as a as an internal of machine model and full use. And finally, we have project four, which is building a deep research light system. So let's start a week. What is a reasoning model? Think vision is for complex prompt prompts
+
+Class
+22:47:10
+
+So when, for example, somebody asks about a difficult fundamental question, it's easier if you start a step by step
+
+You
+22:47:17
+
+So when, for example, somebody asked about it's easier if you start step by step answering and figuring out different parts until we reach a final solution compared to
+
+Class
+22:47:21
+
+And that's the equation. So recent models are basically, but they are capable of doing
+
+You
+22:47:22
+
+recent models are basically still an elegant, but they're
+
+You
+22:47:29
+
+this tracing traces produced by the data. And it's typically modified, um,
+
+Class
+22:47:41
+
+we which are reasoning traces reduced by And it's typically multistep, um, reasoning, and it can be also multifactatic exploration. There could be the model might explore different kinds of reasoning. And then once the reasoning is over and once this kind of thinking is over, the model would start responding. So that's reason why I'm gonna talk more about that, but let's say something examples.
+
+You
+22:47:43
+
+And then once the reasoning is over and once it is kind of thinking is over, the model would, uh, start responding. So that's reason model, and we talk more about that, but this is some examples. Uh, most of the top companies that are provided
+
+You
+22:48:01
+
+And by default, you're having this four whole module, which is not your reasoning. Right?
+
+Class
+22:48:04
+
+So let's go and see some of these examples. This is the HAGP and by default, they are having this four o model, which is not everything model. If you could hear, there are a bunch of different models that we can choose from. And as you if you notice,
+
+Class
+22:48:14
+
+of these models are starting to go. For example, o three, o three pro, o four mini. These names are intended for me. I don't know, um, how why their name is like this. But, basically, anything that starts with o seems to be everything.
+
+Class
+22:48:20
+
+The ones that start date numbers like g p four o and the models here, g p t 454.1, these are not fitting models.
+
+Class
+22:48:36
+
+However, this time that, like, it also, um, describe it describe it as users iMessage. And this is more efficient than for reasoning, so it's fast and advanced reasoning. And then they have four mini high grade at coin. Again, there are some complexities here, but
+
+Class
+22:48:48
+
+Let me ask you a question like, um, counts from one to 10, and then tell me how long it took. It's just a a make up prompt. Let's see how he responds.
+
+Class
+22:49:00
+
+Alright. Coming from one to 10. One, two, three, four, five, six. That took about ten seconds. So you saw, it really started to answer my question. There was no thinking or no reasoning. And it's also a big sentence. It's it's if the answer is true because it was much
+
+Class
+22:49:02
+
+faster. They might have printed all this in probably less than a second, but it's still it's saying that ten seconds, which is not correct.
+
+Class
+22:49:12
+
+Partly because also there's some ambiguity in my, uh, prompt. It's not really clear if we want the model to act with the to to print those or, uh, basically, we want the model to print the time that generally if somebody counts if taken.
+
+You
+22:49:12
+
+See quick here, there are a bunch of different models that you can choose from. And as in if you notice, of these models are starting to go. For example, o three, o three pro, o four b. These things are a little bit I don't know how why they're naming it like this. But basically, anything that starts to go seems to be the reason why. The ones that start with numbers like g t four o and there are more models here, g t 4.5, 4.1, these are not using models. Then maybe that we show some reasoning capability as they respond, but they're not, uh, really, uh, specialized or trained for reasoning. However, it's not like for three. It also, um, describe it as users. And this is more efficient version for reasoning, so it's fastest at mass reading. And then they have four four mini high grade high coding. Again, there are some complexities here, but the ones that start the whole reasoning months. But now let's see what that means to present what they're thinking. Let me ask a question like, um, counts from one to 10, and then tell me how long it took. Just a a make up prompt. Let's see how it is. Alright. Coming from one to 10, one to three, four, five, six. That took about ten seconds together. So as you saw, it directly started to answer my prompt. There was no thinking or no reasoning. And it's also. It's it's if it can say it's true because it was much faster, the model but still it's saying that ten seconds, which is not correct. Partly because also there's some in my front. It's not really clear if they wanted model to have to print those or, uh, basically, you want the model to print the time that generally if somebody counts, they would take it.
+
+Class
+22:49:21
+
+Going to choose o four g just because it's faster. For enough, um, like, day to day tasks, and question that are more complex, I typically default to o three. And that's usually enough.
+
+You
+22:49:23
+
+Going to choose four four meetings because it's faster. For another, uh, like, day to day tasks, and questions that are more complex by default two or three, and that's usually enough. But if the task is day to day and I require moving to the
+
+Class
+22:49:30
+
+But if the task is very complex and require more reliable response, four three probably is usually better. By all three problems is usually better. But I guess, play long for now, so I don't like play that long. And, oh, for me, I don't use it often, but, um, and if they're task
+
+Class
+22:49:33
+
+again, if you're asked that you really don't want to get, you can just use it. Now I wanna use the exact same prompt and switch it over for me so we can compare.
+
+Class
+22:49:38
+
+Can we create a new tab? So you see it's thinking.
+
+You
+22:49:38
+
+So you say it's thinking. And if here are some reasons that are happening,
+
+You
+22:49:43
+
+basically, it's just, okay. So the user wants me to do this. Okay. The user wants me, and then he tell me. So we there was a part for 96.
+
+Class
+22:49:51
+
+So we thought there was a pause for nine seconds. And this is what reasoning models are. They think, and then they present based on my ask for request. And once they're over, once this nine second is over, they they they may start in the final result. Sandy says, it's Danny for me from up again.
+
+Class
+22:50:04
+
+Now this seems to be more and more So it seems to be working better than, uh, single pass for. Now if I do here, you would see the
+
+You
+22:50:05
+
+So it seems to be working better and, uh, single pass model. Now if I click here, you would see the
+
+You
+22:50:28
+
+Now, um, one thing to note is that is not showing the actual reason So it's not exactly what the model already have been thinking. It's it's a little bit different or rewarded. I don't know how they are, uh, rewarding or coming up with this explanation or thoughts. But it seems that they're not really showing the actual business
+
+Class
+22:50:29
+
+Now, to note is that open area is not showing actual reason increases. So it's not exactly what the model probably have been thinking. It's it's a little bit different or reported. I don't know how they're reporting or coming up with this explanation or thoughts. But since I do not really joined
+
+You
+22:50:34
+
+So
+
+Class
+22:50:37
+
+traces, actual tokens that the model generating part of its thought process or realign. So before I switch to the other example, let me also use the exact same but using Radmass model like o three.
+
+Class
+22:50:42
+
+Try different strategies. So let's see if that's really the case.
+
+You
+22:50:44
+
+and see if there is any my expectation is that it would take longer because it's more data model and if they decide to think more and the case.
+
+You
+22:50:51
+
+Alright. It it it seems it's taking longer, and, uh, there was a little more teaching but let's see what happens.
+
+Class
+22:50:52
+
+Alright. It it It seems it's taking longer and, uh, there was a little bit more thinking, uh, let's see what happens.
+
+You
+22:51:03
+
+And just thinking more and reasoning more over how to properly answer my prompt. And, again, that's why there are more efficient models out there, like, before in case you want, uh, you don't want to take take full on.
+
+Class
+22:51:08
+
+Again, it's just thinking more and reasoning more, aware how to properly answer my prompt. And again, that's why there are more features added like before in case you want, uh, you don't want to wait wait too long. Here, you may I mean, an adaptation for especially for simpler questions. If it doesn't really require reasoning, it's not worth it.
+
+You
+22:51:12
+
+To switch more data every single month. So since it's still thinking, and then now it's with the code and probably switch faster. Now.
+
+Class
+22:51:18
+
+Now. Alright. So it's not a matter and then it says the time is this, which is
+
+You
+22:51:27
+
+Update, but now the defenses that it took one minute for this model to think the model generated more points, and therefore, it was more, um, business for the model to handle this one just because it took more time for the model to think and generate tokens.
+
+Class
+22:51:28
+
+So that's
+
+You
+22:51:44
+
+This is basically the reasoning model. And then, again, similar for, uh, uh, So here, they have cloud corpus four, and then that's a I mean, kind of reasoning model too.
+
+You
+22:51:47
+
+Then
+
+Class
+22:51:48
+
+So this is basically everything on it. And then, again, similar for, uh, uh, uh, Got my topic. So here they have, uh, cloudtop as four, and then that's a a high degree kind of reasoning model view. So now there are lots of different frameworks. If you come to this Clearboard that is a in in iguan, which has this ranking of all different models.
+
+You
+22:52:21
+
+this is also everything. Right? Then their documentation here. And then as they are talking about context window and the
+
+Class
+22:52:21
+
+Also, next one is o three, which is also a reason model. Now this one, Chachi p four o, is ranked third. It's not everything model. So it's it's very impressive that it's, um, it's something that many other everything models here and it's been better. Then we have Graph four, and Graph four by Xx AI is also a tie. It's ranked third. Then this model is also every anywhere. I think their documentation here. And then as they are talking about the context window and the
+
+Class
+22:52:36
+
+it, um, it has the same feature. So it's the same model. Now, um, next thing I want to show here. Let's go to the default. So x c o g g t 4.5. That's not everything. So it's still expressive.
+
+You
+22:52:47
+
+it, uh, it has reasoning feature. So it's a reasoning one. Now, um, next thing I want to show here, let's go to the. So next block, g p 4.5, why. So it's still it's impressive, and it's fine. Three. So 4.5 photo and block four color, uh, high. Four is between, but this one up. Now this one is interesting. This is, uh, k two, and this is, uh, released recently. And what is interesting about this product is that, um,
+
+Class
+22:53:04
+
+Now this one is interesting. This is, uh, Kineke two, and this is a company called Moonchat, released it recently. And what is interesting about this title is that, um, while company find it is not as big as common as Google or OpenAI probably, but this model rank five such a short time. So it's very impressive. It's been very good. And also it's not everything model. So is it their website? Um, um, and, um, they're they're saying that non picking models. So, um, this model is also super impressive. And if you had the benchmarks and comparisons at different
+
+You
+22:53:06
+
+but this model ranked five in such a short time. So it's very impressive. It's been stable. Also, it's not a recent model. So this is their website, um, And, um, they're they're saying that non thinking models. So, um, model is also super interesting. And if you look at the benchmarks and comparisons at different tasks like agent data and coding,
+
+Class
+22:53:14
+
+So, um, as I
+
+Class
+22:53:21
+
+again, one more thing I want to share is that another interesting thing that this team is using is this license. It's my fight.
+

@@ -1,0 +1,258 @@
+Class
+23:50:11
+
+And that's when they spin out the model. The the o three is using this model to generate thoughts. And, um, searching for all possible solutions. And, you know, behind the scenes, the model there the app and can also employ other methods for, um,
+
+You
+23:50:12
+
+parts and latent parts and recent traces. And that's when they see now the model there. Yeah. O three is using its model to generate parts and, um, searching for all possible solutions. And, you know, we find the same similar there. The algorithm also I can play other, uh, methods for
+
+Class
+23:50:29
+
+And by the way here, it got for three minutes and thirty seconds. And, you know, lots of searches and thinking that you need it get, uh, latent thoughts. And then finally here you see the final c o t, uh, output. Basically says below is a shortlist and these are some of the questions and here is what makes this part of the problem so
+
+You
+23:50:29
+
+latent thoughts. And then finally, here, we see the final COT, uh, outcome. And basically, it says below is a short list, and these are some of the questions, and here is what makes this part of the problems so
+
+You
+23:50:31
+
+and this and then some take it. So that's it. Let's wrap up the.
+
+You
+23:50:37
+
+Provide a very detailed report on different topics.
+
+You
+23:50:43
+
+So let's understand the research. Let's let me can see how they're really building practice.
+
+Class
+23:50:48
+
+provide a very detailed report on different topics. Alright. Let's understand deep search and let me and see how the rebuilding practice. In previous lectures, we saw multiservations agents, and we also saw multiservations systems. And then you mentioned that DeepSearch is a popular use case.
+
+Class
+23:50:54
+
+Agent here, and it's communicating with and also some tools. And then in the prompt, we are using prompt engineering that need to set up this agent such that when it's
+
+You
+23:50:54
+
+And then in the prompt, we are using pop engineering to set up this agent such that when it's
+
+You
+23:51:02
+
+Basically, what we shared with you was more on based.
+
+Class
+23:51:09
+
+like on prompt engineering. It's more prompt based. Now in practice, after the reading models, we can easily switch from the, uh, the traditional element to thinking
+
+You
+23:51:09
+
+Now in practice, after the reasoning models, you can easily switch from the, uh, the traditional MLM to thinking more recently.
+
+You
+23:51:11
+
+Gonna
+
+You
+23:51:19
+
+So that's how
+
+You
+23:51:23
+
+those elements for thinking for a request. But in practice,
+
+Class
+23:51:31
+
+So that's how Deepsearch tools are doing back is they're not using a normal element, and they're not using React to prompt the equivalent. For anything or change a request. But in practice, the element itself knows how to think and reason. And again, Deepak was introduced first by, I think, OpenAI, and, um,
+
+You
+23:51:31
+
+the element itself knows how to think and reason. And again, if this was introduced first by I think, OpenAI, and, um, it was released in February or it was around that day.
+
+Class
+23:51:36
+
+100
+
+You
+23:51:49
+
+So they're explaining why why it's needed. They're not saying how they're building it in data, but they're just describing the feature. And then there's some, uh, updates here, and I just realized that their final update, July 17. Basically, they are using they're giving the deep research feature access to visual browser as
+
+You
+23:51:52
+
+a as part of their. So now it's even more capable because now it has access to browser. And then visually,
+
+Class
+23:51:58
+
+they're explaining why why to see that they're not saying how they're building it in detail, but they're just describing the feature. And then there's some, uh, updates here, and I just realized that a final update, two by 17. Basically, they're using they're giving the deep search feature access to visual browser as part as part of their chat API. Now it's even more capable because now it has access to browser and then visually, uh, go to browser searching, uh, extract information. And use them as part of its data collection process. So
+
+Class
+23:52:01
+
+to see that in practice, this is RGB UI, and, um, basically we can select a preset.
+
+You
+23:52:02
+
+So I also see that in practice. This is actually DPI, and, um, basically, we can set a DPI
+
+Class
+23:52:32
+
+Very long typically, tens of minutes. And, um, I'll share later if I put this report in case you're interested to see. So I can ask something like, can you create a detailed summary of every technique for training, thinking, and reasoning models? Something like this. So now you may ask us some background questions. Help me make sure you clarify.
+
+You
+23:52:32
+
+So let me get something. We would not wait for it because it takes very long to be read, tens of minutes. And, uh, I share later, it's output gets report in case you're interested to see. So I can ask something like, can you create a detailed summary of every technique for training, Indian, and presenting models. Something like this. Now it may ask us some background questions.
+
+You
+23:52:54
+
+Yes. LMS and different techniques, the state of the art. Which makes them to think reason, internalize, search, and applies inference time. Scaling to search against verifiers. And all all other similar techniques.
+
+Class
+23:52:54
+
+Different techniques, the state of the art. Which makes them to think, reason, internalize, search, and applies inference time scaling to search against verifiers and all all other similar techniques. So
+
+Class
+23:53:04
+
+So here it says then here if quick, we would see activity and all these sources. So again, I'm not going to base it
+
+You
+23:53:05
+
+And then here is quick, we will see the activity and all the sources. So again, I'm not gonna convey it. It's gonna take very long.
+
+You
+23:53:14
+
+So that's deep research, and that's it. And one more thing in practice is that deep research is not a much
+
+Class
+23:53:14
+
+So So that's Deepa Search tool, and that's it. And one more thing in practice is all that deep search is not a multispepper. It's a small version.
+
+Class
+23:53:20
+
+And this
+
+You
+23:53:38
+
+final report and share it to their user. So, um, yeah, that's
+
+You
+23:53:41
+
+That's application like you search. You will see many examples in the project of different ways to use in transcribe snippets tasks.
+
+Class
+23:53:43
+
+And, basically, each of these are having access to tools, I think, and perform the search on the web. And then once they call or done, the manager agent would summarize their, um, that information and complete the final report and share it to the user. So, um, yeah, that's You will see many examples in the project of different ways to use different types of capabilities
+
+Class
+23:53:55
+
+not saying how they're building it in detail, but they're just describing it. And then there's some, uh, updates here, and I just realized that their final update July 17. Basically, they're using they're giving the DBSH
+
+You
+23:53:56
+
+So they're explaining why it's needed. They're not saying how they're building it in detail, but they're just describing the feature. And then some, uh, updates here, and I just realized that their final update, July 17. Deep search feature access to visual browser as a as part of their change of behavior.
+
+Class
+23:53:56
+
+feature access to Visual Browser as well as part of their
+
+You
+23:54:08
+
+And, um, basically, we can select the preset.
+
+Class
+23:54:15
+
+UI. And, um, basically, you can select the preset. Basically, you can select the preset, and then we can get a detailed report or something. A lot of times, you first
+
+Class
+23:54:38
+
+you just go and start this. So we're interesting. We will not make it because it takes very long typically, ten seconds. And, uh, I'll share later is how it's reported in case you're interested to see. So I can ask something like, can you create a detailed summary of every technique for training, making, and reasoning models? Something like this. So now it may ask us some background questions. Have you
+
+You
+23:54:38
+
+So let me enter something. We would not wait for it because it takes very long typically, tens of minutes. And, uh, I'll share later. It's Apple, this report in case you're interested to see. So I can ask something like, can you create a detailed summary of every technique for training, thinking, and presenting models. Something that is now it may ask us some background questions.
+
+You
+23:55:01
+
+Yes. LMS and different techniques. The state of the art, which makes them to think reason, internalize, search, analyze inference time. Scaling to search against verifiers. And all all other similar techniques.
+
+Class
+23:55:01
+
+Yes. Editance. And different techniques, the state of the art. Which makes them to think, reason, internalize, search, and applies inference time scaling to search against verifiers and all all other similar techniques.
+
+Class
+23:55:10
+
+So
+
+You
+23:55:11
+
+Idea summary, and then it's just starting research. And then here it's quick. We will see the activity and all the sources. So it's gonna take very long.
+
+You
+23:55:21
+
+So that's deep research tool, and that's it. And one more thing in practice, you saw that deep search is not a mother status. It's not a agent.
+
+Class
+23:55:21
+
+lecture. So that's the difference two. And that's it. And one more thing in practice is that deep search is not a monetization. It's it's multi agent.
+
+You
+23:55:43
+
+Their final report and share with their use. So, um, yeah, that's
+
+Class
+23:55:44
+
+So, um, yeah, that's reasoning models thinking on this and application that you've
+
+You
+23:55:46
+

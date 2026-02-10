@@ -1,0 +1,300 @@
+Class
+23:22:46
+
+And we every
+
+Class
+23:22:54
+
+And then we use some
+
+Class
+23:23:11
+
+which
+
+You
+23:23:17
+
+So, um, the main question, how are you going to rebuild this?
+
+Class
+23:23:19
+
+can generate responses. So, um,
+
+Class
+23:23:20
+
+the main question is this regarding how are we going to rebuild this?
+
+Class
+23:23:29
+
+And the second
+
+Class
+23:23:38
+
+And then the data that we have is in this format. We have prompt. We have some intermediate steps to generate by the element. And also, um,
+
+You
+23:23:43
+
+So these are already
+
+Class
+23:23:51
+
+And then we need to also label this. The label is basically saying that, um, how accurate or how good the final answer is.
+
+You
+23:23:53
+
+enforce the legals. The legals basically saying that, um, how accurate or how good the final answer is. For example, in this case, if it's accurate, let's say, a mathematical question.
+
+Class
+23:23:55
+
+We
+
+You
+23:23:55
+
+Answer.
+
+Class
+23:24:14
+
+And the difference basically is, in certain ways, we can call it. In certain ways, like, mathematical
+
+You
+23:24:17
+
+To train this model. And the different data sets,
+
+Class
+23:24:30
+
+called verifiable tasks, meaning that we we can easily, um, verify the output. So we can, um,
+
+You
+23:24:30
+
+in
+
+Class
+23:24:46
+
+that's all we need for data preparation.
+
+You
+23:24:47
+
+So that's all we need for data operation. And this will generate using element, and then I'll get the final answer.
+
+You
+23:25:01
+
+Our people just basically the question or the prompt, the sequence of parts, or these in from the data steps, and the final answer. And the label is basically the score that we assign.
+
+Class
+23:25:03
+
+Task. Now And the final answer, the label is basically just quietly assigned to each of these inputs.
+
+Class
+23:25:06
+
+And the last
+
+You
+23:25:07
+
+So we'll have this one model
+
+Class
+23:25:26
+
+estimator of, uh, accurate the financer is.
+
+Class
+23:25:27
+
+So that's how we can change the reward model. And again, feature model and just a copy, like, it's
+
+You
+23:25:32
+
+so that
+
+You
+23:25:38
+
+And then, um, the string. So this is how
+
+Class
+23:25:43
+
+And besides that, everything else is, um, pretty similar like the
+
+Class
+23:25:55
+
+So this is ORM, but it has a major limitation. And its limitation is that
+
+You
+23:25:58
+
+So this is ORN, but it has a major limitation, and its limitation is that look at the, uh, finance. Basically, this is how your, um, clicking update, how your labeling update.
+
+Class
+23:26:10
+
+So it's not really looking at any of these intermediate steps or thoughts. So even if, um, someone here, there is some important thought or, um, vague thought,
+
+You
+23:26:10
+
+So even if, um, at some point here, there is some inquiry thought or, um, rate cut,
+
+You
+23:26:15
+
+um, rate thought, they're one other which is part of it. It has no idea about those. And again, that's simply because this is how we construct the data. We're just labeling their finance.
+
+Class
+23:26:26
+
+The model may learn some correlations, but just looking at them and know and learns that, you know, when certain certain pattern or certain correlation exist in the parts, the final answer is starting quite. So very inquisitive, it may have some idea about correct versus incorrect parts.
+
+You
+23:26:26
+
+Certain pattern or distant correlation existing in the past. The final answer is quite correct. So very implicitly, it may have some idea about, uh, prices and prices.
+
+Class
+23:26:35
+
+And, um, so that's a main motivation for, you know, process to.
+
+You
+23:26:36
+
+And, um, so that's a main motivation for process supervised webinar, for clients.
+
+Class
+23:26:43
+
+And
+
+You
+23:26:46
+
+And
+
+You
+23:26:46
+
+the
+
+Class
+23:26:48
+
+you
+
+You
+23:27:02
+
+So, um, basically, the training data would be the same, uh, question, this one so fast.
+
+Class
+23:27:04
+
+So, um, basically, the train data would input to be the same, uh, question, estimates of thoughts. And then the label would be, um, and it's essentially
+
+You
+23:27:05
+
+Center is basically referring to the finance. It's still part of the generation.
+
+You
+23:27:38
+
+So this is great because now PRMs are more, uh, as better audio and can have a better, uh, overview of each step in the chain of process so they're more capable and they can be more useful.
+
+You
+23:27:58
+
+So the better is such as in certain days and, uh, but again, the the the the theory is that it's not possible to scale in a reliable way to automatically score our data score all the intermediate steps. And then, um, there's some other papers published by DeepMind, I think, should be this one. And it's an amazing paper. It it
+
+Class
+23:27:58
+
+So this is great because now PRMs are more, uh, has better audio and can have a better, um, overview of each step in the channel process so they're more capable and they can be more useful. But the problem is that the generation of these scores cannot be automatic even on for very further tasks. So the paper is such as in certain days and, um, but again, the the the find the the theory is that it's not possible to scale, you know, reliably to automatically score our data score all the Internet assets. And then, um, last time I prepared by DeepMind, I think. Um, it should be this one. And it's an amazing paper. It it
+
+You
+23:28:02
+
+over and what they're trying to do is they're trying to propose a solution so that they can automatically scale. And
+
+Class
+23:28:03
+
+time, everything's better. It it goes up PR and what they're trying to do is they're trying to propose a solution so that they can automatically scale. And
+
+You
+23:28:19
+
+So that's another thing. That's
+
+Class
+23:28:19
+
+So that's about it. That's
+
+You
+23:28:33
+
+it's a happy face, so they score it. Uh, they keep on this.
+
+Class
+23:28:38
+
+Again, if it's incorrect, it's a clickies. I think this was regarding if their if their if their command is not useful or it's
+
+Class
+23:28:56
+
+Alright. That's all I wanted to share for, um, this second day of improving data and its sensitivity.
+
+You
+23:28:58
+
+Alright. That's all I wanted to share for, um, this second day of improving LMM efficiency. Basically, a quick, uh, we can start from an LMM
+
+Class
+23:29:09
+
+So that it it generally generate, um, a chain of thought answers that are accurate.
+
+Class
+23:29:11
+
+Then
+
+You
+23:29:27
+
+But before I wrap up this ticket, one more thing I want to, uh, share is that this PRM, it's very powerful technique. So if you have a written model based on PRM, it has two uses.
+
+Class
+23:29:30
+
+share is that this PRM, it's very powerful technique. So if you have a written model based on PRM, it has two use cases. One use case we already saw, we can use it to continue training or finding our algorithm to make it
+
+Class
+23:29:34
+
+training or
+

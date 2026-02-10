@@ -1,0 +1,300 @@
+Class
+23:08:11
+
+One
+
+You
+23:08:25
+
+You can think of this decoding, basically the
+
+Class
+23:08:28
+
+Now the next thing that I wanna talk about is three ops. You can think of this decoding, basically, the text generation. This is becoming more like a search problem.
+
+Class
+23:08:29
+
+Basically, we have this input and output, and we can easily control, uh, like, the
+
+You
+23:08:39
+
+Again, you're not being hit here, but it's just just a look of it. It's becoming more like a.
+
+Class
+23:08:40
+
+And
+
+You
+23:08:40
+
+And
+
+Class
+23:08:54
+
+generate some different media parts. Then we can, let's say, somehow scored in. We pick the best one.
+
+You
+23:08:54
+
+generate some intermediate parts. Then you can let's say, somehow scored in. You pick the best ones and continue with this generation process.
+
+Class
+23:09:07
+
+Stuff, we can continue the generation and add one more touch. From this time, we can generate four more tasks because it's dark green, meaning that it's, uh, since it's a high potential to reach the a good answer. And again, from here, we can generate four more tops in parallel.
+
+You
+23:09:19
+
+We would just explain on that. So basically, the idea is just to, uh, apply some more complex search algorithm and expand history, um, as we move forward dynamically. And then finally, the best path
+
+Class
+23:09:27
+
+So basically the idea is just to apply some more complex stretch algorithm and expand history. Uh, as we import dynamically. And then finally, the best path with the highest, uh, score, let's say, it would be it would form the final output. So basically, it's not too different. At least it's three of us from, um,
+
+Class
+23:09:28
+
+it
+
+You
+23:09:30
+
+basically, it's not too different at least these three of us from, uh, just see what you did.
+
+You
+23:09:31
+
+It's more focused on efficiency because basically what we can do is we can just generate we can generate more
+
+You
+23:09:37
+
+samples in COTs and services. We can have 10 branches. And Thundermaker is
+
+You
+23:09:37
+
+also
+
+Class
+23:10:02
+
+So dropouts is more focused on efficiency.
+
+Class
+23:10:11
+
+So and again, there are more a lot more approaches after three dots and they all are treating this problem as a search problem.
+
+You
+23:10:11
+
+So and again, there are more a lot more approaches after three of us, and they want about treating this problem as a search problem.
+
+You
+23:10:18
+
+And it's a great paper. I I strongly encourage everyone to take a text paper. It
+
+You
+23:10:20
+
+evaluations.
+
+Class
+23:10:29
+
+Can improve accuracy of, um, in certain domains like math. For example, this red is basically showing parter sampling.
+
+You
+23:10:30
+
+Rate is basically showing par example and then applying different methods like measure
+
+Class
+23:10:56
+
+Highest the best path. And then they're also having this do the head search. I don't know if this better
+
+You
+23:10:58
+
+And they just be doing this. And finally, once we have the final answer, they would just show the highest the best the best, basically, the highest it is. And then they're also trying to do the head search. I don't know if this data was basically, this new head search was proposed in some paper. I don't know if this
+
+Class
+23:11:14
+
+it for a few more sets. And then in that, if it's if it gets somewhere, it's not, they would just get back to this to this part. Different, um, ways of handling this text generation or text decoding as I said.
+
+You
+23:11:26
+
+So, yeah, I think this is this is an amazing I mean, research is to take a look at it. So these are the event over, um, couple different approaches par sampling different days of searching and three of those, and it's our more advanced searchings.
+
+Class
+23:11:29
+
+Different ways of searching and tree of tasks, and we saw more advanced searchings. All these are basically ascending up a few budget in part of for example here, we have a three parter.
+
+You
+23:11:29
+
+But all these are basically spending a company budget in parallel. For example, here, we have a three parallel back.
+
+You
+23:11:37
+
+Here is that we sequentially try to extend our computation. And what that means is that
+
+Class
+23:11:38
+
+Other approach that we have is called sequence. And the idea here is that we essentially try to extend our computation. And what that means is that
+
+Class
+23:11:43
+
+whatever the context becomes to the element, it can also include So it includes And then we get the response.
+
+You
+23:11:49
+
+whatever the context it comes to, we can also include channel dot fronting, so it includes retained, and then we get a response. And now you can pass the response and the prompt to the same element or it could be a different element, but it's the same element. And it has to revise or improve the response. And you have a fixed
+
+Class
+23:11:51
+
+And we ask you to reduce or improve the response. And you have a fixed number of numerations, and say sample k is equal to two.
+
+You
+23:11:54
+
+sequentially, we are sequentially sampling and keep revising, and
+
+Class
+23:11:54
+
+So we sequentially we are sequentially sampling and keep revising and improving data.
+
+Class
+23:12:00
+
+And then the final answer, the final output of the element will be the final answer. Basically, the very, uh, simple suitable here, basically, for this fixed k.
+
+You
+23:12:01
+
+So basically, we have a very, uh, simple suitable here. Basically, for this fixed k,
+
+You
+23:12:06
+
+k times, it will see much
+
+Class
+23:12:08
+
+This is also another way that you can
+
+You
+23:12:24
+
+And I believe every second
+
+You
+23:12:42
+
+Also, there are some other papers that are suggesting that sequential sampling is better for, um, easier for medium questions
+
+You
+23:12:52
+
+more complex questions be more difficult. And the reason for that is intuitively is because, um, you know, for simple
+
+Class
+23:12:54
+
+Also there are some pipers that are suggesting that sequence of sampling is better for easier or medium questions. Like specific questions get easy or medium difficulty. And power sampling must be might be better for questions complex questions with more difficulty. The reason for that is it's really really difficult because, um, you know, for simple and, like, easy and medium difficulty questions, So just, um, it's
+
+Class
+23:12:59
+
+Whereas in complex
+
+You
+23:13:03
+
+but
+
+You
+23:13:09
+
+And
+
+Class
+23:13:10
+
+So
+
+Class
+23:13:11
+
+if we try different ideas and few of them may be, uh, the right direction.
+
+You
+23:13:23
+
+But the core idea behind difference time scaling is just to spend more time generating tokens. Uh, let me see here.
+
+Class
+23:13:26
+
+It's basically spending more time generating more tokens, happy for
+
+You
+23:13:30
+
+I didn't cover my card. It's one of a different way to
+
+Class
+23:13:31
+
+space. I didn't cover my colors here. It's one of the different day to, um,
+
+Class
+23:13:35
+
+to
+
+Class
+23:13:43
+
+that are using earlier days were very helpful, but there are a lot of other examples for different signs.
+
+You
+23:13:50
+
+Hey. There's something you learn about different base of.
+
+Class
+23:14:11
+
+In different, um, thinking or directions, and then we pick this.
+
+Class
+23:14:15
+
+Actually more complex, um, ways of using a tree and searching over it.
+
+You
+23:14:15
+
+In different, um, thinking or durations, and then we pick the best one. Because it's a more complex, um, phase of building a tree and searching for it.
+

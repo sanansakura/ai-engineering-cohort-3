@@ -1,0 +1,300 @@
+You
+22:53:21
+
+Now, again, one more thing I wanted to share is that another interesting thing that this need to do is this license is modified MIT.
+
+You
+22:53:33
+
+And
+
+Class
+22:53:34
+
+Then we have, uh, cloud office one four and Aflac is. Is also a Chinese company. And
+
+Class
+22:54:02
+
+on this
+
+Class
+22:54:08
+
+many features they're saying how they are building and training this model. So, um, it's it's good to read this.
+
+Class
+22:54:14
+
+And
+
+You
+22:54:25
+
+hyperbolic with this one. So let me paste this here. And also I'm going to increase this because now the model is thinking and presenting, so there's a lot of focus, uh, involved the model needs to generate before it reaches the final answer. So let me just change it to 10,000.
+
+Class
+22:54:27
+
+So let me paste this here. And also I'm going to increase this because now the model is thinking and presenting. So there's a lot of focus, uh, involved, and the model needs to generate before it reaches the final answer. So let me just change it to 10,000.
+
+You
+22:54:29
+
+With that model, basically, quite a bit and reason quite a bit. And now let me send this.
+
+Class
+22:54:37
+
+Maybe I have to refresh.
+
+You
+22:54:38
+
+Maybe I have to refresh.
+
+Class
+22:54:50
+
+Alright. So now it says this within. If I click here, basically, it's showing the actual reasoning phrases, which is which is awesome. These are yeah.
+
+You
+22:54:51
+
+Alright. So now it says it's within. Anybody could hear basically, it's trying to actual resume trace, which is which is awesome. These are they're
+
+You
+22:54:52
+
+data
+
+Class
+22:54:53
+
+Phrases, which is which is awesome. These are the exact tokens at the model it's generating during its using process. It says we generate the numbers. It's
+
+You
+22:55:28
+
+And finally, this has to do this ring. So, uh, there's some code here, but the notes
+
+Class
+22:55:30
+
+And finally, it decides to be the string. So, uh, there's some code here, but no SSC nine is running in sandbox.
+
+You
+22:55:52
+
+the time module, Python time module, and date time. So okay. This.
+
+Class
+22:55:57
+
+The time module, Python's time module, and take time. So And finally, it's over and says counting from one to 10. It's actually counting, and it says, time taking approximately this. Um, and finally, it says, as an AI process tasks near the instantly, notice not counting required. So I think I would rate it
+
+You
+22:56:19
+
+So have might have decided to, uh, use it for finding a topic, the model that is, uh, less biased the same certain assets.
+
+You
+22:56:41
+
+K. We continue our discussion, and we'll now learn how any really use using mods.
+
+Class
+22:56:46
+
+Hey. We'll continue our discussion and we'll now learn how can you really build using models. And there are different approaches and different techniques, but they can be categorized into big buckets. One method is through inference time saving, and basically the idea of all the approaches
+
+You
+22:56:46
+
+So One bucket is through inference time scaling and basically the idea of all these approaches.
+
+Class
+22:56:58
+
+So this way, we are not really catching the parameters, but we are not training it.
+
+You
+22:56:58
+
+So this way, you're not really pushing the LMM's parameters where they are not training it.
+
+Class
+22:57:05
+
+So the model becomes scalable within. The other bucket is training between.
+
+You
+22:57:12
+
+Approach. They are scaling the the training part. They are spending more time to continually training the element,
+
+Class
+22:57:21
+
+They are scaling the the training object. They are spending more time to continue training the element, so that element becomes scalable. And we we go about all these different approaches, um, in, um, the future lectures. So, uh, let's let's focus on inference on this today. And, again,
+
+You
+22:57:31
+
+So for now, let's let's focus on different centers today. And again, mentioned, the idea of inference time scaling is to, um, teach the model or the other model to reason to giving it more inference than compute. And the first approach that we now is approach it relying on the prompt engineering technique that we covered previous. And in particular,
+
+Class
+22:57:37
+
+And the first approach that we now is obviously relying on the prompt engineering technique. That we covered previously. And in particular, chain of thought prompting is very powerful for this use case. For example, let's say, without any chain of thought routing, if you ask a model, a question like a map question,
+
+You
+22:57:52
+
+There is no, um, basically LMM is not expected to produce a multistep reasoning and how it reaches the point.
+
+You
+22:58:10
+
+It can add an example to the context in the context of the the model or in this one. And it can show how to answer for a similar question. For example, we had a question here which has a similar type and style to our actual question. So we have here dot two boxes with three balls each. How many balls are there? Two times three eight equals six. So comma, six dot.
+
+Class
+22:58:14
+
+there might produce something like the final answer to me. There is no, um, is not expected to produce a multistep reasoning and how it reaches between. It might be already up to 20 or something like dance 30 is 20. Now if you shot, uh, panoptic technique, it can add an example to the context in the context of the the model or in its font. And it can show how to answer for a similar question. For example, we have a question here which has a similar type instead. To our actual question. So we have here dot two boxes with three balls each. How many balls are there? Two times three equals six. Six. So comma six dot. So this is the example that we are showing it. And now we say now solve this, and then here is a real question I have.
+
+Class
+22:58:22
+
+By attending multiple examples, like, more, um, more like
+
+You
+22:58:22
+
+By attending multiple examples, like, more, uh, more like
+
+Class
+22:58:39
+
+And the next
+
+You
+22:58:55
+
+So
+
+Class
+22:59:01
+
+So knowing that the model would follow a certain format, uh, always once there is any tense, it has dot so comma financer dot.
+
+You
+22:59:12
+
+Now, um, just to see this, uh, let's try this Lamat three one two three d. Then I have the same question here that you have. Let's see if it would, um, up to the financer or it would also do some reason.
+
+Class
+22:59:12
+
+Now, um, just to see this, uh, let's try this Lamont three two three. Financer or it would also do some reason.
+
+You
+22:59:26
+
+And many of the data examples in this data set might have reasoning choices and, uh, multistep logics. So models might still generate some, uh, intermediate steps to solve these problems, but let's see.
+
+Class
+22:59:26
+
+And many of the data examples in this dataset might have reasoning phases and multistate logics. So these models might still generate some, um, intermediate steps to solve these problems, but let's see.
+
+You
+22:59:31
+
+Okay. So it's obviously failing.
+
+Class
+22:59:35
+
+Okay. So it's obviously fitting. And it said there are three red bags with apples, which is not what I we wanted.
+
+You
+22:59:37
+
+Failing. And it says there are three red tags before that, which is not quite a pretty one. Now let's now copy this and see if it makes any difference.
+
+Class
+22:59:39
+
+Copy paste this as if it makes any difference. And I intentionally set it at this three red bags, so it
+
+You
+22:59:56
+
+I don't know what's happening with me.
+
+You
+23:00:04
+
+Refresh this. Okay. I don't know.
+
+Class
+23:00:06
+
+Now let me print this. Uh, this is the exact same question that we had, but now we are showing the one antenna. Let's see if it works or not. I don't know what's happening with me. Refresh this. And they say it. I don't need to do that.
+
+Class
+23:00:11
+
+Oh, maybe it's a cut off piece.
+
+You
+23:00:23
+
+Alright. Okay. Great. So now it's it's doing better. It's not exactly following the example that I showed you.
+
+Class
+23:00:29
+
+Alright. Okay. Great. So now it's it's doing better. It's not exactly following the example that I showed. Says, therefore, there are 29 items in total.
+
+Class
+23:00:35
+
+Now back here
+
+You
+23:00:38
+
+At least now it's doing some calculations, and then it's getting into the final answer and says, therefore, there are 29 apples in total. So basically this way, we can force or push another two reasons, especially in less data than models. Now back here, we saw few shots zero counting by showing some examples of zero
+
+Class
+23:01:10
+
+I think And basically, the audio is coming from the speaker language large language models are zero track speakers.
+
+You
+23:01:25
+
+And, basically, the value is coming from speaker, language large language models or zero chat presents. And but they're showing they have a very comprehensive, uh, detailed evaluation of different techniques. What they're saying is that all we need to do for zero shot ten of dot com is to add less thing step by step to our prompt. So this way, you're not showing the model examples on how to reason or how to think. But they're just asking you to do so. And it can work in practice because these models have learned from each and take up. That's
+
+Class
+23:01:25
+
+Techniques. And what they're saying is that all you need to do for zero shot channels are prompting is to add a listening step by step to our prompt. So this way, they're not showing the model of examples on how to reason or how to think. But they're just asking you to do so. And it can work in practice because these models have learned from each data that's built of times when
+
+You
+23:01:40
+
+If you do few shot,
+
+Class
+23:01:44
+
+It's not only
+
+Class
+23:01:51
+
+features showing how to present by including the the details in Azure and your media sets. But there's also here showing that
+

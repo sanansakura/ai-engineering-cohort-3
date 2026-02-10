@@ -1,0 +1,300 @@
+Class
+23:02:00
+
+So again, there are lots of
+
+You
+23:02:01
+
+So again, there's a lot of, uh, details and evaluation, which is very nice to do.
+
+Class
+23:02:03
+
+understand
+
+You
+23:02:13
+
+So this is, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, a different data handling like this and think of this. It's
+
+Class
+23:02:14
+
+So this is, um, prompting and, you know, chain of our prompting. There's a different way we can visualize this and think of this. Basically, when we don't have a. We are going
+
+You
+23:02:19
+
+Let me add COB, let's say, through prompting.
+
+You
+23:02:23
+
+Is going to change it like this. Now the input is going to produce some thoughts, and these are intermediate
+
+Class
+23:02:24
+
+Let me add c o t. Let's say true counting. This is my the input is going to produce some thoughts and these are intermediate thoughts. Dot one, dot two, dot n.
+
+You
+23:02:31
+
+plus one dot two, plus 10. And then finally, after that 10, the model would just wrap it up and generate its final test. So these are all, uh, intermediate reasons for
+
+You
+23:02:35
+
+two times seven equals 14,
+
+Class
+23:02:36
+
+Then finally, after dot 10, the model would just wrap up and generate its final answer. So these are all, uh, intermediate reasons for steps. For example, in one. Two times seven, equal 14, we start two, and so on. And then the final answer is still.
+
+You
+23:02:42
+
+In practice, each part might have a text show description as a for example, can start with something like
+
+Class
+23:02:47
+
+There is
+
+You
+23:02:48
+
+the reason I'm showing this visualization because I have switched to other different time scaling techniques.
+
+You
+23:02:58
+
+So that's. Next, we're going to switch to a different technique. So the second approach is called self consistency.
+
+Class
+23:03:00
+
+it's easier to say to compare them and understand how they are improving, uh, upon each other. So that's serial prompt. Next, we are going to switch to a different technique. So the second approach is called self constancy. Powerful, um, way of, um, scaling your clients on mute.
+
+You
+23:03:00
+
+And it's also very powerful, um, way of, uh, scaling in front of you.
+
+Class
+23:03:04
+
+In different temps being used. For example, um, in some architectures or loss is called power sampling.
+
+You
+23:03:09
+
+So all these are different, and the idea is very simple.
+
+You
+23:03:16
+
+The audio is instead of spending our compute budget on reasoning phrases or generating basically, generating more
+
+Class
+23:03:19
+
+Basically generating more intermediate steps. Instead, the sample in points from the element and then BPS.
+
+You
+23:03:30
+
+and the client are signing and generate four full responses and then pick the best one. Basically, we have control full control over, uh, our spending budget, and the budget.
+
+Class
+23:03:30
+
+And basically we have control full control over, uh, our display budget, compute budget.
+
+You
+23:03:41
+
+Basically, the more they increase the hand, you're sending more tokens at, uh, generate time difference now.
+
+Class
+23:03:44
+
+Basically, the more you increase again, if you are sending more tokens at, uh, generic. Responses, better overall response. And calibrating and think of visualizations is
+
+Class
+23:03:53
+
+And and then pass this one as their final output. We'll talk about how we can really
+
+Class
+23:03:59
+
+So
+
+Class
+23:04:07
+
+Now there was this speaker
+
+You
+23:04:08
+
+Now there was this
+
+Class
+23:04:12
+
+And
+
+You
+23:04:20
+
+So now instead of having one, um, branch of chain of thought or having
+
+You
+23:04:22
+
+So
+
+Class
+23:04:24
+
+So now instead of having one, um, branch of chain of thought, or having just set on CSS to it out channel thought which is like this, we basically combine this tool, we get something like this.
+
+Class
+23:04:31
+
+And in parallel, um, generations. So after each branch has
+
+You
+23:04:32
+
+And in total, we have n parallel, uh, generations. So after each branch has its own variation and generate
+
+You
+23:04:44
+
+And
+
+You
+23:04:55
+
+And here, you can see the color face of this three d. It's just one, um, one generation, which is other six.
+
+You
+23:04:57
+
+Regardless, no matter what is the reason that. And then they have
+
+Class
+23:04:59
+
+one one generation, which is always fixed, um, regard no matter what is the rendering path. And then they have set constituency, which is blue. So you can see all these different domains and different benchmarks.
+
+You
+23:05:08
+
+again, there are lots of evaluations and interesting, uh, details about it. But
+
+Class
+23:05:09
+
+But Now
+
+You
+23:05:18
+
+the last of evaluations and interesting, uh, detail about it. But now the main question is how you really take this response. So let's talk more about that. There are two main ways to take the best response. One is majority working and the other is using.
+
+Class
+23:05:18
+
+let's talk more about that. There are two main ways to pick the best response. One is majority voting, and the other is using.
+
+Class
+23:05:27
+
+Basically, idea behind majority voting is that once we have these end generations from the middle,
+
+Class
+23:05:36
+
+You can simply compare them and pick one of them that the majority agree about different options.
+
+Class
+23:05:37
+
+For example, here, we have four generations. The first generation has some channel file interest
+
+You
+23:05:39
+
+You can simply conquer them and pick one of them that the majority agree about their final response. For example, here, you have four generations. The first generation has some chain of thought implemented steps and then it says so 29. So
+
+Class
+23:05:52
+
+So we just see what what other generation does
+
+You
+23:05:52
+
+So we just see what what other generations are saying.
+
+Class
+23:06:50
+
+Hey, everyone. This week, compared the first so and then we do majority voting. But imagine a different domain. For example, if it's, uh, writing. It's a writing task. Basically, the prompt says, hey, write a an article or write a lot regarding this regarding this topic. In those cases, there's not really a a correct or incorrect answer, and comparing them is more subjective. And it requires real humans to say which answer is there and which answer is worse.
+
+You
+23:06:50
+
+Hey, everyone. Four. This week, I'll compared the first so and then we do majority voting. But imagine a different domain. For example, if it's, uh, writing. It's a writing task. Basically, the prompt says, hey. Write a article or write a blog regarding this regarding this this topic. Those cases, there is not really a a correct or incorrect answer, and comparing them is more subjective. And it requires billions to say, b chance is better and b chance is worse.
+
+Class
+23:06:59
+
+They are probably correct and relevant. It's just certainty that one of them might be better than another. So for those
+
+You
+23:07:04
+
+Because all of those, uh, generations, for instance, were writing tasks, are probably correct and relevant. It's just certain details that one of them might be doing different on it. So for those, uh, domains, yeah, method that I use to take this responses to use every part one.
+
+You
+23:07:06
+
+And that's what we have here.
+
+Class
+23:07:21
+
+And that's what we have here. We saw reward model in previous sessions in previous weeks And then we saw that how these models are trained and used to post train LLM. Let's just briefly review them. Basically, um, trained on errors, prompt, and responses, and it's taking a lot of producing the score. That how this response, uh, is scored for that particular prompt. And the way that is reported is
+
+You
+23:07:29
+
+With them. Every reward model is basically trained on pairs of prompt and responses. And it's taking a look producing the score at how this response is a score for that particular account. And the data is one of those bar in train is generally the manually collect data and score. So let's say we have thousands of prompts, and for each prompt, we have lots of different answers. So some humans see
+
+Class
+23:07:30
+
+So let's say you have thousands of prompts, and for each prompt, you have lots of different answers. So some humans see and look at these answers and score them. So basically, you have
+
+Class
+23:07:47
+
+So
+
+Class
+23:08:04
+
+and then we show that answer as a final answer to the user. So basically, this setup allowed us to expand to different domains. So it could be writing, could be another task as long as we have a robot that is trained on similar data.
+
+You
+23:08:05
+
+these. So basically, this setup allowed us to expand to different domains. So it could be writing, could be another task. As long as we have a one model that is trained on similar data, we can just use
+

@@ -1,0 +1,300 @@
+You
+23:29:45
+
+If you had a really great we can use we can use that model to one sketch. So we saw at, um, let me
+
+You
+23:29:46
+
+so here.
+
+Class
+23:29:47
+
+If you have a really great model, we can use we can use that model to one search. So we saw at, um, let me so here. I think first time scanning. We saw that there are two methods for generation and decoding.
+
+Class
+23:29:57
+
+If you have a PR model, basically basically we can figure out which parts for each direction
+
+Class
+23:30:00
+
+directions are good, and we can stop continuing the directions that are not good. For example, at any point here,
+
+You
+23:30:01
+
+If you have a for each directions are good, and we can stop continuing the iterations that are not. For example, at any given point here,
+
+Class
+23:30:03
+
+we can just pass this sequence of dots, black
+
+Class
+23:30:08
+
+And also, similarly for good durations,
+
+You
+23:30:08
+
+if it's not too good, we just stop exploring this duration. And also, similarly for good durations, we just pass it to the PRM. If the PRM
+
+You
+23:30:11
+
+So
+
+You
+23:30:31
+
+So the next ticket is send price.
+
+You
+23:30:37
+
+You also saw I can something if we wanna know that difference, some people talk about that. But just first understand then, uh, what is the current issue? So
+
+Class
+23:30:38
+
+So the next is self correction. We also saw, again, something we could learn about that difference now. We talk about that let's first understand and, uh, what is the current issue? So, again, a a quick summary.
+
+You
+23:30:41
+
+So, again, a a brief summary. Then there's no reason related to me and use LMM.
+
+You
+23:30:42
+
+Them
+
+Class
+23:30:50
+
+So for many tasks, my manual questions, this would fail. And that's why in the first place we started to train these models,
+
+You
+23:30:52
+
+tasks, mathematical questions, this would fail. And that's why in the first place, we started to train these models, get a lot of
+
+You
+23:31:10
+
+so that, um,
+
+You
+23:31:39
+
+self correction. Basically, we want a method or use some algorithm as even then eliminate some mistakes, incorrect final answer, even correct itself.
+
+You
+23:31:40
+
+And
+
+Class
+23:31:41
+
+So how can you fix that? This is the this is the problem that you wanna fix it. And that's what is the purpose of self self, uh, self, partition. Basically, we want a method or use some algorithm such as even then it doesn't make some mistakes in quite final answer, it can correct itself. And we saw something similar on
+
+Class
+23:31:55
+
+So more formally, basically in self direction, the l m detects and revises its own response.
+
+You
+23:31:57
+
+get to a better final response. And when you talk about self version, it's
+
+You
+23:31:59
+
+So
+
+Class
+23:32:08
+
+So
+
+You
+23:32:08
+
+And this is the visual.
+
+You
+23:32:17
+
+And then from there, it tries to improve it.
+
+Class
+23:32:27
+
+And then from there, it tries to improve it. If it's incorrect. And then again, it tries to improve the output too. And then this becomes, let's say, a financer. Alright. So how can we really add satisfaction to our model? There are two ways we can do this. One is by spending more, um, or.
+
+You
+23:32:28
+
+Spending more, um, compute or tokens acting for a time.
+
+Class
+23:32:30
+
+Then
+
+Class
+23:38:47
+
+Another way is to train use training compute, and they basically train a model for better vision. So we'll, um, shortly review these two methods, but another aspect of separation.
+
+You
+23:38:48
+
+Other way is to train. Uh, you train, ma'am. Basically train model for better revisions. So, um, shortly, preview with these two methods,
+
+You
+23:38:48
+
+So
+
+You
+23:38:58
+
+And because of this question, there are two base off suppression usually within. One is intrinsic suppression.
+
+You
+23:38:59
+
+Train
+
+You
+23:39:09
+
+The second, um, approach is extremes extremes of suppression. And, basically, these are the models at our
+
+Class
+23:39:10
+
+The second, um, separation approach is extrins extrinsic subparation. And, basically, these are the models that So we'll go over all the tranmination.
+
+Class
+23:39:18
+
+Compute approach. So, um, for the inference on mute,
+
+You
+23:39:21
+
+So So, um, for the inference on you, in order to make, uh, sufficient
+
+You
+23:39:40
+
+So, um, remember, again, this item is that, um,
+
+You
+23:39:41
+
+to
+
+Class
+23:39:42
+
+So, um, remember, again, this element is the it's not
+
+You
+23:39:45
+
+models, but it's not trained for revisions.
+
+Class
+23:39:53
+
+thoughts, but it's not trained for revisions. Therefore, you're just using some inference time trick on engineering to make it revise its answers. And then for intrinsic, basically, the assumption is that they have no access to external feedback or reward models.
+
+You
+23:39:56
+
+And then for intrinsic, basically, the assumption is that you have no access to external feedback or. So we really don't know which of these, uh, responses. Out of one, out of two, or out of three is good.
+
+Class
+23:40:09
+
+Its extrinsic version is also very similar. We just wanted, uh, difference.
+
+You
+23:40:13
+
+Now it's extrinsic version is also very similar. It just minor, uh, difference. Same approach, the same
+
+Class
+23:40:31
+
+Leads to an error or not. But then, um, no matter how I wanna do it, we get some extra
+
+Class
+23:40:42
+
+So this is a self correction mechanism, both extraneous and intrinsic. At inference time or if you are using inference
+
+You
+23:40:44
+
+So this is the self correction mechanism, both extrinsic and intrinsic. And inference time or if you are doing using inference. And the already started again here in the previous videos is
+
+You
+23:40:56
+
+How can you really, um, train
+
+Class
+23:40:56
+
+Now let's switch to the train object, which is the main purpose of this video. How can you really, uh, train
+
+Class
+23:41:01
+
+the
+
+Class
+23:41:07
+
+training process. So
+
+You
+23:41:07
+
+using the exact same
+
+You
+23:41:25
+
+So the model would learn from it so that whenever it generates something, it can fix it or correct it with the correct answer. And
+
+Class
+23:41:32
+
+And there are two ways for doing that. There's if you can just do s f four And
+
+Class
+23:41:38
+
+The
+
+You
+23:41:39
+
+And that's this
+
+You
+23:41:51
+
+is not really better than just doing. Basically, it's saying that, um,
+

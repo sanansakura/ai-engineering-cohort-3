@@ -1,0 +1,300 @@
+Class
+23:41:52
+
+And basically is saying that, um, SFD is not good SFD force and protection is not really better than, um, just doing. Basically, you can read a paper, go through the details. It's saying that, um,
+
+You
+23:42:03
+
+terms for analyzing the process to make self action works. Again, I'm not intending to
+
+Class
+23:42:05
+
+And then they are proposing a solution to use reinforcement learning with with very careful, um, terms for analyzing the process. To make the correction worse. Again, I'm not intending to go into the details and become very technical and really if you're interested.
+
+You
+23:42:15
+
+So, um, again, this is just what I mentioned. The the shared
+
+Class
+23:42:20
+
+To so that the model can self break itself without the need to know if it can approach all this work. So, um, again, this is just what I mentioned. They share that previous approach is not including s t four selection, and they're
+
+Class
+23:42:21
+
+training the model in very unique way using reinforcement learning to, uh, make revision better.
+
+Class
+23:42:33
+
+Inference compute approach for self region. The the workflow is exactly the same.
+
+Class
+23:42:44
+
+But by default, we can
+
+You
+23:43:06
+
+here for inference only compute spending is that this model is trained to revise itself. So it's usually doing better. So whenever we pass some output rate that is incorrect, it's generally better at identifying that and fixing because it's how because this is how it's trained. And, um, it. That's about, um, self by channel. One more thing I wanna be sure is that, um, we can also provide these elements not only the speech prompts, but
+
+Class
+23:43:22
+
+is that this model is trained to revise itself. So it's usually better. Whenever we pass some output to it that is incorrect, it's generally better at identifying that and fixing that because it's how because this is how it's trained. And, um, that's it. That's about separation. One more thing I want to share is that, um, we can also provide these elements not only with these response, but also with some external feedback if it's available. Again, in terms of intrinsic self correction, it's not available. In general, in practice, companies do have PRM or Android models. They can use them to explore parts. Or outputs. They have also access to certain tools because, again, a lot of times, these outputs may have calling abilities, so they may ask for calling certain tools such as coding helper.
+
+You
+23:43:22
+
+companies do have PRM or MPR models. They can use them to score thoughts or outputs. Have also access to certain tools because, again, a lot of times, these outputs may full calling capabilities, so they may ask for calling certain tools such as code interpreter.
+
+You
+23:43:32
+
+It can be, um, some logs or if there is a calling, it may just fail and there are some bots. So there is some logs in the output, and those can be also included in as the input for the next revision.
+
+Class
+23:43:37
+
+Function. It can be, um, some logs or if maybe it's a coding, it may just fade under some bugs. There is some blocks in the output, and those can be also included in as the input for the next revision. Again, what I'm talking about is in extrinsic sub parrot, not intrinsic. But x-ray extrinsic is usually, uh,
+
+You
+23:44:01
+
+And, um, it can be very valuable to include the feedback that you're getting to this element, not only a fixed one. So that's it. Um, that's all about self-service, and, um, yeah, next technique that we're going to now switch to is, um, how to internalize search in this, um, reasoning process. What does it mean to internalize search? And that's again the fifth approach. The conclusion is that there's simple problems, and we can solve those problems
+
+Class
+23:44:06
+
+So that's it. Um, that's all about self checkout. And, um, yeah. Next technique that you're going to switch to is, um, how to generalize search. In this, um, reasoning process. Um, what does it mean to internalize search? And that's like in the fifth approach. The inclusion is that there are still no problems, and we can solve those problems with this effort. And we generally write the solution from the beginning. For example, if you ask a a simple math which
+
+You
+23:44:06
+
+and generally write the correct solution from the beginning. For example, if you have a simple math questions,
+
+Class
+23:44:14
+
+However, for complex problems, there is a different scenario. If you ask somebody very complex mathematical question,
+
+Class
+23:44:18
+
+very
+
+You
+23:44:36
+
+So there was this very popular
+
+Class
+23:44:43
+
+So there was this very popular record named meta c o t or metachain. Basically the pair is discussing exactly similar thing. It's saying that, uh, system two
+
+You
+23:44:53
+
+answer can be just a sequence of thoughts followed by the final answer. But for complex questions,
+
+You
+23:44:55
+
+a
+
+Class
+23:44:56
+
+system two, basically, refers to complex questions which require more, uh, attention and trying different methods. And it's it's saying that for simple questions, answer can be just a sequence of thoughts followed by the final answer. But for complex questions, the answer is not necessarily just a sequence of thoughts followed by the financer. It might be
+
+Class
+23:45:16
+
+So and that's their collate method of that. They're saying that they have to change our dataset instead of having a single, um, change that followed by the question and train the model on those change of the data. Why not we collect a different data
+
+Class
+23:45:30
+
+dots. And then basically, this setup is saying that we have to collect data. Such that after the question, there is a change of thought, which is not necessarily okay or correct. Another change of thought and all the way to the k chain of thought. And finally, we have the correct final
+
+You
+23:46:06
+
+why not we collect a different data which has a sequence of, um, channel files, for number of each of these z one z two by themselves is parts. And then basically, this this setup is saying that we have to collect data such that after the question, there is a chain of thought, which is not necessarily okay or right. Another chain of thought, another way to decay chain of thought. And finally, we have the correct final chain of thought solution, which has its own intermediate steps followed by the final answer. And they're calling the z one z two z k latent parts, meaning that they're just, uh, the process of picking. So that's that's mostly what the paper is proposing, and they're saying that if you train the model on such data, it would learn to think and, uh, try different methods or different division, backtrack, continue all your thoughts. Until it reaches the final solution. So, um, the most difficult part is the data preparation part. And again, we're not going to go into the details because there are a lot of details. But if you can use some elements to generate such data, and, um, to use it to train the model, the model would be capable of thinking and searching and back training. So, um, again, it's before complex problems, we would have the data a sequence of data with more latent thoughts. And actually for simpler questions, we would have examples with less latent thoughts.
+
+Class
+23:46:09
+
+And they're calling it z one z two z k, uh, latent thoughts, think that they're just, uh, the process of thinking. So that's that's mostly what the pair is proposing. I understand that if you shrink your model on such data, you would learn to think and, uh, try different methods or different iterations, backtrack, containing waterpots, until it reaches the final solution. So, um, the most important part is the data preparation part. And, again, we're not going to go into details because they're a lot of details. But if you can use some elements to generate such data, and, um, we use it to train the model, the model would be capable of thinking and searching and backtracking. So, um, again, it's a four complex problems. We will have a data a sequence of data with more latent parts. And naturally, for single questions, we would have examples with less latent parts. And then we can follow this step. We can use inferencing to sample back solutions from the element.
+
+You
+23:46:09
+
+And
+
+Class
+23:46:29
+
+So that's meta
+
+You
+23:46:29
+
+So that's meta
+
+Class
+23:46:32
+
+And again, if you go to Chazebi and select its preset models,
+
+You
+23:46:35
+
+and select its recent models, ask some question, we will see that the model during its printing process, it has basically those latent dots.
+
+You
+23:46:57
+
+Can you, um, figure out what are the most difficult questions in uh, international mathematical Olympiad and and share why you believe it is the most difficult. So I don't care about the answer. I just want to show the thinking process.
+
+Class
+23:47:05
+
+Can you, um, figure out what are the most difficult questions in, uh, international mathematical Olympiad, I don't know, and and share why you believe it is the most difficult I don't care about the answer. I just want to show the editing process of this one. Let me introduce. So firstly speaking, And probably after right now we will see some actual
+
+You
+23:47:06
+
+And probably after one, now we will see some actual, uh, latent thoughts. And see here, it says, the user wants to know if I just problem
+
+Class
+23:47:15
+
+and see here it says the user wants to know the hardest problem. I'm going to search for post or research paper, etcetera. The hardest time problems. After this been searched and try to collect more information. And again, if you think it may change its strategy, it may backtrack.
+
+You
+23:47:51
+
+of showing how this thinking and backtracking works. Again, this is meta data, and they're saying that basic after we train is model is basically showing some kind of errors and backtracking on-site.
+
+You
+23:47:58
+
+So for this algorithm, for example, they have, uh, basically, they're experimenting with different days of
+
+Class
+23:48:02
+
+Explore different regions and find a common solution. Um, I think this pair also has some nice visuals of showing how these thinking and backtracking works against the data. And they're saying that basic category train is, um, basically showing some kind of search and backtracking signs. So for this algorithm, for example, they have, uh, basically are experimenting with different ways of training this model different ways of collecting the data. And in many cases, they are trying to have their data in such a
+
+You
+23:48:14
+
+this model, different base of collecting their data. And in many cases, they're trying to have their data in such a data, some backtracking is also involved. So they search backtrack, and they search backtrack. Backtrack search again. So I think that was the visual. Okay. And here, basically, um, there are also if I'm reading, existing models such as one, d c car one, and gemini two, thinking model. And they're saying that
+
+Class
+23:48:17
+
+So So I think it that's the visual I wanna make sure. Okay. And here. Basically, um, there are also if you're getting existing models such as one, DC core one, and Gen I two. And then if I zoom in,
+
+You
+23:48:19
+
+these are some of the solutions, some of this is basically the output for this question. And then if I zoom in, they're identifying certain backtracking
+
+You
+23:48:38
+
+And at this point, the model says, but we can consider this. So, um, basically, it's trying to use some previously generated tokens here and backtrack here, and again, it comes here. So this pattern is adding o four o one and d c card one.
+
+You
+23:48:40
+
+Here, it's six s eight. Actually, since this is point of degree two and the reading term,
+
+Class
+23:48:45
+
+So here they have some solution and then our equation here. Let me define this. And at this point, the model says, uh, here it is. So, um, it's just trying to use some previously generated tokens here, and I track it here, and again, it comes here. So this pattern is high, four four one and fifty four Here, d six says wait. Actually, since this is on your w two end, leading them. Details information to make more logical steps.
+
+Class
+23:48:46
+
+So
+
+You
+23:48:53
+
+So, yeah, that's the visual I want to show. Some words, this is just very interesting to read. And that's about internalizing search. Uh, there are, um, lots of details the
+
+Class
+23:48:54
+
+And that's about internalizing search. Uh, there are, um, lots of details how to collect data, but the most difficult part is
+
+Class
+23:48:57
+
+observation before I wrap up this one is
+
+You
+23:49:05
+
+another interesting observation before I wrap up this final ticket is that, um, just because you're in the data collection process, you're not going to be able to we have less latent thoughts for simpler question and more latent thoughts by for complex questions,
+
+You
+23:49:07
+
+The model will learn it happy. So what that means is that at inference time, when we have a simple question, the model would not really explore lots of different
+
+Class
+23:49:08
+
+is that, um, just because you're in the data collection process, we have less latent thoughts for simple question and more latent thoughts by four complex questions, the model would learn it that way. So what that means is that that means is that inference, then they ask a similar question, the model would not really explore lots of different questions or search for a longer time.
+
+Class
+23:49:14
+
+Dataset.
+
+You
+23:49:16
+
+For simple questions, they are less than dots, so the model and faster come up with is final to see what the answer.
+
+You
+23:49:22
+
+Knows to perform more search, extensive search try,
+
+Class
+23:49:27
+
+In fact, it's
+
+Class
+23:49:44
+
+So that's it. That's the final way that we can make our model to perform search and thinking and completion. And within all of this, one final thing I wanna
+
+Class
+23:49:55
+
+was showing thinking, but it was not showing anything. It was just saying thinking. So that part probably then the model is running some search at inference time,
+
+You
+23:49:56
+
+So that's it. That's the final way that we can make our model to search and teaching and completion. And you like all of this one final thing I want to share is that all this time combined. Again, For example, for the same question that I asked here, you saw initially the model that it was showing thinking, but it was not showing anything. It was the same thinking. So that part is probably when the model is running some search at inference time, making some verifier to figure out which direction or which direction
+
+You
+23:49:57
+
+of
+

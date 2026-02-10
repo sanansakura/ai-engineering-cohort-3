@@ -1,0 +1,2658 @@
+You
+22:46:15
+
+Hey, everyone. Welcome to big four. This week, our focus would be on thinking and reasoning models. A lot of the amazing stuff that we see or hear these days are all mostly covered by Zendesk because they are basically the most capable of handling that are, uh, availability.
+
+Class
+22:46:16
+
+Hey, everyone. Welcome to week four. This week, our focus would be on thinking and reasoning models. A lot of the amazing stuff that we see or hear these days are all or mostly powered by Amazon because they are basically the most capable telecoms that are, um, available.
+
+You
+22:46:18
+
+So we'll
+
+You
+22:46:30
+
+And then we'll talk, uh, about two main strategies to build business models. And another is training models we present.
+
+Class
+22:46:33
+
+And then we'll talk, uh, about two main strategies to build with anyone. One is in fairness time scaling, and another is, uh, training models with training capability. So for inferencer side scaling, their values
+
+Class
+22:46:47
+
+And we'll also talk about outcome reward modeling and process reward modeling plus reinforcement learning. And after that, we'll go over
+
+You
+22:47:01
+
+And we'll also talk about outcome reward modeling and process reward modeling, plus reinforcement learning, And after that, we'll go over approaches to an internalized step into the model. And finally, we'll explore deep research as a as an example of machine model and tools. And finally, we have project four, which is building a deep search light system. So this is our to be. What is everything about it? Infusion is for complex prompt prompts
+
+Class
+22:47:02
+
+And finally, we explore deep research as a as an internal of machine model and full use. And finally, we have project four, which is building a deep research light system. So let's start a week. What is a reasoning model? Think vision is for complex prompt prompts
+
+Class
+22:47:10
+
+So when, for example, somebody asks about a difficult fundamental question, it's easier if you start a step by step
+
+You
+22:47:17
+
+So when, for example, somebody asked about it's easier if you start step by step answering and figuring out different parts until we reach a final solution compared to
+
+Class
+22:47:21
+
+And that's the equation. So recent models are basically, but they are capable of doing
+
+You
+22:47:22
+
+recent models are basically still an elegant, but they're
+
+You
+22:47:29
+
+this tracing traces produced by the data. And it's typically modified, um,
+
+Class
+22:47:41
+
+we which are reasoning traces reduced by And it's typically multistep, um, reasoning, and it can be also multifactatic exploration. There could be the model might explore different kinds of reasoning. And then once the reasoning is over and once this kind of thinking is over, the model would start responding. So that's reason why I'm gonna talk more about that, but let's say something examples.
+
+You
+22:47:43
+
+And then once the reasoning is over and once it is kind of thinking is over, the model would, uh, start responding. So that's reason model, and we talk more about that, but this is some examples. Uh, most of the top companies that are provided
+
+You
+22:48:01
+
+And by default, you're having this four whole module, which is not your reasoning. Right?
+
+Class
+22:48:04
+
+So let's go and see some of these examples. This is the HAGP and by default, they are having this four o model, which is not everything model. If you could hear, there are a bunch of different models that we can choose from. And as you if you notice,
+
+Class
+22:48:14
+
+of these models are starting to go. For example, o three, o three pro, o four mini. These names are intended for me. I don't know, um, how why their name is like this. But, basically, anything that starts with o seems to be everything.
+
+Class
+22:48:20
+
+The ones that start date numbers like g p four o and the models here, g p t 454.1, these are not fitting models.
+
+Class
+22:48:36
+
+However, this time that, like, it also, um, describe it describe it as users iMessage. And this is more efficient than for reasoning, so it's fast and advanced reasoning. And then they have four mini high grade at coin. Again, there are some complexities here, but
+
+Class
+22:48:48
+
+Let me ask you a question like, um, counts from one to 10, and then tell me how long it took. It's just a a make up prompt. Let's see how he responds.
+
+Class
+22:49:00
+
+Alright. Coming from one to 10. One, two, three, four, five, six. That took about ten seconds. So you saw, it really started to answer my question. There was no thinking or no reasoning. And it's also a big sentence. It's it's if the answer is true because it was much
+
+Class
+22:49:02
+
+faster. They might have printed all this in probably less than a second, but it's still it's saying that ten seconds, which is not correct.
+
+Class
+22:49:12
+
+Partly because also there's some ambiguity in my, uh, prompt. It's not really clear if we want the model to act with the to to print those or, uh, basically, we want the model to print the time that generally if somebody counts if taken.
+
+You
+22:49:12
+
+See quick here, there are a bunch of different models that you can choose from. And as in if you notice, of these models are starting to go. For example, o three, o three pro, o four b. These things are a little bit I don't know how why they're naming it like this. But basically, anything that starts to go seems to be the reason why. The ones that start with numbers like g t four o and there are more models here, g t 4.5, 4.1, these are not using models. Then maybe that we show some reasoning capability as they respond, but they're not, uh, really, uh, specialized or trained for reasoning. However, it's not like for three. It also, um, describe it as users. And this is more efficient version for reasoning, so it's fastest at mass reading. And then they have four four mini high grade high coding. Again, there are some complexities here, but the ones that start the whole reasoning months. But now let's see what that means to present what they're thinking. Let me ask a question like, um, counts from one to 10, and then tell me how long it took. Just a a make up prompt. Let's see how it is. Alright. Coming from one to 10, one to three, four, five, six. That took about ten seconds together. So as you saw, it directly started to answer my prompt. There was no thinking or no reasoning. And it's also. It's it's if it can say it's true because it was much faster, the model but still it's saying that ten seconds, which is not correct. Partly because also there's some in my front. It's not really clear if they wanted model to have to print those or, uh, basically, you want the model to print the time that generally if somebody counts, they would take it.
+
+Class
+22:49:21
+
+Going to choose o four g just because it's faster. For enough, um, like, day to day tasks, and question that are more complex, I typically default to o three. And that's usually enough.
+
+You
+22:49:23
+
+Going to choose four four meetings because it's faster. For another, uh, like, day to day tasks, and questions that are more complex by default two or three, and that's usually enough. But if the task is day to day and I require moving to the
+
+Class
+22:49:30
+
+But if the task is very complex and require more reliable response, four three probably is usually better. By all three problems is usually better. But I guess, play long for now, so I don't like play that long. And, oh, for me, I don't use it often, but, um, and if they're task
+
+Class
+22:49:33
+
+again, if you're asked that you really don't want to get, you can just use it. Now I wanna use the exact same prompt and switch it over for me so we can compare.
+
+Class
+22:49:38
+
+Can we create a new tab? So you see it's thinking.
+
+You
+22:49:38
+
+So you say it's thinking. And if here are some reasons that are happening,
+
+You
+22:49:43
+
+basically, it's just, okay. So the user wants me to do this. Okay. The user wants me, and then he tell me. So we there was a part for 96.
+
+Class
+22:49:51
+
+So we thought there was a pause for nine seconds. And this is what reasoning models are. They think, and then they present based on my ask for request. And once they're over, once this nine second is over, they they they may start in the final result. Sandy says, it's Danny for me from up again.
+
+Class
+22:50:04
+
+Now this seems to be more and more So it seems to be working better than, uh, single pass for. Now if I do here, you would see the
+
+You
+22:50:05
+
+So it seems to be working better and, uh, single pass model. Now if I click here, you would see the
+
+You
+22:50:28
+
+Now, um, one thing to note is that is not showing the actual reason So it's not exactly what the model already have been thinking. It's it's a little bit different or rewarded. I don't know how they are, uh, rewarding or coming up with this explanation or thoughts. But it seems that they're not really showing the actual business
+
+Class
+22:50:29
+
+Now, to note is that open area is not showing actual reason increases. So it's not exactly what the model probably have been thinking. It's it's a little bit different or reported. I don't know how they're reporting or coming up with this explanation or thoughts. But since I do not really joined
+
+You
+22:50:34
+
+So
+
+Class
+22:50:37
+
+traces, actual tokens that the model generating part of its thought process or realign. So before I switch to the other example, let me also use the exact same but using Radmass model like o three.
+
+Class
+22:50:42
+
+Try different strategies. So let's see if that's really the case.
+
+You
+22:50:44
+
+and see if there is any my expectation is that it would take longer because it's more data model and if they decide to think more and the case.
+
+You
+22:50:51
+
+Alright. It it it seems it's taking longer, and, uh, there was a little more teaching but let's see what happens.
+
+Class
+22:50:52
+
+Alright. It it It seems it's taking longer and, uh, there was a little bit more thinking, uh, let's see what happens.
+
+You
+22:51:03
+
+And just thinking more and reasoning more over how to properly answer my prompt. And, again, that's why there are more efficient models out there, like, before in case you want, uh, you don't want to take take full on.
+
+Class
+22:51:08
+
+Again, it's just thinking more and reasoning more, aware how to properly answer my prompt. And again, that's why there are more features added like before in case you want, uh, you don't want to wait wait too long. Here, you may I mean, an adaptation for especially for simpler questions. If it doesn't really require reasoning, it's not worth it.
+
+You
+22:51:12
+
+To switch more data every single month. So since it's still thinking, and then now it's with the code and probably switch faster. Now.
+
+Class
+22:51:18
+
+Now. Alright. So it's not a matter and then it says the time is this, which is
+
+You
+22:51:27
+
+Update, but now the defenses that it took one minute for this model to think the model generated more points, and therefore, it was more, um, business for the model to handle this one just because it took more time for the model to think and generate tokens.
+
+Class
+22:51:28
+
+So that's
+
+You
+22:51:44
+
+This is basically the reasoning model. And then, again, similar for, uh, uh, So here, they have cloud corpus four, and then that's a I mean, kind of reasoning model too.
+
+You
+22:51:47
+
+Then
+
+Class
+22:51:48
+
+So this is basically everything on it. And then, again, similar for, uh, uh, uh, Got my topic. So here they have, uh, cloudtop as four, and then that's a a high degree kind of reasoning model view. So now there are lots of different frameworks. If you come to this Clearboard that is a in in iguan, which has this ranking of all different models.
+
+You
+22:52:21
+
+this is also everything. Right? Then their documentation here. And then as they are talking about context window and the
+
+Class
+22:52:21
+
+Also, next one is o three, which is also a reason model. Now this one, Chachi p four o, is ranked third. It's not everything model. So it's it's very impressive that it's, um, it's something that many other everything models here and it's been better. Then we have Graph four, and Graph four by Xx AI is also a tie. It's ranked third. Then this model is also every anywhere. I think their documentation here. And then as they are talking about the context window and the
+
+Class
+22:52:36
+
+it, um, it has the same feature. So it's the same model. Now, um, next thing I want to show here. Let's go to the default. So x c o g g t 4.5. That's not everything. So it's still expressive.
+
+You
+22:52:47
+
+it, uh, it has reasoning feature. So it's a reasoning one. Now, um, next thing I want to show here, let's go to the. So next block, g p 4.5, why. So it's still it's impressive, and it's fine. Three. So 4.5 photo and block four color, uh, high. Four is between, but this one up. Now this one is interesting. This is, uh, k two, and this is, uh, released recently. And what is interesting about this product is that, um,
+
+Class
+22:53:04
+
+Now this one is interesting. This is, uh, Kineke two, and this is a company called Moonchat, released it recently. And what is interesting about this title is that, um, while company find it is not as big as common as Google or OpenAI probably, but this model rank five such a short time. So it's very impressive. It's been very good. And also it's not everything model. So is it their website? Um, um, and, um, they're they're saying that non picking models. So, um, this model is also super impressive. And if you had the benchmarks and comparisons at different
+
+You
+22:53:06
+
+but this model ranked five in such a short time. So it's very impressive. It's been stable. Also, it's not a recent model. So this is their website, um, And, um, they're they're saying that non thinking models. So, um, model is also super interesting. And if you look at the benchmarks and comparisons at different tasks like agent data and coding,
+
+Class
+22:53:14
+
+So, um, as I
+
+Class
+22:53:21
+
+again, one more thing I want to share is that another interesting thing that this team is using is this license. It's my fight.
+
+You
+22:53:21
+
+Now, again, one more thing I wanted to share is that another interesting thing that this need to do is this license is modified MIT.
+
+You
+22:53:33
+
+And
+
+Class
+22:53:34
+
+Then we have, uh, cloud office one four and Aflac is. Is also a Chinese company. And
+
+Class
+22:54:02
+
+on this
+
+Class
+22:54:08
+
+many features they're saying how they are building and training this model. So, um, it's it's good to read this.
+
+Class
+22:54:14
+
+And
+
+You
+22:54:25
+
+hyperbolic with this one. So let me paste this here. And also I'm going to increase this because now the model is thinking and presenting, so there's a lot of focus, uh, involved the model needs to generate before it reaches the final answer. So let me just change it to 10,000.
+
+Class
+22:54:27
+
+So let me paste this here. And also I'm going to increase this because now the model is thinking and presenting. So there's a lot of focus, uh, involved, and the model needs to generate before it reaches the final answer. So let me just change it to 10,000.
+
+You
+22:54:29
+
+With that model, basically, quite a bit and reason quite a bit. And now let me send this.
+
+Class
+22:54:37
+
+Maybe I have to refresh.
+
+You
+22:54:38
+
+Maybe I have to refresh.
+
+Class
+22:54:50
+
+Alright. So now it says this within. If I click here, basically, it's showing the actual reasoning phrases, which is which is awesome. These are yeah.
+
+You
+22:54:51
+
+Alright. So now it says it's within. Anybody could hear basically, it's trying to actual resume trace, which is which is awesome. These are they're
+
+You
+22:54:52
+
+data
+
+Class
+22:54:53
+
+Phrases, which is which is awesome. These are the exact tokens at the model it's generating during its using process. It says we generate the numbers. It's
+
+You
+22:55:28
+
+And finally, this has to do this ring. So, uh, there's some code here, but the notes
+
+Class
+22:55:30
+
+And finally, it decides to be the string. So, uh, there's some code here, but no SSC nine is running in sandbox.
+
+You
+22:55:52
+
+the time module, Python time module, and date time. So okay. This.
+
+Class
+22:55:57
+
+The time module, Python's time module, and take time. So And finally, it's over and says counting from one to 10. It's actually counting, and it says, time taking approximately this. Um, and finally, it says, as an AI process tasks near the instantly, notice not counting required. So I think I would rate it
+
+You
+22:56:19
+
+So have might have decided to, uh, use it for finding a topic, the model that is, uh, less biased the same certain assets.
+
+You
+22:56:41
+
+K. We continue our discussion, and we'll now learn how any really use using mods.
+
+Class
+22:56:46
+
+Hey. We'll continue our discussion and we'll now learn how can you really build using models. And there are different approaches and different techniques, but they can be categorized into big buckets. One method is through inference time saving, and basically the idea of all the approaches
+
+You
+22:56:46
+
+So One bucket is through inference time scaling and basically the idea of all these approaches.
+
+Class
+22:56:58
+
+So this way, we are not really catching the parameters, but we are not training it.
+
+You
+22:56:58
+
+So this way, you're not really pushing the LMM's parameters where they are not training it.
+
+Class
+22:57:05
+
+So the model becomes scalable within. The other bucket is training between.
+
+You
+22:57:12
+
+Approach. They are scaling the the training part. They are spending more time to continually training the element,
+
+Class
+22:57:21
+
+They are scaling the the training object. They are spending more time to continue training the element, so that element becomes scalable. And we we go about all these different approaches, um, in, um, the future lectures. So, uh, let's let's focus on inference on this today. And, again,
+
+You
+22:57:31
+
+So for now, let's let's focus on different centers today. And again, mentioned, the idea of inference time scaling is to, um, teach the model or the other model to reason to giving it more inference than compute. And the first approach that we now is approach it relying on the prompt engineering technique that we covered previous. And in particular,
+
+Class
+22:57:37
+
+And the first approach that we now is obviously relying on the prompt engineering technique. That we covered previously. And in particular, chain of thought prompting is very powerful for this use case. For example, let's say, without any chain of thought routing, if you ask a model, a question like a map question,
+
+You
+22:57:52
+
+There is no, um, basically LMM is not expected to produce a multistep reasoning and how it reaches the point.
+
+You
+22:58:10
+
+It can add an example to the context in the context of the the model or in this one. And it can show how to answer for a similar question. For example, we had a question here which has a similar type and style to our actual question. So we have here dot two boxes with three balls each. How many balls are there? Two times three eight equals six. So comma, six dot.
+
+Class
+22:58:14
+
+there might produce something like the final answer to me. There is no, um, is not expected to produce a multistep reasoning and how it reaches between. It might be already up to 20 or something like dance 30 is 20. Now if you shot, uh, panoptic technique, it can add an example to the context in the context of the the model or in its font. And it can show how to answer for a similar question. For example, we have a question here which has a similar type instead. To our actual question. So we have here dot two boxes with three balls each. How many balls are there? Two times three equals six. Six. So comma six dot. So this is the example that we are showing it. And now we say now solve this, and then here is a real question I have.
+
+Class
+22:58:22
+
+By attending multiple examples, like, more, um, more like
+
+You
+22:58:22
+
+By attending multiple examples, like, more, uh, more like
+
+Class
+22:58:39
+
+And the next
+
+You
+22:58:55
+
+So
+
+Class
+22:59:01
+
+So knowing that the model would follow a certain format, uh, always once there is any tense, it has dot so comma financer dot.
+
+You
+22:59:12
+
+Now, um, just to see this, uh, let's try this Lamat three one two three d. Then I have the same question here that you have. Let's see if it would, um, up to the financer or it would also do some reason.
+
+Class
+22:59:12
+
+Now, um, just to see this, uh, let's try this Lamont three two three. Financer or it would also do some reason.
+
+You
+22:59:26
+
+And many of the data examples in this data set might have reasoning choices and, uh, multistep logics. So models might still generate some, uh, intermediate steps to solve these problems, but let's see.
+
+Class
+22:59:26
+
+And many of the data examples in this dataset might have reasoning phases and multistate logics. So these models might still generate some, um, intermediate steps to solve these problems, but let's see.
+
+You
+22:59:31
+
+Okay. So it's obviously failing.
+
+Class
+22:59:35
+
+Okay. So it's obviously fitting. And it said there are three red bags with apples, which is not what I we wanted.
+
+You
+22:59:37
+
+Failing. And it says there are three red tags before that, which is not quite a pretty one. Now let's now copy this and see if it makes any difference.
+
+Class
+22:59:39
+
+Copy paste this as if it makes any difference. And I intentionally set it at this three red bags, so it
+
+You
+22:59:56
+
+I don't know what's happening with me.
+
+You
+23:00:04
+
+Refresh this. Okay. I don't know.
+
+Class
+23:00:06
+
+Now let me print this. Uh, this is the exact same question that we had, but now we are showing the one antenna. Let's see if it works or not. I don't know what's happening with me. Refresh this. And they say it. I don't need to do that.
+
+Class
+23:00:11
+
+Oh, maybe it's a cut off piece.
+
+You
+23:00:23
+
+Alright. Okay. Great. So now it's it's doing better. It's not exactly following the example that I showed you.
+
+Class
+23:00:29
+
+Alright. Okay. Great. So now it's it's doing better. It's not exactly following the example that I showed. Says, therefore, there are 29 items in total.
+
+Class
+23:00:35
+
+Now back here
+
+You
+23:00:38
+
+At least now it's doing some calculations, and then it's getting into the final answer and says, therefore, there are 29 apples in total. So basically this way, we can force or push another two reasons, especially in less data than models. Now back here, we saw few shots zero counting by showing some examples of zero
+
+Class
+23:01:10
+
+I think And basically, the audio is coming from the speaker language large language models are zero track speakers.
+
+You
+23:01:25
+
+And, basically, the value is coming from speaker, language large language models or zero chat presents. And but they're showing they have a very comprehensive, uh, detailed evaluation of different techniques. What they're saying is that all we need to do for zero shot ten of dot com is to add less thing step by step to our prompt. So this way, you're not showing the model examples on how to reason or how to think. But they're just asking you to do so. And it can work in practice because these models have learned from each and take up. That's
+
+Class
+23:01:25
+
+Techniques. And what they're saying is that all you need to do for zero shot channels are prompting is to add a listening step by step to our prompt. So this way, they're not showing the model of examples on how to reason or how to think. But they're just asking you to do so. And it can work in practice because these models have learned from each data that's built of times when
+
+You
+23:01:40
+
+If you do few shot,
+
+Class
+23:01:44
+
+It's not only
+
+Class
+23:01:51
+
+features showing how to present by including the the details in Azure and your media sets. But there's also here showing that
+
+Class
+23:02:00
+
+So again, there are lots of
+
+You
+23:02:01
+
+So again, there's a lot of, uh, details and evaluation, which is very nice to do.
+
+Class
+23:02:03
+
+understand
+
+You
+23:02:13
+
+So this is, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, a different data handling like this and think of this. It's
+
+Class
+23:02:14
+
+So this is, um, prompting and, you know, chain of our prompting. There's a different way we can visualize this and think of this. Basically, when we don't have a. We are going
+
+You
+23:02:19
+
+Let me add COB, let's say, through prompting.
+
+You
+23:02:23
+
+Is going to change it like this. Now the input is going to produce some thoughts, and these are intermediate
+
+Class
+23:02:24
+
+Let me add c o t. Let's say true counting. This is my the input is going to produce some thoughts and these are intermediate thoughts. Dot one, dot two, dot n.
+
+You
+23:02:31
+
+plus one dot two, plus 10. And then finally, after that 10, the model would just wrap it up and generate its final test. So these are all, uh, intermediate reasons for
+
+You
+23:02:35
+
+two times seven equals 14,
+
+Class
+23:02:36
+
+Then finally, after dot 10, the model would just wrap up and generate its final answer. So these are all, uh, intermediate reasons for steps. For example, in one. Two times seven, equal 14, we start two, and so on. And then the final answer is still.
+
+You
+23:02:42
+
+In practice, each part might have a text show description as a for example, can start with something like
+
+Class
+23:02:47
+
+There is
+
+You
+23:02:48
+
+the reason I'm showing this visualization because I have switched to other different time scaling techniques.
+
+You
+23:02:58
+
+So that's. Next, we're going to switch to a different technique. So the second approach is called self consistency.
+
+Class
+23:03:00
+
+it's easier to say to compare them and understand how they are improving, uh, upon each other. So that's serial prompt. Next, we are going to switch to a different technique. So the second approach is called self constancy. Powerful, um, way of, um, scaling your clients on mute.
+
+You
+23:03:00
+
+And it's also very powerful, um, way of, uh, scaling in front of you.
+
+Class
+23:03:04
+
+In different temps being used. For example, um, in some architectures or loss is called power sampling.
+
+You
+23:03:09
+
+So all these are different, and the idea is very simple.
+
+You
+23:03:16
+
+The audio is instead of spending our compute budget on reasoning phrases or generating basically, generating more
+
+Class
+23:03:19
+
+Basically generating more intermediate steps. Instead, the sample in points from the element and then BPS.
+
+You
+23:03:30
+
+and the client are signing and generate four full responses and then pick the best one. Basically, we have control full control over, uh, our spending budget, and the budget.
+
+Class
+23:03:30
+
+And basically we have control full control over, uh, our display budget, compute budget.
+
+You
+23:03:41
+
+Basically, the more they increase the hand, you're sending more tokens at, uh, generate time difference now.
+
+Class
+23:03:44
+
+Basically, the more you increase again, if you are sending more tokens at, uh, generic. Responses, better overall response. And calibrating and think of visualizations is
+
+Class
+23:03:53
+
+And and then pass this one as their final output. We'll talk about how we can really
+
+Class
+23:03:59
+
+So
+
+Class
+23:04:07
+
+Now there was this speaker
+
+You
+23:04:08
+
+Now there was this
+
+Class
+23:04:12
+
+And
+
+You
+23:04:20
+
+So now instead of having one, um, branch of chain of thought or having
+
+You
+23:04:22
+
+So
+
+Class
+23:04:24
+
+So now instead of having one, um, branch of chain of thought, or having just set on CSS to it out channel thought which is like this, we basically combine this tool, we get something like this.
+
+Class
+23:04:31
+
+And in parallel, um, generations. So after each branch has
+
+You
+23:04:32
+
+And in total, we have n parallel, uh, generations. So after each branch has its own variation and generate
+
+You
+23:04:44
+
+And
+
+You
+23:04:55
+
+And here, you can see the color face of this three d. It's just one, um, one generation, which is other six.
+
+You
+23:04:57
+
+Regardless, no matter what is the reason that. And then they have
+
+Class
+23:04:59
+
+one one generation, which is always fixed, um, regard no matter what is the rendering path. And then they have set constituency, which is blue. So you can see all these different domains and different benchmarks.
+
+You
+23:05:08
+
+again, there are lots of evaluations and interesting, uh, details about it. But
+
+Class
+23:05:09
+
+But Now
+
+You
+23:05:18
+
+the last of evaluations and interesting, uh, detail about it. But now the main question is how you really take this response. So let's talk more about that. There are two main ways to take the best response. One is majority working and the other is using.
+
+Class
+23:05:18
+
+let's talk more about that. There are two main ways to pick the best response. One is majority voting, and the other is using.
+
+Class
+23:05:27
+
+Basically, idea behind majority voting is that once we have these end generations from the middle,
+
+Class
+23:05:36
+
+You can simply compare them and pick one of them that the majority agree about different options.
+
+Class
+23:05:37
+
+For example, here, we have four generations. The first generation has some channel file interest
+
+You
+23:05:39
+
+You can simply conquer them and pick one of them that the majority agree about their final response. For example, here, you have four generations. The first generation has some chain of thought implemented steps and then it says so 29. So
+
+Class
+23:05:52
+
+So we just see what what other generation does
+
+You
+23:05:52
+
+So we just see what what other generations are saying.
+
+Class
+23:06:50
+
+Hey, everyone. This week, compared the first so and then we do majority voting. But imagine a different domain. For example, if it's, uh, writing. It's a writing task. Basically, the prompt says, hey, write a an article or write a lot regarding this regarding this topic. In those cases, there's not really a a correct or incorrect answer, and comparing them is more subjective. And it requires real humans to say which answer is there and which answer is worse.
+
+You
+23:06:50
+
+Hey, everyone. Four. This week, I'll compared the first so and then we do majority voting. But imagine a different domain. For example, if it's, uh, writing. It's a writing task. Basically, the prompt says, hey. Write a article or write a blog regarding this regarding this this topic. Those cases, there is not really a a correct or incorrect answer, and comparing them is more subjective. And it requires billions to say, b chance is better and b chance is worse.
+
+Class
+23:06:59
+
+They are probably correct and relevant. It's just certainty that one of them might be better than another. So for those
+
+You
+23:07:04
+
+Because all of those, uh, generations, for instance, were writing tasks, are probably correct and relevant. It's just certain details that one of them might be doing different on it. So for those, uh, domains, yeah, method that I use to take this responses to use every part one.
+
+You
+23:07:06
+
+And that's what we have here.
+
+Class
+23:07:21
+
+And that's what we have here. We saw reward model in previous sessions in previous weeks And then we saw that how these models are trained and used to post train LLM. Let's just briefly review them. Basically, um, trained on errors, prompt, and responses, and it's taking a lot of producing the score. That how this response, uh, is scored for that particular prompt. And the way that is reported is
+
+You
+23:07:29
+
+With them. Every reward model is basically trained on pairs of prompt and responses. And it's taking a look producing the score at how this response is a score for that particular account. And the data is one of those bar in train is generally the manually collect data and score. So let's say we have thousands of prompts, and for each prompt, we have lots of different answers. So some humans see
+
+Class
+23:07:30
+
+So let's say you have thousands of prompts, and for each prompt, you have lots of different answers. So some humans see and look at these answers and score them. So basically, you have
+
+Class
+23:07:47
+
+So
+
+Class
+23:08:04
+
+and then we show that answer as a final answer to the user. So basically, this setup allowed us to expand to different domains. So it could be writing, could be another task as long as we have a robot that is trained on similar data.
+
+You
+23:08:05
+
+these. So basically, this setup allowed us to expand to different domains. So it could be writing, could be another task. As long as we have a one model that is trained on similar data, we can just use
+
+Class
+23:08:11
+
+One
+
+You
+23:08:25
+
+You can think of this decoding, basically the
+
+Class
+23:08:28
+
+Now the next thing that I wanna talk about is three ops. You can think of this decoding, basically, the text generation. This is becoming more like a search problem.
+
+Class
+23:08:29
+
+Basically, we have this input and output, and we can easily control, uh, like, the
+
+You
+23:08:39
+
+Again, you're not being hit here, but it's just just a look of it. It's becoming more like a.
+
+Class
+23:08:40
+
+And
+
+You
+23:08:40
+
+And
+
+Class
+23:08:54
+
+generate some different media parts. Then we can, let's say, somehow scored in. We pick the best one.
+
+You
+23:08:54
+
+generate some intermediate parts. Then you can let's say, somehow scored in. You pick the best ones and continue with this generation process.
+
+Class
+23:09:07
+
+Stuff, we can continue the generation and add one more touch. From this time, we can generate four more tasks because it's dark green, meaning that it's, uh, since it's a high potential to reach the a good answer. And again, from here, we can generate four more tops in parallel.
+
+You
+23:09:19
+
+We would just explain on that. So basically, the idea is just to, uh, apply some more complex search algorithm and expand history, um, as we move forward dynamically. And then finally, the best path
+
+Class
+23:09:27
+
+So basically the idea is just to apply some more complex stretch algorithm and expand history. Uh, as we import dynamically. And then finally, the best path with the highest, uh, score, let's say, it would be it would form the final output. So basically, it's not too different. At least it's three of us from, um,
+
+Class
+23:09:28
+
+it
+
+You
+23:09:30
+
+basically, it's not too different at least these three of us from, uh, just see what you did.
+
+You
+23:09:31
+
+It's more focused on efficiency because basically what we can do is we can just generate we can generate more
+
+You
+23:09:37
+
+samples in COTs and services. We can have 10 branches. And Thundermaker is
+
+You
+23:09:37
+
+also
+
+Class
+23:10:02
+
+So dropouts is more focused on efficiency.
+
+Class
+23:10:11
+
+So and again, there are more a lot more approaches after three dots and they all are treating this problem as a search problem.
+
+You
+23:10:11
+
+So and again, there are more a lot more approaches after three of us, and they want about treating this problem as a search problem.
+
+You
+23:10:18
+
+And it's a great paper. I I strongly encourage everyone to take a text paper. It
+
+You
+23:10:20
+
+evaluations.
+
+Class
+23:10:29
+
+Can improve accuracy of, um, in certain domains like math. For example, this red is basically showing parter sampling.
+
+You
+23:10:30
+
+Rate is basically showing par example and then applying different methods like measure
+
+Class
+23:10:56
+
+Highest the best path. And then they're also having this do the head search. I don't know if this better
+
+You
+23:10:58
+
+And they just be doing this. And finally, once we have the final answer, they would just show the highest the best the best, basically, the highest it is. And then they're also trying to do the head search. I don't know if this data was basically, this new head search was proposed in some paper. I don't know if this
+
+Class
+23:11:14
+
+it for a few more sets. And then in that, if it's if it gets somewhere, it's not, they would just get back to this to this part. Different, um, ways of handling this text generation or text decoding as I said.
+
+You
+23:11:26
+
+So, yeah, I think this is this is an amazing I mean, research is to take a look at it. So these are the event over, um, couple different approaches par sampling different days of searching and three of those, and it's our more advanced searchings.
+
+Class
+23:11:29
+
+Different ways of searching and tree of tasks, and we saw more advanced searchings. All these are basically ascending up a few budget in part of for example here, we have a three parter.
+
+You
+23:11:29
+
+But all these are basically spending a company budget in parallel. For example, here, we have a three parallel back.
+
+You
+23:11:37
+
+Here is that we sequentially try to extend our computation. And what that means is that
+
+Class
+23:11:38
+
+Other approach that we have is called sequence. And the idea here is that we essentially try to extend our computation. And what that means is that
+
+Class
+23:11:43
+
+whatever the context becomes to the element, it can also include So it includes And then we get the response.
+
+You
+23:11:49
+
+whatever the context it comes to, we can also include channel dot fronting, so it includes retained, and then we get a response. And now you can pass the response and the prompt to the same element or it could be a different element, but it's the same element. And it has to revise or improve the response. And you have a fixed
+
+Class
+23:11:51
+
+And we ask you to reduce or improve the response. And you have a fixed number of numerations, and say sample k is equal to two.
+
+You
+23:11:54
+
+sequentially, we are sequentially sampling and keep revising, and
+
+Class
+23:11:54
+
+So we sequentially we are sequentially sampling and keep revising and improving data.
+
+Class
+23:12:00
+
+And then the final answer, the final output of the element will be the final answer. Basically, the very, uh, simple suitable here, basically, for this fixed k.
+
+You
+23:12:01
+
+So basically, we have a very, uh, simple suitable here. Basically, for this fixed k,
+
+You
+23:12:06
+
+k times, it will see much
+
+Class
+23:12:08
+
+This is also another way that you can
+
+You
+23:12:24
+
+And I believe every second
+
+You
+23:12:42
+
+Also, there are some other papers that are suggesting that sequential sampling is better for, um, easier for medium questions
+
+You
+23:12:52
+
+more complex questions be more difficult. And the reason for that is intuitively is because, um, you know, for simple
+
+Class
+23:12:54
+
+Also there are some pipers that are suggesting that sequence of sampling is better for easier or medium questions. Like specific questions get easy or medium difficulty. And power sampling must be might be better for questions complex questions with more difficulty. The reason for that is it's really really difficult because, um, you know, for simple and, like, easy and medium difficulty questions, So just, um, it's
+
+Class
+23:12:59
+
+Whereas in complex
+
+You
+23:13:03
+
+but
+
+You
+23:13:09
+
+And
+
+Class
+23:13:10
+
+So
+
+Class
+23:13:11
+
+if we try different ideas and few of them may be, uh, the right direction.
+
+You
+23:13:23
+
+But the core idea behind difference time scaling is just to spend more time generating tokens. Uh, let me see here.
+
+Class
+23:13:26
+
+It's basically spending more time generating more tokens, happy for
+
+You
+23:13:30
+
+I didn't cover my card. It's one of a different way to
+
+Class
+23:13:31
+
+space. I didn't cover my colors here. It's one of the different day to, um,
+
+Class
+23:13:35
+
+to
+
+Class
+23:13:43
+
+that are using earlier days were very helpful, but there are a lot of other examples for different signs.
+
+You
+23:13:50
+
+Hey. There's something you learn about different base of.
+
+Class
+23:14:11
+
+In different, um, thinking or directions, and then we pick this.
+
+Class
+23:14:15
+
+Actually more complex, um, ways of using a tree and searching over it.
+
+You
+23:14:15
+
+In different, um, thinking or durations, and then we pick the best one. Because it's a more complex, um, phase of building a tree and searching for it.
+
+You
+23:14:23
+
+And continue branches that loop promising.
+
+Class
+23:14:25
+
+Is not optimal, and continue, uh, branches that look promising. And there are lots of different
+
+Class
+23:14:29
+
+And there are lots of different But at the end of the day, it's a It's basically before maturing. You let the model to think in different ways, different generation, generated thoughts.
+
+Class
+23:14:43
+
+But all of the networks are basically, um, techniques at inference time. We are just trading off compute at inference time.
+
+You
+23:14:58
+
+Now
+
+Class
+23:14:58
+
+Now
+
+Class
+23:15:13
+
+effective. And again, there is a trade off of this can be also combined, um, for instance, you can combine, uh,
+
+Class
+23:15:27
+
+So the first thing that we wanna do is train VCSO data. We saw how we can use
+
+You
+23:15:27
+
+But this is a start focusing on different techniques to to actually train gain that sort of capability. So the first thing that I want to discuss is training video
+
+Class
+23:15:39
+
+CODPunking previously to for the model to generate data sets, but the model itself is not developing that. So here, the idea is what if we continue training the element and providing the serial data? Basically providing the data which has answer.
+
+You
+23:16:13
+
+Because now this model is generating intermediate steps. So what that means is that you're spending more
+
+You
+23:16:18
+
+Now
+
+You
+23:16:36
+
+So, um, let's see what the idea is. Basically, I'm not thankful the data, but, um, basically, this is their the overview of the method.
+
+Class
+23:16:43
+
+Is it's more like a mechanic to to generate something. So, um, let's see what I get. It's Basically, I'm not going through the hair, but, um, basically, this is their overview of their method. So what I'm saying is that we have this language model or LM, and it's not initially capable of generating different datasets. So what we can do is first we can, um, try prompting the next see if prompting which we saw previously.
+
+You
+23:16:43
+
+So what they can do is first, we can, um, try prompting the COC prompting which is up previously.
+
+Class
+23:16:57
+
+So once we once we see this, we can easily identify better answers for this quite well. Because let's say it's it's
+
+You
+23:17:18
+
+Now this along with the original question will form one example of our training data. And once we have a bunch of examples of, uh, for training data, now we can start finding this. So, um, let me go back to our, uh, lecture.
+
+Class
+23:17:18
+
+If the finalizer is right, then now we have some rational or human data sets. Now this along with the question, we form one example of our training data. And once we have the bunch of examples of, uh, like, in this format for our training data, we can start finding music at a hundred second. So, um, let me go back to our lecture. Data.
+
+You
+23:17:37
+
+And, um, again, we would use the new rational answers to iteratively find you in this segment.
+
+Class
+23:17:41
+
+Answer pairs to iterate to be fine tuned the same. So basically, we just, um, distracting the model. It keeps getting better and better at generating intermediate steps.
+
+You
+23:17:55
+
+For the next round of training. So, um, as a to collect your data,
+
+Class
+23:18:00
+
+Set is to, um, introduce a special commands and then train the other.
+
+You
+23:18:08
+
+In order to distinguish between these two, we can define
+
+Class
+23:18:14
+
+That it can specify when these specials are being started and in it. For example, we are using things like distinct tag or a
+
+Class
+23:18:23
+
+Yes. You're using Scratchpad. So basically for a question like this, first
+
+Class
+23:18:40
+
+We would close this this pack this thinking, um, process using a special token. And after that, this many produces that final obvious ones. So basically, this is the format of the data that we create to train our model. And, um,
+
+You
+23:18:41
+
+this pack, this thinking, um, process using the special token. And then after that, it's spinning produces that final, uh, business. So basically, this is the format of the pickup that we create to China. And, um, and most reason what they do have is they do have a special tokens for thinking. They're just mainly different.
+
+Class
+23:18:43
+
+different. For example, here, if you choose a really model,
+
+Class
+23:18:46
+
+organizer, I don't know if you're handy because most of them are close source except
+
+You
+23:19:03
+
+Now if you put something inside this, like, uh, I am start, uh, or, you know, hi. You will see that this becomes one token. I since it's a default term, it becomes one token.
+
+You
+23:19:06
+
+This
+
+You
+23:19:22
+
+Now let's see if they are using a Scratchpad. No. Um, what they are using is this thing. Basically, if you have this, um, think, it's just one token, and this is the token ID. And I think this would be also another way to decide. So
+
+You
+23:19:25
+
+it has it is, uh, 128798 and then I have 6799.
+
+Class
+23:19:29
+
+Now if we put something inside this like, um, I am start, uh, or, you know, hi. You will see that this becomes monochrome, high. Since it's a meaningful term, it becomes monochrome. Tokens here. And in these studies, For this two. Now let's see if they are using a scratch pad. No. Um, what they're using is this thing. Basically, if you have this, um, think, it's just one token, and this is a token. And I think this will also another token with this ID. So if I it is, uh, 128798, and then add this becomes 790 So these two tokens become those special tokens that are using to, um, to basically build it
+
+Class
+23:19:31
+
+a
+
+You
+23:19:32
+
+The
+
+You
+23:19:34
+
+So
+
+Class
+23:19:38
+
+So
+
+Class
+23:19:57
+
+Now by doing this, DLL would adjust these parameters. So it, uh, adapt to this new distribution of views, meaning that now the element would learn to generate this thing or describe the special tokens.
+
+You
+23:19:58
+
+And then
+
+Class
+23:20:16
+
+And this is perfect because uh, now basically by following this
+
+You
+23:20:17
+
+And this is perfect because, uh, now basically, by following this start to collect data,
+
+You
+23:20:19
+
+start to collect data, it's basically fine tuning this element to generate rational. It will end up in the model, take the developing increasing.
+
+You
+23:20:44
+
+Reason model really. But still, we ask a question like, you know, think about how long it takes to go to moon from San Francisco by what? I believe you may use some, um, some sort of, um, intermediate steps before before concluding or before coming up with the financing.
+
+Class
+23:20:46
+
+traces. For example, if you go to JPG, just keep their photo, which is not the reasoning model, really. But to say if we ask a question like, um, you know, think about how long it takes to go to moon from San Francisco by walk. Believe it may use some, um, some sort of, um, intermediate steps for before concluding or before coming up with the financing. Introduce. So this is exactly what it's
+
+You
+23:21:24
+
+So all I wanted to say is that even models that are not advertised as we think, they've been trained on lots of datasets, lots of, uh, examples in their dataset. And those examples, a lot of them nowadays are having these intermediate steps within them. So the model learns to generate datasets. So that's that's the first approach, training the skill team to get the model that can be the reason. So now let's move to the next technique. Alright. The next technique is RMB provide model.
+
+You
+23:21:27
+
+But let's understand what what that means. Besides that, most of these meta
+
+Class
+23:21:29
+
+So all I wanted to say is that even models that are not advertised as reason they've been trained on lots of datasets, lots of, uh, examples in their dataset. And those examples, a lot of them nowadays are having these chain of thought intermediate steps within them. So the model learns to generate these steps. Um, so that's that's the first approach, training with So now let's move to the next technique. Alright. The next technique is RLMiT recorder. But let's understand what what happens. Beside most of these, uh, methods or training a model of bit resync capability, they
+
+Class
+23:21:38
+
+Now this
+
+Class
+23:21:42
+
+is kind of, which we saw at first time.
+
+Class
+23:21:50
+
+And we just generate multiple outputs from this element for the same prompt.
+
+You
+23:21:53
+
+Now it's equivalent in the training is that when we continue finding this element in some methods,
+
+Class
+23:22:04
+
+To
+
+You
+23:22:05
+
+basically, we just continue training the development based on this final data that we can generate before training, and then we
+
+You
+23:22:13
+
+So that's that's the idea of training. Basically, I just, um, we're just trying to
+
+Class
+23:22:15
+
+So that's that's the idea of training. Basically, you're just, um, we're just trying to continue training
+
+Class
+23:22:29
+
+So that's idea.
+
+You
+23:22:29
+
+So that's how this process works in the previous features.
+
+You
+23:22:36
+
+And this thing we can follow the same very similar idea to continue training gap and between of the intermediate sets.
+
+You
+23:22:45
+
+And we have everybody. We talk about how to do this webinar.
+
+Class
+23:22:46
+
+And we every
+
+Class
+23:22:54
+
+And then we use some
+
+Class
+23:23:11
+
+which
+
+You
+23:23:17
+
+So, um, the main question, how are you going to rebuild this?
+
+Class
+23:23:19
+
+can generate responses. So, um,
+
+Class
+23:23:20
+
+the main question is this regarding how are we going to rebuild this?
+
+Class
+23:23:29
+
+And the second
+
+Class
+23:23:38
+
+And then the data that we have is in this format. We have prompt. We have some intermediate steps to generate by the element. And also, um,
+
+You
+23:23:43
+
+So these are already
+
+Class
+23:23:51
+
+And then we need to also label this. The label is basically saying that, um, how accurate or how good the final answer is.
+
+You
+23:23:53
+
+enforce the legals. The legals basically saying that, um, how accurate or how good the final answer is. For example, in this case, if it's accurate, let's say, a mathematical question.
+
+Class
+23:23:55
+
+We
+
+You
+23:23:55
+
+Answer.
+
+Class
+23:24:14
+
+And the difference basically is, in certain ways, we can call it. In certain ways, like, mathematical
+
+You
+23:24:17
+
+To train this model. And the different data sets,
+
+Class
+23:24:30
+
+called verifiable tasks, meaning that we we can easily, um, verify the output. So we can, um,
+
+You
+23:24:30
+
+in
+
+Class
+23:24:46
+
+that's all we need for data preparation.
+
+You
+23:24:47
+
+So that's all we need for data operation. And this will generate using element, and then I'll get the final answer.
+
+You
+23:25:01
+
+Our people just basically the question or the prompt, the sequence of parts, or these in from the data steps, and the final answer. And the label is basically the score that we assign.
+
+Class
+23:25:03
+
+Task. Now And the final answer, the label is basically just quietly assigned to each of these inputs.
+
+Class
+23:25:06
+
+And the last
+
+You
+23:25:07
+
+So we'll have this one model
+
+Class
+23:25:26
+
+estimator of, uh, accurate the financer is.
+
+Class
+23:25:27
+
+So that's how we can change the reward model. And again, feature model and just a copy, like, it's
+
+You
+23:25:32
+
+so that
+
+You
+23:25:38
+
+And then, um, the string. So this is how
+
+Class
+23:25:43
+
+And besides that, everything else is, um, pretty similar like the
+
+Class
+23:25:55
+
+So this is ORM, but it has a major limitation. And its limitation is that
+
+You
+23:25:58
+
+So this is ORN, but it has a major limitation, and its limitation is that look at the, uh, finance. Basically, this is how your, um, clicking update, how your labeling update.
+
+Class
+23:26:10
+
+So it's not really looking at any of these intermediate steps or thoughts. So even if, um, someone here, there is some important thought or, um, vague thought,
+
+You
+23:26:10
+
+So even if, um, at some point here, there is some inquiry thought or, um, rate cut,
+
+You
+23:26:15
+
+um, rate thought, they're one other which is part of it. It has no idea about those. And again, that's simply because this is how we construct the data. We're just labeling their finance.
+
+Class
+23:26:26
+
+The model may learn some correlations, but just looking at them and know and learns that, you know, when certain certain pattern or certain correlation exist in the parts, the final answer is starting quite. So very inquisitive, it may have some idea about correct versus incorrect parts.
+
+You
+23:26:26
+
+Certain pattern or distant correlation existing in the past. The final answer is quite correct. So very implicitly, it may have some idea about, uh, prices and prices.
+
+Class
+23:26:35
+
+And, um, so that's a main motivation for, you know, process to.
+
+You
+23:26:36
+
+And, um, so that's a main motivation for process supervised webinar, for clients.
+
+Class
+23:26:43
+
+And
+
+You
+23:26:46
+
+And
+
+You
+23:26:46
+
+the
+
+Class
+23:26:48
+
+you
+
+You
+23:27:02
+
+So, um, basically, the training data would be the same, uh, question, this one so fast.
+
+Class
+23:27:04
+
+So, um, basically, the train data would input to be the same, uh, question, estimates of thoughts. And then the label would be, um, and it's essentially
+
+You
+23:27:05
+
+Center is basically referring to the finance. It's still part of the generation.
+
+You
+23:27:38
+
+So this is great because now PRMs are more, uh, as better audio and can have a better, uh, overview of each step in the chain of process so they're more capable and they can be more useful.
+
+You
+23:27:58
+
+So the better is such as in certain days and, uh, but again, the the the the theory is that it's not possible to scale in a reliable way to automatically score our data score all the intermediate steps. And then, um, there's some other papers published by DeepMind, I think, should be this one. And it's an amazing paper. It it
+
+Class
+23:27:58
+
+So this is great because now PRMs are more, uh, has better audio and can have a better, um, overview of each step in the channel process so they're more capable and they can be more useful. But the problem is that the generation of these scores cannot be automatic even on for very further tasks. So the paper is such as in certain days and, um, but again, the the the find the the theory is that it's not possible to scale, you know, reliably to automatically score our data score all the Internet assets. And then, um, last time I prepared by DeepMind, I think. Um, it should be this one. And it's an amazing paper. It it
+
+You
+23:28:02
+
+over and what they're trying to do is they're trying to propose a solution so that they can automatically scale. And
+
+Class
+23:28:03
+
+time, everything's better. It it goes up PR and what they're trying to do is they're trying to propose a solution so that they can automatically scale. And
+
+You
+23:28:19
+
+So that's another thing. That's
+
+Class
+23:28:19
+
+So that's about it. That's
+
+You
+23:28:33
+
+it's a happy face, so they score it. Uh, they keep on this.
+
+Class
+23:28:38
+
+Again, if it's incorrect, it's a clickies. I think this was regarding if their if their if their command is not useful or it's
+
+Class
+23:28:56
+
+Alright. That's all I wanted to share for, um, this second day of improving data and its sensitivity.
+
+You
+23:28:58
+
+Alright. That's all I wanted to share for, um, this second day of improving LMM efficiency. Basically, a quick, uh, we can start from an LMM
+
+Class
+23:29:09
+
+So that it it generally generate, um, a chain of thought answers that are accurate.
+
+Class
+23:29:11
+
+Then
+
+You
+23:29:27
+
+But before I wrap up this ticket, one more thing I want to, uh, share is that this PRM, it's very powerful technique. So if you have a written model based on PRM, it has two uses.
+
+Class
+23:29:30
+
+share is that this PRM, it's very powerful technique. So if you have a written model based on PRM, it has two use cases. One use case we already saw, we can use it to continue training or finding our algorithm to make it
+
+Class
+23:29:34
+
+training or
+
+You
+23:29:45
+
+If you had a really great we can use we can use that model to one sketch. So we saw at, um, let me
+
+You
+23:29:46
+
+so here.
+
+Class
+23:29:47
+
+If you have a really great model, we can use we can use that model to one search. So we saw at, um, let me so here. I think first time scanning. We saw that there are two methods for generation and decoding.
+
+Class
+23:29:57
+
+If you have a PR model, basically basically we can figure out which parts for each direction
+
+Class
+23:30:00
+
+directions are good, and we can stop continuing the directions that are not good. For example, at any point here,
+
+You
+23:30:01
+
+If you have a for each directions are good, and we can stop continuing the iterations that are not. For example, at any given point here,
+
+Class
+23:30:03
+
+we can just pass this sequence of dots, black
+
+Class
+23:30:08
+
+And also, similarly for good durations,
+
+You
+23:30:08
+
+if it's not too good, we just stop exploring this duration. And also, similarly for good durations, we just pass it to the PRM. If the PRM
+
+You
+23:30:11
+
+So
+
+You
+23:30:31
+
+So the next ticket is send price.
+
+You
+23:30:37
+
+You also saw I can something if we wanna know that difference, some people talk about that. But just first understand then, uh, what is the current issue? So
+
+Class
+23:30:38
+
+So the next is self correction. We also saw, again, something we could learn about that difference now. We talk about that let's first understand and, uh, what is the current issue? So, again, a a quick summary.
+
+You
+23:30:41
+
+So, again, a a brief summary. Then there's no reason related to me and use LMM.
+
+You
+23:30:42
+
+Them
+
+Class
+23:30:50
+
+So for many tasks, my manual questions, this would fail. And that's why in the first place we started to train these models,
+
+You
+23:30:52
+
+tasks, mathematical questions, this would fail. And that's why in the first place, we started to train these models, get a lot of
+
+You
+23:31:10
+
+so that, um,
+
+You
+23:31:39
+
+self correction. Basically, we want a method or use some algorithm as even then eliminate some mistakes, incorrect final answer, even correct itself.
+
+You
+23:31:40
+
+And
+
+Class
+23:31:41
+
+So how can you fix that? This is the this is the problem that you wanna fix it. And that's what is the purpose of self self, uh, self, partition. Basically, we want a method or use some algorithm such as even then it doesn't make some mistakes in quite final answer, it can correct itself. And we saw something similar on
+
+Class
+23:31:55
+
+So more formally, basically in self direction, the l m detects and revises its own response.
+
+You
+23:31:57
+
+get to a better final response. And when you talk about self version, it's
+
+You
+23:31:59
+
+So
+
+Class
+23:32:08
+
+So
+
+You
+23:32:08
+
+And this is the visual.
+
+You
+23:32:17
+
+And then from there, it tries to improve it.
+
+Class
+23:32:27
+
+And then from there, it tries to improve it. If it's incorrect. And then again, it tries to improve the output too. And then this becomes, let's say, a financer. Alright. So how can we really add satisfaction to our model? There are two ways we can do this. One is by spending more, um, or.
+
+You
+23:32:28
+
+Spending more, um, compute or tokens acting for a time.
+
+Class
+23:32:30
+
+Then
+
+Class
+23:38:47
+
+Another way is to train use training compute, and they basically train a model for better vision. So we'll, um, shortly review these two methods, but another aspect of separation.
+
+You
+23:38:48
+
+Other way is to train. Uh, you train, ma'am. Basically train model for better revisions. So, um, shortly, preview with these two methods,
+
+You
+23:38:48
+
+So
+
+You
+23:38:58
+
+And because of this question, there are two base off suppression usually within. One is intrinsic suppression.
+
+You
+23:38:59
+
+Train
+
+You
+23:39:09
+
+The second, um, approach is extremes extremes of suppression. And, basically, these are the models at our
+
+Class
+23:39:10
+
+The second, um, separation approach is extrins extrinsic subparation. And, basically, these are the models that So we'll go over all the tranmination.
+
+Class
+23:39:18
+
+Compute approach. So, um, for the inference on mute,
+
+You
+23:39:21
+
+So So, um, for the inference on you, in order to make, uh, sufficient
+
+You
+23:39:40
+
+So, um, remember, again, this item is that, um,
+
+You
+23:39:41
+
+to
+
+Class
+23:39:42
+
+So, um, remember, again, this element is the it's not
+
+You
+23:39:45
+
+models, but it's not trained for revisions.
+
+Class
+23:39:53
+
+thoughts, but it's not trained for revisions. Therefore, you're just using some inference time trick on engineering to make it revise its answers. And then for intrinsic, basically, the assumption is that they have no access to external feedback or reward models.
+
+You
+23:39:56
+
+And then for intrinsic, basically, the assumption is that you have no access to external feedback or. So we really don't know which of these, uh, responses. Out of one, out of two, or out of three is good.
+
+Class
+23:40:09
+
+Its extrinsic version is also very similar. We just wanted, uh, difference.
+
+You
+23:40:13
+
+Now it's extrinsic version is also very similar. It just minor, uh, difference. Same approach, the same
+
+Class
+23:40:31
+
+Leads to an error or not. But then, um, no matter how I wanna do it, we get some extra
+
+Class
+23:40:42
+
+So this is a self correction mechanism, both extraneous and intrinsic. At inference time or if you are using inference
+
+You
+23:40:44
+
+So this is the self correction mechanism, both extrinsic and intrinsic. And inference time or if you are doing using inference. And the already started again here in the previous videos is
+
+You
+23:40:56
+
+How can you really, um, train
+
+Class
+23:40:56
+
+Now let's switch to the train object, which is the main purpose of this video. How can you really, uh, train
+
+Class
+23:41:01
+
+the
+
+Class
+23:41:07
+
+training process. So
+
+You
+23:41:07
+
+using the exact same
+
+You
+23:41:25
+
+So the model would learn from it so that whenever it generates something, it can fix it or correct it with the correct answer. And
+
+Class
+23:41:32
+
+And there are two ways for doing that. There's if you can just do s f four And
+
+Class
+23:41:38
+
+The
+
+You
+23:41:39
+
+And that's this
+
+You
+23:41:51
+
+is not really better than just doing. Basically, it's saying that, um,
+
+Class
+23:41:52
+
+And basically is saying that, um, SFD is not good SFD force and protection is not really better than, um, just doing. Basically, you can read a paper, go through the details. It's saying that, um,
+
+You
+23:42:03
+
+terms for analyzing the process to make self action works. Again, I'm not intending to
+
+Class
+23:42:05
+
+And then they are proposing a solution to use reinforcement learning with with very careful, um, terms for analyzing the process. To make the correction worse. Again, I'm not intending to go into the details and become very technical and really if you're interested.
+
+You
+23:42:15
+
+So, um, again, this is just what I mentioned. The the shared
+
+Class
+23:42:20
+
+To so that the model can self break itself without the need to know if it can approach all this work. So, um, again, this is just what I mentioned. They share that previous approach is not including s t four selection, and they're
+
+Class
+23:42:21
+
+training the model in very unique way using reinforcement learning to, uh, make revision better.
+
+Class
+23:42:33
+
+Inference compute approach for self region. The the workflow is exactly the same.
+
+Class
+23:42:44
+
+But by default, we can
+
+You
+23:43:06
+
+here for inference only compute spending is that this model is trained to revise itself. So it's usually doing better. So whenever we pass some output rate that is incorrect, it's generally better at identifying that and fixing because it's how because this is how it's trained. And, um, it. That's about, um, self by channel. One more thing I wanna be sure is that, um, we can also provide these elements not only the speech prompts, but
+
+Class
+23:43:22
+
+is that this model is trained to revise itself. So it's usually better. Whenever we pass some output to it that is incorrect, it's generally better at identifying that and fixing that because it's how because this is how it's trained. And, um, that's it. That's about separation. One more thing I want to share is that, um, we can also provide these elements not only with these response, but also with some external feedback if it's available. Again, in terms of intrinsic self correction, it's not available. In general, in practice, companies do have PRM or Android models. They can use them to explore parts. Or outputs. They have also access to certain tools because, again, a lot of times, these outputs may have calling abilities, so they may ask for calling certain tools such as coding helper.
+
+You
+23:43:22
+
+companies do have PRM or MPR models. They can use them to score thoughts or outputs. Have also access to certain tools because, again, a lot of times, these outputs may full calling capabilities, so they may ask for calling certain tools such as code interpreter.
+
+You
+23:43:32
+
+It can be, um, some logs or if there is a calling, it may just fail and there are some bots. So there is some logs in the output, and those can be also included in as the input for the next revision.
+
+Class
+23:43:37
+
+Function. It can be, um, some logs or if maybe it's a coding, it may just fade under some bugs. There is some blocks in the output, and those can be also included in as the input for the next revision. Again, what I'm talking about is in extrinsic sub parrot, not intrinsic. But x-ray extrinsic is usually, uh,
+
+You
+23:44:01
+
+And, um, it can be very valuable to include the feedback that you're getting to this element, not only a fixed one. So that's it. Um, that's all about self-service, and, um, yeah, next technique that we're going to now switch to is, um, how to internalize search in this, um, reasoning process. What does it mean to internalize search? And that's again the fifth approach. The conclusion is that there's simple problems, and we can solve those problems
+
+Class
+23:44:06
+
+So that's it. Um, that's all about self checkout. And, um, yeah. Next technique that you're going to switch to is, um, how to generalize search. In this, um, reasoning process. Um, what does it mean to internalize search? And that's like in the fifth approach. The inclusion is that there are still no problems, and we can solve those problems with this effort. And we generally write the solution from the beginning. For example, if you ask a a simple math which
+
+You
+23:44:06
+
+and generally write the correct solution from the beginning. For example, if you have a simple math questions,
+
+Class
+23:44:14
+
+However, for complex problems, there is a different scenario. If you ask somebody very complex mathematical question,
+
+Class
+23:44:18
+
+very
+
+You
+23:44:36
+
+So there was this very popular
+
+Class
+23:44:43
+
+So there was this very popular record named meta c o t or metachain. Basically the pair is discussing exactly similar thing. It's saying that, uh, system two
+
+You
+23:44:53
+
+answer can be just a sequence of thoughts followed by the final answer. But for complex questions,
+
+You
+23:44:55
+
+a
+
+Class
+23:44:56
+
+system two, basically, refers to complex questions which require more, uh, attention and trying different methods. And it's it's saying that for simple questions, answer can be just a sequence of thoughts followed by the final answer. But for complex questions, the answer is not necessarily just a sequence of thoughts followed by the financer. It might be
+
+Class
+23:45:16
+
+So and that's their collate method of that. They're saying that they have to change our dataset instead of having a single, um, change that followed by the question and train the model on those change of the data. Why not we collect a different data
+
+Class
+23:45:30
+
+dots. And then basically, this setup is saying that we have to collect data. Such that after the question, there is a change of thought, which is not necessarily okay or correct. Another change of thought and all the way to the k chain of thought. And finally, we have the correct final
+
+You
+23:46:06
+
+why not we collect a different data which has a sequence of, um, channel files, for number of each of these z one z two by themselves is parts. And then basically, this this setup is saying that we have to collect data such that after the question, there is a chain of thought, which is not necessarily okay or right. Another chain of thought, another way to decay chain of thought. And finally, we have the correct final chain of thought solution, which has its own intermediate steps followed by the final answer. And they're calling the z one z two z k latent parts, meaning that they're just, uh, the process of picking. So that's that's mostly what the paper is proposing, and they're saying that if you train the model on such data, it would learn to think and, uh, try different methods or different division, backtrack, continue all your thoughts. Until it reaches the final solution. So, um, the most difficult part is the data preparation part. And again, we're not going to go into the details because there are a lot of details. But if you can use some elements to generate such data, and, um, to use it to train the model, the model would be capable of thinking and searching and back training. So, um, again, it's before complex problems, we would have the data a sequence of data with more latent thoughts. And actually for simpler questions, we would have examples with less latent thoughts.
+
+Class
+23:46:09
+
+And they're calling it z one z two z k, uh, latent thoughts, think that they're just, uh, the process of thinking. So that's that's mostly what the pair is proposing. I understand that if you shrink your model on such data, you would learn to think and, uh, try different methods or different iterations, backtrack, containing waterpots, until it reaches the final solution. So, um, the most important part is the data preparation part. And, again, we're not going to go into details because they're a lot of details. But if you can use some elements to generate such data, and, um, we use it to train the model, the model would be capable of thinking and searching and backtracking. So, um, again, it's a four complex problems. We will have a data a sequence of data with more latent parts. And naturally, for single questions, we would have examples with less latent parts. And then we can follow this step. We can use inferencing to sample back solutions from the element.
+
+You
+23:46:09
+
+And
+
+Class
+23:46:29
+
+So that's meta
+
+You
+23:46:29
+
+So that's meta
+
+Class
+23:46:32
+
+And again, if you go to Chazebi and select its preset models,
+
+You
+23:46:35
+
+and select its recent models, ask some question, we will see that the model during its printing process, it has basically those latent dots.
+
+You
+23:46:57
+
+Can you, um, figure out what are the most difficult questions in uh, international mathematical Olympiad and and share why you believe it is the most difficult. So I don't care about the answer. I just want to show the thinking process.
+
+Class
+23:47:05
+
+Can you, um, figure out what are the most difficult questions in, uh, international mathematical Olympiad, I don't know, and and share why you believe it is the most difficult I don't care about the answer. I just want to show the editing process of this one. Let me introduce. So firstly speaking, And probably after right now we will see some actual
+
+You
+23:47:06
+
+And probably after one, now we will see some actual, uh, latent thoughts. And see here, it says, the user wants to know if I just problem
+
+Class
+23:47:15
+
+and see here it says the user wants to know the hardest problem. I'm going to search for post or research paper, etcetera. The hardest time problems. After this been searched and try to collect more information. And again, if you think it may change its strategy, it may backtrack.
+
+You
+23:47:51
+
+of showing how this thinking and backtracking works. Again, this is meta data, and they're saying that basic after we train is model is basically showing some kind of errors and backtracking on-site.
+
+You
+23:47:58
+
+So for this algorithm, for example, they have, uh, basically, they're experimenting with different days of
+
+Class
+23:48:02
+
+Explore different regions and find a common solution. Um, I think this pair also has some nice visuals of showing how these thinking and backtracking works against the data. And they're saying that basic category train is, um, basically showing some kind of search and backtracking signs. So for this algorithm, for example, they have, uh, basically are experimenting with different ways of training this model different ways of collecting the data. And in many cases, they are trying to have their data in such a
+
+You
+23:48:14
+
+this model, different base of collecting their data. And in many cases, they're trying to have their data in such a data, some backtracking is also involved. So they search backtrack, and they search backtrack. Backtrack search again. So I think that was the visual. Okay. And here, basically, um, there are also if I'm reading, existing models such as one, d c car one, and gemini two, thinking model. And they're saying that
+
+Class
+23:48:17
+
+So So I think it that's the visual I wanna make sure. Okay. And here. Basically, um, there are also if you're getting existing models such as one, DC core one, and Gen I two. And then if I zoom in,
+
+You
+23:48:19
+
+these are some of the solutions, some of this is basically the output for this question. And then if I zoom in, they're identifying certain backtracking
+
+You
+23:48:38
+
+And at this point, the model says, but we can consider this. So, um, basically, it's trying to use some previously generated tokens here and backtrack here, and again, it comes here. So this pattern is adding o four o one and d c card one.
+
+You
+23:48:40
+
+Here, it's six s eight. Actually, since this is point of degree two and the reading term,
+
+Class
+23:48:45
+
+So here they have some solution and then our equation here. Let me define this. And at this point, the model says, uh, here it is. So, um, it's just trying to use some previously generated tokens here, and I track it here, and again, it comes here. So this pattern is high, four four one and fifty four Here, d six says wait. Actually, since this is on your w two end, leading them. Details information to make more logical steps.
+
+Class
+23:48:46
+
+So
+
+You
+23:48:53
+
+So, yeah, that's the visual I want to show. Some words, this is just very interesting to read. And that's about internalizing search. Uh, there are, um, lots of details the
+
+Class
+23:48:54
+
+And that's about internalizing search. Uh, there are, um, lots of details how to collect data, but the most difficult part is
+
+Class
+23:48:57
+
+observation before I wrap up this one is
+
+You
+23:49:05
+
+another interesting observation before I wrap up this final ticket is that, um, just because you're in the data collection process, you're not going to be able to we have less latent thoughts for simpler question and more latent thoughts by for complex questions,
+
+You
+23:49:07
+
+The model will learn it happy. So what that means is that at inference time, when we have a simple question, the model would not really explore lots of different
+
+Class
+23:49:08
+
+is that, um, just because you're in the data collection process, we have less latent thoughts for simple question and more latent thoughts by four complex questions, the model would learn it that way. So what that means is that that means is that inference, then they ask a similar question, the model would not really explore lots of different questions or search for a longer time.
+
+Class
+23:49:14
+
+Dataset.
+
+You
+23:49:16
+
+For simple questions, they are less than dots, so the model and faster come up with is final to see what the answer.
+
+You
+23:49:22
+
+Knows to perform more search, extensive search try,
+
+Class
+23:49:27
+
+In fact, it's
+
+Class
+23:49:44
+
+So that's it. That's the final way that we can make our model to perform search and thinking and completion. And within all of this, one final thing I wanna
+
+Class
+23:49:55
+
+was showing thinking, but it was not showing anything. It was just saying thinking. So that part probably then the model is running some search at inference time,
+
+You
+23:49:56
+
+So that's it. That's the final way that we can make our model to search and teaching and completion. And you like all of this one final thing I want to share is that all this time combined. Again, For example, for the same question that I asked here, you saw initially the model that it was showing thinking, but it was not showing anything. It was the same thinking. So that part is probably when the model is running some search at inference time, making some verifier to figure out which direction or which direction
+
+You
+23:49:57
+
+of
+
+Class
+23:50:11
+
+And that's when they spin out the model. The the o three is using this model to generate thoughts. And, um, searching for all possible solutions. And, you know, behind the scenes, the model there the app and can also employ other methods for, um,
+
+You
+23:50:12
+
+parts and latent parts and recent traces. And that's when they see now the model there. Yeah. O three is using its model to generate parts and, um, searching for all possible solutions. And, you know, we find the same similar there. The algorithm also I can play other, uh, methods for
+
+Class
+23:50:29
+
+And by the way here, it got for three minutes and thirty seconds. And, you know, lots of searches and thinking that you need it get, uh, latent thoughts. And then finally here you see the final c o t, uh, output. Basically says below is a shortlist and these are some of the questions and here is what makes this part of the problem so
+
+You
+23:50:29
+
+latent thoughts. And then finally, here, we see the final COT, uh, outcome. And basically, it says below is a short list, and these are some of the questions, and here is what makes this part of the problems so
+
+You
+23:50:31
+
+and this and then some take it. So that's it. Let's wrap up the.
+
+You
+23:50:37
+
+Provide a very detailed report on different topics.
+
+You
+23:50:43
+
+So let's understand the research. Let's let me can see how they're really building practice.
+
+Class
+23:50:48
+
+provide a very detailed report on different topics. Alright. Let's understand deep search and let me and see how the rebuilding practice. In previous lectures, we saw multiservations agents, and we also saw multiservations systems. And then you mentioned that DeepSearch is a popular use case.
+
+Class
+23:50:54
+
+Agent here, and it's communicating with and also some tools. And then in the prompt, we are using prompt engineering that need to set up this agent such that when it's
+
+You
+23:50:54
+
+And then in the prompt, we are using pop engineering to set up this agent such that when it's
+
+You
+23:51:02
+
+Basically, what we shared with you was more on based.
+
+Class
+23:51:09
+
+like on prompt engineering. It's more prompt based. Now in practice, after the reading models, we can easily switch from the, uh, the traditional element to thinking
+
+You
+23:51:09
+
+Now in practice, after the reasoning models, you can easily switch from the, uh, the traditional MLM to thinking more recently.
+
+You
+23:51:11
+
+Gonna
+
+You
+23:51:19
+
+So that's how
+
+You
+23:51:23
+
+those elements for thinking for a request. But in practice,
+
+Class
+23:51:31
+
+So that's how Deepsearch tools are doing back is they're not using a normal element, and they're not using React to prompt the equivalent. For anything or change a request. But in practice, the element itself knows how to think and reason. And again, Deepak was introduced first by, I think, OpenAI, and, um,
+
+You
+23:51:31
+
+the element itself knows how to think and reason. And again, if this was introduced first by I think, OpenAI, and, um, it was released in February or it was around that day.
+
+Class
+23:51:36
+
+100
+
+You
+23:51:49
+
+So they're explaining why why it's needed. They're not saying how they're building it in data, but they're just describing the feature. And then there's some, uh, updates here, and I just realized that their final update, July 17. Basically, they are using they're giving the deep research feature access to visual browser as
+
+You
+23:51:52
+
+a as part of their. So now it's even more capable because now it has access to browser. And then visually,
+
+Class
+23:51:58
+
+they're explaining why why to see that they're not saying how they're building it in detail, but they're just describing the feature. And then there's some, uh, updates here, and I just realized that a final update, two by 17. Basically, they're using they're giving the deep search feature access to visual browser as part as part of their chat API. Now it's even more capable because now it has access to browser and then visually, uh, go to browser searching, uh, extract information. And use them as part of its data collection process. So
+
+Class
+23:52:01
+
+to see that in practice, this is RGB UI, and, um, basically we can select a preset.
+
+You
+23:52:02
+
+So I also see that in practice. This is actually DPI, and, um, basically, we can set a DPI
+
+Class
+23:52:32
+
+Very long typically, tens of minutes. And, um, I'll share later if I put this report in case you're interested to see. So I can ask something like, can you create a detailed summary of every technique for training, thinking, and reasoning models? Something like this. So now you may ask us some background questions. Help me make sure you clarify.
+
+You
+23:52:32
+
+So let me get something. We would not wait for it because it takes very long to be read, tens of minutes. And, uh, I share later, it's output gets report in case you're interested to see. So I can ask something like, can you create a detailed summary of every technique for training, Indian, and presenting models. Something like this. Now it may ask us some background questions.
+
+You
+23:52:54
+
+Yes. LMS and different techniques, the state of the art. Which makes them to think reason, internalize, search, and applies inference time. Scaling to search against verifiers. And all all other similar techniques.
+
+Class
+23:52:54
+
+Different techniques, the state of the art. Which makes them to think, reason, internalize, search, and applies inference time scaling to search against verifiers and all all other similar techniques. So
+
+Class
+23:53:04
+
+So here it says then here if quick, we would see activity and all these sources. So again, I'm not going to base it
+
+You
+23:53:05
+
+And then here is quick, we will see the activity and all the sources. So again, I'm not gonna convey it. It's gonna take very long.
+
+You
+23:53:14
+
+So that's deep research, and that's it. And one more thing in practice is that deep research is not a much
+
+Class
+23:53:14
+
+So So that's Deepa Search tool, and that's it. And one more thing in practice is all that deep search is not a multispepper. It's a small version.
+
+Class
+23:53:20
+
+And this
+
+You
+23:53:38
+
+final report and share it to their user. So, um, yeah, that's
+
+You
+23:53:41
+
+That's application like you search. You will see many examples in the project of different ways to use in transcribe snippets tasks.
+
+Class
+23:53:43
+
+And, basically, each of these are having access to tools, I think, and perform the search on the web. And then once they call or done, the manager agent would summarize their, um, that information and complete the final report and share it to the user. So, um, yeah, that's You will see many examples in the project of different ways to use different types of capabilities
+
+Class
+23:53:55
+
+not saying how they're building it in detail, but they're just describing it. And then there's some, uh, updates here, and I just realized that their final update July 17. Basically, they're using they're giving the DBSH
+
+You
+23:53:56
+
+So they're explaining why it's needed. They're not saying how they're building it in detail, but they're just describing the feature. And then some, uh, updates here, and I just realized that their final update, July 17. Deep search feature access to visual browser as a as part of their change of behavior.
+
+Class
+23:53:56
+
+feature access to Visual Browser as well as part of their
+
+You
+23:54:08
+
+And, um, basically, we can select the preset.
+
+Class
+23:54:15
+
+UI. And, um, basically, you can select the preset. Basically, you can select the preset, and then we can get a detailed report or something. A lot of times, you first
+
+Class
+23:54:38
+
+you just go and start this. So we're interesting. We will not make it because it takes very long typically, ten seconds. And, uh, I'll share later is how it's reported in case you're interested to see. So I can ask something like, can you create a detailed summary of every technique for training, making, and reasoning models? Something like this. So now it may ask us some background questions. Have you
+
+You
+23:54:38
+
+So let me enter something. We would not wait for it because it takes very long typically, tens of minutes. And, uh, I'll share later. It's Apple, this report in case you're interested to see. So I can ask something like, can you create a detailed summary of every technique for training, thinking, and presenting models. Something that is now it may ask us some background questions.
+
+You
+23:55:01
+
+Yes. LMS and different techniques. The state of the art, which makes them to think reason, internalize, search, analyze inference time. Scaling to search against verifiers. And all all other similar techniques.
+
+Class
+23:55:01
+
+Yes. Editance. And different techniques, the state of the art. Which makes them to think, reason, internalize, search, and applies inference time scaling to search against verifiers and all all other similar techniques.
+
+Class
+23:55:10
+
+So
+
+You
+23:55:11
+
+Idea summary, and then it's just starting research. And then here it's quick. We will see the activity and all the sources. So it's gonna take very long.
+
+You
+23:55:21
+
+So that's deep research tool, and that's it. And one more thing in practice, you saw that deep search is not a mother status. It's not a agent.
+
+Class
+23:55:21
+
+lecture. So that's the difference two. And that's it. And one more thing in practice is that deep search is not a monetization. It's it's multi agent.
+
+You
+23:55:43
+
+Their final report and share with their use. So, um, yeah, that's
+
+Class
+23:55:44
+
+So, um, yeah, that's reasoning models thinking on this and application that you've
+
+You
+23:55:46
+

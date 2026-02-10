@@ -1,0 +1,300 @@
+You
+23:14:23
+
+And continue branches that loop promising.
+
+Class
+23:14:25
+
+Is not optimal, and continue, uh, branches that look promising. And there are lots of different
+
+Class
+23:14:29
+
+And there are lots of different But at the end of the day, it's a It's basically before maturing. You let the model to think in different ways, different generation, generated thoughts.
+
+Class
+23:14:43
+
+But all of the networks are basically, um, techniques at inference time. We are just trading off compute at inference time.
+
+You
+23:14:58
+
+Now
+
+Class
+23:14:58
+
+Now
+
+Class
+23:15:13
+
+effective. And again, there is a trade off of this can be also combined, um, for instance, you can combine, uh,
+
+Class
+23:15:27
+
+So the first thing that we wanna do is train VCSO data. We saw how we can use
+
+You
+23:15:27
+
+But this is a start focusing on different techniques to to actually train gain that sort of capability. So the first thing that I want to discuss is training video
+
+Class
+23:15:39
+
+CODPunking previously to for the model to generate data sets, but the model itself is not developing that. So here, the idea is what if we continue training the element and providing the serial data? Basically providing the data which has answer.
+
+You
+23:16:13
+
+Because now this model is generating intermediate steps. So what that means is that you're spending more
+
+You
+23:16:18
+
+Now
+
+You
+23:16:36
+
+So, um, let's see what the idea is. Basically, I'm not thankful the data, but, um, basically, this is their the overview of the method.
+
+Class
+23:16:43
+
+Is it's more like a mechanic to to generate something. So, um, let's see what I get. It's Basically, I'm not going through the hair, but, um, basically, this is their overview of their method. So what I'm saying is that we have this language model or LM, and it's not initially capable of generating different datasets. So what we can do is first we can, um, try prompting the next see if prompting which we saw previously.
+
+You
+23:16:43
+
+So what they can do is first, we can, um, try prompting the COC prompting which is up previously.
+
+Class
+23:16:57
+
+So once we once we see this, we can easily identify better answers for this quite well. Because let's say it's it's
+
+You
+23:17:18
+
+Now this along with the original question will form one example of our training data. And once we have a bunch of examples of, uh, for training data, now we can start finding this. So, um, let me go back to our, uh, lecture.
+
+Class
+23:17:18
+
+If the finalizer is right, then now we have some rational or human data sets. Now this along with the question, we form one example of our training data. And once we have the bunch of examples of, uh, like, in this format for our training data, we can start finding music at a hundred second. So, um, let me go back to our lecture. Data.
+
+You
+23:17:37
+
+And, um, again, we would use the new rational answers to iteratively find you in this segment.
+
+Class
+23:17:41
+
+Answer pairs to iterate to be fine tuned the same. So basically, we just, um, distracting the model. It keeps getting better and better at generating intermediate steps.
+
+You
+23:17:55
+
+For the next round of training. So, um, as a to collect your data,
+
+Class
+23:18:00
+
+Set is to, um, introduce a special commands and then train the other.
+
+You
+23:18:08
+
+In order to distinguish between these two, we can define
+
+Class
+23:18:14
+
+That it can specify when these specials are being started and in it. For example, we are using things like distinct tag or a
+
+Class
+23:18:23
+
+Yes. You're using Scratchpad. So basically for a question like this, first
+
+Class
+23:18:40
+
+We would close this this pack this thinking, um, process using a special token. And after that, this many produces that final obvious ones. So basically, this is the format of the data that we create to train our model. And, um,
+
+You
+23:18:41
+
+this pack, this thinking, um, process using the special token. And then after that, it's spinning produces that final, uh, business. So basically, this is the format of the pickup that we create to China. And, um, and most reason what they do have is they do have a special tokens for thinking. They're just mainly different.
+
+Class
+23:18:43
+
+different. For example, here, if you choose a really model,
+
+Class
+23:18:46
+
+organizer, I don't know if you're handy because most of them are close source except
+
+You
+23:19:03
+
+Now if you put something inside this, like, uh, I am start, uh, or, you know, hi. You will see that this becomes one token. I since it's a default term, it becomes one token.
+
+You
+23:19:06
+
+This
+
+You
+23:19:22
+
+Now let's see if they are using a Scratchpad. No. Um, what they are using is this thing. Basically, if you have this, um, think, it's just one token, and this is the token ID. And I think this would be also another way to decide. So
+
+You
+23:19:25
+
+it has it is, uh, 128798 and then I have 6799.
+
+Class
+23:19:29
+
+Now if we put something inside this like, um, I am start, uh, or, you know, hi. You will see that this becomes monochrome, high. Since it's a meaningful term, it becomes monochrome. Tokens here. And in these studies, For this two. Now let's see if they are using a scratch pad. No. Um, what they're using is this thing. Basically, if you have this, um, think, it's just one token, and this is a token. And I think this will also another token with this ID. So if I it is, uh, 128798, and then add this becomes 790 So these two tokens become those special tokens that are using to, um, to basically build it
+
+Class
+23:19:31
+
+a
+
+You
+23:19:32
+
+The
+
+You
+23:19:34
+
+So
+
+Class
+23:19:38
+
+So
+
+Class
+23:19:57
+
+Now by doing this, DLL would adjust these parameters. So it, uh, adapt to this new distribution of views, meaning that now the element would learn to generate this thing or describe the special tokens.
+
+You
+23:19:58
+
+And then
+
+Class
+23:20:16
+
+And this is perfect because uh, now basically by following this
+
+You
+23:20:17
+
+And this is perfect because, uh, now basically, by following this start to collect data,
+
+You
+23:20:19
+
+start to collect data, it's basically fine tuning this element to generate rational. It will end up in the model, take the developing increasing.
+
+You
+23:20:44
+
+Reason model really. But still, we ask a question like, you know, think about how long it takes to go to moon from San Francisco by what? I believe you may use some, um, some sort of, um, intermediate steps before before concluding or before coming up with the financing.
+
+Class
+23:20:46
+
+traces. For example, if you go to JPG, just keep their photo, which is not the reasoning model, really. But to say if we ask a question like, um, you know, think about how long it takes to go to moon from San Francisco by walk. Believe it may use some, um, some sort of, um, intermediate steps for before concluding or before coming up with the financing. Introduce. So this is exactly what it's
+
+You
+23:21:24
+
+So all I wanted to say is that even models that are not advertised as we think, they've been trained on lots of datasets, lots of, uh, examples in their dataset. And those examples, a lot of them nowadays are having these intermediate steps within them. So the model learns to generate datasets. So that's that's the first approach, training the skill team to get the model that can be the reason. So now let's move to the next technique. Alright. The next technique is RMB provide model.
+
+You
+23:21:27
+
+But let's understand what what that means. Besides that, most of these meta
+
+Class
+23:21:29
+
+So all I wanted to say is that even models that are not advertised as reason they've been trained on lots of datasets, lots of, uh, examples in their dataset. And those examples, a lot of them nowadays are having these chain of thought intermediate steps within them. So the model learns to generate these steps. Um, so that's that's the first approach, training with So now let's move to the next technique. Alright. The next technique is RLMiT recorder. But let's understand what what happens. Beside most of these, uh, methods or training a model of bit resync capability, they
+
+Class
+23:21:38
+
+Now this
+
+Class
+23:21:42
+
+is kind of, which we saw at first time.
+
+Class
+23:21:50
+
+And we just generate multiple outputs from this element for the same prompt.
+
+You
+23:21:53
+
+Now it's equivalent in the training is that when we continue finding this element in some methods,
+
+Class
+23:22:04
+
+To
+
+You
+23:22:05
+
+basically, we just continue training the development based on this final data that we can generate before training, and then we
+
+You
+23:22:13
+
+So that's that's the idea of training. Basically, I just, um, we're just trying to
+
+Class
+23:22:15
+
+So that's that's the idea of training. Basically, you're just, um, we're just trying to continue training
+
+Class
+23:22:29
+
+So that's idea.
+
+You
+23:22:29
+
+So that's how this process works in the previous features.
+
+You
+23:22:36
+
+And this thing we can follow the same very similar idea to continue training gap and between of the intermediate sets.
+
+You
+23:22:45
+
+And we have everybody. We talk about how to do this webinar.
+
