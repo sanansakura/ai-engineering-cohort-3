@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Split a transcript file into chunks of N lines (default 300).
+Split a transcript file into chunks of N lines (default 10).
 Output: transcript-part1.txt, transcript-part2.txt, ...
 """
 
@@ -12,7 +12,7 @@ from typing import List, Optional
 def split_transcript(
     input_path: str,
     output_dir: Optional[str] = None,
-    chunk_size: int = 300,
+    chunk_size: int = 10,
     basename: Optional[str] = None,
 ) -> List[Path]:
     """Split transcript into chunks. Returns list of output file paths."""
@@ -42,7 +42,7 @@ def split_transcript(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Split transcript into 300-line chunks")
+    parser = argparse.ArgumentParser(description="Split transcript into ~10-line chunks")
     parser.add_argument("transcript", help="Path to transcript file")
     parser.add_argument(
         "--output-dir", "-o",
@@ -51,8 +51,8 @@ def main():
     parser.add_argument(
         "--chunk-size", "-n",
         type=int,
-        default=300,
-        help="Lines per chunk (default: 300)",
+        default=10,
+        help="Lines per chunk (default: 10)",
     )
     parser.add_argument(
         "--basename",

@@ -1,6 +1,6 @@
 ---
 name: transcript-summarizer
-description: Splits transcript files into 300-line chunks, generates hierarchical bullet summaries for each chunk, then produces a unified final summary. Use when the user wants to summarize a transcript, process office-hour recordings, review-session transcripts, or create structured summaries from long text files.
+description: Splits transcript files into ~10-line chunks, generates hierarchical bullet summaries for each chunk, then produces a unified final summary. Use when the user wants to summarize a transcript, process office-hour recordings, review-session transcripts, or create structured summaries from long text files.
 ---
 
 # Transcript Summarizer
@@ -10,7 +10,7 @@ Processes long transcript files by chunking, summarizing each chunk with hierarc
 ## Workflow
 
 ```
-Transcript → Split (300 lines/chunk) → Summarize each chunk (hierarchical bullets) → Unified final summary
+Transcript → Split (~10 lines/chunk) → Summarize each chunk (hierarchical bullets) → Unified final summary
 ```
 
 ## Step 1: Split transcript into chunks
@@ -18,14 +18,14 @@ Transcript → Split (300 lines/chunk) → Summarize each chunk (hierarchical bu
 Run the split script:
 
 ```bash
-python .cursor/skills/transcript-summarizer/scripts/split_transcript.py <transcript_path> [--output-dir <dir>] [--chunk-size 300]
+python .cursor/skills/transcript-summarizer/scripts/split_transcript.py <transcript_path> [--output-dir <dir>] [--chunk-size 10]
 ```
 
 - **Input**: Path to transcript file (.txt)
 - **Output**: Chunk files `transcript-part1.txt`, `transcript-part2.txt`, ... in `--output-dir` (default: same dir as input)
-- **Chunk size**: 300 lines (configurable)
+- **Chunk size**: ~10 lines (configurable)
 
-If the script isn't available, split manually: read the file, split by newlines into groups of 300, write each group to `transcript-partN.txt`.
+If the script isn't available, split manually: read the file, split by newlines into groups of ~10, write each group to `transcript-partN.txt`.
 
 ## Step 2: Summarize each chunk
 
